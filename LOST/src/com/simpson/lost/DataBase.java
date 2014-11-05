@@ -21,15 +21,9 @@ public class DataBase extends SQLiteAssetHelper{
 	
 	public Location getLocation(String MAC)
 	{
+		int testInt = 5;
 		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor cursor = db.query("Locations", // a. table
-	            COLUMNS, // b. column names
-	            "MACOne", // c. selections 
-	            new String[] { String.valueOf(MAC) }, // d. selections args
-	            null, // e. group by
-	            null, // f. having
-	            null, // g. order by
-	            null);
+		Cursor cursor = db.rawQuery("SELECT Location FROM Locations WHERE MACOne = " + Integer.toString(testInt), null);
 		
 		if(cursor != null)
 		{
@@ -37,7 +31,6 @@ public class DataBase extends SQLiteAssetHelper{
 		}
 		
 		Location location = new Location(cursor.getString(0));
-		
 		return location;
 	}
 }
