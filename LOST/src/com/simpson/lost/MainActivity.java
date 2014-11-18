@@ -2,7 +2,7 @@ package com.simpson.lost;
 
 import java.util.List;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity{
 
 	WifiManager wifi;       
     ListView lv;
