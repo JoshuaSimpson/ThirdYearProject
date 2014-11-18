@@ -1,13 +1,32 @@
 package com.simpson.lost;
 
+import java.util.List;
+
 import android.support.v7.app.ActionBarActivity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
+	WifiManager wifi;       
+    ListView lv;
+    TextView textStatus;
+    Button buttonScan;
+    int size = 0;
+    List<ScanResult> results;
+    BroadcastReceiver wifiReceiver;
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -19,6 +38,29 @@ public class MainActivity extends ActionBarActivity {
 		TextView tv = (TextView) findViewById(R.id.textField);
 		Location location = db.getLocation("1");
 		tv.setText(location.locName());
+		
+		
+		// Wifi start here
+		
+		wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+		if ( wifi.isWifiEnabled() == true )
+		{
+			wifi.setWifiEnabled(true);
+		}
+		
+		registerReceiver(new BroadcastReceiver()
+		{
+
+			@Override
+			public void onReceive(Context context, Intent intent) {
+				// TODO Auto-generated method stub
+				results = wifi.getScanResults();
+				size = results.size();
+				Toast.makeText(getApplicationContext(), Integer.toString(results.get(0).level), Toast.LENGTH_LONG).show();
+				context.unregisterReceiver(this);
+			}
+			
+		}, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
 	}
 
 	@Override
