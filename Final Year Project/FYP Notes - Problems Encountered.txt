@@ -1,0 +1,7 @@
+Had to change SQL data structure from Name, MACOne, MACTwo, MACThree to: Name, Co-Ordinates, Map, MACOne, MACTwo, MACThree
+
+Had to filter out different SSIDs from the same router
+
+Possibly scaling issues with images?
+
+Battery life on a repeated WiFi scan
