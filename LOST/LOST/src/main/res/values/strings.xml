@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LOST</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_where_am_i">WhereAmI</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
