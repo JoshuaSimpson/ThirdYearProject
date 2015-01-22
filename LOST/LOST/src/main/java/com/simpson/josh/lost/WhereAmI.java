@@ -50,7 +50,7 @@ public class WhereAmI extends ActionBarActivity {
                 Comparator<ScanResult> resultComparator = new Comparator<ScanResult>() {
                     @Override
                     public int compare(ScanResult lhs, ScanResult rhs) {
-                        return (lhs.level < rhs.level ? -1 : (lhs.level == rhs.level ? 0 : 1));
+                        return (lhs.level > rhs.level ? -1 : (lhs.level == rhs.level ? 0 : 1));
                     }
                 };
 
@@ -60,12 +60,12 @@ public class WhereAmI extends ActionBarActivity {
                 
                 String testToastString = "";
 
-                testToastString += "Stuff one: " + results.get(0).level + " Stuff Two: " + results.get(1).level + " Stuff Three: " + results.get(2).level;
+                testToastString += " " + results.get(0).SSID + ": " + results.get(0).level + " " + results.get(1).SSID + " " + results.get(1).level + " Stuff Three: " + results.get(2).level;
 
                 //Cool, we have WiFis sorted by level
                 Toast.makeText(getApplicationContext(), testToastString, Toast.LENGTH_SHORT).show();
 
-                tv.setText(test);
+                tv.setText(testToastString);
             }
 
         }, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
