@@ -14,9 +14,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.lang.reflect.Array;
+import java.util.*;
 
 
 public class WhereAmI extends ActionBarActivity {
@@ -26,7 +25,6 @@ public class WhereAmI extends ActionBarActivity {
     List<ScanResult> results;
     TextView tv;
     String test = "";
-    int temp = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,19 +45,31 @@ public class WhereAmI extends ActionBarActivity {
                 Log.d("Stuff happened", "Lol");
                 Toast.makeText(getApplicationContext(), Integer.toString(results.get(0).level), Toast.LENGTH_LONG).show();
                 context.unregisterReceiver(this);
-                for(ScanResult x : results)
-                {
-                    if(x.frequency > temp)
-                    {
-                        temp = x.level;
-                        test = "Highest signal strength is name: " + x.SSID + " MAC: " + x.BSSID + " with signal strength " + x.level + "MORE STUFF: " + x.capabilities;
+
+                //New comparator so that we can get the top three WiFi points
+                Comparator<ScanResult> resultComparator = new Comparator<ScanResult>() {
+                    @Override
+                    public int compare(ScanResult lhs, ScanResult rhs) {
+                        return (lhs.level < rhs.level ? -1 : (lhs.level == rhs.level ? 0 : 1));
                     }
-                }
+                };
+
+                //Sort 'dem WiFis
+                Collections.sort(results, resultComparator);
+
+                
+                String testToastString = "";
+
+                testToastString += "Stuff one: " + results.get(0).level + " Stuff Two: " + results.get(1).level + " Stuff Three: " + results.get(2).level;
+
+                //Cool, we have WiFis sorted by level
+                Toast.makeText(getApplicationContext(), testToastString, Toast.LENGTH_SHORT).show();
 
                 tv.setText(test);
             }
 
         }, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+
 
 
     }
