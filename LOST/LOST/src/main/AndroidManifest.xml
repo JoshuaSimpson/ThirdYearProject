@@ -21,6 +21,10 @@
             android:name="com.simpson.josh.lost.WhereAmI"
             android:label="@string/title_activity_where_am_i" >
         </activity>
+        <activity
+                android:name="com.simpson.josh.lost.RouteFinder"
+                android:label="@string/title_activity_where_am_i">
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
