@@ -97,7 +97,7 @@ public class WhereAmI extends ActionBarActivity {
 
             String testToastString = "";
 
-            testToastString += " " + results.get(0).SSID + ": " + results.get(0).level + " " + results.get(1).SSID + " " + results.get(1).level + " " + results.get(2).SSID + results.get(2).level;
+            testToastString += " " + results.get(0).SSID + ": " + results.get(0).level + " " + results.get(1).SSID + " " + results.get(1).level + " " + results.get(2).SSID + " " + results.get(2).level;
 
             //Cool, we have WiFis sorted by level
             Toast.makeText(getApplicationContext(), testToastString, Toast.LENGTH_SHORT).show();

@@ -27,19 +27,23 @@ public class RouteFinder extends Activity {
 
         Log.d("IT WORKED", "FUCKING FINALLY");
 
+        //Initialise spinner
         Spinner start = (Spinner) findViewById(R.id.routeFrom);
         Spinner end = (Spinner) findViewById(R.id.routeTo);
 
+        //Double adapter because I can
         ArrayList<String> sqlResults = new ArrayList<String>();
+        ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(RouteFinder.this, android.R.layout.simple_spinner_item, sqlResults);
+        spinAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
-
-        do {
-            Log.d("Stuff", getLocations.getString(0).toString());
-        } while (getLocations.moveToNext());
-
-
-        ArrayAdapter<String> spinAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sqlResults);
+        //Like I said, double adapter
         start.setAdapter(spinAdapter);
+        end.setAdapter(spinAdapter);
 
+        //Just gonna fill that adapter up here...
+        getLocations.moveToFirst();
+        do {
+            spinAdapter.add(getLocations.getString(0));
+        } while (getLocations.moveToNext());
     }
 }

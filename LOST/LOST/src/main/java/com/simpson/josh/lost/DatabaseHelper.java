@@ -3,7 +3,6 @@ package com.simpson.josh.lost;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteQueryBuilder;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 /**
@@ -20,16 +19,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
 
     public Cursor getLocNames() {
         SQLiteDatabase db = getReadableDatabase();
-        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String[] sqlSelect = {"LocName"};
-        String sqlTables = "Locations";
-
-        qb.setTables(sqlTables);
-
-        Cursor c = qb.query(db, sqlSelect, null, null, null, null, null);
-
-        c.moveToFirst();
-        return c;
+        return db.query("Locations", new String[]{"LocName"}, null, null, null, null, null);
     }
 }
