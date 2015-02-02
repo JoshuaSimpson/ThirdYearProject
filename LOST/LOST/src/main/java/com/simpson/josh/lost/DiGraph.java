@@ -1,7 +1,5 @@
 package com.simpson.josh.lost;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +23,9 @@ public class DiGraph {
     }
 
     public void addNode(Node newNode) {
-        Log.d("FUCKIN' FILLER", "SERIOUSLY JUST NEED TO CLEAN THIS UP");
+        String mac = newNode.macs[0] + newNode.macs[1] + newNode.macs[2];
+        nodes.put(mac, newNode);
+        adjacency.put(newNode, new HashMap<Node, Edge>());
     }
 
     public void addEdge(Edge newEdge) {

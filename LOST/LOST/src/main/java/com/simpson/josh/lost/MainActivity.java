@@ -2,11 +2,16 @@ package com.simpson.josh.lost;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends Activity {
+
+    DiGraph myGraph;
+    DatabaseHelper db;
+    Cursor getLocations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,15 +19,41 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //Nothing much doing here...
+        myGraph = new DiGraph();
+
+        db = new DatabaseHelper(this);
+        getLocations = db.getLocNames();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Log.d("IT WORKED", "FUCKING FINALLY");
+                getLocations.moveToFirst();
+
+                int i = 0;
+                do {
+                    String[] macs = {"Stuff" + i, "Stuff" + i, "Stuff" + i};
+                    myGraph.addNode(Node.createNode(i, macs, getLocations.getString(0)));
+                    i++;
+                    Log.d("Doing stuff:", "" + i);
+
+                } while (getLocations.moveToNext());
 
 
-        DiGraph myGraph = new DiGraph();
-        String[] macs = {"Stuff", "Stuff", "Stuff"};
+                /*for (int i = 0; i < 10; i++) {
 
-        for (int i = 0; i < 10; i++) {
-            myGraph.addNode(DiGraph.Node.createNode(1, macs, "location"));
+                    myGraph.addNode(Node.createNode(i, macs, "location"));
+                    Log.d("Creating and adding", "SIR");
+                }*/
+            }
+        }).run();
+
+
+        for (int i = 0; i < myGraph.nodes.size(); i++) {
+            Log.d("Try hard:", myGraph.nodes.entrySet().iterator().next().toString());
+
         }
-
         Log.d("Graph Size", " " + myGraph.getNodeCount());
     }
 
