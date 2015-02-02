@@ -16,6 +16,14 @@ public class MainActivity extends Activity {
         //Nothing much doing here...
 
 
+        DiGraph myGraph = new DiGraph();
+        String[] macs = {"Stuff", "Stuff", "Stuff"};
+
+        for (int i = 0; i < 10; i++) {
+            myGraph.addNode(DiGraph.Node.createNode(1, macs, "location"));
+        }
+
+        Log.d("Graph Size", " " + myGraph.getNodeCount());
     }
 
     public void whereAmI(View view)
