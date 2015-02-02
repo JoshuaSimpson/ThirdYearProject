@@ -2,6 +2,8 @@ package com.simpson.josh.lost;
 
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,28 +12,38 @@ import java.util.Map;
  */
 public class DiGraph {
 
-    Map<Node, Map<Edge, Node>> adjacency;
-    List<Node> nodes;
+    Map<Node, HashMap<Node, Edge>> adjacency;
+    Map<String, Node> nodes;
     List<Edge> edges;
 
     public DiGraph() {
         //I get the feeling this needs filling..
+        //Implement .equals and implement hash codes.
+        adjacency = new HashMap<Node, HashMap<Node, Edge>>();
+        this.nodes = new HashMap();
+        this.edges = new ArrayList<Edge>();
     }
 
     public void addNode(Node newNode) {
-        this.nodes.add(newNode);
+        Log.d("FUCKIN' FILLER", "SERIOUSLY JUST NEED TO CLEAN THIS UP");
     }
 
     public void addEdge(Edge newEdge) {
         //This might be a little complicated / expensive, come back to this.
-        if (nodes.contains(newEdge.startNode) && nodes.contains(newEdge.endNode)) {
+        if(nodes.containsValue(newEdge.startNode) && nodes.containsValue(newEdge.endNode))
+        {
             edges.add(newEdge);
-            Map<Edge, Node> adjList = adjacency.get(newEdge.startNode);
-            adjList.put(newEdge, newEdge.endNode);
-            adjacency.put(newEdge.startNode, adjList);
-        } else {
-            Log.d("Nooope", "Need both nodes in first...");
+            adjacency.get(newEdge.startNode).put(newEdge.endNode, newEdge);
+
         }
+        else{
+
+        }
+    }
+
+    public int getNodeCount()
+    {
+        return this.nodes.size();
     }
 
     public class Node {
