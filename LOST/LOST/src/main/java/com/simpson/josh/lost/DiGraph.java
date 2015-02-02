@@ -41,8 +41,28 @@ public class DiGraph {
         }
     }
 
+    public List<Edge> outGoingEdges(Node sourceNode) throws NoConnectionException {
+        HashMap tempMap = adjacency.get(sourceNode);
+        if (tempMap.isEmpty()) {
+            throw new NoConnectionException();
+        } else {
+            //todo come back to this and fill it out - need to modify data structures so we can iterate through connections
+            return null;
+        }
+    }
+
     public int getNodeCount()
     {
         return this.nodes.size();
+    }
+
+    public class NoConnectionException extends Exception {
+        public NoConnectionException() {
+        }
+
+        //Constructor that accepts a message
+        public NoConnectionException(String message) {
+            super(message);
+        }
     }
 }
