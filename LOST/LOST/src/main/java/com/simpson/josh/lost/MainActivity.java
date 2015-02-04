@@ -28,9 +28,11 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
 
+                //Put the nodes into our DiGraph in another thread so as not to freeze up the main GUI thread
                 Log.d("IT WORKED", "FUCKING FINALLY");
                 getLocations.moveToFirst();
 
+                //Test entries at the moment - need to edit SQL entries
                 int i = 0;
                 do {
                     String[] macs = {"Stuff" + i, "Stuff" + i, "Stuff" + i};
@@ -48,7 +50,6 @@ public class MainActivity extends Activity {
                 }*/
             }
         }).run();
-
 
         for (int i = 0; i < myGraph.nodes.size(); i++) {
             Log.d("Try hard:", myGraph.nodes.entrySet().iterator().next().toString());

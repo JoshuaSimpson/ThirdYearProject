@@ -1,9 +1,6 @@
 package com.simpson.josh.lost;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Josh on 23/01/2015.
@@ -41,14 +38,16 @@ public class DiGraph {
         }
     }
 
-    public List<Edge> outGoingEdges(Node sourceNode) throws NoConnectionException {
+    public Set<Node> getConnectedNodes(Node sourceNode) {
+
+        HashMap<Node, Edge> tempMap = adjacency.get(sourceNode);
+        return tempMap.keySet();
+    }
+
+    public Set<Edge> outGoingEdges(Node sourceNode) throws NoConnectionException {
         HashMap tempMap = adjacency.get(sourceNode);
-        if (tempMap.isEmpty()) {
-            throw new NoConnectionException();
-        } else {
-            //todo come back to this and fill it out - need to modify data structures so we can iterate through connections
-            return null;
-        }
+
+        return tempMap.entrySet();
     }
 
     public int getNodeCount()

@@ -28,4 +28,12 @@ public class Edge {
 
         return edge;
     }
+
+    public int weight() {
+        return this.weight;
+    }
+
+    public String travelType() {
+        return this.travelType;
+    }
 }
