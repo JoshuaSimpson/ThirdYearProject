@@ -35,10 +35,11 @@ public class MainActivity extends Activity {
                 //Test entries at the moment - need to edit SQL entries
                 int i = 0;
                 do {
-                    String[] macs = {"Stuff" + i, "Stuff" + i, "Stuff" + i};
-                    myGraph.addNode(Node.createNode(i, macs, getLocations.getString(0)));
+                    String[] macs = {getLocations.getString(1), getLocations.getString(2), getLocations.getString(3)};
+                    myGraph.addNode(Node.createNode(getLocations.getInt(4), macs, getLocations.getString(0)));
                     i++;
-                    Log.d("Doing stuff:", "" + i);
+                    Log.d("Doing stuff:", "");
+                    //YOU ARE HERE
 
                 } while (getLocations.moveToNext());
 
