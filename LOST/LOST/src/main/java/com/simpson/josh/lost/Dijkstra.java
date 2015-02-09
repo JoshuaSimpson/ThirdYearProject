@@ -1,9 +1,6 @@
 package com.simpson.josh.lost;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Josh on 04/02/2015.
@@ -15,6 +12,7 @@ public class Dijkstra {
     ArrayList<Edge> edgeList;
     Set<Node> visitedNodes;
     Set<Node> unVisitedNodes;
+    Map<Node, Integer> distance;
 
 
     public Dijkstra(DiGraph graph) {
@@ -30,10 +28,37 @@ public class Dijkstra {
 
     }
 
+    private Node getMinimum(Set<Node> nodes)
+    {
+        Node min = null;
+        for( Node n : nodes)
+        {
+            if(min == null)
+            {
+                min = n;
+            }
+            else{
+                if(getShortestDistance(n) < getShortestDistance(min))
+                {
+                    min = n;
+                }
+            }
+        }
+
+        return min;
+    }
+
     public List<Node> getNeighbours(Node sourceNode) {
         List<Node> neighbours = new ArrayList<Node>(dg.getAdjacency(sourceNode).keySet());
-        // Go through edgelist, add any unvisited nodes to nodelist
+        // Go through edgelist,remove any visited nodes
 
+        for( Node n : neighbours)
+        {
+            if(visitedNodes.contains(n))
+            {
+                neighbours.remove(n);
+            }
+        }
 
         return neighbours;
 
@@ -59,6 +84,17 @@ public class Dijkstra {
         return weight;
     }
 
+    public int getShortestDistance(Node destinationNode)
+    {
+        Integer d = distance.get(destinationNode);
 
-
+        if(d == null)
+        {
+            return 9999;
+        }
+        else
+        {
+            return d;
+        }
+    }
 }
