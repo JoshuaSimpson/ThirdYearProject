@@ -18,7 +18,7 @@ public class Edge {
         this.weight = weight;
     }
 
-    public Edge createEdge(int edgeID, Node startNode, Node endNode, String travelType, int weight) {
+    public static Edge createEdge(int edgeID, Node startNode, Node endNode, String travelType, int weight) {
         Edge edge = new Edge(edgeID, startNode, endNode, travelType, weight);
         edge.edgeID = edgeID;
         edge.startNode = startNode;

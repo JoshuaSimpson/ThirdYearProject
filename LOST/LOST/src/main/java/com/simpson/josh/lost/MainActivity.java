@@ -12,6 +12,7 @@ public class MainActivity extends Activity {
     DiGraph myGraph;
     DatabaseHelper db;
     Cursor getLocations;
+    Cursor getEdges;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +39,17 @@ public class MainActivity extends Activity {
                     String[] macs = {getLocations.getString(1), getLocations.getString(2), getLocations.getString(3)};
                     myGraph.addNode(Node.createNode(getLocations.getInt(4), macs, getLocations.getString(0)));
                     i++;
-                    Log.d("Doing stuff:", "");
+                    Log.d("Doing stuff:", "" + myGraph.getNodeCount());
                     //YOU ARE HERE
 
                 } while (getLocations.moveToNext());
+
+                i = 0;
+                getEdges = db.getEdges();
+
+                do {
+                    myGraph.addEdge(Edge.createEdge(getEdges)));
+                }
 
 
                 /*for (int i = 0; i < 10; i++) {
