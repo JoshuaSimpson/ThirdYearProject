@@ -10,9 +10,9 @@ import java.util.Map;
  */
 public class DiGraph {
 
-    Map<Node, HashMap<Node, Edge>> adjacency;
-    Map<String, Node> nodes;
-    List<Edge> edges;
+    public static Map<Node, HashMap<Node, Edge>> adjacency;
+    public static Map<String, Node> nodes;
+    public static List<Edge> edges;
 
     public DiGraph() {
         //I get the feeling this needs filling..
