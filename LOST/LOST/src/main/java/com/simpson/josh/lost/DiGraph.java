@@ -41,6 +41,11 @@ public class DiGraph {
         }
     }
 
+    public Node getNodeFromWiFi(String M1, String M2, String M3)
+    {
+       return nodes.get(M1 + M2 + M3);
+    }
+
     public HashMap<Node, Edge> getAdjacency(Node sourceNode) {
 
         HashMap<Node, Edge> tempMap = adjacency.get(sourceNode);

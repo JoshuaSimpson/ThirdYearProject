@@ -22,4 +22,10 @@ public class DatabaseHelper extends SQLiteAssetHelper {
 
         return db.query("Locations", new String[]{"LocName"}, null, null, null, null, null);
     }
+
+    public Cursor getEdges()
+    {
+        SQLiteDatabase db = getReadableDatabase();
+        return null;
+    }
 }

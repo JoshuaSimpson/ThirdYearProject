@@ -12,6 +12,7 @@ public class Dijkstra {
     ArrayList<Edge> edgeList;
     Set<Node> visitedNodes;
     Set<Node> unVisitedNodes;
+    Map<Node, Node> predecessors;
     Map<Node, Integer> distance;
 
 
@@ -24,7 +25,19 @@ public class Dijkstra {
     public void execute(Node sourceNode) {
         visitedNodes = new HashSet<Node>();
         unVisitedNodes = new HashSet<Node>();
+        distance = new HashMap<Node, Integer>();
+        predecessors = new HashMap<Node, Node>();
 
+        distance.put(sourceNode, 0);
+        unVisitedNodes.add(sourceNode);
+
+        while(unVisitedNodes.size() > 0)
+        {
+            Node node =getMinimum(unVisitedNodes);
+            visitedNodes.add(node);
+            unVisitedNodes.remove(node);
+            findMinDistances(node);
+        }
 
     }
 
@@ -95,6 +108,21 @@ public class Dijkstra {
         else
         {
             return d;
+        }
+    }
+
+    public void findMinDistances(Node node)
+    {
+        List<Node> adjacentNodes = getNeighbours(node);
+        for(Node target : adjacentNodes)
+        {
+            if(getShortestDistance(target) > getShortestDistance(node) + getDistance(node,target))
+            {
+                distance.put(target, getShortestDistance(node) + getDistance(node,target));
+                predecessors.put(target, node);
+                unVisitedNodes.add(target);
+
+            }
         }
     }
 }
