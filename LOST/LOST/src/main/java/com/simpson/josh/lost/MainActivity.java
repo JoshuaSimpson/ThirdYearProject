@@ -34,22 +34,18 @@ public class MainActivity extends Activity {
                 getLocations.moveToFirst();
 
                 //Test entries at the moment - need to edit SQL entries
-                int i = 0;
                 do {
                     String[] macs = {getLocations.getString(1), getLocations.getString(2), getLocations.getString(3)};
                     myGraph.addNode(Node.createNode(getLocations.getInt(4), macs, getLocations.getString(0)));
-                    i++;
-                    Log.d("Doing stuff:", "" + myGraph.getNodeCount());
-                    //YOU ARE HERE
-
                 } while (getLocations.moveToNext());
 
-                i = 0;
                 getEdges = db.getEdges();
 
-                do {
-                    myGraph.addEdge(Edge.createEdge(getEdges)));
-                }
+                getEdges.moveToFirst();
+                do{
+                    myGraph.addEdge(Edge.createEdge(getEdges.getInt(0), myGraph.getNodeFromID(getEdges.getInt(1)), myGraph.getNodeFromID(getEdges.getInt(2)), getEdges.getString(3), getEdges.getInt(4)));
+                    Log.d("Number of Edges", "" + myGraph.getEdgeCount());
+                } while (getEdges.moveToNext());
 
 
                 /*for (int i = 0; i < 10; i++) {

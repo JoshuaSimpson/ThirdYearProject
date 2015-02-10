@@ -13,6 +13,7 @@ public class DiGraph {
     public static Map<Node, HashMap<Node, Edge>> adjacency;
     public static Map<String, Node> nodes;
     public static List<Edge> edges;
+    public static Map<Integer, Node> nodeIDList;
 
     public DiGraph() {
         //I get the feeling this needs filling..
@@ -20,12 +21,14 @@ public class DiGraph {
         adjacency = new HashMap<Node, HashMap<Node, Edge>>();
         this.nodes = new HashMap();
         this.edges = new ArrayList<Edge>();
+        nodeIDList = new HashMap<Integer, Node>();
     }
 
     public void addNode(Node newNode) {
         String mac = newNode.macs[0] + newNode.macs[1] + newNode.macs[2];
         nodes.put(mac, newNode);
         adjacency.put(newNode, new HashMap<Node, Edge>());
+        nodeIDList.put(newNode.id, newNode);
     }
 
     public void addEdge(Edge newEdge) {
@@ -46,6 +49,12 @@ public class DiGraph {
        return nodes.get(M1 + M2 + M3);
     }
 
+    public Node getNodeFromID(int id)
+    {
+        //Need this to be able to associate new edges properly in MainActivity
+        return nodeIDList.get(id);
+    }
+
     public HashMap<Node, Edge> getAdjacency(Node sourceNode) {
 
         HashMap<Node, Edge> tempMap = adjacency.get(sourceNode);
@@ -56,6 +65,8 @@ public class DiGraph {
     {
         return this.nodes.size();
     }
+
+    public int getEdgeCount() { return this.edges.size(); }
 
     public class NoConnectionException extends Exception {
         public NoConnectionException() {
