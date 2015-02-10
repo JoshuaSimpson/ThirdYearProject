@@ -24,6 +24,7 @@ public class MainActivity extends Activity {
 
         db = new DatabaseHelper(this);
         getLocations = db.getLocNames();
+        getEdges = db.getEdges();
 
         new Thread(new Runnable() {
             @Override
@@ -39,20 +40,18 @@ public class MainActivity extends Activity {
                     myGraph.addNode(Node.createNode(getLocations.getInt(4), macs, getLocations.getString(0)));
                 } while (getLocations.moveToNext());
 
-                getEdges = db.getEdges();
+
+                Log.d("Edge Count:", "" + getEdges.getCount());
 
                 getEdges.moveToFirst();
                 do{
-                    myGraph.addEdge(Edge.createEdge(getEdges.getInt(0), myGraph.getNodeFromID(getEdges.getInt(1)), myGraph.getNodeFromID(getEdges.getInt(2)), getEdges.getString(3), getEdges.getInt(4)));
+                    myGraph.addEdge(Edge.createEdge(getEdges.getInt(0), myGraph.getNodeFromID(getEdges.getInt(1)), myGraph.getNodeFromID(getEdges.getInt(2)), getEdges.getString(4), getEdges.getInt(3)));
                     Log.d("Number of Edges", "" + myGraph.getEdgeCount());
                 } while (getEdges.moveToNext());
 
+                Dijkstra dijkstra = new Dijkstra(myGraph);
+                dijkstra.execute(myGraph.getNodeFromID(1));
 
-                /*for (int i = 0; i < 10; i++) {
-
-                    myGraph.addNode(Node.createNode(i, macs, "location"));
-                    Log.d("Creating and adding", "SIR");
-                }*/
             }
         }).run();
 

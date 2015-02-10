@@ -26,6 +26,6 @@ public class DatabaseHelper extends SQLiteAssetHelper {
     public Cursor getEdges()
     {
         SQLiteDatabase db = getReadableDatabase();
-        return db.query("Edges", new String[]{"EdgeID", "StartVertex", "EndVertex", "Weight"}, null, null, null, null, null);
+        return db.query("Edges", new String[]{"EdgeID", "StartVertex", "EndVertex", "Weight", "Method"}, null, null, null, null, null);
     }
 }
