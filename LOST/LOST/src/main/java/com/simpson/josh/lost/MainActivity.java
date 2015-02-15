@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+
 public class MainActivity extends Activity {
 
     DiGraph myGraph;
@@ -31,7 +34,6 @@ public class MainActivity extends Activity {
             public void run() {
 
                 //Put the nodes into our DiGraph in another thread so as not to freeze up the main GUI thread
-                Log.d("IT WORKED", "FUCKING FINALLY");
                 getLocations.moveToFirst();
 
                 //Test entries at the moment - need to edit SQL entries
@@ -40,31 +42,42 @@ public class MainActivity extends Activity {
                     myGraph.addNode(Node.createNode(getLocations.getInt(4), macs, getLocations.getString(0)));
                 } while (getLocations.moveToNext());
 
-
-                Log.d("Edge Count:", "" + getEdges.getCount());
-
                 getEdges.moveToFirst();
                 do{
                     myGraph.addEdge(Edge.createEdge(getEdges.getInt(0), myGraph.getNodeFromID(getEdges.getInt(1)), myGraph.getNodeFromID(getEdges.getInt(2)), getEdges.getString(4), getEdges.getInt(3)));
-                    Log.d("Number of Edges", "" + myGraph.getEdgeCount());
                 } while (getEdges.moveToNext());
 
+                Log.d("Fucking hell digraphs", "" + myGraph.adjSizeTest());
+                Log.d("Digraph test edges", "" + myGraph.getEdgeCount());
+
+                for (int i = 1; i < myGraph.adjSizeTest(); i++) {
+                    if (myGraph.getNodeFromID(i) == null) {
+                        Log.d("Whoops", "A daisy");
+                        Log.d("REALLY COME ON DIGRAPH", "" + myGraph.getAdjacency(myGraph.getNodeFromID(i)).size());
+                    } else if (myGraph.getAdjacency(myGraph.getNodeFromID(i)).size() == 0) {
+                        Log.d("We have an outlier", "It's node: " + i);
+                    }
+                }
+
                 Dijkstra dijkstra = new Dijkstra(myGraph);
-                dijkstra.execute(myGraph.getNodeFromID(1));
+                dijkstra.execute(myGraph.getNodeFromID(10));
+
+                LinkedList<Node> path = dijkstra.getPath(myGraph.getNodeFromID(50));
+                Log.d("Dijkstra got", "" + path.size());
+
+                Iterator<Node> pathIt = path.listIterator();
+
+                while (pathIt.hasNext()) {
+                    Log.d("Path step", "" + pathIt.next().id);
+                }
 
             }
         }).run();
 
-        for (int i = 0; i < myGraph.nodes.size(); i++) {
-            Log.d("Try hard:", myGraph.nodes.entrySet().iterator().next().toString());
-
-        }
-        Log.d("Graph Size", " " + myGraph.getNodeCount());
     }
 
     public void whereAmI(View view)
     {
-        Log.d("STUFF HERE", getFilesDir().getPath().toString());
         Intent openView = new Intent(this, WhereAmI.class);
         startActivity(openView);
     }

@@ -19,8 +19,8 @@ public class DiGraph {
         //I get the feeling this needs filling..
         //Implement .equals and implement hash codes.
         adjacency = new HashMap<Node, HashMap<Node, Edge>>();
-        this.nodes = new HashMap();
-        this.edges = new ArrayList<Edge>();
+        nodes = new HashMap();
+        edges = new ArrayList<Edge>();
         nodeIDList = new HashMap<Integer, Node>();
     }
 
@@ -61,12 +61,18 @@ public class DiGraph {
         return tempMap;
     }
 
-    public int getNodeCount()
-    {
-        return this.nodes.size();
+    public int adjSizeTest() {
+        return adjacency.size();
     }
 
-    public int getEdgeCount() { return this.edges.size(); }
+    public int getNodeCount()
+    {
+        return nodes.size();
+    }
+
+    public int getEdgeCount() {
+        return edges.size();
+    }
 
     public class NoConnectionException extends Exception {
         public NoConnectionException() {
