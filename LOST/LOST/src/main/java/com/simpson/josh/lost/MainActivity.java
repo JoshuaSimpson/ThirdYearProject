@@ -12,7 +12,7 @@ import java.util.LinkedList;
 
 public class MainActivity extends Activity {
 
-    DiGraph myGraph;
+    public static DiGraph myGraph;
     DatabaseHelper db;
     Cursor getLocations;
     Cursor getEdges;

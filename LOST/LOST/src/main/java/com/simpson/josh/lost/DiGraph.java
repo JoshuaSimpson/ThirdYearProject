@@ -14,6 +14,7 @@ public class DiGraph {
     public static Map<String, Node> nodes;
     public static List<Edge> edges;
     public static Map<Integer, Node> nodeIDList;
+    public static Map<String, Node> nodeLocationList;
 
     public DiGraph() {
         //I get the feeling this needs filling..
@@ -22,6 +23,7 @@ public class DiGraph {
         nodes = new HashMap();
         edges = new ArrayList<Edge>();
         nodeIDList = new HashMap<Integer, Node>();
+        nodeLocationList = new HashMap<String, Node>();
     }
 
     public void addNode(Node newNode) {
@@ -29,6 +31,7 @@ public class DiGraph {
         nodes.put(mac, newNode);
         adjacency.put(newNode, new HashMap<Node, Edge>());
         nodeIDList.put(newNode.id, newNode);
+        nodeLocationList.put(newNode.location, newNode);
     }
 
     public void addEdge(Edge newEdge) {
@@ -37,7 +40,6 @@ public class DiGraph {
         {
             edges.add(newEdge);
             adjacency.get(newEdge.startNode).put(newEdge.endNode, newEdge);
-
         }
         else{
 
@@ -53,6 +55,10 @@ public class DiGraph {
     {
         //Need this to be able to associate new edges properly in MainActivity
         return nodeIDList.get(id);
+    }
+
+    public Node getNodeFromLocation(String location) {
+        return nodeLocationList.get(location);
     }
 
     public HashMap<Node, Edge> getAdjacency(Node sourceNode) {
