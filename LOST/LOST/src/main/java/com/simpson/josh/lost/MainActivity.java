@@ -47,9 +47,6 @@ public class MainActivity extends Activity {
                     myGraph.addEdge(Edge.createEdge(getEdges.getInt(0), myGraph.getNodeFromID(getEdges.getInt(1)), myGraph.getNodeFromID(getEdges.getInt(2)), getEdges.getString(4), getEdges.getInt(3)));
                 } while (getEdges.moveToNext());
 
-                Log.d("Fucking hell digraphs", "" + myGraph.adjSizeTest());
-                Log.d("Digraph test edges", "" + myGraph.getEdgeCount());
-
                 for (int i = 1; i < myGraph.adjSizeTest(); i++) {
                     if (myGraph.getNodeFromID(i) == null) {
                         Log.d("Whoops", "A daisy");
@@ -86,4 +83,4 @@ public class MainActivity extends Activity {
         Intent openView = new Intent(this, RouteFinder.class);
         startActivity(openView);
     }
-    }
+}

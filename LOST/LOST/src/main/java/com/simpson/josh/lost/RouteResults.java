@@ -1,12 +1,19 @@
 package com.simpson.josh.lost;
 
+import android.graphics.Bitmap;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
-
+// http://www.icons4android.com/iconset/29 - Thank them for the Icon Set.
 public class RouteResults extends ActionBarActivity {
 
     String[] path;
@@ -15,23 +22,21 @@ public class RouteResults extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_route_results);
         path = this.getIntent().getStringArrayExtra("Path");
-        TextView tv = (TextView)findViewById(R.id.path);
 
         String myString = "";
 
-        for (int i = 0 ; i < path.length ; i++)
+        TableLayout table = (TableLayout)findViewById(R.id.resultsTable);
+        for( int i = 0 ; i < path.length ; i++)
         {
-            if(i == 0)
-            {
-                myString += "Start at: " + path[i] + ", then \n";
-            }
-            else
-            {
-                myString += "Go to: " + path[i] + ", then \n";
-            }
-        }
+            TableRow row = (TableRow) LayoutInflater.from(RouteResults.this).inflate(R.layout.inflatable_table_row, null);
+            ImageView iv = (ImageView)row.findViewById(R.id.statusIcon);
+            Log.d("Trying here", "Seriously");
+            iv.setImageResource(R.drawable.ic_action);
 
-        tv.setText(myString);
+            TextView instructionText = (TextView)row.findViewById(R.id.instruction);
+            instructionText.setText(path[i]);
+            table.addView(row);
+        }
     }
 
 
