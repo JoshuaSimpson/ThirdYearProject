@@ -25,13 +25,23 @@ public class RouteResults extends ActionBarActivity {
 
         String myString = "";
 
+        // Attach to tablelayout, and inflate the table rows
         TableLayout table = (TableLayout)findViewById(R.id.resultsTable);
         for( int i = 0 ; i < path.length ; i++)
         {
             TableRow row = (TableRow) LayoutInflater.from(RouteResults.this).inflate(R.layout.inflatable_table_row, null);
             ImageView iv = (ImageView)row.findViewById(R.id.statusIcon);
             Log.d("Trying here", "Seriously");
-            iv.setImageResource(R.drawable.ic_action);
+
+            // Set icon depending on the status
+            if(i == 0)
+            {
+                iv.setImageResource(R.drawable.ic_en_route);
+            }
+            else if(i == path.length -1) {
+                iv.setImageResource(R.drawable.ic_fin);
+            }
+
 
             TextView instructionText = (TextView)row.findViewById(R.id.instruction);
             instructionText.setText(path[i]);
