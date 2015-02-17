@@ -41,6 +41,10 @@ public class RouteResults extends ActionBarActivity {
             else if(i == path.length -1) {
                 iv.setImageResource(R.drawable.ic_fin);
             }
+            else
+            {
+                iv.setImageResource(R.drawable.ic_action);
+            }
 
 
             TextView instructionText = (TextView)row.findViewById(R.id.instruction);
