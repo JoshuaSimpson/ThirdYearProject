@@ -12,9 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -29,16 +27,23 @@ public class MainActivity extends ActionBarActivity {
     TextView tv;
     static EditText et;
     wifiScanReceiver scanReceiver;
+    static Spinner sp;
+    ArrayAdapter<String> dataAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dataAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item);
+
+
+        sp = (Spinner)findViewById(R.id.spinner);
         et = (EditText)findViewById(R.id.locationText);
         tv = (TextView) findViewById(R.id.resultText);
         wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         scanReceiver = new wifiScanReceiver();
+
     }
 
 
@@ -101,6 +106,7 @@ public class MainActivity extends ActionBarActivity {
             DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
 
             dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), results.get(1).BSSID.toString(), results.get(2).BSSID.toString(), dh.returnCount() + 1);
+
             Toast.makeText(getApplicationContext(), dh.returnCount() + " Stuff", Toast.LENGTH_SHORT).show();
         }
     }

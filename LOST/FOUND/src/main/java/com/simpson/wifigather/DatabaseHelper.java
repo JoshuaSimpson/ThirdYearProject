@@ -33,6 +33,17 @@ public class DatabaseHelper extends SQLiteAssetHelper{
 
     }
 
+    public void insertEdge(int id, int startVertex, int endVertex, int weight, String method)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("EdgeID", id);
+        cv.put("StartVertex", startVertex);
+        cv.put("EndVertex", endVertex);
+        cv.put("Weight", weight);
+        cv.put("Method", method);
+    }
+
     public int returnCount()
     {
         SQLiteDatabase db = getReadableDatabase();
