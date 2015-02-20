@@ -1,5 +1,6 @@
 package com.simpson.wifigather;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,19 +13,31 @@ public class DatabaseHelper extends SQLiteAssetHelper{
 
     private static final String DATABASE_NAME = "LOSTANDFOUND";
     private static final int DATABASE_VERSION = 1;
-    public static SQLiteDatabase.CursorFactory cf;
 
     public DatabaseHelper(Context context)
     {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        cf = new
+    }
+
+    public void insertLocation(String locName, String MACOne, String MACTwo, String MACThree, int locID)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("LocName", locName);
+        cv.put("MACOne", MACOne);
+        cv.put("MACTwo", MACTwo);
+        cv.put("MACThree", MACThree);
+        cv.put("LocID", locID);
+        db.insert("LocNode", null, cv);
+
 
     }
 
-    public Cursor insertLocation(String name)
+    public int returnCount()
     {
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/FOUND", null);
-
-        return db.query(
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor counter = db.rawQuery("SELECT COUNT(*) FROM LocNode", null);
+        counter.moveToFirst();
+        return counter.getInt(0);
     }
 }
