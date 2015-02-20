@@ -1,1 +1,1 @@
-include ':LOST'
+include ':LOST', ':FOUND'
