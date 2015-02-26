@@ -83,7 +83,6 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onResume() {
-        registerReceiver(scanReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         super.onPause();
     }
 
