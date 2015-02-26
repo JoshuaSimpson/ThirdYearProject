@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.support.v7.app.ActionBarActivity;
@@ -39,8 +40,13 @@ public class MainActivity extends ActionBarActivity {
 
 
         sp = (Spinner)findViewById(R.id.spinner);
+        sp.setAdapter(dataAdapter);
+
+        updateSpinner();
+
         et = (EditText)findViewById(R.id.locationText);
-        tv = (TextView) findViewById(R.id.resultText);
+
+
         wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         scanReceiver = new wifiScanReceiver();
 
@@ -105,9 +111,44 @@ public class MainActivity extends ActionBarActivity {
 
             DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
 
-            dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), results.get(1).BSSID.toString(), results.get(2).BSSID.toString(), dh.returnCount() + 1);
 
-            Toast.makeText(getApplicationContext(), dh.returnCount() + " Stuff", Toast.LENGTH_SHORT).show();
+
+            if(sp.getSelectedItem().toString() == "Nothing")
+            {
+                dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), results.get(1).BSSID.toString(), results.get(2).BSSID.toString(), dh.getNodeCount() + 1);
+                updateSpinner();
+            }
+            else
+            {
+                dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), results.get(1).BSSID.toString(), results.get(2).BSSID.toString(), dh.getNodeCount() + 1);
+                dh.insertEdge(dh.getEdgeCount() + 1 , Integer.parseInt(sp.getSelectedItem().toString()), dh.getNodeCount(), 1, "Walk");
+                updateSpinner();
+            }
+            Toast.makeText(getApplicationContext(), dh.getNodeCount() + " Stuff", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void updateSpinner()
+    {
+        DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
+        Cursor idListCursor = dh.getNodeIDList();
+
+        dataAdapter.clear();
+
+        if(idListCursor.getCount() == 0)
+        {
+            dataAdapter.add("Nothing");
+        }
+        else if(idListCursor.getCount() > 0)
+        {
+            dataAdapter.add("Nothing");
+            idListCursor.moveToFirst();
+            while(idListCursor.moveToNext())
+            {
+                dataAdapter.add(idListCursor.getString(0));
+                sp.setSelection(dataAdapter.getCount() -1 );
+            }
         }
     }
 }

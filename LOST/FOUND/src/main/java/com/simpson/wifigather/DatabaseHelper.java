@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by josh on 20/02/15.
  */
@@ -42,13 +44,30 @@ public class DatabaseHelper extends SQLiteAssetHelper{
         cv.put("EndVertex", endVertex);
         cv.put("Weight", weight);
         cv.put("Method", method);
+        db.insert("LocEdge", null, cv);
     }
 
-    public int returnCount()
+    public int getNodeCount()
     {
         SQLiteDatabase db = getReadableDatabase();
         Cursor counter = db.rawQuery("SELECT COUNT(*) FROM LocNode", null);
         counter.moveToFirst();
         return counter.getInt(0);
+    }
+
+    public int getEdgeCount()
+    {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor counter = db.rawQuery("SELECT COUNT(*) FROM LocEdge", null);
+        counter.moveToFirst();
+        return counter.getInt(0);
+    }
+
+    public Cursor getNodeIDList()
+    {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor idList = db.rawQuery("SELECT LocID FROM LocNode", null);
+
+        return idList;
     }
 }
