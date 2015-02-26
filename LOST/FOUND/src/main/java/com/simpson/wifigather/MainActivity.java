@@ -87,8 +87,9 @@ public class MainActivity extends ActionBarActivity {
         super.onPause();
     }
 
-    public static void scanAndStore(View view)
+    public void scanAndStore(View view)
     {
+        registerReceiver(scanReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         wifi.startScan();
         Log.d("Button press", "What the fuck");
     }
@@ -125,6 +126,7 @@ public class MainActivity extends ActionBarActivity {
                 updateSpinner();
             }
             Toast.makeText(getApplicationContext(), dh.getNodeCount() + " Stuff", Toast.LENGTH_SHORT).show();
+            unregisterReceiver(scanReceiver);
         }
 
     }
