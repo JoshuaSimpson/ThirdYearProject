@@ -1,7 +1,10 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 <TableLayout
-        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:id="@+id/resultsTable">
+
         <TextView
                 android:id="@+id/title"
                 android:layout_width="fill_parent"
@@ -10,4 +13,7 @@
                 android:gravity="center_horizontal"
                 android:text="LOLOLOL"
                 />
-        </TableLayout>
+
+
+</TableLayout>
+</ScrollView>
