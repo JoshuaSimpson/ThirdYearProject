@@ -2,10 +2,7 @@ package com.simpson.josh.lost;
 
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Josh on 23/01/2015.
@@ -13,10 +10,11 @@ import java.util.Map;
 public class DiGraph {
 
     public static Map<Node, HashMap<Node, Edge>> adjacency;
-    public static Map<String, Node> nodes;
+    public static Map<Integer, Node> nodes;
     public static List<Edge> edges;
     public static Map<Integer, Node> nodeIDList;
     public static Map<String, Node> nodeLocationList;
+    public static Map<String, Node> nodeMAC;
 
     public DiGraph() {
         //I get the feeling this needs filling..
@@ -26,14 +24,15 @@ public class DiGraph {
         edges = new ArrayList<Edge>();
         nodeIDList = new HashMap<Integer, Node>();
         nodeLocationList = new HashMap<String, Node>();
+        nodeMAC = new HashMap<String, Node>();
     }
 
     public void addNode(Node newNode) {
-        String mac = newNode.macs[0] + newNode.macs[1] + newNode.macs[2];
-        nodes.put(mac, newNode);
+        nodes.put(newNode.id, newNode);
         adjacency.put(newNode, new HashMap<Node, Edge>());
         nodeIDList.put(newNode.id, newNode);
         nodeLocationList.put(newNode.location, newNode);
+        nodeMAC.put(newNode.macs[0] + newNode.macs[1] + newNode.macs[2], newNode);
     }
 
     public void addEdge(Edge newEdge) {
@@ -41,6 +40,7 @@ public class DiGraph {
         if(nodes.containsValue(newEdge.startNode) && nodes.containsValue(newEdge.endNode))
         {
             edges.add(newEdge);
+            edges.size();
             adjacency.get(newEdge.startNode).put(newEdge.endNode, newEdge);
             Log.d("Node: " + newEdge.startNode.id + " is being connected to: " + newEdge.endNode.id, "Edge ID: " + newEdge.edgeID);
         }
@@ -58,6 +58,20 @@ public class DiGraph {
     {
         //Need this to be able to associate new edges properly in MainActivity
         return nodeIDList.get(id);
+    }
+
+    public String getLocFromMac(String mac)
+    {
+        return nodeMAC.get(mac).location.toString();
+    }
+
+    public void printMACS()
+    {
+        Set<String> maclist = nodeMAC.keySet();
+        for(String s : maclist)
+        {
+            Log.d("MAC IS: ", s);
+        }
     }
 
     public Node getNodeFromLocation(String location) {

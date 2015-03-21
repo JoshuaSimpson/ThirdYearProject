@@ -97,8 +97,13 @@ public class WhereAmI extends ActionBarActivity {
 
             String testToastString = "";
 
-            testToastString += " " + results.get(0).SSID + ": " + results.get(0).level + " " + results.get(1).SSID + " " + results.get(1).level + " " + results.get(2).SSID + " " + results.get(2).level;
+            testToastString += "" + results.get(0).BSSID + "" + results.get(1).BSSID +  "" + results.get(2).BSSID;
 
+            MainActivity.myGraph.printMACS();
+            Log.d("I NEED TO KNOW", testToastString);
+            Log.d("", "" + MainActivity.myGraph.getNodeCount());
+
+            Log.d("Stuffing it here", "" + MainActivity.myGraph.getLocFromMac(testToastString).toString());
             //Cool, we have WiFis sorted by level
             Toast.makeText(getApplicationContext(), testToastString, Toast.LENGTH_SHORT).show();
 
