@@ -56,17 +56,7 @@ public class MainActivity extends Activity {
                     }
                 }
 
-                Dijkstra dijkstra = new Dijkstra(myGraph);
-                dijkstra.execute(myGraph.getNodeFromID(10));
-
-                LinkedList<Node> path = dijkstra.getPath(myGraph.getNodeFromID(50));
-                Log.d("Dijkstra got", "" + path.size());
-
-                Iterator<Node> pathIt = path.listIterator();
-
-                while (pathIt.hasNext()) {
-                    Log.d("Path step", "" + pathIt.next().id);
-                }
+                Log.d("WHAT THE SHIT", "" + myGraph.getEdgeCount());
 
             }
         }).run();

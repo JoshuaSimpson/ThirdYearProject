@@ -30,11 +30,14 @@ public class MainActivity extends ActionBarActivity {
     wifiScanReceiver scanReceiver;
     static Spinner sp;
     ArrayAdapter<String> dataAdapter;
+    Button scanButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        scanButton = (Button)findViewById(R.id.scanButton);
 
         dataAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item);
 
@@ -87,6 +90,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void scanAndStore(View view)
     {
+        scanButton.setEnabled(false);
         registerReceiver(scanReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         wifi.startScan();
         Log.d("Button press", "What the fuck");
@@ -124,6 +128,7 @@ public class MainActivity extends ActionBarActivity {
                 updateSpinner();
             }
             Toast.makeText(getApplicationContext(), dh.getNodeCount() + " Stuff", Toast.LENGTH_SHORT).show();
+            scanButton.setEnabled(true);
             unregisterReceiver(scanReceiver);
         }
 

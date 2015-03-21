@@ -1,5 +1,7 @@
 package com.simpson.josh.lost;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,6 +42,7 @@ public class DiGraph {
         {
             edges.add(newEdge);
             adjacency.get(newEdge.startNode).put(newEdge.endNode, newEdge);
+            Log.d("Node: " + newEdge.startNode.id + " is being connected to: " + newEdge.endNode.id, "Edge ID: " + newEdge.edgeID);
         }
         else{
 
@@ -62,7 +65,6 @@ public class DiGraph {
     }
 
     public HashMap<Node, Edge> getAdjacency(Node sourceNode) {
-
         HashMap<Node, Edge> tempMap = adjacency.get(sourceNode);
         return tempMap;
     }
