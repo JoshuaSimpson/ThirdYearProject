@@ -17,14 +17,12 @@ public class DatabaseHelper extends SQLiteAssetHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public Cursor getLocNames()
-    {
+    public Cursor getLocNames() {
         SQLiteDatabase db = getReadableDatabase();
         return db.query("Locations", new String[]{"LocName", "MACOne", "MACTwo", "MACThree", "LocID"}, null, null, null, null, null);
     }
 
-    public Cursor getEdges()
-    {
+    public Cursor getEdges() {
         SQLiteDatabase db = getReadableDatabase();
         return db.query("Edges", new String[]{"EdgeID", "StartVertex", "EndVertex", "Weight", "Method"}, null, null, null, null, null);
     }

@@ -12,11 +12,16 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Where Am I?"
+            android:text="Where Am I?  "
             android:id="@+id/whereami" android:layout_gravity="center_horizontal" android:onClick="whereAmI"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Route Finder"
             android:id="@+id/routeFinder" android:layout_gravity="center_horizontal" android:onClick="routeFinder"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    Settings     "
+            android:id="@+id/button3" android:layout_gravity="center_horizontal" android:onClick="settings"/>
 </LinearLayout>

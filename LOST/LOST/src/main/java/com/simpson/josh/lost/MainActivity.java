@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
                 } while (getLocations.moveToNext());
 
                 getEdges.moveToFirst();
-                do{
+                do {
                     myGraph.addEdge(Edge.createEdge(getEdges.getInt(0), myGraph.getNodeFromID(getEdges.getInt(1)), myGraph.getNodeFromID(getEdges.getInt(2)), getEdges.getString(4), getEdges.getInt(3)));
                 } while (getEdges.moveToNext());
 
@@ -77,14 +77,18 @@ public class MainActivity extends Activity {
 
     }
 
-    public void whereAmI(View view)
-    {
+    public void whereAmI(View view) {
         Intent openView = new Intent(this, WhereAmI.class);
         startActivity(openView);
     }
 
     public void routeFinder(View view) {
         Intent openView = new Intent(this, RouteFinder.class);
+        startActivity(openView);
+    }
+
+    public void settings(View view) {
+        Intent openView = new Intent(this, settings.class);
         startActivity(openView);
     }
 }

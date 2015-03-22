@@ -1,7 +1,7 @@
 package com.simpson.josh.lost;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class RouteResults extends ActionBarActivity {
 
     String[] path;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,28 +25,23 @@ public class RouteResults extends ActionBarActivity {
         String myString = "";
 
         // Attach to tablelayout, and inflate the table rows
-        TableLayout table = (TableLayout)findViewById(R.id.resultsTable);
-        for( int i = 0 ; i < path.length ; i++)
-        {
+        TableLayout table = (TableLayout) findViewById(R.id.resultsTable);
+        for (int i = 0; i < path.length; i++) {
             TableRow row = (TableRow) LayoutInflater.from(RouteResults.this).inflate(R.layout.inflatable_table_row, null);
-            ImageView iv = (ImageView)row.findViewById(R.id.statusIcon);
+            ImageView iv = (ImageView) row.findViewById(R.id.statusIcon);
             Log.d("Trying here", "Seriously");
 
             // Set icon depending on the status
-            if(i == 0)
-            {
+            if (i == 0) {
                 iv.setImageResource(R.drawable.ic_en_route);
-            }
-            else if(i == path.length -1) {
+            } else if (i == path.length - 1) {
                 iv.setImageResource(R.drawable.ic_fin);
-            }
-            else
-            {
+            } else {
                 iv.setImageResource(R.drawable.ic_action);
             }
 
 
-            TextView instructionText = (TextView)row.findViewById(R.id.instruction);
+            TextView instructionText = (TextView) row.findViewById(R.id.instruction);
             instructionText.setText(path[i]);
             table.addView(row);
         }

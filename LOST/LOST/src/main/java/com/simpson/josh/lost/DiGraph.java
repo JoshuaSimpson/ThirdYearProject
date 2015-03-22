@@ -37,46 +37,38 @@ public class DiGraph {
 
     public void addEdge(Edge newEdge) {
         //This might be a little complicated / expensive, come back to this.
-        if(nodes.containsValue(newEdge.startNode) && nodes.containsValue(newEdge.endNode))
-        {
+        if (nodes.containsValue(newEdge.startNode) && nodes.containsValue(newEdge.endNode)) {
             edges.add(newEdge);
             edges.size();
             adjacency.get(newEdge.startNode).put(newEdge.endNode, newEdge);
             Log.d("Node: " + newEdge.startNode.id + " is being connected to: " + newEdge.endNode.id, "Edge ID: " + newEdge.edgeID);
-        }
-        else{
+        } else {
 
         }
     }
 
-    public Node getNodeFromWiFi(String M1, String M2, String M3)
-    {
-       return nodes.get(M1 + M2 + M3);
+    public Node getNodeFromWiFi(String M1, String M2, String M3) {
+        return nodes.get(M1 + M2 + M3);
     }
 
-    public Node getNodeFromID(int id)
-    {
+    public Node getNodeFromID(int id) {
         //Need this to be able to associate new edges properly in MainActivity
         return nodeIDList.get(id);
     }
 
-    public String getLocFromMac(String mac)
-    {
+    public String getLocFromMac(String mac) {
         String nopeOut = "";
         try {
             nopeOut = nodeMAC.get(mac).location;
-        }catch(Exception e)
-        {
+        } catch (Exception e) {
             nopeOut = "Seriously just nope it all";
         }
         return nopeOut;
     }
 
-    public void printMACS()
-    {
+    public void printMACS() {
         Set<String> maclist = nodeMAC.keySet();
-        for(String s : maclist)
-        {
+        for (String s : maclist) {
             Log.d("MAC IS: ", s);
         }
     }
@@ -94,8 +86,7 @@ public class DiGraph {
         return adjacency.size();
     }
 
-    public int getNodeCount()
-    {
+    public int getNodeCount() {
         return nodes.size();
     }
 

@@ -11,7 +11,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I agree to a wicked and salacious misuse of anonymous location data"
-            android:id="@+id/checkBox"
+            android:id="@+id/locationBox"
             android:layout_centerVertical="true" android:layout_centerHorizontal="true"/>
     <TextView
             android:layout_width="wrap_content"
@@ -31,9 +31,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I agree to an awful and irresponsible collection of data when I can&apos;t connect"
-            android:id="@+id/checkBox2"
-            android:checked="false" android:layout_below="@+id/checkBox" android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" android:layout_marginTop="29dp"/>
+            android:id="@+id/wirelessBox"
+            android:checked="false"
+            android:layout_marginTop="28dp"
+            android:layout_below="@+id/locationBox" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
