@@ -1,14 +1,13 @@
 package com.simpson.josh.lost;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-
-import java.util.Iterator;
-import java.util.LinkedList;
 
 public class MainActivity extends Activity {
 
@@ -21,6 +20,21 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences sharedPrefs = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor ed = sharedPrefs.edit();
+
+
+        if (!sharedPrefs.contains("FirstTime")) {
+            Log.d("Cool, make a thing", "NOW");
+
+            ed.putBoolean("FirstTime", true);
+            ed.putBoolean("Location", true);
+            ed.putBoolean("Wireless", true);
+            ed.commit();
+        } else if (sharedPrefs.contains("FirstTime")) {
+            Log.d("Awesome it did the thing", "Well done");
+        }
 
         //Nothing much doing here...
         myGraph = new DiGraph();
