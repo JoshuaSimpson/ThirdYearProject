@@ -1,5 +1,6 @@
 package com.simpson.josh.lost;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +8,7 @@ import android.content.IntentFilter;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +17,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-public class WhereAmI extends ActionBarActivity {
+public class WhereAmI extends Activity {
 
     WifiManager wifi;
     BroadcastReceiver wifiReceiver;
@@ -53,29 +51,6 @@ public class WhereAmI extends ActionBarActivity {
         super.onPause();
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_where_am_i, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     class wifiScanReceiver extends BroadcastReceiver {
         public void onReceive(Context c, Intent intent) {
             results = wifi.getScanResults();
@@ -99,15 +74,13 @@ public class WhereAmI extends ActionBarActivity {
 
             testToastString += "" + results.get(0).BSSID + "" + results.get(1).BSSID +  "" + results.get(2).BSSID;
 
-            MainActivity.myGraph.printMACS();
-            Log.d("I NEED TO KNOW", testToastString);
-            Log.d("", "" + MainActivity.myGraph.getNodeCount());
-
-            Log.d("Stuffing it here", "" + MainActivity.myGraph.getLocFromMac(testToastString).toString());
-            //Cool, we have WiFis sorted by level
-            Toast.makeText(getApplicationContext(), testToastString, Toast.LENGTH_SHORT).show();
+            testToastString = MainActivity.myGraph.getLocFromMac(testToastString).toString();
 
             tv.setText(testToastString);
+
+            Log.d("Stuffing it here", "" + testToastString);
+            //Cool, we have WiFis sorted by level
+            Toast.makeText(getApplicationContext(), testToastString, Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -10,8 +10,7 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
  */
 public class DatabaseHelper extends SQLiteAssetHelper {
 
-    //private static final String DATABASE_NAME = "LocationDatabase";
-    private static final String DATABASE_NAME = "LOSTANDFOUNDTWO";
+    private static final String DATABASE_NAME = "LocationDatabase";
     private static final int DATABASE_VERSION = 1;
 
     public DatabaseHelper(Context context) {

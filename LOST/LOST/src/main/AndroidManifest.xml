@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.simpson.josh.lost" >
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -24,12 +24,16 @@
             android:label="@string/title_activity_where_am_i" >
         </activity>
         <activity
-                android:name="com.simpson.josh.lost.RouteFinder"
-                android:label="@string/title_activity_where_am_i">
+            android:name="com.simpson.josh.lost.RouteFinder"
+            android:label="@string/title_activity_where_am_i" >
         </activity>
         <activity
-                android:name="com.simpson.josh.lost.RouteResults"
-                android:label="@string/title_activity_route_results">
+            android:name="com.simpson.josh.lost.RouteResults"
+            android:label="@string/title_activity_route_results" >
+        </activity>
+        <activity
+            android:name="com.simpson.josh.lost.settings"
+            android:label="@string/title_activity_settings" >
         </activity>
     </application>
 
