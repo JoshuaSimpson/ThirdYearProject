@@ -1,0 +1,61 @@
+        <div class="col-md-10 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="/sky.svg" class="img-responsive" alt="Generic placeholder thumbnail"> 
+              <h4>Stuff</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="/sky.svg" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>More stuff</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="/sky.svg" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>SO MUCH STUFF</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="/sky.svg" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>DAMN THIS IS A LOT OF STUFF</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div>
+
+          <h2 class="sub-header">Location List</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>MAC</th>
+                  <th>Location</th>
+                  <th>Date / Time</th>
+                  <th>Notes</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+  <tbody>
+    <% @access_points.each do |access_point| %>
+      <tr>
+        <td><%= access_point.mac %></td>
+        <td><%= access_point.location %></td>
+        <td><%= access_point.time %></td>
+        <td><%= access_point.notes %></td>
+        <td><%= link_to 'Show', access_point %> | <%= link_to 'Edit', edit_access_point_path(access_point) %> | <%= link_to 'Issue Resolved', access_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+</tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>

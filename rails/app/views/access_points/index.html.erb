@@ -1,0 +1,35 @@
+        <div class="col-md-10 main">
+          <h1 class="page-header">Access Point Fault List</h1>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>MAC</th>
+                  <th>Location</th>
+                  <th>Date / Time</th>
+                  <th>Notes</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+  <tbody>
+    <% @access_points.each do |access_point| %>
+      <tr>
+        <td><%= access_point.mac %></td>
+        <td><%= access_point.location %></td>
+        <td><%= access_point.time %></td>
+        <td><%= access_point.notes %></td>
+        <td><%= link_to 'Show', access_point %> | <%= link_to 'Edit', edit_access_point_path(access_point) %> | <%= link_to 'Issue Resolved', access_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+</tbody>
+</table>
+</div>
+
+
+
+<%= link_to 'New Access Point', new_access_point_path, class:'btn btn-success' %>
+        </div>
+      </div>
+    </div>
+<br>
