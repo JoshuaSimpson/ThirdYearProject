@@ -23,12 +23,12 @@ import java.util.List;
 public class MainActivity extends ActionBarActivity {
 
     static WifiManager wifi;
-    BroadcastReceiver wifiReceiver;
     static List<ScanResult> results;
-    TextView tv;
     static EditText et;
-    wifiScanReceiver scanReceiver;
     static Spinner sp;
+    BroadcastReceiver wifiReceiver;
+    TextView tv;
+    wifiScanReceiver scanReceiver;
     ArrayAdapter<String> dataAdapter;
     Button scanButton;
 
@@ -96,6 +96,30 @@ public class MainActivity extends ActionBarActivity {
         Log.d("Button press", "What the fuck");
     }
 
+    public void uploadDB(View view) {
+        DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
+        dh.uploadData();
+
+    }
+
+    public void updateSpinner() {
+        DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
+        Cursor idListCursor = dh.getNodeIDList();
+
+        dataAdapter.clear();
+
+        if (idListCursor.getCount() == 0) {
+            dataAdapter.add("Nothing");
+        } else if (idListCursor.getCount() > 0) {
+            dataAdapter.add("Nothing");
+            idListCursor.moveToFirst();
+            while (idListCursor.moveToNext()) {
+                dataAdapter.add(idListCursor.getString(0));
+                sp.setSelection(dataAdapter.getCount() - 1);
+            }
+        }
+    }
+
     class wifiScanReceiver extends BroadcastReceiver{
 
         public void onReceive(Context c, Intent intent)
@@ -132,28 +156,5 @@ public class MainActivity extends ActionBarActivity {
             unregisterReceiver(scanReceiver);
         }
 
-    }
-
-    public void updateSpinner()
-    {
-        DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
-        Cursor idListCursor = dh.getNodeIDList();
-
-        dataAdapter.clear();
-
-        if(idListCursor.getCount() == 0)
-        {
-            dataAdapter.add("Nothing");
-        }
-        else if(idListCursor.getCount() > 0)
-        {
-            dataAdapter.add("Nothing");
-            idListCursor.moveToFirst();
-            while(idListCursor.moveToNext())
-            {
-                dataAdapter.add(idListCursor.getString(0));
-                sp.setSelection(dataAdapter.getCount() -1 );
-            }
-        }
     }
 }
