@@ -13267,3 +13267,1498 @@ I, [2015-03-26T16:13:30.676752 #879]  INFO -- : Started GET "/access_points" for
 I, [2015-03-26T16:13:30.680820 #879]  INFO -- : Processing by AccessPointsController#index as HTML
 I, [2015-03-26T16:13:30.698900 #879]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (9.2ms)
 I, [2015-03-26T16:13:30.702447 #879]  INFO -- : Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+I, [2015-03-26T16:33:11.895113 #877]  INFO -- : Started GET "/" for 159.92.1.130 at 2015-03-26 16:33:11 +0000
+I, [2015-03-26T16:33:11.901320 #877]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-03-26T16:33:11.913029 #877]  INFO -- :   Rendered home/index.html.erb within layouts/application (5.0ms)
+I, [2015-03-26T16:33:11.914935 #877]  INFO -- : Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 0.9ms)
+I, [2015-03-26T16:33:17.609039 #885]  INFO -- : Started GET "/" for 159.92.1.130 at 2015-03-26 16:33:17 +0000
+I, [2015-03-26T16:33:17.646100 #885]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-03-26T16:33:17.679538 #885]  INFO -- :   Rendered home/index.html.erb within layouts/application (7.9ms)
+I, [2015-03-26T16:33:17.681987 #885]  INFO -- : Completed 200 OK in 36ms (Views: 12.8ms | ActiveRecord: 1.8ms)
+I, [2015-03-26T17:08:45.348291 #879]  INFO -- : Started GET "/" for 84.92.36.42 at 2015-03-26 17:08:45 +0000
+I, [2015-03-26T17:08:45.359082 #879]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-03-26T17:08:45.390088 #879]  INFO -- :   Rendered home/index.html.erb within layouts/application (8.2ms)
+I, [2015-03-26T17:08:45.392613 #879]  INFO -- : Completed 200 OK in 33ms (Views: 14.5ms | ActiveRecord: 1.5ms)
+I, [2015-03-26T17:27:13.324158 #877]  INFO -- : Started GET "/" for 123.30.174.55 at 2015-03-26 17:27:13 +0000
+I, [2015-03-26T17:27:13.334323 #877]  INFO -- : Processing by HomeController#index as */*
+I, [2015-03-26T17:27:13.351195 #877]  INFO -- :   Rendered home/index.html.erb within layouts/application (7.6ms)
+I, [2015-03-26T17:27:13.353246 #877]  INFO -- : Completed 200 OK in 19ms (Views: 13.5ms | ActiveRecord: 0.7ms)
+I, [2015-03-26T19:32:39.832541 #879]  INFO -- : Started GET "/" for 84.92.36.42 at 2015-03-26 19:32:39 +0000
+I, [2015-03-26T19:32:39.838583 #879]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-03-26T19:32:39.852541 #879]  INFO -- :   Rendered home/index.html.erb within layouts/application (6.3ms)
+I, [2015-03-26T19:32:39.854942 #879]  INFO -- : Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 1.3ms)
+I, [2015-03-26T22:20:29.578304 #7738]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-26 22:20:29 +0000
+I, [2015-03-26T22:20:29.656602 #7738]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-26T22:20:29.656799 #7738]  INFO -- :   Parameters: {"DB"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x00000004817230 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-7738-1y7s7zk>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB[file]\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}}
+I, [2015-03-26T22:20:29.689917 #7738]  INFO -- : Completed 400 Bad Request in 33ms
+F, [2015-03-26T22:20:29.703884 #7738] FATAL -- : 
+ActionController::ParameterMissing (param not found: location):
+  app/controllers/locations_controller.rb:72:in `location_params'
+  app/controllers/locations_controller.rb:27:in `create'
+
+
+I, [2015-03-26T22:20:29.705783 #7738]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-26 22:20:29 +0000
+I, [2015-03-26T22:20:29.719928 #7738]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-26T22:20:29.720115 #7738]  INFO -- :   Parameters: {"DB"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x000000047877c0 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-7738-1m0n4zh>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB[file]\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}}
+I, [2015-03-26T22:20:29.720769 #7738]  INFO -- : Completed 400 Bad Request in 1ms
+F, [2015-03-26T22:20:29.722026 #7738] FATAL -- : 
+ActionController::ParameterMissing (param not found: location):
+  app/controllers/locations_controller.rb:72:in `location_params'
+  app/controllers/locations_controller.rb:27:in `create'
+
+
+I, [2015-03-26T22:20:29.723002 #7738]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-26 22:20:29 +0000
+I, [2015-03-26T22:20:29.736269 #7738]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-26T22:20:29.736380 #7738]  INFO -- :   Parameters: {"DB"=>{"file"=>"stuff"}}
+I, [2015-03-26T22:20:29.736934 #7738]  INFO -- : Completed 400 Bad Request in 0ms
+F, [2015-03-26T22:20:29.738174 #7738] FATAL -- : 
+ActionController::ParameterMissing (param not found: location):
+  app/controllers/locations_controller.rb:72:in `location_params'
+  app/controllers/locations_controller.rb:27:in `create'
+
+
+I, [2015-03-26T22:20:29.751187 #7738]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-26 22:20:29 +0000
+I, [2015-03-26T22:20:29.752553 #7738]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-26T22:20:29.752631 #7738]  INFO -- :   Parameters: {"DB"=>{"file"=>"stuff"}}
+I, [2015-03-26T22:20:29.753161 #7738]  INFO -- : Completed 400 Bad Request in 0ms
+F, [2015-03-26T22:20:29.754404 #7738] FATAL -- : 
+ActionController::ParameterMissing (param not found: location):
+  app/controllers/locations_controller.rb:72:in `location_params'
+  app/controllers/locations_controller.rb:27:in `create'
+
+
+I, [2015-03-26T22:20:37.256163 #7748]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-26 22:20:37 +0000
+I, [2015-03-26T22:20:37.280310 #7748]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-26T22:20:37.280461 #7748]  INFO -- :   Parameters: {"DB"=>{"file"=>"stuff"}}
+I, [2015-03-26T22:20:37.289480 #7748]  INFO -- : Completed 400 Bad Request in 9ms
+F, [2015-03-26T22:20:37.291270 #7748] FATAL -- : 
+ActionController::ParameterMissing (param not found: location):
+  app/controllers/locations_controller.rb:72:in `location_params'
+  app/controllers/locations_controller.rb:27:in `create'
+
+
+I, [2015-03-26T22:43:50.987145 #7751]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-26 22:43:50 +0000
+I, [2015-03-26T22:43:51.026821 #7751]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-26T22:43:51.027000 #7751]  INFO -- :   Parameters: {"DB"=>{"file"=>"stuff"}}
+I, [2015-03-26T22:43:51.041068 #7751]  INFO -- : Completed 400 Bad Request in 14ms
+F, [2015-03-26T22:43:51.043418 #7751] FATAL -- : 
+ActionController::ParameterMissing (param not found: location):
+  app/controllers/locations_controller.rb:72:in `location_params'
+  app/controllers/locations_controller.rb:27:in `create'
+
+
+I, [2015-03-26T22:44:15.626027 #7741]  INFO -- : Started GET "/" for 89.248.172.110 at 2015-03-26 22:44:15 +0000
+I, [2015-03-26T22:44:15.646685 #7741]  INFO -- : Processing by HomeController#index as */*
+I, [2015-03-26T22:44:15.710105 #7741]  INFO -- :   Rendered home/index.html.erb within layouts/application (7.6ms)
+I, [2015-03-26T22:44:15.712873 #7741]  INFO -- : Completed 200 OK in 66ms (Views: 14.6ms | ActiveRecord: 2.2ms)
+I, [2015-03-26T22:44:36.249737 #7748]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:44:36 +0000
+F, [2015-03-26T22:44:36.253732 #7748] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:46:45.434090 #7751]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:46:45 +0000
+F, [2015-03-26T22:46:45.436959 #7751] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:46:50.164453 #7738]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:46:50 +0000
+F, [2015-03-26T22:46:50.168470 #7738] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:48:02.940097 #7751]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:48:02 +0000
+F, [2015-03-26T22:48:02.941681 #7751] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:49:21.366773 #7741]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:49:21 +0000
+F, [2015-03-26T22:49:21.370930 #7741] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:49:59.830347 #7738]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:49:59 +0000
+F, [2015-03-26T22:49:59.835389 #7738] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:50:37.487762 #7741]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:50:37 +0000
+F, [2015-03-26T22:50:37.489821 #7741] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:52:29.924979 #7748]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:52:29 +0000
+F, [2015-03-26T22:52:29.928273 #7748] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:52:34.194675 #7741]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:52:34 +0000
+F, [2015-03-26T22:52:34.196820 #7741] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:57:37.123252 #7738]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:57:37 +0000
+F, [2015-03-26T22:57:37.125383 #7738] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:58:19.166585 #7751]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 22:58:19 +0000
+F, [2015-03-26T22:58:19.170103 #7751] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T22:59:51.991647 #7738]  INFO -- : Started POST "/trythis" for 82.2.92.239 at 2015-03-26 22:59:51 +0000
+F, [2015-03-26T22:59:51.996374 #7738] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/trythis"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:02:01.350650 #7751]  INFO -- : Started POST "/trythis" for 82.2.92.239 at 2015-03-26 23:02:01 +0000
+F, [2015-03-26T23:02:01.353659 #7751] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/trythis"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:03:17.539442 #7738]  INFO -- : Started POST "/trythis" for 82.2.92.239 at 2015-03-26 23:03:17 +0000
+F, [2015-03-26T23:03:17.542365 #7738] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/trythis"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:08:43.133963 #7741]  INFO -- : Started POST "/trythis" for 82.2.92.239 at 2015-03-26 23:08:43 +0000
+F, [2015-03-26T23:08:43.138531 #7741] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/trythis"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:11:08.534934 #7751]  INFO -- : Started POST "/trythis" for 82.2.92.239 at 2015-03-26 23:11:08 +0000
+F, [2015-03-26T23:11:08.537779 #7751] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/trythis"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:11:56.876013 #7748]  INFO -- : Started POST "/db" for 82.2.92.239 at 2015-03-26 23:11:56 +0000
+F, [2015-03-26T23:11:56.879158 #7748] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/db"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:13:16.831230 #8859]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:13:16 +0000
+I, [2015-03-26T23:13:16.847204 #8859]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:13:16.847366 #8859]  INFO -- :   Parameters: {"DB"=>{"file"=>"stuff"}}
+I, [2015-03-26T23:13:16.857752 #8859]  INFO -- : Completed 500 Internal Server Error in 10ms
+F, [2015-03-26T23:13:16.859547 #8859] FATAL -- : 
+ActiveRecord::StatementInvalid (Could not find table 'dbs'):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:17:48.415879 #8861]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:17:48 +0000
+I, [2015-03-26T23:17:48.431978 #8861]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:17:48.432172 #8861]  INFO -- :   Parameters: {"DB"=>{"file"=>#<ActionDispatch::Http::UploadedFile:0x000000043cc298 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-8861-8sbpa1>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB[file]\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}}
+I, [2015-03-26T23:17:48.442553 #8861]  INFO -- : Completed 500 Internal Server Error in 10ms
+F, [2015-03-26T23:17:48.444375 #8861] FATAL -- : 
+ActiveRecord::StatementInvalid (Could not find table 'dbs'):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:23:34.633586 #8864]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:23:34 +0000
+I, [2015-03-26T23:23:34.647980 #8864]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:23:34.648146 #8864]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000043a7a10 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-8864-1gaev71>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:23:34.658423 #8864]  INFO -- : Completed 500 Internal Server Error in 10ms
+F, [2015-03-26T23:23:34.660127 #8864] FATAL -- : 
+ActiveRecord::StatementInvalid (Could not find table 'dbs'):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:25:51.840818 #8867]  INFO -- : Started GET "/" for 61.240.144.65 at 2015-03-26 23:25:51 +0000
+I, [2015-03-26T23:25:51.856793 #8867]  INFO -- : Processing by HomeController#index as */*
+I, [2015-03-26T23:25:51.893333 #8867]  INFO -- :   Rendered home/index.html.erb within layouts/application (7.1ms)
+I, [2015-03-26T23:25:51.896294 #8867]  INFO -- : Completed 200 OK in 39ms (Views: 14.6ms | ActiveRecord: 1.5ms)
+I, [2015-03-26T23:27:05.056771 #8861]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:27:05 +0000
+I, [2015-03-26T23:27:05.059752 #8861]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:27:05.059942 #8861]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x0000000433def8 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-8861-9855z8>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:27:05.060896 #8861]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:27:05.062350 #8861] FATAL -- : 
+ActiveRecord::StatementInvalid (Could not find table 'dbs'):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:28:04.759818 #9290]  INFO -- : Migrating to CreateDbs (20150326231013)
+I, [2015-03-26T23:29:55.688399 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.735119 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.735570 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000003125658 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-1re9ygk>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.769536 #9545]  INFO -- : Completed 500 Internal Server Error in 34ms
+F, [2015-03-26T23:29:55.785063 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:55.797072 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.805240 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.811190 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000030c44c0 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-6yuq23>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.812468 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:55.819871 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:55.824540 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.828409 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.833874 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000003052a00 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-1dq22cu>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.836133 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:55.840526 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:55.848564 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.854654 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.854925 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002fe7520 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-naf00r>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.855975 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:55.868684 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:55.870289 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.876400 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.879184 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002f6d950 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-1rwxay6>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.880352 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:55.888433 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:55.892650 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.896204 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.907218 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002f1a9f8 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-1fjv1k7>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.908550 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:55.910131 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:55.916598 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.924189 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.927207 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002ea72c8 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-spv2jp>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.928450 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:55.932554 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:55.940600 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.948221 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.951158 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002e4dea8 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-jml7jl>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.952291 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:55.956497 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:55.961296 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.975527 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.975901 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002ddbfb0 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-7m1ygf>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.976889 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:55.980359 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:55.981902 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:55 +0000
+I, [2015-03-26T23:29:55.992525 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:55.995170 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002d5eec0 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-1d34k47>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:55.996206 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:56.000522 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:56.006037 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:56 +0000
+I, [2015-03-26T23:29:56.016597 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:56.019165 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002d1cc28 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-yclra1>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:56.020394 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:56.024620 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:56.032855 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:56 +0000
+I, [2015-03-26T23:29:56.040331 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:56.043149 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002cb48a8 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-igh6s3>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:56.047316 #9545]  INFO -- : Completed 500 Internal Server Error in 4ms
+F, [2015-03-26T23:29:56.049082 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:56.056623 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:56 +0000
+I, [2015-03-26T23:29:56.064223 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:56.065614 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002c3cdf8 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-1n9u27j>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:56.066670 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:56.073733 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:29:56.080650 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:29:56 +0000
+I, [2015-03-26T23:29:56.084231 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:29:56.088913 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002bc0078 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-1pqmnq8>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:29:56.090643 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:29:56.100511 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:30:18.273251 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:30:18 +0000
+I, [2015-03-26T23:30:18.274355 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:30:18.274539 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002b55700 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-170cdw5>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:30:18.275566 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:30:18.284425 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:30:45.141644 #9545]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:30:45 +0000
+I, [2015-03-26T23:30:45.143006 #9545]  INFO -- : Processing by DbsController#create as HTML
+I, [2015-03-26T23:30:45.143297 #9545]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000002acbd48 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-9545-1pkgufk>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:30:45.144245 #9545]  INFO -- : Completed 500 Internal Server Error in 1ms
+F, [2015-03-26T23:30:45.152353 #9545] FATAL -- : 
+RuntimeError (Circular dependency detected while autoloading constant Db):
+  app/controllers/dbs_controller.rb:27:in `create'
+
+
+I, [2015-03-26T23:34:31.225684 #10221]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:34:31 +0000
+I, [2015-03-26T23:34:31.229841 #10218]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:34:31 +0000
+F, [2015-03-26T23:34:31.257107 #10218] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/dbs"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:34:31.264133 #10224]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:34:31 +0000
+F, [2015-03-26T23:34:31.287356 #10221] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/dbs"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+F, [2015-03-26T23:34:31.303031 #10224] FATAL -- : 
+ActionController::RoutingError (No route matches [POST] "/dbs"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:536:in `maintain_worker_count'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:294:in `join'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:51:46.919127 #10796]  INFO -- : Migrating to CreateDbFiles (20150326234111)
+I, [2015-03-26T23:53:15.337387 #10845]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:53:15 +0000
+F, [2015-03-26T23:53:15.346368 #10845] FATAL -- : 
+ActionController::RoutingError (uninitialized constant DbFileController):
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__2860389449050437779__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:140:in `start'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:55:14.993671 #10848]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:55:14 +0000
+F, [2015-03-26T23:55:15.002278 #10848] FATAL -- : 
+ActionController::RoutingError (uninitialized constant DbFileController):
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__2860389449050437779__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:140:in `start'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-26T23:55:34.243036 #10954]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:55:34 +0000
+I, [2015-03-26T23:55:34.250761 #10954]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-26T23:55:34.251021 #10954]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x0000000419d6c0 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-10954-tw1jdf>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:55:34.258980 #10954]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-26T23:55:34.260599 #10954] FATAL -- : 
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/db_file.rb:4:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-26T23:57:05.424349 #10949]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:57:05 +0000
+I, [2015-03-26T23:57:05.435808 #10949]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-26T23:57:05.436185 #10949]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x0000000418c3e8 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-10949-16j1x8j>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:57:05.445560 #10949]  INFO -- : Completed 500 Internal Server Error in 9ms
+F, [2015-03-26T23:57:05.447834 #10949] FATAL -- : 
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/db_file.rb:4:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-26T23:58:27.593339 #10957]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:58:27 +0000
+I, [2015-03-26T23:58:27.602122 #10957]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-26T23:58:27.602363 #10957]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000041839a0 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-10957-1nxg0ni>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:58:27.610667 #10957]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-26T23:58:27.612424 #10957] FATAL -- : 
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/db_file.rb:4:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-26T23:58:38.376534 #11040]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:58:38 +0000
+I, [2015-03-26T23:58:38.384707 #11040]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-26T23:58:38.385051 #11040]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000049f2140 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-11040-15t7iiz>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:58:38.394115 #11040]  INFO -- : Completed 500 Internal Server Error in 9ms
+F, [2015-03-26T23:58:38.396117 #11040] FATAL -- : 
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/db_file.rb:4:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-26T23:59:19.261832 #11090]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:59:19 +0000
+I, [2015-03-26T23:59:19.290394 #11090]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-26T23:59:19.290698 #11090]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000004c539c0 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-11090-dgzzng>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:59:19.298727 #11090]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-26T23:59:19.300277 #11090] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00000004c539c0>):
+  app/models/db_file.rb:4:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-26T23:59:32.335631 #11082]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:59:32 +0000
+I, [2015-03-26T23:59:32.348867 #11082]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-26T23:59:32.349284 #11082]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000004bee9f8 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-11082-sdbxtv>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:59:32.361624 #11082]  INFO -- : Completed 500 Internal Server Error in 12ms
+F, [2015-03-26T23:59:32.363555 #11082] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00000004bee9f8>):
+  app/models/db_file.rb:4:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-26T23:59:42.050140 #11131]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-26 23:59:42 +0000
+I, [2015-03-26T23:59:42.070630 #11131]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-26T23:59:42.071015 #11131]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000003821718 @tempfile=#<Tempfile:/tmp/RackMultipart20150326-11131-h5orb7>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-26T23:59:42.081644 #11131]  INFO -- : Completed 500 Internal Server Error in 10ms
+F, [2015-03-26T23:59:42.083492 #11131] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00000003821718>):
+  app/models/db_file.rb:4:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:00:47.208989 #11182]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:00:47 +0000
+I, [2015-03-27T00:00:47.216402 #11182]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:00:47.216706 #11182]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000044c9dd0 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11182-1wc8jvw>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:00:47.224778 #11182]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-27T00:00:47.226357 #11182] FATAL -- : 
+Errno::EACCES (Permission denied @ rb_sysopen - public/dbs/LOSTANDFOUND):
+  app/models/db_file.rb:9:in `initialize'
+  app/models/db_file.rb:9:in `open'
+  app/models/db_file.rb:9:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:01:59.843512 #11185]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:01:59 +0000
+I, [2015-03-27T00:01:59.851251 #11185]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:01:59.851562 #11185]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000044ec1c8 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11185-1fciat4>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:01:59.860175 #11185]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-27T00:01:59.861903 #11185] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x000000044ec1c8>):
+  app/models/db_file.rb:9:in `block in save'
+  app/models/db_file.rb:9:in `open'
+  app/models/db_file.rb:9:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:03:06.369295 #11292]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:03:06 +0000
+I, [2015-03-27T00:03:06.388754 #11292]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:03:06.389164 #11292]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000042be248 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11292-qeb2tc>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:03:06.397502 #11292]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-27T00:03:06.399071 #11292] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x000000042be248>):
+  app/models/db_file.rb:9:in `block in save'
+  app/models/db_file.rb:9:in `open'
+  app/models/db_file.rb:9:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:03:49.361605 #11295]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:03:49 +0000
+I, [2015-03-27T00:03:49.389266 #11295]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:03:49.389648 #11295]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000042d8760 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11295-dtqyfh>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:03:49.399093 #11295]  INFO -- : Completed 500 Internal Server Error in 9ms
+F, [2015-03-27T00:03:49.400968 #11295] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x000000042d8760>):
+  app/models/db_file.rb:9:in `block in save'
+  app/models/db_file.rb:9:in `open'
+  app/models/db_file.rb:9:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:04:00.069118 #11341]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:04:00 +0000
+I, [2015-03-27T00:04:00.077103 #11341]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:04:00.077434 #11341]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000037dd310 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11341-1i8dwu9>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:04:00.085621 #11341]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-27T00:04:00.087284 #11341] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x000000037dd310>):
+  app/models/db_file.rb:9:in `block in save'
+  app/models/db_file.rb:9:in `open'
+  app/models/db_file.rb:9:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:05:35.997438 #11344]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:05:35 +0000
+I, [2015-03-27T00:05:36.006742 #11344]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:05:36.007027 #11344]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000037ecd60 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11344-5f9bvx>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:05:36.015539 #11344]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-27T00:05:36.017212 #11344] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x000000037ecd60>):
+  app/models/db_file.rb:9:in `block in save'
+  app/models/db_file.rb:9:in `open'
+  app/models/db_file.rb:9:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:07:41.367251 #11445]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:07:41 +0000
+I, [2015-03-27T00:07:41.375106 #11445]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:07:41.375431 #11445]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000003686098 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11445-1f16139>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:07:41.383740 #11445]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-27T00:07:41.385387 #11445] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00000003686098>):
+  app/models/db_file.rb:9:in `block in save'
+  app/models/db_file.rb:9:in `open'
+  app/models/db_file.rb:9:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:08:23.863008 #11440]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:08:23 +0000
+I, [2015-03-27T00:08:23.870674 #11440]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:08:23.870951 #11440]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000003688e38 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11440-13j4kdc>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:08:23.879499 #11440]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-27T00:08:23.881321 #11440] FATAL -- : 
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00000003688e38>):
+  app/models/db_file.rb:9:in `block in save'
+  app/models/db_file.rb:9:in `open'
+  app/models/db_file.rb:9:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:08:39.385868 #11497]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:08:39 +0000
+I, [2015-03-27T00:08:39.394180 #11497]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:08:39.394560 #11497]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x0000000387da90 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11497-ioskjb>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:08:39.403127 #11497]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-27T00:08:39.404836 #11497] FATAL -- : 
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/db_file.rb:9:in `block in save'
+  app/models/db_file.rb:9:in `open'
+  app/models/db_file.rb:9:in `save'
+  app/controllers/manager_controller.rb:4:in `upload'
+
+
+I, [2015-03-27T00:13:52.425044 #11621]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:13:52 +0000
+I, [2015-03-27T00:13:52.434144 #11621]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:13:52.434463 #11621]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000041b12d8 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11621-no39dz>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:13:52.443160 #11621]  INFO -- : Completed 500 Internal Server Error in 8ms
+F, [2015-03-27T00:13:52.444839 #11621] FATAL -- : 
+Errno::ENOENT (No such file or directory @ rb_sysopen - /home/rails/public/uploads/LOSTANDFOUND):
+  app/controllers/manager_controller.rb:5:in `initialize'
+  app/controllers/manager_controller.rb:5:in `open'
+  app/controllers/manager_controller.rb:5:in `upload'
+
+
+I, [2015-03-27T00:14:07.583428 #11624]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:14:07 +0000
+I, [2015-03-27T00:14:07.591881 #11624]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:14:07.592206 #11624]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x000000041b1170 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11624-177clc4>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:14:07.601134 #11624]  INFO -- : Completed 500 Internal Server Error in 9ms
+F, [2015-03-27T00:14:07.602938 #11624] FATAL -- : 
+Errno::ENOENT (No such file or directory @ rb_sysopen - /home/rails/public/uploads/LOSTANDFOUND):
+  app/controllers/manager_controller.rb:5:in `initialize'
+  app/controllers/manager_controller.rb:5:in `open'
+  app/controllers/manager_controller.rb:5:in `upload'
+
+
+I, [2015-03-27T00:14:17.299519 #11660]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:14:17 +0000
+I, [2015-03-27T00:14:17.307196 #11660]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:14:17.307391 #11660]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000003dea8e8 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11660-1ecnjto>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:14:17.317087 #11660]  INFO -- : Completed 500 Internal Server Error in 9ms
+F, [2015-03-27T00:14:17.319981 #11660] FATAL -- : 
+ActionView::MissingTemplate (Missing template manager/upload, application/upload with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/rails/app/views"
+):
+  actionpack (4.0.2) lib/action_view/path_set.rb:46:in `find'
+  actionpack (4.0.2) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (4.0.2) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionpack (4.0.2) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (4.0.2) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionpack (4.0.2) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionpack (4.0.2) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionpack (4.0.2) lib/abstract_controller/rendering.rb:127:in `_render_template'
+  actionpack (4.0.2) lib/action_controller/metal/streaming.rb:219:in `_render_template'
+  actionpack (4.0.2) lib/abstract_controller/rendering.rb:120:in `render_to_body'
+  actionpack (4.0.2) lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+  actionpack (4.0.2) lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+  actionpack (4.0.2) lib/abstract_controller/rendering.rb:97:in `render'
+  actionpack (4.0.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.0.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/local/rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.0.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.0.2) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.0.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.0.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:393:in `_run__305873227670332219__process_action__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.0.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.0.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.0.2) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+  activerecord (4.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.0.2) lib/abstract_controller/base.rb:136:in `process'
+  actionpack (4.0.2) lib/abstract_controller/rendering.rb:44:in `process'
+  actionpack (4.0.2) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.0.2) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  activerecord (4.0.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__3939672343561770759__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:140:in `start'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-27T00:15:36.412383 #11728]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:15:36 +0000
+I, [2015-03-27T00:15:36.419974 #11728]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:15:36.420256 #11728]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x0000000359a918 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11728-9cvz5c>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:15:36.431344 #11728]  INFO -- :   Rendered manager/upload.html.erb within layouts/application (0.7ms)
+I, [2015-03-27T00:15:36.434202 #11728]  INFO -- : Completed 200 OK in 14ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+I, [2015-03-27T00:18:33.814097 #11726]  INFO -- : Started POST "/dbs" for 82.2.92.239 at 2015-03-27 00:18:33 +0000
+I, [2015-03-27T00:18:33.823036 #11726]  INFO -- : Processing by ManagerController#upload as HTML
+I, [2015-03-27T00:18:33.823334 #11726]  INFO -- :   Parameters: {"DB"=>#<ActionDispatch::Http::UploadedFile:0x00000003587e08 @tempfile=#<Tempfile:/tmp/RackMultipart20150327-11726-8yqqq>, @original_filename="LOSTANDFOUND", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"DB\"; filename=\"LOSTANDFOUND\"\r\nContent-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n">}
+I, [2015-03-27T00:18:33.841416 #11726]  INFO -- :   Rendered manager/upload.html.erb within layouts/application (0.8ms)
+I, [2015-03-27T00:18:33.844785 #11726]  INFO -- : Completed 200 OK in 21ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+I, [2015-03-27T00:24:31.435253 #11728]  INFO -- : Started GET "/" for 82.2.92.239 at 2015-03-27 00:24:31 +0000
+I, [2015-03-27T00:24:31.437322 #11728]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-03-27T00:24:31.456581 #11728]  INFO -- :   Rendered home/index.html.erb within layouts/application (5.6ms)
+I, [2015-03-27T00:24:31.457830 #11728]  INFO -- : Completed 200 OK in 20ms (Views: 8.2ms | ActiveRecord: 1.5ms)
+I, [2015-03-27T00:24:33.633814 #11731]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:24:33 +0000
+I, [2015-03-27T00:24:33.642977 #11731]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:24:33.675329 #11731]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (9.0ms)
+I, [2015-03-27T00:24:33.677621 #11731]  INFO -- : Completed 200 OK in 34ms (Views: 13.4ms | ActiveRecord: 1.4ms)
+I, [2015-03-27T00:24:35.455706 #11728]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:24:35 +0000
+I, [2015-03-27T00:24:35.458783 #11728]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:24:35.466253 #11728]  INFO -- :   Rendered locations/index.html.erb within layouts/application (2.1ms)
+I, [2015-03-27T00:24:35.467852 #11728]  INFO -- : Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+I, [2015-03-27T00:24:36.569736 #11726]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:24:36 +0000
+I, [2015-03-27T00:24:36.572146 #11726]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:24:36.596510 #11726]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (11.3ms)
+I, [2015-03-27T00:24:36.598388 #11726]  INFO -- : Completed 200 OK in 26ms (Views: 14.5ms | ActiveRecord: 1.3ms)
+I, [2015-03-27T00:24:37.324114 #11728]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:24:37 +0000
+I, [2015-03-27T00:24:37.326458 #11728]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:24:37.329357 #11728]  INFO -- :   Rendered locations/index.html.erb within layouts/application (1.1ms)
+I, [2015-03-27T00:24:37.330703 #11728]  INFO -- : Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+I, [2015-03-27T00:24:38.064428 #11734]  INFO -- : Started GET "/locations/new" for 82.2.92.239 at 2015-03-27 00:24:38 +0000
+I, [2015-03-27T00:24:38.076546 #11734]  INFO -- : Processing by LocationsController#new as HTML
+I, [2015-03-27T00:24:38.146523 #11734]  INFO -- :   Rendered locations/_form.html.erb (52.6ms)
+I, [2015-03-27T00:24:38.147269 #11734]  INFO -- :   Rendered locations/new.html.erb within layouts/application (54.8ms)
+I, [2015-03-27T00:24:38.151017 #11734]  INFO -- : Completed 200 OK in 74ms (Views: 60.0ms | ActiveRecord: 1.1ms)
+I, [2015-03-27T00:24:40.084399 #11728]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-27 00:24:40 +0000
+I, [2015-03-27T00:24:40.088510 #11728]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-27T00:24:40.089307 #11728]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwMPkx/XEzi5JVCfUScGM/QQ7KyWm5f6xy/jCWPV2Jg=", "location"=>{"loc"=>"data", "time(1i)"=>"2015", "time(2i)"=>"3", "time(3i)"=>"27", "time(4i)"=>"00", "time(5i)"=>"24"}, "commit"=>"Create Location"}
+I, [2015-03-27T00:24:40.120535 #11728]  INFO -- : Redirected to http://178.62.73.203/locations/1
+I, [2015-03-27T00:24:40.120822 #11728]  INFO -- : Completed 302 Found in 31ms (ActiveRecord: 13.5ms)
+I, [2015-03-27T00:24:40.148158 #11734]  INFO -- : Started GET "/locations/1" for 82.2.92.239 at 2015-03-27 00:24:40 +0000
+I, [2015-03-27T00:24:40.156287 #11734]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-03-27T00:24:40.156426 #11734]  INFO -- :   Parameters: {"id"=>"1"}
+I, [2015-03-27T00:24:40.169572 #11734]  INFO -- :   Rendered locations/show.html.erb within layouts/application (2.0ms)
+I, [2015-03-27T00:24:40.171596 #11734]  INFO -- : Completed 200 OK in 15ms (Views: 5.7ms | ActiveRecord: 0.8ms)
+I, [2015-03-27T00:24:41.228576 #11728]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:24:41 +0000
+I, [2015-03-27T00:24:41.230014 #11728]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:24:41.234264 #11728]  INFO -- :   Rendered locations/index.html.erb within layouts/application (2.7ms)
+I, [2015-03-27T00:24:41.235658 #11728]  INFO -- : Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+I, [2015-03-27T00:25:12.655950 #12146]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:25:12 +0000
+I, [2015-03-27T00:25:12.659571 #12151]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:25:12 +0000
+I, [2015-03-27T00:25:12.664010 #12154]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:25:12 +0000
+I, [2015-03-27T00:25:12.718191 #12146]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:25:12.725955 #12151]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:25:12.729684 #12154]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:25:12.763540 #12148]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:25:12 +0000
+I, [2015-03-27T00:25:12.817557 #12146]  INFO -- :   Rendered locations/index.html.erb within layouts/application (41.3ms)
+I, [2015-03-27T00:25:12.821427 #12151]  INFO -- :   Rendered locations/index.html.erb within layouts/application (48.7ms)
+I, [2015-03-27T00:25:12.829709 #12148]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:25:12.832135 #12146]  INFO -- : Completed 200 OK in 114ms (Views: 64.9ms | ActiveRecord: 1.1ms)
+I, [2015-03-27T00:25:12.834445 #12151]  INFO -- : Completed 200 OK in 108ms (Views: 59.1ms | ActiveRecord: 16.7ms)
+I, [2015-03-27T00:25:12.845830 #12154]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (34.9ms)
+I, [2015-03-27T00:25:12.853625 #12154]  INFO -- : Completed 200 OK in 124ms (Views: 44.6ms | ActiveRecord: 1.1ms)
+I, [2015-03-27T00:25:12.872571 #12148]  INFO -- :   Rendered locations/index.html.erb within layouts/application (10.7ms)
+I, [2015-03-27T00:25:12.875016 #12148]  INFO -- : Completed 200 OK in 45ms (Views: 13.7ms | ActiveRecord: 1.1ms)
+I, [2015-03-27T00:25:12.895624 #12154]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:25:12 +0000
+I, [2015-03-27T00:25:12.898273 #12154]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:25:12.910153 #12154]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (7.8ms)
+I, [2015-03-27T00:25:12.911695 #12154]  INFO -- : Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.5ms)
+I, [2015-03-27T00:25:13.639410 #12148]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:25:13 +0000
+I, [2015-03-27T00:25:13.641557 #12148]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:25:13.644737 #12148]  INFO -- :   Rendered locations/index.html.erb within layouts/application (1.7ms)
+I, [2015-03-27T00:25:13.645701 #12148]  INFO -- : Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+I, [2015-03-27T00:25:16.971792 #12154]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:25:16 +0000
+I, [2015-03-27T00:25:16.973948 #12154]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:25:16.985873 #12154]  INFO -- :   Rendered locations/index.html.erb within layouts/application (9.0ms)
+I, [2015-03-27T00:25:16.987254 #12154]  INFO -- : Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.7ms)
+I, [2015-03-27T00:25:17.639961 #12148]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:25:17 +0000
+I, [2015-03-27T00:25:17.643197 #12148]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:25:17.666316 #12148]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (7.3ms)
+I, [2015-03-27T00:25:17.667762 #12148]  INFO -- : Completed 200 OK in 24ms (Views: 10.4ms | ActiveRecord: 1.3ms)
+I, [2015-03-27T00:25:18.203865 #12154]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:25:18 +0000
+I, [2015-03-27T00:25:18.205058 #12154]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:25:18.213386 #12154]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (5.7ms)
+I, [2015-03-27T00:25:18.214492 #12154]  INFO -- : Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+I, [2015-03-27T00:25:18.955923 #12148]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:25:18 +0000
+I, [2015-03-27T00:25:18.957348 #12148]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:25:18.961564 #12148]  INFO -- :   Rendered locations/index.html.erb within layouts/application (2.8ms)
+I, [2015-03-27T00:25:18.963502 #12148]  INFO -- : Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+I, [2015-03-27T00:26:18.716001 #12199]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:26:18 +0000
+I, [2015-03-27T00:26:18.731123 #12199]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:26:18.751124 #12199]  INFO -- :   Rendered locations/index.html.erb within layouts/application (9.5ms)
+I, [2015-03-27T00:26:18.753083 #12199]  INFO -- : Completed 200 OK in 22ms (Views: 12.0ms | ActiveRecord: 1.1ms)
+I, [2015-03-27T00:26:19.700169 #12201]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:26:19 +0000
+I, [2015-03-27T00:26:19.711284 #12201]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:26:19.738670 #12201]  INFO -- :   Rendered locations/index.html.erb within layouts/application (11.7ms)
+I, [2015-03-27T00:26:19.741403 #12201]  INFO -- : Completed 200 OK in 30ms (Views: 15.1ms | ActiveRecord: 1.1ms)
+I, [2015-03-27T00:27:09.914296 #12199]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:27:09 +0000
+I, [2015-03-27T00:27:09.916514 #12199]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:27:09.920060 #12199]  INFO -- :   Rendered locations/index.html.erb within layouts/application (2.2ms)
+I, [2015-03-27T00:27:09.921086 #12199]  INFO -- : Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+I, [2015-03-27T00:27:20.520359 #12255]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:27:20 +0000
+I, [2015-03-27T00:27:20.528954 #12255]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:27:20.556351 #12255]  INFO -- :   Rendered locations/index.html.erb within layouts/application (14.7ms)
+I, [2015-03-27T00:27:20.559706 #12255]  INFO -- : Completed 200 OK in 30ms (Views: 18.8ms | ActiveRecord: 1.6ms)
+I, [2015-03-27T00:27:31.769518 #12250]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:27:31 +0000
+I, [2015-03-27T00:27:31.778447 #12250]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:27:31.799428 #12250]  INFO -- :   Rendered locations/index.html.erb within layouts/application (9.9ms)
+I, [2015-03-27T00:27:31.801456 #12250]  INFO -- : Completed 200 OK in 23ms (Views: 12.5ms | ActiveRecord: 1.1ms)
+I, [2015-03-27T00:28:07.857955 #12252]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:28:07 +0000
+I, [2015-03-27T00:28:07.866195 #12252]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:28:07.893641 #12252]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (7.7ms)
+I, [2015-03-27T00:28:07.895777 #12252]  INFO -- : Completed 200 OK in 29ms (Views: 11.5ms | ActiveRecord: 1.2ms)
+I, [2015-03-27T00:28:08.752969 #12250]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:28:08 +0000
+I, [2015-03-27T00:28:08.754976 #12250]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:28:08.757749 #12250]  INFO -- :   Rendered locations/index.html.erb within layouts/application (1.6ms)
+I, [2015-03-27T00:28:08.758692 #12250]  INFO -- : Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+I, [2015-03-27T00:28:09.441558 #12252]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:28:09 +0000
+I, [2015-03-27T00:28:09.444745 #12252]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:28:09.455810 #12252]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (7.4ms)
+I, [2015-03-27T00:28:09.457150 #12252]  INFO -- : Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.5ms)
+I, [2015-03-27T00:28:10.759618 #12250]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:28:10 +0000
+I, [2015-03-27T00:28:10.761222 #12250]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:28:10.765039 #12250]  INFO -- :   Rendered locations/index.html.erb within layouts/application (2.3ms)
+I, [2015-03-27T00:28:10.766078 #12250]  INFO -- : Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+I, [2015-03-27T00:30:12.394153 #12255]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:30:12 +0000
+I, [2015-03-27T00:30:12.404363 #12255]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:30:12.416323 #12255]  INFO -- :   Rendered locations/index.html.erb within layouts/application (7.2ms)
+I, [2015-03-27T00:30:12.418930 #12255]  INFO -- : Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 1.4ms)
+I, [2015-03-27T00:30:26.180970 #12398]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:30:26 +0000
+I, [2015-03-27T00:30:26.199677 #12398]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:30:26.222682 #12398]  INFO -- :   Rendered locations/index.html.erb within layouts/application (10.7ms)
+I, [2015-03-27T00:30:26.224999 #12398]  INFO -- : Completed 200 OK in 25ms (Views: 14.6ms | ActiveRecord: 1.4ms)
+I, [2015-03-27T00:30:27.507896 #12396]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:30:27 +0000
+I, [2015-03-27T00:30:27.516372 #12396]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:30:27.542994 #12396]  INFO -- :   Rendered locations/index.html.erb within layouts/application (10.1ms)
+I, [2015-03-27T00:30:27.545070 #12396]  INFO -- : Completed 200 OK in 28ms (Views: 12.9ms | ActiveRecord: 1.1ms)
+I, [2015-03-27T00:30:28.309792 #12398]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:30:28 +0000
+I, [2015-03-27T00:30:28.312825 #12398]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:30:28.332466 #12398]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (7.2ms)
+I, [2015-03-27T00:30:28.333744 #12398]  INFO -- : Completed 200 OK in 21ms (Views: 9.9ms | ActiveRecord: 0.9ms)
+I, [2015-03-27T00:30:28.959403 #12396]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:30:28 +0000
+I, [2015-03-27T00:30:28.961930 #12396]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:30:28.964924 #12396]  INFO -- :   Rendered locations/index.html.erb within layouts/application (1.6ms)
+I, [2015-03-27T00:30:28.966001 #12396]  INFO -- : Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+I, [2015-03-27T00:31:44.229586 #12398]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:31:44 +0000
+I, [2015-03-27T00:31:44.236357 #12398]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:31:44.244507 #12398]  INFO -- :   Rendered locations/index.html.erb within layouts/application (4.4ms)
+I, [2015-03-27T00:31:44.246463 #12398]  INFO -- : Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.7ms)
+I, [2015-03-27T00:31:45.088617 #12396]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:31:45 +0000
+I, [2015-03-27T00:31:45.093027 #12396]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:31:45.100019 #12396]  INFO -- :   Rendered locations/index.html.erb within layouts/application (4.3ms)
+I, [2015-03-27T00:31:45.101792 #12396]  INFO -- : Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.5ms)
+I, [2015-03-27T00:31:55.403019 #12481]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:31:55 +0000
+I, [2015-03-27T00:31:55.428721 #12481]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:31:55.450415 #12481]  INFO -- :   Rendered locations/index.html.erb within layouts/application (10.4ms)
+I, [2015-03-27T00:31:55.452752 #12481]  INFO -- : Completed 200 OK in 24ms (Views: 13.5ms | ActiveRecord: 1.2ms)
+I, [2015-03-27T00:32:02.209572 #12478]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:32:02 +0000
+I, [2015-03-27T00:32:02.218643 #12478]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:32:02.250776 #12478]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (8.9ms)
+I, [2015-03-27T00:32:02.253251 #12478]  INFO -- : Completed 200 OK in 34ms (Views: 13.5ms | ActiveRecord: 1.5ms)
+I, [2015-03-27T00:32:03.193477 #12481]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:32:03 +0000
+I, [2015-03-27T00:32:03.196776 #12481]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:32:03.199991 #12481]  INFO -- :   Rendered locations/index.html.erb within layouts/application (2.0ms)
+I, [2015-03-27T00:32:03.201007 #12481]  INFO -- : Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+I, [2015-03-27T00:32:07.105755 #12478]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:32:07 +0000
+I, [2015-03-27T00:32:07.107843 #12478]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:32:07.115719 #12478]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (5.4ms)
+I, [2015-03-27T00:32:07.116729 #12478]  INFO -- : Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+I, [2015-03-27T00:32:08.341723 #12481]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:32:08 +0000
+I, [2015-03-27T00:32:08.342844 #12481]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:32:08.345455 #12481]  INFO -- :   Rendered locations/index.html.erb within layouts/application (1.5ms)
+I, [2015-03-27T00:32:08.346538 #12481]  INFO -- : Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+I, [2015-03-27T00:32:09.284653 #12478]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-27 00:32:09 +0000
+I, [2015-03-27T00:32:09.287159 #12478]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-27T00:32:09.301150 #12478]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (8.9ms)
+I, [2015-03-27T00:32:09.302365 #12478]  INFO -- : Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.8ms)
+I, [2015-03-27T00:32:10.464356 #12481]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-27 00:32:10 +0000
+I, [2015-03-27T00:32:10.465477 #12481]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-27T00:32:10.468337 #12481]  INFO -- :   Rendered locations/index.html.erb within layouts/application (1.8ms)
+I, [2015-03-27T00:32:10.469333 #12481]  INFO -- : Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+I, [2015-03-27T00:32:41.749488 #12486]  INFO -- : Started GET "/manager/html" for 81.21.81.200 at 2015-03-27 00:32:41 +0000
+F, [2015-03-27T00:32:41.765121 #12486] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/manager/html"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:140:in `start'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-27T00:38:24.280418 #12481]  INFO -- : Started GET "/" for 52.4.32.145 at 2015-03-27 00:38:24 +0000
+I, [2015-03-27T00:38:24.284261 #12481]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-03-27T00:38:24.327219 #12481]  INFO -- :   Rendered home/index.html.erb within layouts/application (7.7ms)
+I, [2015-03-27T00:38:24.329690 #12481]  INFO -- : Completed 200 OK in 45ms (Views: 13.8ms | ActiveRecord: 12.7ms)

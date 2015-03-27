@@ -1,29 +1,33 @@
-<h1>Listing locations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Loc</th>
-      <th>Time</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+        <div class="col-md-10 main">
+          <h1 class="page-header">Location Fault List</h1>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+    			<tr>
+      			<th>Loc</th>
+      			<th>Time</th>
+      			<th></th>
+      			<th></th>
+      			<th></th>
+    			</tr>
+  			</thead>
 
   <tbody>
     <% @locations.each do |location| %>
       <tr>
         <td><%= location.loc %></td>
         <td><%= location.time %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', location %> | <%= link_to 'Edit', edit_location_path(location) %> | <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Location', new_location_path %>
+<%= link_to 'New Location', new_location_path, class:'btn btn-success' %>
+        </div>
+      </div>
+    </div>
+<br>

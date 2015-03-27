@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326155646) do
+ActiveRecord::Schema.define(version: 20150326234111) do
 
   create_table "access_points", force: true do |t|
     t.string   "mac"
     t.string   "location"
     t.datetime "time"
     t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "db_files", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dbs", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

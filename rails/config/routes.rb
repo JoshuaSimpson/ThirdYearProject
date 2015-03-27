@@ -5,5 +5,7 @@ Myapp::Application.routes.draw do
 
   root to: 'home#index'
 
+  post '/dbs', to: 'manager#upload'
+
   resources :access_points, only: [:index, :show, :new, :create, :destroy, :edit, :patch]
 end
