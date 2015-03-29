@@ -10,20 +10,20 @@ import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
  */
 public class DatabaseHelper extends SQLiteAssetHelper {
 
-    private static final String DATABASE_NAME = "LocationDatabase";
+    private static final String DATABASE_NAME = "LOSTANDFOUND";
     private static final int DATABASE_VERSION = 1;
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, context.getFilesDir().getAbsolutePath(), null, DATABASE_VERSION);
     }
 
     public Cursor getLocNames() {
         SQLiteDatabase db = getReadableDatabase();
-        return db.query("Locations", new String[]{"LocName", "MACOne", "MACTwo", "MACThree", "LocID"}, null, null, null, null, null);
+        return db.query("LocNode", new String[]{"LocName", "MACOne", "MACTwo", "MACThree", "LocID"}, null, null, null, null, null);
     }
 
     public Cursor getEdges() {
         SQLiteDatabase db = getReadableDatabase();
-        return db.query("Edges", new String[]{"EdgeID", "StartVertex", "EndVertex", "Weight", "Method"}, null, null, null, null, null);
+        return db.query("LocEdge", new String[]{"EdgeID", "StartVertex", "EndVertex", "Weight", "Method"}, null, null, null, null, null);
     }
 }

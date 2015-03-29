@@ -28,10 +28,18 @@ public class MainActivity extends Activity {
         if (!sharedPrefs.contains("FirstTime")) {
             Log.d("Cool, make a thing", "NOW");
 
-
             ed.putBoolean("FirstTime", true);
             ed.putBoolean("Location", true);
             ed.putBoolean("Wireless", true);
+
+            Downloader dl = new Downloader();
+            dl.execute(this.getFilesDir().toString());
+            try {
+                //Just delays anything else running until we know the file is downloaded. Hacky, but it works
+                dl.get();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             ed.commit();
         } else if (sharedPrefs.contains("FirstTime")) {
             Log.d("Awesome it did the thing", "Well done");
