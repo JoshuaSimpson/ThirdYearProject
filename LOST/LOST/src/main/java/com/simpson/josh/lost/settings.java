@@ -61,6 +61,7 @@ public class settings extends ActionBarActivity {
         });
     }
 
+
     public void JSONPost(View view) throws JSONException, IOException {
         new Thread(new Runnable() {
             @Override
@@ -106,4 +107,10 @@ public class settings extends ActionBarActivity {
         }).start();
     }
 
+
+    public void downloadDB(View view) {
+        Downloader dl = new Downloader();
+        dl.execute(this.getFilesDir().toString());
+
+    }
 }

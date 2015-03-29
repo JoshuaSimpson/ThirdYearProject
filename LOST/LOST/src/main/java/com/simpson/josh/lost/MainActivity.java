@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
         if (!sharedPrefs.contains("FirstTime")) {
             Log.d("Cool, make a thing", "NOW");
 
+
             ed.putBoolean("FirstTime", true);
             ed.putBoolean("Location", true);
             ed.putBoolean("Wireless", true);

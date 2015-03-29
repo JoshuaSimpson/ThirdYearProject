@@ -42,4 +42,11 @@
             android:text="Test JSON"
             android:id="@+id/button2" android:layout_alignParentBottom="true" android:layout_alignRight="@+id/textView2"
             android:layout_alignEnd="@+id/textView2" android:layout_marginBottom="66dp" android:onClick="JSONPost"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:onClick="downloadDB"
+            android:id="@+id/button4" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
