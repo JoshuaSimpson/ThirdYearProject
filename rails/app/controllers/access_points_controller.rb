@@ -5,6 +5,12 @@ class AccessPointsController < ApplicationController
   # GET /access_points.json
   def index
     @access_points = AccessPoint.find( :all, :order => "time ASC")
+
+    @access_list = AccessPoint.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @access_list.to_csv }
+    end
   end
 
   # GET /access_points/1

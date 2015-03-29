@@ -5,6 +5,11 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+
+    respond_to do |format|
+    	format.html
+    	format.csv { send_data @locations.to_csv }
+    end
   end
 
   # GET /locations/1
