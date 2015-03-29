@@ -72,7 +72,7 @@ public class WhereAmI extends Activity {
 
             String testToastString = "";
 
-            testToastString += "" + results.get(0).BSSID + "" + results.get(1).BSSID + "" + results.get(2).BSSID;
+            testToastString += results.get(0).BSSID;
 
             testToastString = MainActivity.myGraph.getLocFromMac(testToastString).toString();
 
