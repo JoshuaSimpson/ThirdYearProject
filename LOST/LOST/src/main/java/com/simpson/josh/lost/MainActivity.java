@@ -61,8 +61,8 @@ public class MainActivity extends Activity {
 
                 //Test entries at the moment - need to edit SQL entries
                 do {
-                    String[] macs = {getLocations.getString(1), getLocations.getString(2), getLocations.getString(3)};
-                    myGraph.addNode(Node.createNode(getLocations.getInt(4), macs, getLocations.getString(0)));
+                    String macs = getLocations.getString(1);
+                    myGraph.addNode(Node.createNode(getLocations.getInt(2), macs, getLocations.getString(0)));
                 } while (getLocations.moveToNext());
 
                 getEdges.moveToFirst();

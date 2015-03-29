@@ -5,19 +5,19 @@ package com.simpson.josh.lost;
  */
 public class Node {
     int id;
-    String[] macs;
+    String mac;
     String location;
 
-    public Node(int id, String[] macs, String location) {
+    public Node(int id, String mac, String location) {
         this.id = id;
-        this.macs = macs;
+        this.mac = mac;
         this.location = location;
     }
 
-    public static Node createNode(int id, String[] macs, String location) {
-        Node node = new Node(id, macs, location);
+    public static Node createNode(int id, String mac, String location) {
+        Node node = new Node(id, mac, location);
         node.id = id;
-        node.macs = macs;
+        node.mac = mac;
         node.location = location;
 
         return node;

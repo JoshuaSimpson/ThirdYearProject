@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteAssetHelper {
 
     public Cursor getLocNames() {
         SQLiteDatabase db = getReadableDatabase();
-        return db.query("LocNode", new String[]{"LocName", "MACOne", "MACTwo", "MACThree", "LocID"}, null, null, null, null, null);
+        return db.query("LocNode", new String[]{"LocName", "MACOne", "LocID"}, null, null, null, null, null);
     }
 
     public Cursor getEdges() {

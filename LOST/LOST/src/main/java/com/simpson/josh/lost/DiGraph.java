@@ -32,7 +32,7 @@ public class DiGraph {
         adjacency.put(newNode, new HashMap<Node, Edge>());
         nodeIDList.put(newNode.id, newNode);
         nodeLocationList.put(newNode.location, newNode);
-        nodeMAC.put(newNode.macs[0] + newNode.macs[1] + newNode.macs[2], newNode);
+        nodeMAC.put(newNode.mac, newNode);
     }
 
     public void addEdge(Edge newEdge) {

@@ -17,8 +17,6 @@ import java.util.LinkedList;
  */
 public class RouteFinder extends Activity {
 
-    private static int version = 1;
-    private static String dbName = "databases/LocationDatabase";
     Spinner start;
     Spinner end;
 
