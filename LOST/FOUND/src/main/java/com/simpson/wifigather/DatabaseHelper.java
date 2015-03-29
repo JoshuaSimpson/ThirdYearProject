@@ -26,14 +26,12 @@ public class DatabaseHelper extends SQLiteAssetHelper{
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public void insertLocation(String locName, String MACOne, String MACTwo, String MACThree, int locID)
+    public void insertLocation(String locName, String MACOne, int locID)
     {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("LocName", locName);
         cv.put("MACOne", MACOne);
-        cv.put("MACTwo", MACTwo);
-        cv.put("MACThree", MACThree);
         cv.put("LocID", locID);
         db.insert("LocNode", null, cv);
 

@@ -142,12 +142,12 @@ public class MainActivity extends ActionBarActivity {
 
             if(sp.getSelectedItem().toString() == "Nothing")
             {
-                dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), results.get(1).BSSID.toString(), results.get(2).BSSID.toString(), dh.getNodeCount() + 1);
+                dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), dh.getNodeCount() + 1);
                 updateSpinner();
             }
             else
             {
-                dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), results.get(1).BSSID.toString(), results.get(2).BSSID.toString(), dh.getNodeCount() + 1);
+                dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), dh.getNodeCount() + 1);
                 dh.insertEdge(dh.getEdgeCount() + 1 , Integer.parseInt(sp.getSelectedItem().toString()), dh.getNodeCount(), 1, "Walk");
                 updateSpinner();
             }
