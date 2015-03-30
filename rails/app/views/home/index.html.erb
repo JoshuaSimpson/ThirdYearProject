@@ -2,26 +2,7 @@
           <h1 class="page-header">Dashboard</h1>
 
           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="/sky.svg" class="img-responsive" alt="Generic placeholder thumbnail"> 
-              <h4>Stuff</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="/sky.svg" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>More stuff</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="/sky.svg" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>SO MUCH STUFF</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="/sky.svg" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>DAMN THIS IS A LOT OF STUFF</h4>
-              <span class="text-muted">Something else</span>
-            </div>
+
           </div>
 
           <h2 class="sub-header">Location List</h2>
@@ -49,6 +30,55 @@
     <% end %>
 </tbody>
             </table>
+            <script type="text/javascript" charset="utf-8">
+$(function () {
+  $('#orders_chart').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: 'Browser market shares at a specific website, 2014'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Browser share',
+            data: [
+                ['Firefox',   45.0],
+                ['IE',       26.8],
+                {
+                    name: 'Chrome',
+                    y: 12.8,
+                    sliced: true,
+                    selected: true
+                },
+                ['Safari',    8.5],
+                ['Opera',     6.2],
+                ['Others',   0.7]
+            ]
+        }]
+    });
+});
+</script>
+
+        <center><div id="orders_chart" style="width: 300px; height: 300px;"></div></center>
           </div>
         </div>
       </div>

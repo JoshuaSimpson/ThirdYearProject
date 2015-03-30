@@ -6,6 +6,8 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.all
 
+    @lastweek = Location.last_week_locations
+
     respond_to do |format|
     	format.html
     	format.csv { send_data @locations.to_csv }
