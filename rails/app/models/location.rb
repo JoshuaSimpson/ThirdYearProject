@@ -8,4 +8,8 @@ class Location < ActiveRecord::Base
 			end
 		end
 	end
+
+	def self.last_week_locations
+		where("time > ?", (DateTime.now - 7.days).beginning_of_day().group(:loc).count
+	end
 end

@@ -16888,3 +16888,281 @@ ActionController::RoutingError (No route matches [GET] "/myadmin/scripts/setup.p
   /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
 
 
+I, [2015-03-29T23:48:24.618277 #23736]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-29 23:48:24 +0000
+I, [2015-03-29T23:48:24.627219 #23736]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-29T23:48:24.643244 #23736]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (5.9ms)
+I, [2015-03-29T23:48:24.645468 #23736]  INFO -- : Completed 200 OK in 18ms (Views: 9.4ms | ActiveRecord: 1.2ms)
+I, [2015-03-30T05:10:03.031900 #23738]  INFO -- : Started GET "/phph/php/ph.php" for 219.129.115.72 at 2015-03-30 05:10:03 +0000
+F, [2015-03-30T05:10:03.036899 #23738] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/phph/php/ph.php"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:140:in `start'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-30T05:10:03.617891 #23733]  INFO -- : Started GET "/phpMyAdmin/scripts/setup.php" for 219.129.115.72 at 2015-03-30 05:10:03 +0000
+F, [2015-03-30T05:10:03.622849 #23733] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/phpMyAdmin/scripts/setup.php"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:140:in `start'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-30T05:10:04.152833 #23738]  INFO -- : Started GET "/pma/scripts/setup.php" for 219.129.115.72 at 2015-03-30 05:10:04 +0000
+F, [2015-03-30T05:10:04.155009 #23738] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/pma/scripts/setup.php"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:140:in `start'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-30T05:10:04.742987 #23741]  INFO -- : Started GET "/myadmin/scripts/setup.php" for 219.129.115.72 at 2015-03-30 05:10:04 +0000
+F, [2015-03-30T05:10:04.747035 #23741] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/myadmin/scripts/setup.php"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:140:in `start'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-30T07:01:36.727411 #23733]  INFO -- : Started GET "/" for 128.61.240.66 at 2015-03-30 07:01:36 +0000
+I, [2015-03-30T07:01:36.734635 #23733]  INFO -- : Processing by HomeController#index as */*
+I, [2015-03-30T07:01:36.755651 #23733]  INFO -- :   Rendered home/index.html.erb within layouts/application (7.3ms)
+I, [2015-03-30T07:01:36.757721 #23733]  INFO -- : Completed 200 OK in 23ms (Views: 15.9ms | ActiveRecord: 1.1ms)
+I, [2015-03-30T07:38:18.284821 #23741]  INFO -- : Started GET "/" for 61.240.144.64 at 2015-03-30 07:38:18 +0000
+I, [2015-03-30T07:38:18.290627 #23741]  INFO -- : Processing by HomeController#index as */*
+I, [2015-03-30T07:38:18.307720 #23741]  INFO -- :   Rendered home/index.html.erb within layouts/application (6.7ms)
+I, [2015-03-30T07:38:18.310859 #23741]  INFO -- : Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 1.1ms)
+I, [2015-03-30T13:01:14.116661 #23733]  INFO -- : Started GET "/access_points" for 82.2.92.239 at 2015-03-30 13:01:14 +0000
+I, [2015-03-30T13:01:14.125007 #23733]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-03-30T13:01:14.142050 #23733]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (6.6ms)
+I, [2015-03-30T13:01:14.144146 #23733]  INFO -- : Completed 200 OK in 19ms (Views: 11.7ms | ActiveRecord: 0.9ms)
+I, [2015-03-30T14:50:59.238208 #9128]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-30 14:50:59 +0000
+I, [2015-03-30T14:50:59.255191 #9128]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-30T14:50:59.298971 #9128]  INFO -- :   Rendered locations/index.html.erb within layouts/application (21.3ms)
+I, [2015-03-30T14:50:59.301708 #9128]  INFO -- : Completed 200 OK in 46ms (Views: 27.7ms | ActiveRecord: 3.0ms)
+I, [2015-03-30T15:14:50.836365 #9228]  INFO -- : Started GET "/locations/new" for 82.2.92.239 at 2015-03-30 15:14:50 +0000
+I, [2015-03-30T15:14:50.851986 #9228]  INFO -- : Processing by LocationsController#new as HTML
+I, [2015-03-30T15:14:50.908121 #9228]  INFO -- :   Rendered locations/_form.html.erb (33.4ms)
+I, [2015-03-30T15:14:50.908503 #9228]  INFO -- :   Rendered locations/new.html.erb within layouts/application (38.0ms)
+I, [2015-03-30T15:14:50.911148 #9228]  INFO -- : Completed 200 OK in 59ms (Views: 45.6ms | ActiveRecord: 1.1ms)
+I, [2015-03-30T15:14:59.411150 #9230]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-30 15:14:59 +0000
+I, [2015-03-30T15:14:59.428199 #9230]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-30T15:14:59.428700 #9230]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwMPkx/XEzi5JVCfUScGM/QQ7KyWm5f6xy/jCWPV2Jg=", "location"=>{"loc"=>"check", "time(1i)"=>"2015", "time(2i)"=>"3", "time(3i)"=>"17", "time(4i)"=>"15", "time(5i)"=>"14"}, "commit"=>"Create Location"}
+I, [2015-03-30T15:14:59.465840 #9230]  INFO -- : Redirected to http://178.62.73.203/locations/5
+I, [2015-03-30T15:14:59.466277 #9230]  INFO -- : Completed 302 Found in 37ms (ActiveRecord: 11.4ms)
+I, [2015-03-30T15:14:59.494144 #9228]  INFO -- : Started GET "/locations/5" for 82.2.92.239 at 2015-03-30 15:14:59 +0000
+I, [2015-03-30T15:14:59.503707 #9228]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-03-30T15:14:59.503852 #9228]  INFO -- :   Parameters: {"id"=>"5"}
+I, [2015-03-30T15:14:59.523026 #9228]  INFO -- :   Rendered locations/show.html.erb within layouts/application (2.6ms)
+I, [2015-03-30T15:14:59.524927 #9228]  INFO -- : Completed 200 OK in 21ms (Views: 6.9ms | ActiveRecord: 0.9ms)
+I, [2015-03-30T15:29:25.538517 #9230]  INFO -- : Started GET "/" for 82.2.92.239 at 2015-03-30 15:29:25 +0000
+I, [2015-03-30T15:29:25.541301 #9230]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-03-30T15:29:25.568118 #9230]  INFO -- :   Rendered home/index.html.erb within layouts/application (6.7ms)
+I, [2015-03-30T15:29:25.571371 #9230]  INFO -- : Completed 200 OK in 30ms (Views: 14.5ms | ActiveRecord: 0.8ms)
+I, [2015-03-30T15:29:28.183309 #9233]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-30 15:29:28 +0000
+I, [2015-03-30T15:29:28.233313 #9233]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-30T15:29:28.259526 #9233]  INFO -- :   Rendered locations/index.html.erb within layouts/application (14.2ms)
+I, [2015-03-30T15:29:28.261807 #9233]  INFO -- : Completed 200 OK in 28ms (Views: 17.5ms | ActiveRecord: 1.2ms)
+I, [2015-03-30T15:29:32.551592 #9230]  INFO -- : Started GET "/locations/new" for 82.2.92.239 at 2015-03-30 15:29:32 +0000
+I, [2015-03-30T15:29:32.555826 #9230]  INFO -- : Processing by LocationsController#new as HTML
+I, [2015-03-30T15:29:32.597568 #9230]  INFO -- :   Rendered locations/_form.html.erb (36.0ms)
+I, [2015-03-30T15:29:32.598846 #9230]  INFO -- :   Rendered locations/new.html.erb within layouts/application (39.3ms)
+I, [2015-03-30T15:29:32.600795 #9230]  INFO -- : Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+I, [2015-03-30T15:29:34.501603 #9228]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-30 15:29:34 +0000
+I, [2015-03-30T15:29:34.503270 #9228]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-30T15:29:34.503399 #9228]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwMPkx/XEzi5JVCfUScGM/QQ7KyWm5f6xy/jCWPV2Jg=", "location"=>{"loc"=>"home", "time(1i)"=>"2015", "time(2i)"=>"3", "time(3i)"=>"30", "time(4i)"=>"15", "time(5i)"=>"29"}, "commit"=>"Create Location"}
+I, [2015-03-30T15:29:34.517456 #9228]  INFO -- : Redirected to http://178.62.73.203/locations/6
+I, [2015-03-30T15:29:34.517773 #9228]  INFO -- : Completed 302 Found in 14ms (ActiveRecord: 6.9ms)
+I, [2015-03-30T15:29:34.541260 #9230]  INFO -- : Started GET "/locations/6" for 82.2.92.239 at 2015-03-30 15:29:34 +0000
+I, [2015-03-30T15:29:34.542714 #9230]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-03-30T15:29:34.542782 #9230]  INFO -- :   Parameters: {"id"=>"6"}
+I, [2015-03-30T15:29:34.547849 #9230]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.4ms)
+I, [2015-03-30T15:29:34.549133 #9230]  INFO -- : Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+I, [2015-03-30T15:29:35.553798 #9228]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-30 15:29:35 +0000
+I, [2015-03-30T15:29:35.556306 #9228]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-30T15:29:35.570766 #9228]  INFO -- :   Rendered locations/index.html.erb within layouts/application (11.6ms)
+I, [2015-03-30T15:29:35.573211 #9228]  INFO -- : Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+I, [2015-03-30T15:29:36.665926 #9230]  INFO -- : Started GET "/locations/new" for 82.2.92.239 at 2015-03-30 15:29:36 +0000
+I, [2015-03-30T15:29:36.667540 #9230]  INFO -- : Processing by LocationsController#new as HTML
+I, [2015-03-30T15:29:36.678416 #9230]  INFO -- :   Rendered locations/_form.html.erb (9.3ms)
+I, [2015-03-30T15:29:36.678841 #9230]  INFO -- :   Rendered locations/new.html.erb within layouts/application (9.9ms)
+I, [2015-03-30T15:29:36.680173 #9230]  INFO -- : Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+I, [2015-03-30T15:29:38.260391 #9228]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-30 15:29:38 +0000
+I, [2015-03-30T15:29:38.261857 #9228]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-30T15:29:38.261998 #9228]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwMPkx/XEzi5JVCfUScGM/QQ7KyWm5f6xy/jCWPV2Jg=", "location"=>{"loc"=>"home", "time(1i)"=>"2015", "time(2i)"=>"3", "time(3i)"=>"30", "time(4i)"=>"15", "time(5i)"=>"29"}, "commit"=>"Create Location"}
+I, [2015-03-30T15:29:38.268661 #9228]  INFO -- : Redirected to http://178.62.73.203/locations/7
+I, [2015-03-30T15:29:38.268856 #9228]  INFO -- : Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+I, [2015-03-30T15:29:38.293784 #9230]  INFO -- : Started GET "/locations/7" for 82.2.92.239 at 2015-03-30 15:29:38 +0000
+I, [2015-03-30T15:29:38.295155 #9230]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-03-30T15:29:38.295229 #9230]  INFO -- :   Parameters: {"id"=>"7"}
+I, [2015-03-30T15:29:38.297797 #9230]  INFO -- :   Rendered locations/show.html.erb within layouts/application (0.6ms)
+I, [2015-03-30T15:29:38.298865 #9230]  INFO -- : Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+I, [2015-03-30T15:29:39.226229 #9228]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-30 15:29:39 +0000
+I, [2015-03-30T15:29:39.227834 #9228]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-30T15:29:39.237634 #9228]  INFO -- :   Rendered locations/index.html.erb within layouts/application (7.9ms)
+I, [2015-03-30T15:29:39.239095 #9228]  INFO -- : Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+I, [2015-03-30T15:29:40.992654 #9230]  INFO -- : Started GET "/locations/new" for 82.2.92.239 at 2015-03-30 15:29:40 +0000
+I, [2015-03-30T15:29:40.994016 #9230]  INFO -- : Processing by LocationsController#new as HTML
+I, [2015-03-30T15:29:41.003992 #9230]  INFO -- :   Rendered locations/_form.html.erb (8.7ms)
+I, [2015-03-30T15:29:41.004284 #9230]  INFO -- :   Rendered locations/new.html.erb within layouts/application (9.1ms)
+I, [2015-03-30T15:29:41.005533 #9230]  INFO -- : Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+I, [2015-03-30T15:29:44.021071 #9228]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-30 15:29:44 +0000
+I, [2015-03-30T15:29:44.023069 #9228]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-30T15:29:44.023163 #9228]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwMPkx/XEzi5JVCfUScGM/QQ7KyWm5f6xy/jCWPV2Jg=", "location"=>{"loc"=>"location", "time(1i)"=>"2015", "time(2i)"=>"3", "time(3i)"=>"30", "time(4i)"=>"15", "time(5i)"=>"29"}, "commit"=>"Create Location"}
+I, [2015-03-30T15:29:44.028712 #9228]  INFO -- : Redirected to http://178.62.73.203/locations/8
+I, [2015-03-30T15:29:44.028913 #9228]  INFO -- : Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+I, [2015-03-30T15:29:44.052615 #9230]  INFO -- : Started GET "/locations/8" for 82.2.92.239 at 2015-03-30 15:29:44 +0000
+I, [2015-03-30T15:29:44.053930 #9230]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-03-30T15:29:44.054206 #9230]  INFO -- :   Parameters: {"id"=>"8"}
+I, [2015-03-30T15:29:44.057179 #9230]  INFO -- :   Rendered locations/show.html.erb within layouts/application (0.6ms)
+I, [2015-03-30T15:29:44.058282 #9230]  INFO -- : Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+I, [2015-03-30T15:29:45.164977 #9228]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-30 15:29:45 +0000
+I, [2015-03-30T15:29:45.166119 #9228]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-30T15:29:45.175913 #9228]  INFO -- :   Rendered locations/index.html.erb within layouts/application (8.3ms)
+I, [2015-03-30T15:29:45.177606 #9228]  INFO -- : Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+I, [2015-03-30T15:29:45.963423 #9230]  INFO -- : Started GET "/locations/new" for 82.2.92.239 at 2015-03-30 15:29:45 +0000
+I, [2015-03-30T15:29:45.964876 #9230]  INFO -- : Processing by LocationsController#new as HTML
+I, [2015-03-30T15:29:45.974840 #9230]  INFO -- :   Rendered locations/_form.html.erb (8.6ms)
+I, [2015-03-30T15:29:45.975186 #9230]  INFO -- :   Rendered locations/new.html.erb within layouts/application (9.1ms)
+I, [2015-03-30T15:29:45.976377 #9230]  INFO -- : Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+I, [2015-03-30T15:29:48.190102 #9228]  INFO -- : Started POST "/locations" for 82.2.92.239 at 2015-03-30 15:29:48 +0000
+I, [2015-03-30T15:29:48.191738 #9228]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-03-30T15:29:48.191949 #9228]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwMPkx/XEzi5JVCfUScGM/QQ7KyWm5f6xy/jCWPV2Jg=", "location"=>{"loc"=>"check", "time(1i)"=>"2015", "time(2i)"=>"3", "time(3i)"=>"30", "time(4i)"=>"15", "time(5i)"=>"29"}, "commit"=>"Create Location"}
+I, [2015-03-30T15:29:48.199256 #9228]  INFO -- : Redirected to http://178.62.73.203/locations/9
+I, [2015-03-30T15:29:48.199580 #9228]  INFO -- : Completed 302 Found in 7ms (ActiveRecord: 4.0ms)
+I, [2015-03-30T15:29:48.225493 #9230]  INFO -- : Started GET "/locations/9" for 82.2.92.239 at 2015-03-30 15:29:48 +0000
+I, [2015-03-30T15:29:48.227720 #9230]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-03-30T15:29:48.227857 #9230]  INFO -- :   Parameters: {"id"=>"9"}
+I, [2015-03-30T15:29:48.232315 #9230]  INFO -- :   Rendered locations/show.html.erb within layouts/application (0.9ms)
+I, [2015-03-30T15:29:48.234099 #9230]  INFO -- : Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+I, [2015-03-30T15:29:49.213360 #9228]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-30 15:29:49 +0000
+I, [2015-03-30T15:29:49.214453 #9228]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-30T15:29:49.223218 #9228]  INFO -- :   Rendered locations/index.html.erb within layouts/application (7.5ms)
+I, [2015-03-30T15:29:49.224415 #9228]  INFO -- : Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+E, [2015-03-30T15:32:16.130339 #9499] ERROR -- : SQLite3::SQLException: near "check": syntax error: SELECT "locations".* FROM "locations"  HAVING check
+E, [2015-03-30T15:32:40.097431 #9499] ERROR -- : SQLite3::SQLException: a GROUP BY clause is required before HAVING: SELECT "locations".* FROM "locations"  HAVING data
+I, [2015-03-30T15:52:59.203790 #9230]  INFO -- : Started GET "/" for 82.2.92.239 at 2015-03-30 15:52:59 +0000
+I, [2015-03-30T15:52:59.206409 #9230]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-03-30T15:52:59.213341 #9230]  INFO -- :   Rendered home/index.html.erb within layouts/application (3.5ms)
+I, [2015-03-30T15:52:59.214932 #9230]  INFO -- : Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+I, [2015-03-30T15:53:01.124383 #9236]  INFO -- : Started GET "/locations" for 82.2.92.239 at 2015-03-30 15:53:01 +0000
+I, [2015-03-30T15:53:01.142201 #9236]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-03-30T15:53:01.179121 #9236]  INFO -- :   Rendered locations/index.html.erb within layouts/application (22.2ms)
+I, [2015-03-30T15:53:01.182370 #9236]  INFO -- : Completed 200 OK in 40ms (Views: 27.0ms | ActiveRecord: 1.5ms)
+I, [2015-03-30T16:34:08.391880 #9233]  INFO -- : Started GET "/rom-0" for 95.213.143.180 at 2015-03-30 16:34:08 +0000
+F, [2015-03-30T16:34:08.396524 #9233] FATAL -- : 
+ActionController::RoutingError (No route matches [GET] "/rom-0"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:576:in `process_client'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:670:in `worker_loop'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:525:in `spawn_missing_workers'
+  unicorn (4.8.3) lib/unicorn/http_server.rb:140:in `start'
+  unicorn (4.8.3) bin/unicorn:126:in `<top (required)>'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `load'
+  /usr/local/rvm/gems/ruby-2.1.3/bin/unicorn:23:in `<main>'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `eval'
+  /usr/local/rvm/gems/ruby-2.0.0-p353/bin/ruby_executable_hooks:15:in `<main>'
+
+
+I, [2015-03-30T16:37:23.202396 #9236]  INFO -- : Started GET "/" for 84.92.36.42 at 2015-03-30 16:37:23 +0000
+I, [2015-03-30T16:37:23.211212 #9236]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-03-30T16:37:23.245844 #9236]  INFO -- :   Rendered home/index.html.erb within layouts/application (6.1ms)
+I, [2015-03-30T16:37:23.247973 #9236]  INFO -- : Completed 200 OK in 36ms (Views: 10.6ms | ActiveRecord: 1.4ms)

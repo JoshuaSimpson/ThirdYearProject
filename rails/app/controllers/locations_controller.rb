@@ -66,6 +66,11 @@ class LocationsController < ApplicationController
     end
   end
 
+  def chartHelper
+    # Keys are the locations, params are the counts
+    @locations = Location.last_week_locations
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_location

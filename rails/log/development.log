@@ -87,3 +87,8 @@ Migrating to CreateDbFiles (20150326234111)
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150326234111"]]
   [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."time" = '2015-03-23 14:42:15.062895'[0m
+  [1m[36mLocation Load (2.0ms)[0m  [1mSELECT "locations".* FROM "locations" GROUP BY loc[0m
+  [1m[35mLocation Load (0.4ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."time" = '2015-03-23 15:24:36.740713'[0m
+  [1m[35mLocation Load (0.5ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."time" = '2015-03-23 15:25:12.690825'
