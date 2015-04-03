@@ -8,6 +8,8 @@ class LocationsController < ApplicationController
 
     @lastweek = Location.last_week_locations_count
 
+    @loclist = Location.last_week_locations
+
     respond_to do |format|
     	format.html
     	format.csv { send_data @locations.to_csv }
@@ -18,6 +20,7 @@ class LocationsController < ApplicationController
   # GET /locations/1.json
   def show
     @chartFill = Location.get_location_count(Location.find(params[:id]).loc.to_s)
+    @location = Location.find(params[:id])
   end
 
   # GET /locations/new

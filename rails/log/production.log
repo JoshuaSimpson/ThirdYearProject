@@ -22163,3 +22163,474 @@ I, [2015-04-03T09:09:06.602966 #9806]  INFO -- : Started GET "/" for 141.212.122
 I, [2015-04-03T09:09:06.604682 #9806]  INFO -- : Processing by HomeController#index as HTML
 I, [2015-04-03T09:09:06.612716 #9806]  INFO -- :   Rendered home/index.html.erb within layouts/application (3.3ms)
 I, [2015-04-03T09:09:06.623714 #9806]  INFO -- : Completed 200 OK in 19ms (Views: 14.5ms | ActiveRecord: 1.1ms)
+I, [2015-04-03T17:19:41.945044 #9804]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:19:41 +0000
+I, [2015-04-03T17:19:41.954313 #9804]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:19:41.969374 #9804]  INFO -- :   Rendered home/index.html.erb within layouts/application (4.5ms)
+I, [2015-04-03T17:19:41.978481 #9804]  INFO -- : Completed 200 OK in 24ms (Views: 14.9ms | ActiveRecord: 1.4ms)
+I, [2015-04-03T17:19:48.843692 #9809]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:19:48 +0000
+I, [2015-04-03T17:19:48.854459 #9809]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:19:48.870590 #9809]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (6.5ms)
+I, [2015-04-03T17:19:48.880717 #9809]  INFO -- : Completed 200 OK in 26ms (Views: 19.4ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:19:49.833457 #9804]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:19:49 +0000
+I, [2015-04-03T17:19:49.836548 #9804]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:19:49.846658 #9804]  INFO -- :   Rendered locations/index.html.erb within layouts/application (4.9ms)
+I, [2015-04-03T17:19:49.847348 #9804]  INFO -- : Completed 500 Internal Server Error in 11ms
+F, [2015-04-03T17:19:49.850954 #9804] FATAL -- : 
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1:         <div class="col-md-10 main">
+    2:           <h1 class="page-header">Location List</h1>
+    3: 	  <select>
+    4:       <% @loclist.each do |loc| %>
+    5:       <option><%= loc.loc.to_s %></option>
+    6:       <% end %>
+    7: 	  </select>
+  app/views/locations/index.html.erb:4:in `_app_views_locations_index_html_erb___3494871226411936473_20909360'
+  app/controllers/locations_controller.rb:11:in `index'
+
+
+I, [2015-04-03T17:22:28.727592 #18312]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:22:28 +0000
+I, [2015-04-03T17:22:28.741121 #18312]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:22:28.800025 #18312]  INFO -- :   Rendered locations/index.html.erb within layouts/application (36.0ms)
+I, [2015-04-03T17:22:28.835530 #18312]  INFO -- : Completed 500 Internal Server Error in 94ms
+F, [2015-04-03T17:22:28.837756 #18312] FATAL -- : 
+ActionView::Template::Error (undefined local variable or method `help_path' for #<#<Class:0x00000004ac2520>:0x00000004ac1530>):
+    42:             <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Overview", root_path %></li>
+    43:             <li class="<%= 'active' if params[:controller] == 'access_points' %>"><%= link_to "Access Point Faults", access_points_path %></li>
+    44:             <li class="<%= 'active' if params[:controller] == 'locations' %>"><%= link_to "Location Usage", locations_path %></li>
+    45: 	    <li class="<%= 'active' if params[:controller] == 'help'%>"><%= link_to "Help", help_path %></li>
+    46:             </ul>
+    47:         </div>
+    48: 	<br><br>
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__1759721408842270452_39157040'
+  app/controllers/locations_controller.rb:13:in `index'
+
+
+I, [2015-04-03T17:22:58.494982 #18309]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:22:58 +0000
+I, [2015-04-03T17:22:58.508972 #18309]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:22:58.553054 #18309]  INFO -- :   Rendered locations/index.html.erb within layouts/application (18.7ms)
+I, [2015-04-03T17:22:58.583378 #18309]  INFO -- : Completed 500 Internal Server Error in 74ms
+F, [2015-04-03T17:22:58.585395 #18309] FATAL -- : 
+ActionView::Template::Error (undefined local variable or method `help_path' for #<#<Class:0x00000004ac0298>:0x00000004aaeed0>):
+    42:             <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Overview", root_path %></li>
+    43:             <li class="<%= 'active' if params[:controller] == 'access_points' %>"><%= link_to "Access Point Faults", access_points_path %></li>
+    44:             <li class="<%= 'active' if params[:controller] == 'locations' %>"><%= link_to "Location Usage", locations_path %></li>
+    45: 	    <li class="<%= 'active' if params[:controller] == 'help'%>"><%= link_to "Help", help_path %></li>
+    46:             </ul>
+    47:         </div>
+    48: 	<br><br>
+  app/views/layouts/application.html.erb:45:in `_app_views_layouts_application_html_erb__1759721408842270452_39110900'
+  app/controllers/locations_controller.rb:13:in `index'
+
+
+I, [2015-04-03T17:23:14.638748 #18344]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:23:14 +0000
+I, [2015-04-03T17:23:14.642551 #18352]  INFO -- : Started GET "/" for 94.102.49.122 at 2015-04-03 17:23:14 +0000
+I, [2015-04-03T17:23:14.667813 #18344]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:23:14.671218 #18352]  INFO -- : Processing by HomeController#index as */*
+I, [2015-04-03T17:23:14.743719 #18344]  INFO -- :   Rendered locations/index.html.erb within layouts/application (37.3ms)
+I, [2015-04-03T17:23:14.742994 #18352]  INFO -- :   Rendered home/index.html.erb within layouts/application (9.7ms)
+I, [2015-04-03T17:23:14.758500 #18352]  INFO -- : Completed 200 OK in 87ms (Views: 32.6ms | ActiveRecord: 2.0ms)
+I, [2015-04-03T17:23:14.760750 #18344]  INFO -- : Completed 200 OK in 93ms (Views: 55.9ms | ActiveRecord: 9.8ms)
+I, [2015-04-03T17:23:16.879629 #18349]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:23:16 +0000
+I, [2015-04-03T17:23:16.888069 #18349]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:23:16.899889 #18349]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.6ms)
+I, [2015-04-03T17:23:16.917532 #18349]  INFO -- : Completed 200 OK in 29ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:23:18.100627 #18344]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:23:18 +0000
+I, [2015-04-03T17:23:18.103459 #18344]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:23:18.119825 #18344]  INFO -- :   Rendered locations/index.html.erb within layouts/application (12.7ms)
+I, [2015-04-03T17:23:18.129248 #18344]  INFO -- : Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:23:18.695727 #18349]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:23:18 +0000
+I, [2015-04-03T17:23:18.698410 #18349]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:23:18.720455 #18349]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (6.7ms)
+I, [2015-04-03T17:23:18.728864 #18349]  INFO -- : Completed 200 OK in 30ms (Views: 17.0ms | ActiveRecord: 1.5ms)
+I, [2015-04-03T17:23:19.340689 #18344]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:23:19 +0000
+I, [2015-04-03T17:23:19.343509 #18344]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:23:19.363342 #18344]  INFO -- :   Rendered home/index.html.erb within layouts/application (5.4ms)
+I, [2015-04-03T17:23:19.370589 #18344]  INFO -- : Completed 200 OK in 27ms (Views: 14.0ms | ActiveRecord: 1.1ms)
+I, [2015-04-03T17:23:20.374997 #18349]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:23:20 +0000
+I, [2015-04-03T17:23:20.377342 #18349]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:23:20.404257 #18349]  INFO -- :   Rendered locations/index.html.erb within layouts/application (15.8ms)
+I, [2015-04-03T17:23:20.411723 #18349]  INFO -- : Completed 200 OK in 34ms (Views: 24.5ms | ActiveRecord: 1.0ms)
+I, [2015-04-03T17:28:42.238270 #18344]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:28:42 +0000
+I, [2015-04-03T17:28:42.241701 #18344]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:28:42.251736 #18344]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (4.7ms)
+I, [2015-04-03T17:28:42.259339 #18344]  INFO -- : Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:28:43.440245 #18349]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:28:43 +0000
+I, [2015-04-03T17:28:43.444472 #18349]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:28:43.446764 #18349]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.2ms)
+I, [2015-04-03T17:28:43.456364 #18349]  INFO -- : Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:28:44.281573 #18344]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:28:44 +0000
+I, [2015-04-03T17:28:44.283009 #18344]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:28:44.297038 #18344]  INFO -- :   Rendered locations/index.html.erb within layouts/application (10.4ms)
+I, [2015-04-03T17:28:44.336117 #18344]  INFO -- : Completed 200 OK in 53ms (Views: 49.6ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:28:45.128152 #18349]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:28:45 +0000
+I, [2015-04-03T17:28:45.130511 #18349]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:28:45.139418 #18349]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (4.6ms)
+I, [2015-04-03T17:28:45.148558 #18349]  INFO -- : Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:28:46.082124 #18352]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:28:46 +0000
+I, [2015-04-03T17:28:46.086960 #18352]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:28:46.100099 #18352]  INFO -- :   Rendered home/index.html.erb within layouts/application (5.2ms)
+I, [2015-04-03T17:28:46.108792 #18352]  INFO -- : Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 0.8ms)
+I, [2015-04-03T17:28:47.225642 #18349]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:28:47 +0000
+I, [2015-04-03T17:28:47.227734 #18349]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:28:47.238008 #18349]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (5.6ms)
+I, [2015-04-03T17:28:47.246390 #18349]  INFO -- : Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:28:47.740666 #18352]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:28:47 +0000
+I, [2015-04-03T17:28:47.742944 #18352]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:28:47.763532 #18352]  INFO -- :   Rendered locations/index.html.erb within layouts/application (16.1ms)
+I, [2015-04-03T17:28:47.770569 #18352]  INFO -- : Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:28:48.305217 #18349]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:28:48 +0000
+I, [2015-04-03T17:28:48.306504 #18349]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:28:48.307767 #18349]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.1ms)
+I, [2015-04-03T17:28:48.347194 #18349]  INFO -- : Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:28:49.157276 #18352]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:28:49 +0000
+I, [2015-04-03T17:28:49.159406 #18352]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:28:49.171935 #18352]  INFO -- :   Rendered locations/index.html.erb within layouts/application (9.6ms)
+I, [2015-04-03T17:28:49.178960 #18352]  INFO -- : Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:28:49.905304 #18349]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:28:49 +0000
+I, [2015-04-03T17:28:49.906996 #18349]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:28:49.913756 #18349]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (4.1ms)
+I, [2015-04-03T17:28:49.921760 #18349]  INFO -- : Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+I, [2015-04-03T17:28:50.592556 #18352]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:28:50 +0000
+I, [2015-04-03T17:28:50.593928 #18352]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:28:50.601015 #18352]  INFO -- :   Rendered home/index.html.erb within layouts/application (3.2ms)
+I, [2015-04-03T17:28:50.640456 #18352]  INFO -- : Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:38:34.701046 #18422]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:38:34 +0000
+I, [2015-04-03T17:38:34.710927 #18422]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:38:34.739827 #18422]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (5.8ms)
+I, [2015-04-03T17:38:34.747568 #18422]  INFO -- : Completed 200 OK in 36ms (Views: 15.5ms | ActiveRecord: 1.6ms)
+I, [2015-04-03T17:38:35.274882 #18425]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:38:35 +0000
+I, [2015-04-03T17:38:35.289879 #18425]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:38:35.335595 #18425]  INFO -- :   Rendered home/index.html.erb within layouts/application (6.8ms)
+I, [2015-04-03T17:38:35.345732 #18425]  INFO -- : Completed 200 OK in 55ms (Views: 19.8ms | ActiveRecord: 2.5ms)
+I, [2015-04-03T17:38:36.232595 #18422]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:38:36 +0000
+I, [2015-04-03T17:38:36.235120 #18422]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:38:36.266558 #18422]  INFO -- :   Rendered locations/index.html.erb within layouts/application (19.7ms)
+I, [2015-04-03T17:38:36.276992 #18422]  INFO -- : Completed 200 OK in 42ms (Views: 31.1ms | ActiveRecord: 1.0ms)
+I, [2015-04-03T17:38:36.948418 #18425]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:38:36 +0000
+I, [2015-04-03T17:38:36.951706 #18425]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:38:36.955592 #18425]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.6ms)
+I, [2015-04-03T17:38:36.966014 #18425]  INFO -- : Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:38:37.716737 #18422]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:38:37 +0000
+I, [2015-04-03T17:38:37.718898 #18422]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:38:37.732365 #18422]  INFO -- :   Rendered locations/index.html.erb within layouts/application (10.3ms)
+I, [2015-04-03T17:38:37.739880 #18422]  INFO -- : Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:38:38.503955 #18425]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:38:38 +0000
+I, [2015-04-03T17:38:38.505927 #18425]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:38:38.506900 #18425]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.0ms)
+I, [2015-04-03T17:38:38.514135 #18425]  INFO -- : Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:41:33.080100 #18611]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:41:33 +0000
+I, [2015-04-03T17:41:33.089205 #18611]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:41:33.100284 #18611]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.6ms)
+I, [2015-04-03T17:41:33.108315 #18611]  INFO -- : Completed 200 OK in 19ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:41:35.715165 #18606]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:41:35 +0000
+I, [2015-04-03T17:41:35.723836 #18606]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:41:35.770268 #18606]  INFO -- :   Rendered locations/index.html.erb within layouts/application (23.0ms)
+I, [2015-04-03T17:41:35.779420 #18606]  INFO -- : Completed 200 OK in 55ms (Views: 33.7ms | ActiveRecord: 1.8ms)
+I, [2015-04-03T17:41:36.588368 #18611]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:41:36 +0000
+I, [2015-04-03T17:41:36.590371 #18611]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:41:36.591588 #18611]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.1ms)
+I, [2015-04-03T17:41:36.598382 #18611]  INFO -- : Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:41:37.514401 #18606]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:41:37 +0000
+I, [2015-04-03T17:41:37.516820 #18606]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:41:37.529567 #18606]  INFO -- :   Rendered locations/index.html.erb within layouts/application (9.2ms)
+I, [2015-04-03T17:41:37.536741 #18606]  INFO -- : Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.8ms)
+I, [2015-04-03T17:41:38.818472 #18611]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:41:38 +0000
+I, [2015-04-03T17:41:38.819624 #18611]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:41:38.820863 #18611]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.2ms)
+I, [2015-04-03T17:41:38.828579 #18611]  INFO -- : Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:42:45.195026 #18649]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:42:45 +0000
+I, [2015-04-03T17:42:45.204057 #18649]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:42:45.214479 #18649]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.6ms)
+I, [2015-04-03T17:42:45.222389 #18649]  INFO -- : Completed 200 OK in 18ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:43:00.113300 #18651]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:43:00 +0000
+I, [2015-04-03T17:43:00.123039 #18651]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:43:00.165049 #18651]  INFO -- :   Rendered locations/index.html.erb within layouts/application (19.9ms)
+I, [2015-04-03T17:43:00.174938 #18651]  INFO -- : Completed 200 OK in 52ms (Views: 31.4ms | ActiveRecord: 1.6ms)
+I, [2015-04-03T17:43:01.061037 #18649]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:43:01 +0000
+I, [2015-04-03T17:43:01.063821 #18649]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:43:01.088560 #18649]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (10.0ms)
+I, [2015-04-03T17:43:01.095971 #18649]  INFO -- : Completed 200 OK in 32ms (Views: 19.2ms | ActiveRecord: 1.3ms)
+I, [2015-04-03T17:43:02.421241 #18651]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:43:02 +0000
+I, [2015-04-03T17:43:02.423658 #18651]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:43:02.442499 #18651]  INFO -- :   Rendered home/index.html.erb within layouts/application (4.4ms)
+I, [2015-04-03T17:43:02.449490 #18651]  INFO -- : Completed 200 OK in 26ms (Views: 12.8ms | ActiveRecord: 1.3ms)
+I, [2015-04-03T17:43:02.888490 #18649]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:43:02 +0000
+I, [2015-04-03T17:43:02.891427 #18649]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:43:02.909871 #18649]  INFO -- :   Rendered home/index.html.erb within layouts/application (4.5ms)
+I, [2015-04-03T17:43:02.917526 #18649]  INFO -- : Completed 200 OK in 26ms (Views: 13.5ms | ActiveRecord: 1.2ms)
+I, [2015-04-03T17:43:02.961256 #18651]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:43:02 +0000
+I, [2015-04-03T17:43:02.963468 #18651]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:43:02.969802 #18651]  INFO -- :   Rendered home/index.html.erb within layouts/application (2.7ms)
+I, [2015-04-03T17:43:02.976572 #18651]  INFO -- : Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:43:04.835964 #18649]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:43:04 +0000
+I, [2015-04-03T17:43:04.838739 #18649]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:43:04.846216 #18649]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (3.9ms)
+I, [2015-04-03T17:43:04.855312 #18649]  INFO -- : Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.4ms)
+I, [2015-04-03T17:43:05.629163 #18651]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:43:05 +0000
+I, [2015-04-03T17:43:05.631296 #18651]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:43:05.645547 #18651]  INFO -- :   Rendered locations/index.html.erb within layouts/application (10.6ms)
+I, [2015-04-03T17:43:05.653123 #18651]  INFO -- : Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 0.8ms)
+I, [2015-04-03T17:43:06.158331 #18646]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:43:06 +0000
+I, [2015-04-03T17:43:06.168068 #18646]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:43:06.180084 #18646]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.6ms)
+I, [2015-04-03T17:43:06.190657 #18646]  INFO -- : Completed 200 OK in 22ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:43:26.202860 #18683]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:43:26 +0000
+I, [2015-04-03T17:43:26.221832 #18683]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:43:26.236998 #18683]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.5ms)
+I, [2015-04-03T17:43:26.244822 #18683]  INFO -- : Completed 200 OK in 23ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:44:01.794917 #18728]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:44:01 +0000
+I, [2015-04-03T17:44:01.820541 #18728]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:44:01.834457 #18728]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.6ms)
+I, [2015-04-03T17:44:01.842503 #18728]  INFO -- : Completed 200 OK in 22ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:44:19.597068 #18725]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:44:19 +0000
+I, [2015-04-03T17:44:19.608445 #18725]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:44:19.650220 #18725]  INFO -- :   Rendered locations/index.html.erb within layouts/application (20.1ms)
+I, [2015-04-03T17:44:19.659732 #18725]  INFO -- : Completed 200 OK in 51ms (Views: 31.4ms | ActiveRecord: 1.7ms)
+I, [2015-04-03T17:44:21.497192 #18728]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:44:21 +0000
+I, [2015-04-03T17:44:21.499873 #18728]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:44:21.501115 #18728]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.1ms)
+I, [2015-04-03T17:44:21.507620 #18728]  INFO -- : Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:44:22.526137 #18725]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:44:22 +0000
+I, [2015-04-03T17:44:22.530303 #18725]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:44:22.534428 #18725]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.6ms)
+I, [2015-04-03T17:44:22.542690 #18725]  INFO -- : Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:44:23.176004 #18728]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:44:23 +0000
+I, [2015-04-03T17:44:23.179175 #18728]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:44:23.218131 #18728]  INFO -- :   Rendered locations/index.html.erb within layouts/application (21.9ms)
+I, [2015-04-03T17:44:23.225467 #18728]  INFO -- : Completed 200 OK in 46ms (Views: 30.9ms | ActiveRecord: 2.1ms)
+I, [2015-04-03T17:44:25.578744 #18725]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:44:25 +0000
+I, [2015-04-03T17:44:25.581325 #18725]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:44:25.598093 #18725]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (4.8ms)
+I, [2015-04-03T17:44:25.605299 #18725]  INFO -- : Completed 200 OK in 24ms (Views: 13.4ms | ActiveRecord: 0.7ms)
+I, [2015-04-03T17:44:26.553939 #18728]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:44:26 +0000
+I, [2015-04-03T17:44:26.556291 #18728]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:44:26.574888 #18728]  INFO -- :   Rendered home/index.html.erb within layouts/application (4.8ms)
+I, [2015-04-03T17:44:26.582569 #18728]  INFO -- : Completed 200 OK in 26ms (Views: 13.4ms | ActiveRecord: 1.0ms)
+I, [2015-04-03T17:47:43.851170 #18725]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 17:47:43 +0000
+I, [2015-04-03T17:47:43.853780 #18725]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T17:47:43.856020 #18725]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.1ms)
+I, [2015-04-03T17:47:43.864198 #18725]  INFO -- : Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:47:45.265467 #18722]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:47:45 +0000
+I, [2015-04-03T17:47:45.281510 #18722]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:47:45.323021 #18722]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (8.3ms)
+I, [2015-04-03T17:47:45.331735 #18722]  INFO -- : Completed 200 OK in 50ms (Views: 19.7ms | ActiveRecord: 1.6ms)
+I, [2015-04-03T17:47:45.906144 #18725]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:47:45 +0000
+I, [2015-04-03T17:47:45.908422 #18725]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:47:45.924152 #18725]  INFO -- :   Rendered locations/index.html.erb within layouts/application (11.0ms)
+I, [2015-04-03T17:47:45.931555 #18725]  INFO -- : Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:47:49.458322 #18722]  INFO -- : Started GET "/locations/new" for 62.253.25.226 at 2015-04-03 17:47:49 +0000
+I, [2015-04-03T17:47:49.461412 #18722]  INFO -- : Processing by LocationsController#new as HTML
+I, [2015-04-03T17:47:49.493269 #18722]  INFO -- :   Rendered locations/_form.html.erb (26.4ms)
+I, [2015-04-03T17:47:49.493698 #18722]  INFO -- :   Rendered locations/new.html.erb within layouts/application (28.0ms)
+I, [2015-04-03T17:47:49.501220 #18722]  INFO -- : Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:47:52.693802 #18725]  INFO -- : Started POST "/locations" for 62.253.25.226 at 2015-04-03 17:47:52 +0000
+I, [2015-04-03T17:47:52.696029 #18725]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-04-03T17:47:52.696552 #18725]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"v5S4+4Osr+d3SdUiUJEuBfaPxnv2icyml/tCq1H577A=", "location"=>{"loc"=>"data", "time(1i)"=>"2015", "time(2i)"=>"4", "time(3i)"=>"3", "time(4i)"=>"17", "time(5i)"=>"47"}, "commit"=>"Create Location"}
+I, [2015-04-03T17:47:52.743457 #18725]  INFO -- : Redirected to http://178.62.73.203/locations/16
+I, [2015-04-03T17:47:52.743790 #18725]  INFO -- : Completed 302 Found in 47ms (ActiveRecord: 39.8ms)
+I, [2015-04-03T17:47:52.848791 #18722]  INFO -- : Started GET "/locations/16" for 62.253.25.226 at 2015-04-03 17:47:52 +0000
+I, [2015-04-03T17:47:52.851884 #18722]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:47:52.851984 #18722]  INFO -- :   Parameters: {"id"=>"16"}
+I, [2015-04-03T17:47:52.868048 #18722]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.1ms)
+I, [2015-04-03T17:47:52.877400 #18722]  INFO -- : Completed 200 OK in 25ms (Views: 11.6ms | ActiveRecord: 0.9ms)
+I, [2015-04-03T17:47:54.457234 #18725]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:47:54 +0000
+I, [2015-04-03T17:47:54.460214 #18725]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:47:54.468083 #18725]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (3.9ms)
+I, [2015-04-03T17:47:54.475829 #18725]  INFO -- : Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.7ms)
+I, [2015-04-03T17:47:54.992358 #18722]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:47:54 +0000
+I, [2015-04-03T17:47:54.993947 #18722]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:47:55.011240 #18722]  INFO -- :   Rendered locations/index.html.erb within layouts/application (12.9ms)
+I, [2015-04-03T17:47:55.019997 #18722]  INFO -- : Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 0.7ms)
+I, [2015-04-03T17:47:56.518551 #18725]  INFO -- : Started GET "/locations/new" for 62.253.25.226 at 2015-04-03 17:47:56 +0000
+I, [2015-04-03T17:47:56.520300 #18725]  INFO -- : Processing by LocationsController#new as HTML
+I, [2015-04-03T17:47:56.544433 #18725]  INFO -- :   Rendered locations/_form.html.erb (20.7ms)
+I, [2015-04-03T17:47:56.544880 #18725]  INFO -- :   Rendered locations/new.html.erb within layouts/application (22.6ms)
+I, [2015-04-03T17:47:56.553354 #18725]  INFO -- : Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:47:59.392575 #18722]  INFO -- : Started POST "/locations" for 62.253.25.226 at 2015-04-03 17:47:59 +0000
+I, [2015-04-03T17:47:59.395268 #18722]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-04-03T17:47:59.395482 #18722]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"v5S4+4Osr+d3SdUiUJEuBfaPxnv2icyml/tCq1H577A=", "location"=>{"loc"=>"check", "time(1i)"=>"2015", "time(2i)"=>"4", "time(3i)"=>"3", "time(4i)"=>"17", "time(5i)"=>"47"}, "commit"=>"Create Location"}
+I, [2015-04-03T17:47:59.409401 #18722]  INFO -- : Redirected to http://178.62.73.203/locations/17
+I, [2015-04-03T17:47:59.409669 #18722]  INFO -- : Completed 302 Found in 14ms (ActiveRecord: 6.0ms)
+I, [2015-04-03T17:47:59.529927 #18728]  INFO -- : Started GET "/locations/17" for 62.253.25.226 at 2015-04-03 17:47:59 +0000
+I, [2015-04-03T17:47:59.535777 #18728]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:47:59.535956 #18728]  INFO -- :   Parameters: {"id"=>"17"}
+I, [2015-04-03T17:47:59.548232 #18728]  INFO -- :   Rendered locations/show.html.erb within layouts/application (2.3ms)
+I, [2015-04-03T17:47:59.564562 #18728]  INFO -- : Completed 200 OK in 28ms (Views: 20.2ms | ActiveRecord: 1.4ms)
+I, [2015-04-03T17:48:00.401909 #18722]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:48:00 +0000
+I, [2015-04-03T17:48:00.433185 #18722]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:48:00.442417 #18722]  INFO -- :   Rendered home/index.html.erb within layouts/application (4.1ms)
+I, [2015-04-03T17:48:00.450420 #18722]  INFO -- : Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:48:51.394910 #18757]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:48:51 +0000
+I, [2015-04-03T17:48:51.413443 #18757]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:48:51.448845 #18757]  INFO -- :   Rendered home/index.html.erb within layouts/application (5.7ms)
+I, [2015-04-03T17:48:51.456896 #18757]  INFO -- : Completed 200 OK in 43ms (Views: 15.6ms | ActiveRecord: 2.0ms)
+I, [2015-04-03T17:49:04.508120 #18765]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:49:04 +0000
+I, [2015-04-03T17:49:04.516847 #18765]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:49:04.555170 #18765]  INFO -- :   Rendered locations/index.html.erb within layouts/application (19.0ms)
+I, [2015-04-03T17:49:04.564466 #18765]  INFO -- : Completed 200 OK in 47ms (Views: 29.9ms | ActiveRecord: 1.4ms)
+I, [2015-04-03T17:49:05.977661 #18757]  INFO -- : Started GET "/locations/new" for 62.253.25.226 at 2015-04-03 17:49:05 +0000
+I, [2015-04-03T17:49:05.980273 #18757]  INFO -- : Processing by LocationsController#new as HTML
+I, [2015-04-03T17:49:06.006566 #18757]  INFO -- :   Rendered locations/_form.html.erb (22.3ms)
+I, [2015-04-03T17:49:06.006930 #18757]  INFO -- :   Rendered locations/new.html.erb within layouts/application (23.8ms)
+I, [2015-04-03T17:49:06.015301 #18757]  INFO -- : Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T17:49:09.317284 #18765]  INFO -- : Started POST "/locations" for 62.253.25.226 at 2015-04-03 17:49:09 +0000
+I, [2015-04-03T17:49:09.319669 #18765]  INFO -- : Processing by LocationsController#create as HTML
+I, [2015-04-03T17:49:09.319775 #18765]  INFO -- :   Parameters: {"utf8"=>"✓", "authenticity_token"=>"v5S4+4Osr+d3SdUiUJEuBfaPxnv2icyml/tCq1H577A=", "location"=>{"loc"=>"location", "time(1i)"=>"2015", "time(2i)"=>"4", "time(3i)"=>"3", "time(4i)"=>"17", "time(5i)"=>"49"}, "commit"=>"Create Location"}
+I, [2015-04-03T17:49:09.332671 #18765]  INFO -- : Redirected to http://178.62.73.203/locations/18
+I, [2015-04-03T17:49:09.333129 #18765]  INFO -- : Completed 302 Found in 13ms (ActiveRecord: 6.8ms)
+I, [2015-04-03T17:49:09.355417 #18757]  INFO -- : Started GET "/locations/18" for 62.253.25.226 at 2015-04-03 17:49:09 +0000
+I, [2015-04-03T17:49:09.357705 #18757]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:49:09.357893 #18757]  INFO -- :   Parameters: {"id"=>"18"}
+I, [2015-04-03T17:49:09.365127 #18757]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.0ms)
+I, [2015-04-03T17:49:09.373044 #18757]  INFO -- : Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 0.7ms)
+I, [2015-04-03T17:49:11.036291 #18765]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:49:11 +0000
+I, [2015-04-03T17:49:11.040097 #18765]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:49:11.069763 #18765]  INFO -- :   Rendered home/index.html.erb within layouts/application (7.4ms)
+I, [2015-04-03T17:49:11.079149 #18765]  INFO -- : Completed 200 OK in 39ms (Views: 19.0ms | ActiveRecord: 1.6ms)
+I, [2015-04-03T17:50:15.591538 #18757]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:50:15 +0000
+I, [2015-04-03T17:50:15.594223 #18757]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:50:15.604724 #18757]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (6.0ms)
+I, [2015-04-03T17:50:15.614491 #18757]  INFO -- : Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.3ms)
+I, [2015-04-03T17:50:16.961942 #18765]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:50:16 +0000
+I, [2015-04-03T17:50:16.964049 #18765]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:50:16.970593 #18765]  INFO -- :   Rendered home/index.html.erb within layouts/application (2.6ms)
+I, [2015-04-03T17:50:16.977002 #18765]  INFO -- : Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:53:27.950137 #18759]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:53:27 +0000
+I, [2015-04-03T17:53:27.962602 #18759]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:53:27.995632 #18759]  INFO -- :   Rendered home/index.html.erb within layouts/application (5.4ms)
+I, [2015-04-03T17:53:28.003424 #18759]  INFO -- : Completed 200 OK in 41ms (Views: 14.9ms | ActiveRecord: 1.8ms)
+I, [2015-04-03T17:53:29.271772 #18762]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:53:29 +0000
+I, [2015-04-03T17:53:29.286622 #18762]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:53:29.334384 #18762]  INFO -- :   Rendered locations/index.html.erb within layouts/application (20.8ms)
+I, [2015-04-03T17:53:29.342299 #18762]  INFO -- : Completed 200 OK in 55ms (Views: 31.7ms | ActiveRecord: 1.8ms)
+I, [2015-04-03T17:53:30.576616 #18759]  INFO -- : Started GET "/locations/1" for 62.253.25.226 at 2015-04-03 17:53:30 +0000
+I, [2015-04-03T17:53:30.579215 #18759]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:53:30.579332 #18759]  INFO -- :   Parameters: {"id"=>"1"}
+I, [2015-04-03T17:53:30.590476 #18759]  INFO -- :   Rendered locations/show.html.erb within layouts/application (0.9ms)
+I, [2015-04-03T17:53:30.597993 #18759]  INFO -- : Completed 200 OK in 19ms (Views: 9.7ms | ActiveRecord: 0.7ms)
+I, [2015-04-03T17:53:43.677553 #18762]  INFO -- : Started GET "/locations/15" for 62.253.25.226 at 2015-04-03 17:53:43 +0000
+I, [2015-04-03T17:53:43.681398 #18762]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:53:43.681589 #18762]  INFO -- :   Parameters: {"id"=>"15"}
+I, [2015-04-03T17:53:43.690077 #18762]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.1ms)
+I, [2015-04-03T17:53:43.696912 #18762]  INFO -- : Completed 200 OK in 15ms (Views: 8.7ms | ActiveRecord: 0.7ms)
+I, [2015-04-03T17:54:38.655065 #18757]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:54:38 +0000
+I, [2015-04-03T17:54:38.657225 #18757]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:54:38.663794 #18757]  INFO -- :   Rendered home/index.html.erb within layouts/application (2.9ms)
+I, [2015-04-03T17:54:38.697209 #18757]  INFO -- : Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:55:07.056729 #18759]  INFO -- : Started GET "/access_points" for 62.253.25.226 at 2015-04-03 17:55:07 +0000
+I, [2015-04-03T17:55:07.058998 #18759]  INFO -- : Processing by AccessPointsController#index as HTML
+I, [2015-04-03T17:55:07.066731 #18759]  INFO -- :   Rendered access_points/index.html.erb within layouts/application (3.8ms)
+I, [2015-04-03T17:55:07.073230 #18759]  INFO -- : Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+I, [2015-04-03T17:55:08.472844 #18765]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:55:08 +0000
+I, [2015-04-03T17:55:08.474160 #18765]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:55:08.488453 #18765]  INFO -- :   Rendered locations/index.html.erb within layouts/application (11.1ms)
+I, [2015-04-03T17:55:08.495533 #18765]  INFO -- : Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:55:24.723738 #18759]  INFO -- : Started GET "/locations/1" for 62.253.25.226 at 2015-04-03 17:55:24 +0000
+I, [2015-04-03T17:55:24.725652 #18759]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:55:24.725720 #18759]  INFO -- :   Parameters: {"id"=>"1"}
+I, [2015-04-03T17:55:24.729678 #18759]  INFO -- :   Rendered locations/show.html.erb within layouts/application (0.3ms)
+I, [2015-04-03T17:55:24.736293 #18759]  INFO -- : Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+I, [2015-04-03T17:55:39.989327 #18762]  INFO -- : Started GET "/locations/12" for 62.253.25.226 at 2015-04-03 17:55:39 +0000
+I, [2015-04-03T17:55:39.991670 #18762]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:55:39.991808 #18762]  INFO -- :   Parameters: {"id"=>"12"}
+I, [2015-04-03T17:55:39.996947 #18762]  INFO -- :   Rendered locations/show.html.erb within layouts/application (0.3ms)
+I, [2015-04-03T17:55:40.003542 #18762]  INFO -- : Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:57:15.313289 #18757]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:57:15 +0000
+I, [2015-04-03T17:57:15.314764 #18757]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:57:15.335942 #18757]  INFO -- :   Rendered locations/index.html.erb within layouts/application (17.4ms)
+I, [2015-04-03T17:57:15.345295 #18757]  INFO -- : Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:57:17.417642 #18762]  INFO -- : Started GET "/" for 62.253.25.226 at 2015-04-03 17:57:17 +0000
+I, [2015-04-03T17:57:17.419790 #18762]  INFO -- : Processing by HomeController#index as HTML
+I, [2015-04-03T17:57:17.436149 #18762]  INFO -- :   Rendered home/index.html.erb within layouts/application (4.3ms)
+I, [2015-04-03T17:57:17.443244 #18762]  INFO -- : Completed 200 OK in 23ms (Views: 12.7ms | ActiveRecord: 1.0ms)
+I, [2015-04-03T17:59:41.945245 #18757]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 17:59:41 +0000
+I, [2015-04-03T17:59:41.947392 #18757]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T17:59:41.962428 #18757]  INFO -- :   Rendered locations/index.html.erb within layouts/application (11.2ms)
+I, [2015-04-03T17:59:41.969274 #18757]  INFO -- : Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:59:44.945384 #18765]  INFO -- : Started GET "/locations/4" for 62.253.25.226 at 2015-04-03 17:59:44 +0000
+I, [2015-04-03T17:59:44.946970 #18765]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:59:44.947110 #18765]  INFO -- :   Parameters: {"id"=>"4"}
+I, [2015-04-03T17:59:44.952895 #18765]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.1ms)
+I, [2015-04-03T17:59:44.995199 #18765]  INFO -- : Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.6ms)
+I, [2015-04-03T17:59:53.098619 #18757]  INFO -- : Started GET "/locations/5" for 62.253.25.226 at 2015-04-03 17:59:53 +0000
+I, [2015-04-03T17:59:53.100279 #18757]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:59:53.100399 #18757]  INFO -- :   Parameters: {"id"=>"5"}
+I, [2015-04-03T17:59:53.106588 #18757]  INFO -- :   Rendered locations/show.html.erb within layouts/application (0.4ms)
+I, [2015-04-03T17:59:53.113720 #18757]  INFO -- : Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 1.0ms)
+I, [2015-04-03T17:59:55.391921 #18762]  INFO -- : Started GET "/locations/5" for 62.253.25.226 at 2015-04-03 17:59:55 +0000
+I, [2015-04-03T17:59:55.393351 #18762]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T17:59:55.393420 #18762]  INFO -- :   Parameters: {"id"=>"5"}
+I, [2015-04-03T17:59:55.398442 #18762]  INFO -- :   Rendered locations/show.html.erb within layouts/application (0.4ms)
+I, [2015-04-03T17:59:55.407701 #18762]  INFO -- : Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 0.7ms)
+I, [2015-04-03T18:00:42.216158 #18825]  INFO -- : Started GET "/locations/5" for 62.253.25.226 at 2015-04-03 18:00:42 +0000
+I, [2015-04-03T18:00:42.228729 #18825]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T18:00:42.228821 #18825]  INFO -- :   Parameters: {"id"=>"5"}
+I, [2015-04-03T18:00:42.255199 #18825]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.1ms)
+I, [2015-04-03T18:00:42.263171 #18825]  INFO -- : Completed 200 OK in 34ms (Views: 10.7ms | ActiveRecord: 1.6ms)
+I, [2015-04-03T18:02:14.406936 #18865]  INFO -- : Started GET "/locations/5" for 62.253.25.226 at 2015-04-03 18:02:14 +0000
+I, [2015-04-03T18:02:14.433262 #18865]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T18:02:14.433390 #18865]  INFO -- :   Parameters: {"id"=>"5"}
+I, [2015-04-03T18:02:14.459946 #18865]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.1ms)
+I, [2015-04-03T18:02:14.467741 #18865]  INFO -- : Completed 200 OK in 34ms (Views: 10.6ms | ActiveRecord: 1.4ms)
+I, [2015-04-03T18:05:35.526718 #18897]  INFO -- : Started GET "/locations/5" for 62.253.25.226 at 2015-04-03 18:05:35 +0000
+I, [2015-04-03T18:05:35.547172 #18897]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T18:05:35.547308 #18897]  INFO -- :   Parameters: {"id"=>"5"}
+I, [2015-04-03T18:05:35.573279 #18897]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.0ms)
+I, [2015-04-03T18:05:35.581079 #18897]  INFO -- : Completed 200 OK in 34ms (Views: 10.6ms | ActiveRecord: 1.4ms)
+I, [2015-04-03T18:07:50.374886 #18933]  INFO -- : Started GET "/locations/5" for 62.253.25.226 at 2015-04-03 18:07:50 +0000
+I, [2015-04-03T18:07:50.397049 #18933]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T18:07:50.397136 #18933]  INFO -- :   Parameters: {"id"=>"5"}
+I, [2015-04-03T18:07:50.422326 #18933]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.1ms)
+I, [2015-04-03T18:07:50.429982 #18933]  INFO -- : Completed 200 OK in 33ms (Views: 10.3ms | ActiveRecord: 1.4ms)
+I, [2015-04-03T18:07:57.652079 #18939]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 18:07:57 +0000
+I, [2015-04-03T18:07:57.661447 #18939]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T18:07:57.698360 #18939]  INFO -- :   Rendered locations/index.html.erb within layouts/application (17.5ms)
+I, [2015-04-03T18:07:57.706249 #18939]  INFO -- : Completed 200 OK in 45ms (Views: 26.8ms | ActiveRecord: 1.3ms)
+I, [2015-04-03T18:07:59.221204 #18933]  INFO -- : Started GET "/locations/13" for 62.253.25.226 at 2015-04-03 18:07:59 +0000
+I, [2015-04-03T18:07:59.223373 #18933]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T18:07:59.223445 #18933]  INFO -- :   Parameters: {"id"=>"13"}
+I, [2015-04-03T18:07:59.227735 #18933]  INFO -- :   Rendered locations/show.html.erb within layouts/application (0.3ms)
+I, [2015-04-03T18:07:59.234089 #18933]  INFO -- : Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+I, [2015-04-03T18:08:45.090662 #18976]  INFO -- : Started GET "/locations/13" for 62.253.25.226 at 2015-04-03 18:08:45 +0000
+I, [2015-04-03T18:08:45.098955 #18976]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T18:08:45.099116 #18976]  INFO -- :   Parameters: {"id"=>"13"}
+I, [2015-04-03T18:08:45.127202 #18976]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.2ms)
+I, [2015-04-03T18:08:45.135340 #18976]  INFO -- : Completed 200 OK in 36ms (Views: 11.1ms | ActiveRecord: 1.7ms)
+I, [2015-04-03T18:09:41.610908 #18970]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 18:09:41 +0000
+I, [2015-04-03T18:09:41.625903 #18970]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T18:09:41.642184 #18970]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.8ms)
+I, [2015-04-03T18:09:41.651112 #18970]  INFO -- : Completed 200 OK in 25ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T18:09:42.634181 #18976]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 18:09:42 +0000
+I, [2015-04-03T18:09:42.637038 #18976]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T18:09:42.655488 #18976]  INFO -- :   Rendered locations/index.html.erb within layouts/application (13.8ms)
+I, [2015-04-03T18:09:42.662195 #18976]  INFO -- : Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.8ms)
+I, [2015-04-03T18:09:43.419341 #18970]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 18:09:43 +0000
+I, [2015-04-03T18:09:43.421203 #18970]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T18:09:43.422406 #18970]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.1ms)
+I, [2015-04-03T18:09:43.429212 #18970]  INFO -- : Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T18:09:44.132399 #18976]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 18:09:44 +0000
+I, [2015-04-03T18:09:44.134016 #18976]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T18:09:44.150714 #18976]  INFO -- :   Rendered locations/index.html.erb within layouts/application (12.6ms)
+I, [2015-04-03T18:09:44.157506 #18976]  INFO -- : Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.8ms)
+I, [2015-04-03T18:11:20.924022 #19015]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 18:11:20 +0000
+I, [2015-04-03T18:11:20.935954 #19015]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T18:11:20.985873 #19015]  INFO -- :   Rendered locations/index.html.erb within layouts/application (25.0ms)
+I, [2015-04-03T18:11:20.997767 #19015]  INFO -- : Completed 200 OK in 62ms (Views: 38.9ms | ActiveRecord: 1.9ms)
+I, [2015-04-03T18:11:22.430680 #19012]  INFO -- : Started GET "/help" for 62.253.25.226 at 2015-04-03 18:11:22 +0000
+I, [2015-04-03T18:11:22.444460 #19012]  INFO -- : Processing by HelpController#index as HTML
+I, [2015-04-03T18:11:22.461410 #19012]  INFO -- :   Rendered help/index.html.erb within layouts/application (0.8ms)
+I, [2015-04-03T18:11:22.472486 #19012]  INFO -- : Completed 200 OK in 28ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+I, [2015-04-03T18:11:23.132958 #19015]  INFO -- : Started GET "/locations" for 62.253.25.226 at 2015-04-03 18:11:23 +0000
+I, [2015-04-03T18:11:23.135353 #19015]  INFO -- : Processing by LocationsController#index as HTML
+I, [2015-04-03T18:11:23.156015 #19015]  INFO -- :   Rendered locations/index.html.erb within layouts/application (16.1ms)
+I, [2015-04-03T18:11:23.165546 #19015]  INFO -- : Completed 200 OK in 30ms (Views: 25.6ms | ActiveRecord: 1.1ms)
+I, [2015-04-03T18:11:24.901335 #19012]  INFO -- : Started GET "/locations/11" for 62.253.25.226 at 2015-04-03 18:11:24 +0000
+I, [2015-04-03T18:11:24.903996 #19012]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T18:11:24.904074 #19012]  INFO -- :   Parameters: {"id"=>"11"}
+I, [2015-04-03T18:11:24.926227 #19012]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.1ms)
+I, [2015-04-03T18:11:24.933739 #19012]  INFO -- : Completed 200 OK in 29ms (Views: 10.0ms | ActiveRecord: 1.9ms)
+I, [2015-04-03T18:12:04.667293 #19049]  INFO -- : Started GET "/locations/11" for 62.253.25.226 at 2015-04-03 18:12:04 +0000
+I, [2015-04-03T18:12:04.688384 #19049]  INFO -- : Processing by LocationsController#show as HTML
+I, [2015-04-03T18:12:04.688520 #19049]  INFO -- :   Parameters: {"id"=>"11"}
+I, [2015-04-03T18:12:04.716951 #19049]  INFO -- :   Rendered locations/show.html.erb within layouts/application (1.1ms)
+I, [2015-04-03T18:12:04.724953 #19049]  INFO -- : Completed 200 OK in 36ms (Views: 10.9ms | ActiveRecord: 1.7ms)

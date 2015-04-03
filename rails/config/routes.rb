@@ -7,6 +7,7 @@ Myapp::Application.routes.draw do
 
   post '/dbs', to: 'manager#upload'
   get '/dbs/get', to: 'manager#download'
+  get '/help', to: 'help#index'
 
   resources :access_points, only: [:index, :show, :new, :create, :destroy, :edit, :patch]
 end

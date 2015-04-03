@@ -41,7 +41,7 @@
                     plotShadow: false
                   },
                   title: {
-                    text: 'Number of students in each area over the past 7 days'
+                    text: 'Number of people in each area over the past 7 days'
                   },
                   plotOptions: {
                     pie: {
@@ -58,7 +58,7 @@
                   },
                   series: [{
                     type: 'pie',
-                    name: 'Number of students',
+                    name: 'Number of people',
                     data: [
                     <% @lastweek.each_with_index do |(key, value), index| %>
                     ['<%= key.to_s %>', <%= value.to_s %>.0]<%= if index != @lastweek.length-1  then "," end %>

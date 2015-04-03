@@ -27,13 +27,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><%= link_to "Dashboard", root_path %></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
             <li><a href="#">Help</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search..." style="margin-right:8px">
-          </form>
-        </div>
+          </div>
       </div>
     </nav>
 <br>
@@ -46,8 +42,8 @@
             <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Overview", root_path %></li>
             <li class="<%= 'active' if params[:controller] == 'access_points' %>"><%= link_to "Access Point Faults", access_points_path %></li>
             <li class="<%= 'active' if params[:controller] == 'locations' %>"><%= link_to "Location Usage", locations_path %></li>
-            <li><a href="#">Export Data</a></li>
-          </ul>
+	    <li class="<%= 'active' if params[:controller] == 'help'%>"><%= link_to "Help", help_path %></li>
+            </ul>
         </div>
 	<br><br>
 <%= yield %>

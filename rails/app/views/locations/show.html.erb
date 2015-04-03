@@ -1,3 +1,6 @@
+<div class="col-md-10 main">
+  <h1 class="page-header">Graph data for <%= @location.loc %></h1>
+
 <script type="text/javascript" charset="utf-8">
               $(function () {
                 $('#orders_chart').highcharts({
@@ -7,7 +10,7 @@
                     plotShadow: false
                   },
                   title: {
-                    text: 'Number of students in each area over the past 7 days'
+                    text: 'Number of visitors to <%= @location.loc %> on each date'
                   },
                   plotOptions: {
                     pie: {
@@ -24,7 +27,7 @@
                   },
                   series: [{
                     type: 'pie',
-                    name: 'Number of students',
+                    name: 'Number of visitors: ',
                     data: [
                     <% @chartFill.each_with_index do |(key, value), index| %>
                     ['<%= key.to_s %>', <%= value.to_s %>.0]<%= if index != @chartFill.length-1  then "," end %>
@@ -33,3 +36,6 @@
                 });
       });
       </script>
+<center><div id="orders_chart" style="width: 600px; height: 500px;"></div></center>
+
+</div>
