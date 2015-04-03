@@ -92,3 +92,6 @@ Migrating to CreateDbFiles (20150326234111)
   [1m[35mLocation Load (0.4ms)[0m  SELECT "locations".* FROM "locations"
   [1m[36mLocation Load (0.2ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."time" = '2015-03-23 15:24:36.740713'[0m
   [1m[35mLocation Load (0.5ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."time" = '2015-03-23 15:25:12.690825'
+  [1m[36mLocation Load (1.7ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) AS count_all, loc AS loc FROM "locations" WHERE (time > '2015-03-26 00:00:00.000000') GROUP BY loc
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT "locations".* FROM "locations"[0m

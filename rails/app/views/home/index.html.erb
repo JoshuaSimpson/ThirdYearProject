@@ -5,7 +5,7 @@
 
           </div>
 
-          <h2 class="sub-header">Location List</h2>
+          <h2 class="sub-header">Access Point Fault List</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -18,74 +18,57 @@
                 </tr>
               </thead>
 
-  <tbody>
-    <% @access_points.each do |access_point| %>
-      <tr>
-        <td><%= access_point.mac %></td>
-        <td><%= access_point.location %></td>
-        <td><%= access_point.time %></td>
-        <td><%= access_point.notes %></td>
-        <td><%= link_to 'Show', access_point %> | <%= link_to 'Edit', edit_access_point_path(access_point) %> | <%= link_to 'Issue Resolved', access_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-</tbody>
+              <tbody>
+                <% @access_points.each do |access_point| %>
+                <tr>
+                  <td><%= access_point.mac %></td>
+                  <td><%= access_point.location %></td>
+                  <td><%= access_point.time %></td>
+                  <td><%= access_point.notes %></td>
+                  <td><%= link_to 'Show', access_point %> | <%= link_to 'Edit', edit_access_point_path(access_point) %> | <%= link_to 'Issue Resolved', access_point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+              </tbody>
             </table>
+
+
             <script type="text/javascript" charset="utf-8">
-$(function () {
-  $('#orders_chart').highcharts({
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false
-        },
-        title: {
-            text: 'Browser market shares at a specific website, 2014'
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                    style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+              $(function () {
+                $('#orders_chart').highcharts({
+                  chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                  },
+                  title: {
+                    text: 'Number of students in each area over the past 7 days'
+                  },
+                  plotOptions: {
+                    pie: {
+                      allowPointSelect: true,
+                      cursor: 'pointer',
+                      dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {y} ',
+                        style: {
+                          color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                      }
                     }
-                }
-            }
-        },
-        series: [{
-            type: 'pie',
-            name: 'Browser share',
-            data: [
-                ['Firefox',   45.0],
-                ['IE',       26.8],
-                {
-                    name: 'Chrome',
-                    y: 12.8,
-                    sliced: true,
-                    selected: true
-                },
-                ['Safari',    8.5],
-                ['Opera',     6.2],
-                ['Others',   0.7]
-            ]
-        }]
-    });
-});
-</script>
+                  },
+                  series: [{
+                    type: 'pie',
+                    name: 'Number of students',
+                    data: [
+                    <% @lastweek.each_with_index do |(key, value), index| %>
+                    ['<%= key.to_s %>', <%= value.to_s %>.0]<%= if index != @lastweek.length-1  then "," end %>
+                    <% end %>
+                  ]}]
+                });
+      });
+      </script>
 
-        <center><div id="orders_chart" style="width: 300px; height: 300px;"></div></center>
-          </div>
-        </div>
-      </div>
+      <center><div id="orders_chart" style="width: 400px; height: 300px;"></div></center>
     </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  </body>
-</html>
+  </div>
+</div>

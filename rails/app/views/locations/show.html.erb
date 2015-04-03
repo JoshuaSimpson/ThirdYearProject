@@ -1,14 +1,35 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Loc:</strong>
-  <%= @location.loc %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @location.time %>
-</p>
-
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<script type="text/javascript" charset="utf-8">
+              $(function () {
+                $('#orders_chart').highcharts({
+                  chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                  },
+                  title: {
+                    text: 'Number of students in each area over the past 7 days'
+                  },
+                  plotOptions: {
+                    pie: {
+                      allowPointSelect: true,
+                      cursor: 'pointer',
+                      dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {y} ',
+                        style: {
+                          color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                      }
+                    }
+                  },
+                  series: [{
+                    type: 'pie',
+                    name: 'Number of students',
+                    data: [
+                    <% @chartFill.each_with_index do |(key, value), index| %>
+                    ['<%= key.to_s %>', <%= value.to_s %>.0]<%= if index != @chartFill.length-1  then "," end %>
+                    <% end %>
+                  ]}]
+                });
+      });
+      </script>

@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.all
 
-    @lastweek = Location.last_week_locations
+    @lastweek = Location.last_week_locations_count
 
     respond_to do |format|
     	format.html
@@ -17,6 +17,7 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+    @chartFill = Location.get_location_count(Location.find(params[:id]).loc.to_s)
   end
 
   # GET /locations/new
@@ -66,11 +67,6 @@ class LocationsController < ApplicationController
       format.html { redirect_to locations_url }
       format.json { head :no_content }
     end
-  end
-
-  def chartHelper
-    # Keys are the locations, params are the counts
-    @locations = Location.last_week_locations
   end
 
   private
