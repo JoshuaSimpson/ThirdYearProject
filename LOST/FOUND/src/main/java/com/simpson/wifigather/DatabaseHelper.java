@@ -66,10 +66,10 @@ public class DatabaseHelper extends SQLiteAssetHelper{
         return counter.getInt(0);
     }
 
-    public Cursor getNodeIDList()
+    public Cursor getNodeList()
     {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor idList = db.rawQuery("SELECT LocID FROM LocNode", null);
+        Cursor idList = db.rawQuery("SELECT LocID, LocName FROM LocNode", null);
 
         return idList;
     }

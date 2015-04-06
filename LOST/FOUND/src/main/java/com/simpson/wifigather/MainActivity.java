@@ -71,7 +71,8 @@ public class MainActivity extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_save) {
+
             return true;
         }
 
@@ -104,7 +105,7 @@ public class MainActivity extends Activity {
 
     public void updateSpinner() {
         DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
-        Cursor idListCursor = dh.getNodeIDList();
+        Cursor idListCursor = dh.getNodeList();
 
         dataAdapter.clear();
 
@@ -113,10 +114,10 @@ public class MainActivity extends Activity {
         } else if (idListCursor.getCount() > 0) {
             dataAdapter.add("Nothing");
             idListCursor.moveToFirst();
-            while (idListCursor.moveToNext()) {
-                dataAdapter.add(idListCursor.getString(0));
+            do {
+                dataAdapter.add(idListCursor.getString(0) + " | " + idListCursor.getString(1));
                 sp.setSelection(dataAdapter.getCount() - 1);
-            }
+            } while (idListCursor.moveToNext());
         }
     }
 
@@ -148,7 +149,7 @@ public class MainActivity extends Activity {
             else
             {
                 dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), dh.getNodeCount() + 1);
-                dh.insertEdge(dh.getEdgeCount() + 1 , Integer.parseInt(sp.getSelectedItem().toString()), dh.getNodeCount(), 1, "Walk");
+                dh.insertEdge(dh.getEdgeCount() + 1, Integer.parseInt(Integer.toString(sp.getSelectedItemPosition())), dh.getNodeCount(), 1, "Walk");
                 updateSpinner();
             }
             Toast.makeText(getApplicationContext(), dh.getNodeCount() + " Stuff", Toast.LENGTH_SHORT).show();

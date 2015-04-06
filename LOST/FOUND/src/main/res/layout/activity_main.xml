@@ -13,28 +13,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Record Location"
-            android:layout_alignBottom="@+id/locationText" android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_below="@+id/spinner" android:layout_centerHorizontal="true" android:layout_marginTop="39dp"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/locationText"
             android:hint="Enter Location Name"
-            android:layout_marginTop="61dp" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
+            android:layout_marginTop="27dp"
+            android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" android:layout_alignRight="@+id/spinner"
+            android:layout_alignEnd="@+id/spinner"/>
     <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinner"
-            android:layout_below="@+id/scanButton" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:layout_marginTop="53dp"/>
+            android:layout_below="@+id/locationText" android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" android:layout_marginTop="27dp"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"
-            android:id="@+id/button" android:layout_below="@+id/spinner" android:layout_centerHorizontal="true"
+            android:id="@+id/button"
             android:onClick="uploadDB"
-            android:layout_marginTop="75dp"/>
+            android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"/>
 
 
 </RelativeLayout>
