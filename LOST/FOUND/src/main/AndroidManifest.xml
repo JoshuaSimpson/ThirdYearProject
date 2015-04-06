@@ -9,7 +9,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark">
         <activity
             android:name="com.simpson.wifigather.MainActivity"
             android:label="@string/app_name" >
