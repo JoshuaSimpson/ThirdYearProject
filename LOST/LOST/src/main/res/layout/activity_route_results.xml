@@ -11,7 +11,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:gravity="center_horizontal"
-                android:text="LOLOLOL"
+                android:text="Test String"
                 />
 
 

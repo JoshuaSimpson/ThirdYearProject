@@ -8,9 +8,9 @@ import android.content.IntentFilter;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -25,17 +25,27 @@ public class WhereAmI extends Activity {
     TextView tv;
     wifiScanReceiver scanReceiver;
 
+    private ProgressBar distraction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_where_am_i);
 
+        distraction = (ProgressBar) findViewById(R.id.progressBar);
+        distraction.setVisibility(View.VISIBLE);
 
         // Wifi start here
         tv = (TextView) findViewById(R.id.textField);
 
         wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         scanReceiver = new wifiScanReceiver();
+        wifi.startScan();
+    }
+
+    public void refresh(View view) {
+        tv.setVisibility(View.GONE);
+        distraction.setVisibility(View.VISIBLE);
         wifi.startScan();
     }
 
@@ -55,32 +65,28 @@ public class WhereAmI extends Activity {
         public void onReceive(Context c, Intent intent) {
             results = wifi.getScanResults();
 
-            Log.d("Stuff happened", "Lol");
-            Toast.makeText(getApplicationContext(), Integer.toString(results.get(0).level), Toast.LENGTH_LONG).show();
+            String resultString = "";
+            if (results.isEmpty() == true) {
+                resultString = "Looks like there are no wireless access points around - are you in an elevator?";
+            } else {
 
-            //New comparator so that we can get the top three WiFi points
-            Comparator<ScanResult> resultComparator = new Comparator<ScanResult>() {
-                @Override
-                public int compare(ScanResult lhs, ScanResult rhs) {
-                    return (lhs.level > rhs.level ? -1 : (lhs.level == rhs.level ? 0 : 1));
-                }
-            };
+                //New comparator so that we can get the top three WiFi points
+                Comparator<ScanResult> resultComparator = new Comparator<ScanResult>() {
+                    @Override
+                    public int compare(ScanResult lhs, ScanResult rhs) {
+                        return (lhs.level > rhs.level ? -1 : (lhs.level == rhs.level ? 0 : 1));
+                    }
+                };
+                //Sort 'dem WiFis
+                Collections.sort(results, resultComparator);
 
-            //Sort 'dem WiFis
-            Collections.sort(results, resultComparator);
+                resultString = "Found you! You're at: \n \n " + MainActivity.myGraph.getLocFromMac(results.get(0).BSSID).toString();
 
+            }
+            distraction.setVisibility(View.GONE);
 
-            String testToastString = "";
-
-            testToastString += results.get(0).BSSID;
-
-            testToastString = MainActivity.myGraph.getLocFromMac(testToastString).toString();
-
-            tv.setText(testToastString);
-
-            Log.d("Stuffing it here", "" + testToastString);
-            //Cool, we have WiFis sorted by level
-            Toast.makeText(getApplicationContext(), testToastString, Toast.LENGTH_SHORT).show();
+            tv.setVisibility(View.VISIBLE);
+            tv.setText(resultString);
         }
     }
 }

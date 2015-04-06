@@ -1,9 +1,9 @@
 package com.simpson.josh.lost;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -23,7 +23,7 @@ import java.text.DateFormat;
 import java.util.Date;
 
 
-public class settings extends ActionBarActivity {
+public class settings extends Activity {
 
     CheckBox locationBox;
     CheckBox wirelessBox;
