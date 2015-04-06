@@ -1,7 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:tools="http://schemas.android.com/tools"
+      xmlns:FOUND="http://schemas.android.com/apk/res-auto"
       tools:context=".MainActivity">
+
       <item android:id="@+id/action_save"
             android:icon="@android:drawable/ic_menu_save"
-            android:title="Save to server"/>
+            android:title="Save to server"
+            FOUND:showAsAction="ifRoom"/>
 </menu>

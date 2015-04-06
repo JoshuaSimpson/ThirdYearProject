@@ -72,7 +72,7 @@ public class MainActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_save) {
-
+            uploadDB();
             return true;
         }
 
@@ -97,10 +97,9 @@ public class MainActivity extends Activity {
         Log.d("Button press", "What the fuck");
     }
 
-    public void uploadDB(View view) {
+    public void uploadDB() {
         DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
         dh.uploadData();
-
     }
 
     public void updateSpinner() {
@@ -149,7 +148,8 @@ public class MainActivity extends Activity {
             else
             {
                 dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), dh.getNodeCount() + 1);
-                dh.insertEdge(dh.getEdgeCount() + 1, Integer.parseInt(Integer.toString(sp.getSelectedItemPosition())), dh.getNodeCount(), 1, "Walk");
+                dh.insertEdge(dh.getEdgeCount() + 1, sp.getSelectedItemPosition(), dh.getNodeCount(), 1, "Walk");
+                dh.insertEdge(dh.getEdgeCount() + 1, dh.getNodeCount(), sp.getSelectedItemPosition(), 1, "Walk");
                 updateSpinner();
             }
             Toast.makeText(getApplicationContext(), dh.getNodeCount() + " Stuff", Toast.LENGTH_SHORT).show();
