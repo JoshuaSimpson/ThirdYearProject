@@ -3,6 +3,7 @@ package com.simpson.josh.lost;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.util.Log;
@@ -19,20 +20,36 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Josh on 08/04/2015.
  */
 public class LocationPush extends BroadcastReceiver {
 
+    WifiManager wifi;
+    List<ScanResult> results;
+    wifiScanReceiver scanReceiver;
+
+
     public void onReceive(Context context, Intent intent) {
-        Log.d("Something happened", "Which is good");
-        Toast.makeText(context, "Stuff happened", Toast.LENGTH_SHORT).show();
+        wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        scanReceiver = new wifiScanReceiver();
+        wifi.startScan();
 
         WifiManager manager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         WifiInfo info = manager.getConnectionInfo();
 
+        //Consider calling JSONPOST with certain parameters, or whether to put this code into JSONPost itself - probably the former
+
+        //Also need to consider the various types of 'connected' we will be
+
+
+        Log.d("Something happened", "Which is good");
+        Toast.makeText(context, "Stuff happened", Toast.LENGTH_SHORT).show();
 
         try {
             JSONPost();
@@ -87,5 +104,23 @@ public class LocationPush extends BroadcastReceiver {
                 Log.d("IT WORKED", "Stuff");
             }
         }).start();
+    }
+
+    class wifiScanReceiver extends BroadcastReceiver {
+        public void onReceive(Context c, Intent intent) {
+            results = wifi.getScanResults();
+
+            //New comparator so that we can get the top three WiFi points
+            Comparator<ScanResult> resultComparator = new Comparator<ScanResult>() {
+                @Override
+                public int compare(ScanResult lhs, ScanResult rhs) {
+                    return (lhs.level > rhs.level ? -1 : (lhs.level == rhs.level ? 0 : 1));
+                }
+            };
+            //Sort 'dem WiFis
+            Collections.sort(results, resultComparator);
+
+            MainActivity.myGraph.containsMAC(results.get(0).BSSID.toString());
+        }
     }
 }

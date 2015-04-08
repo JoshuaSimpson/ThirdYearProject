@@ -20,7 +20,6 @@ import java.util.List;
 public class WhereAmI extends Activity {
 
     WifiManager wifi;
-    BroadcastReceiver wifiReceiver;
     List<ScanResult> results;
     TextView tv;
     wifiScanReceiver scanReceiver;

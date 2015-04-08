@@ -80,9 +80,7 @@ public class MainActivity extends Activity {
                         Log.d("We have an outlier", "It's node: " + i);
                     }
                 }
-
                 Log.d("WHAT THE SHIT", "" + myGraph.getEdgeCount());
-
             }
         }).run();
 

@@ -47,6 +47,10 @@ public class DiGraph {
         }
     }
 
+    public boolean containsMAC(String mac) {
+        return nodeMAC.containsKey(mac);
+    }
+
     public Node getNodeFromWiFi(String M1, String M2, String M3) {
         return nodes.get(M1 + M2 + M3);
     }
@@ -66,6 +70,7 @@ public class DiGraph {
         return nopeOut;
     }
 
+    //Test method
     public void printMACS() {
         Set<String> maclist = nodeMAC.keySet();
         for (String s : maclist) {
