@@ -1,6 +1,8 @@
 package com.simpson.josh.lost;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -84,6 +86,7 @@ public class MainActivity extends Activity {
             }
         }).run();
 
+        startTimer();
     }
 
     public void whereAmI(View view) {
@@ -99,5 +102,14 @@ public class MainActivity extends Activity {
     public void settings(View view) {
         Intent openView = new Intent(this, settings.class);
         startActivity(openView);
+    }
+
+    public void startTimer() {
+        Intent intent = new Intent(this, LocationPush.class);
+        PendingIntent pi = PendingIntent.getBroadcast(this.getApplicationContext(), 348934839, intent, 0);
+        AlarmManager al = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        //900000 should equal 15 minutes
+        al.setInexactRepeating(AlarmManager.RTC, System.currentTimeMillis() + 10000, AlarmManager.INTERVAL_FIFTEEN_MINUTES, pi);
     }
 }

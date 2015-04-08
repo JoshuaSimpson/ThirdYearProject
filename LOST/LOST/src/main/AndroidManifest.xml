@@ -36,6 +36,8 @@
             android:name="com.simpson.josh.lost.settings"
             android:label="@string/title_activity_settings" >
         </activity>
+        <receiver android:name=".LocationPush">
+        </receiver>
     </application>
 
 </manifest>
