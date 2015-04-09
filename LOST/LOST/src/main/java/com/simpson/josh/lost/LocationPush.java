@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.ScanResult;
@@ -142,6 +143,8 @@ public class LocationPush extends BroadcastReceiver {
 
     class wifiScanReceiver extends BroadcastReceiver {
         public void onReceive(Context c, Intent intent) {
+            FaultDatabaseHelper fh = new FaultDatabaseHelper(c);
+
             results = wifi.getScanResults();
 
             SharedPreferences sharedPrefs = c.getSharedPreferences("FaultStore", Context.MODE_PRIVATE);
@@ -179,14 +182,19 @@ public class LocationPush extends BroadcastReceiver {
                     JSONPost(location, dateString);
 
                     // Now to make sure we don't have any leftover faulty access point data
-                    if (sharedPrefs.contains("faultlist")) {
+                    if (!fh.isEmpty()) {
                         //TODO - Implement posting for Faults using FaultDataBaseHelper
 
+                        Cursor poster = fh.getFaults();
+
+                        poster.moveToFirst();
+
+                        do {
+                            JSONPost(poster.getString(0), poster.getString(1), poster.getString(2), poster.getString(3));
+                        } while (poster.moveToNext());
                     }
                 }
             }
-
-
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.simpson.josh.lost;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,6 +21,36 @@ public class FaultDatabaseHelper extends SQLiteAssetHelper {
     public Cursor getFaults() {
         SQLiteDatabase db = getReadableDatabase();
 
-        return null;
+        return db.query("Faults", new String[]{"MAC", "Location", "Time", "Notes"}, null, null, null, null, null);
+    }
+
+    public void insertFault(String mac, String location, String time, String notes) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("MAC", mac);
+        cv.put("Location", location);
+        cv.put("Time", time);
+        cv.put("Notes", notes);
+
+        db.insert("Faults", null, cv);
+
+        db.close();
+    }
+
+    public void clearFaults() {
+        SQLiteDatabase db = getWritableDatabase();
+
+        db.rawQuery("DELETE * FROM Faults", null);
+
+        db.close();
+    }
+
+    public boolean isEmpty() {
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM Faults", null);
+
+        return cursor.getInt(0) == 0;
     }
 }
