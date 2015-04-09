@@ -26,6 +26,7 @@ public class MainActivity extends Activity {
         SharedPreferences sharedPrefs = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor ed = sharedPrefs.edit();
 
+        FaultDatabaseHelper fdh = new FaultDatabaseHelper(this);
 
         if (!sharedPrefs.contains("FirstTime")) {
             Log.d("Cool, make a thing", "NOW");

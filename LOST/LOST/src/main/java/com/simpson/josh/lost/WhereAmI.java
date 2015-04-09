@@ -78,7 +78,6 @@ public class WhereAmI extends Activity {
                 };
                 //Sort 'dem WiFis
                 Collections.sort(results, resultComparator);
-
                 resultString = "Found you! You're at: \n \n " + MainActivity.myGraph.getLocFromMac(results.get(0).BSSID).toString();
 
             }
