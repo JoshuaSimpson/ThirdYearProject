@@ -137,24 +137,23 @@ public class MainActivity extends Activity {
             Collections.sort(results, resultComparator);
 
             DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
-
-
-
-            if(sp.getSelectedItem().toString() == "Nothing")
+            if (dh.checkForMac(results.get(0).BSSID))
             {
-                dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), dh.getNodeCount() + 1);
-                updateSpinner();
+                Toast.makeText(c, "MAC already present in database, move on", Toast.LENGTH_SHORT);
+            } else {
+                if (sp.getSelectedItem().toString() == "Nothing") {
+                    dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), dh.getNodeCount() + 1);
+                    updateSpinner();
+                } else {
+                    dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), dh.getNodeCount() + 1);
+                    dh.insertEdge(dh.getEdgeCount() + 1, sp.getSelectedItemPosition(), dh.getNodeCount(), 1, "Walk");
+                    dh.insertEdge(dh.getEdgeCount() + 1, dh.getNodeCount(), sp.getSelectedItemPosition(), 1, "Walk");
+                    updateSpinner();
+                }
+                Toast.makeText(getApplicationContext(), dh.getNodeCount() + " Stuff", Toast.LENGTH_SHORT).show();
+                scanButton.setEnabled(true);
+                unregisterReceiver(scanReceiver);
             }
-            else
-            {
-                dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), dh.getNodeCount() + 1);
-                dh.insertEdge(dh.getEdgeCount() + 1, sp.getSelectedItemPosition(), dh.getNodeCount(), 1, "Walk");
-                dh.insertEdge(dh.getEdgeCount() + 1, dh.getNodeCount(), sp.getSelectedItemPosition(), 1, "Walk");
-                updateSpinner();
-            }
-            Toast.makeText(getApplicationContext(), dh.getNodeCount() + " Stuff", Toast.LENGTH_SHORT).show();
-            scanButton.setEnabled(true);
-            unregisterReceiver(scanReceiver);
         }
 
     }
