@@ -22,7 +22,10 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Josh on 08/04/2015.
@@ -142,7 +145,6 @@ public class LocationPush extends BroadcastReceiver {
             results = wifi.getScanResults();
 
             SharedPreferences sharedPrefs = c.getSharedPreferences("FaultStore", Context.MODE_PRIVATE);
-            SharedPreferences.Editor sharedEditor = sharedPrefs.edit();
 
             // New comparator so that we can get the top three WiFi points
             Comparator<ScanResult> resultComparator = new Comparator<ScanResult>() {
@@ -178,12 +180,8 @@ public class LocationPush extends BroadcastReceiver {
 
                     // Now to make sure we don't have any leftover faulty access point data
                     if (sharedPrefs.contains("faultlist")) {
-                        Set<String> faultMac = sharedPrefs.getStringSet("faultMac", null);
+                        //TODO - Implement posting for Faults using FaultDataBaseHelper
 
-
-                        for (String s : faultMac) {
-                            //JSONPost(info.getBSSID(), location, );
-                        }
                     }
                 }
             }
