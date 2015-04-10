@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 /**
@@ -41,8 +42,9 @@ public class FaultDatabaseHelper extends SQLiteAssetHelper {
     public void clearFaults() {
         SQLiteDatabase db = getWritableDatabase();
 
-        db.rawQuery("DELETE * FROM Faults", null);
+        int i = db.delete("Faults", null, null);
 
+        Log.d("DB Delete:", "" + i);
         db.close();
     }
 
@@ -50,7 +52,7 @@ public class FaultDatabaseHelper extends SQLiteAssetHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM Faults", null);
-
+        cursor.moveToFirst();
         return cursor.getInt(0) == 0;
     }
 }
