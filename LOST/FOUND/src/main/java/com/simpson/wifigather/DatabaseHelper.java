@@ -74,21 +74,6 @@ public class DatabaseHelper extends SQLiteAssetHelper{
         return idList;
     }
 
-    // Method to verify that we're not taking the same MAC again
-    public boolean checkForMac(String mac) {
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor check = db.rawQuery("SELECT MACOne FROM LocNode WHERE MACOne == " + mac, null);
-
-        boolean inDB = false;
-        if (check.getCount() > 0) {
-            inDB = true;
-        } else if (check.getCount() == 0) {
-            inDB = false;
-        }
-
-        return inDB;
-    }
-
     public void uploadData() {
         SQLiteDatabase db = getReadableDatabase();
 

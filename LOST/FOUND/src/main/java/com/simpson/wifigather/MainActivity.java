@@ -137,11 +137,8 @@ public class MainActivity extends Activity {
             Collections.sort(results, resultComparator);
 
             DatabaseHelper dh = new DatabaseHelper(getApplicationContext());
-            if (dh.checkForMac(results.get(0).BSSID))
-            {
-                Toast.makeText(c, "MAC already present in database, move on", Toast.LENGTH_SHORT);
-            } else {
-                if (sp.getSelectedItem().toString() == "Nothing") {
+
+            if (sp.getSelectedItem().toString() == "Nothing") {
                     dh.insertLocation(et.getText().toString(), results.get(0).BSSID.toString(), dh.getNodeCount() + 1);
                     updateSpinner();
                 } else {
@@ -157,4 +154,3 @@ public class MainActivity extends Activity {
         }
 
     }
-}
