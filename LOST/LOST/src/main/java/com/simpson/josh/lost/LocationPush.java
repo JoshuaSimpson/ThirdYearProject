@@ -1,9 +1,6 @@
 package com.simpson.josh.lost;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.*;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -21,7 +18,10 @@ import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.DateFormat;
 import java.util.Collections;
 import java.util.Comparator;
@@ -43,6 +43,7 @@ public class LocationPush extends BroadcastReceiver {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         scanReceiver = new wifiScanReceiver();
+        context.registerReceiver(scanReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         wifi.startScan();
 
 
@@ -143,6 +144,7 @@ public class LocationPush extends BroadcastReceiver {
 
     class wifiScanReceiver extends BroadcastReceiver {
         public void onReceive(Context c, Intent intent) {
+            Log.d("Are we even receiving the scan?", "I fucking hope so");
             FaultDatabaseHelper fh = new FaultDatabaseHelper(c);
 
             results = wifi.getScanResults();
@@ -175,25 +177,49 @@ public class LocationPush extends BroadcastReceiver {
 
             // If we're at Kings then launch into this set of statements, otherwise we ain't got no business posting stuff
             if (atKings) {
+
+                Log.d("Hit at Kings", "Okay...");
+                String location = MainActivity.myGraph.getLocFromMac(firstMac);
                 // If we're connected, and connected to WiFi
-                if (networkInf.isConnected() == true && networkInf.getType() == ConnectivityManager.TYPE_WIFI) {
-                    // Here we POST the location data
-                    String location = MainActivity.myGraph.getLocFromMac(firstMac);
-                    JSONPost(location, dateString);
+                if (networkInf.isConnected() && networkInf.getType() == ConnectivityManager.TYPE_WIFI) {
+                    try {
+                        if (InetAddress.getByName("www.google.co.uk").isReachable(800)) {
 
-                    // Now to make sure we don't have any leftover faulty access point data
-                    if (!fh.isEmpty()) {
-                        //TODO - Implement posting for Faults using FaultDataBaseHelper
+                            // Here we POST the location data
+                            JSONPost(location, dateString);
 
-                        Cursor poster = fh.getFaults();
+                            // Now to make sure we don't have any leftover faulty access point data
+                            if (!fh.isEmpty()) {
+                                Cursor poster = fh.getFaults();
+                                poster.moveToFirst();
 
-                        poster.moveToFirst();
+                                do {
+                                    JSONPost(poster.getString(0), poster.getString(1), poster.getString(2), poster.getString(3));
+                                } while (poster.moveToNext());
+                            }
+                        }
+                    } catch (UnknownHostException u) {
 
-                        do {
-                            JSONPost(poster.getString(0), poster.getString(1), poster.getString(2), poster.getString(3));
-                        } while (poster.moveToNext());
+                    } catch (IOException i) {
+
                     }
                 }
+
+                try {
+                    // This is our issue set, then just insert into the database
+                    if (networkInf.isConnected() && InetAddress.getByName("www.google.co.uk").isReachable(10000)) {
+                        // FirstMAC may not NECESSARILY be the one we're connected to...
+                        fh.insertFault(info.getMacAddress(), location, dateString, "High latency");
+                    } else if (networkInf.isConnected() && !InetAddress.getByName("www.google.co.uk").isReachable(10000)) {
+                        // This case tells us if the latency is abnormally high
+                        fh.insertFault(info.getMacAddress(), location, dateString, "No internet");
+                    }
+                } catch (UnknownHostException u) {
+
+                } catch (IOException i) {
+
+                }
+
             }
         }
     }
