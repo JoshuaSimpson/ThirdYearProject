@@ -2,6 +2,7 @@ package com.simpson.josh.lost;
 
 import android.app.DialogFragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -55,8 +56,8 @@ public class settings extends FragmentActivity {
     }
 
     public void wifiSetup(View view) {
-        DialogFragment newDialog = new loginDialog();
-        newDialog.show(getFragmentManager(), "Login");
+        Intent newDialog = new Intent(this, LoginDialog.class);
+        startActivity(newDialog);
     }
 
 }

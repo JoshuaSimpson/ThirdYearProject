@@ -2,16 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.simpson.josh.lost" >
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark">
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark" >
         <activity
             android:name="com.simpson.josh.lost.MainActivity"
             android:label="@string/app_name" >
@@ -37,8 +37,15 @@
             android:name="com.simpson.josh.lost.settings"
             android:label="@string/title_activity_settings" >
         </activity>
-        <service android:name=".LocationPush">
+
+        <service android:name="com.simpson.josh.lost.LocationPush" >
         </service>
+
+        <activity
+            android:name="com.simpson.josh.lost.LoginDialog"
+            android:label="@string/title_activity_login_dialog"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
     </application>
 
 </manifest>
