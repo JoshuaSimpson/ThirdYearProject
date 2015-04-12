@@ -56,7 +56,7 @@ public class DiGraph {
     }
 
     public Node getNodeFromID(int id) {
-        //Need this to be able to associate new edges properly in MainActivity
+        //Need this to be able to associate new  edges properly in MainActivity
         return nodeIDList.get(id);
     }
 

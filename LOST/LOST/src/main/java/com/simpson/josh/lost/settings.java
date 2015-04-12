@@ -1,16 +1,17 @@
 package com.simpson.josh.lost;
 
-import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 
-public class settings extends Activity {
+public class settings extends FragmentActivity {
 
     CheckBox locationBox;
     CheckBox wirelessBox;
@@ -48,13 +49,14 @@ public class settings extends Activity {
         });
     }
 
-
-
-
-
     public void downloadDB(View view) {
         Downloader dl = new Downloader();
         dl.execute(this.getFilesDir().toString());
-
     }
+
+    public void wifiSetup(View view) {
+        DialogFragment newDialog = new loginDialog();
+        newDialog.show(getFragmentManager(), "Login");
+    }
+
 }
