@@ -1,0 +1,51 @@
+\begin{thebibliography}{1}
+
+\bibitem{996891}
+Yongguang Chen and Hisashi Kobayashi.
+\newblock Signal strength based indoor geolocation.
+\newblock In {\em Communications, 2002. ICC 2002. IEEE International Conference
+  on}, volume~1, pages 436--439, 2002.
+
+\bibitem{cook2005indoor}
+B~Cook, G~Buckberry, I~Scowcroft, J~Mitchell, and T~Allen.
+\newblock Indoor location using trilateration characteristics.
+\newblock In {\em Proc. London Communications Symposium}, pages 147--150, 2005.
+
+\bibitem{googlewifi}
+Google.
+\newblock Configure access points with google location service.
+\newblock \url{https://support.google.com/nexus/answer/1725632?hl=en}.
+
+\bibitem{headcount}
+King's~College London.
+\newblock King's college london headcount summary 2012-2013.
+\newblock
+  \url{http://www.kcl.ac.uk/aboutkings/facts/ida/stats/HeadcountSummary2012.pdf},
+  2012.
+
+\bibitem{national1995global}
+National Research Council (U.S.).~Committee on~the Future of~the Global
+  Positioning~System, National~Academy of~Public~Administration, Commission
+  on~Engineering, and Technical Systems.
+\newblock {\em The Global Positioning System: A Shared National Asset}.
+\newblock Romantic Reassessment; 118. National Academies Press, 1995.
+
+\bibitem{googlemaps}
+Felix Richter.
+\newblock 15 years of google.
+\newblock \url{http://www.statista.com/chart/1502/15-years-of-google/}, 2013.
+
+\bibitem{schiller2004location}
+J.~Schiller and A.~Voisard.
+\newblock {\em Location-Based Services}.
+\newblock The Morgan Kaufmann Series in Data Management Systems. Elsevier
+  Science, 2004.
+
+\bibitem{googlewifi2}
+Steven~J. Vaughan-Nichols.
+\newblock How google--and everyone else--gets wi-fi location data.
+\newblock
+  \url{http://www.zdnet.com/article/how-google-and-everyone-else-gets-wi-fi-location-data/},
+  2011.
+
+\end{thebibliography}

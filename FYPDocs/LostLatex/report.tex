@@ -1,0 +1,94 @@
+\documentclass[11pt]{informatics-report}
+\usepackage{color}
+\usepackage[square,sort,comma,numbers]{natbib} 
+
+
+\title{6CCS3PRJ Final Year\\\vspace{0.2cm} LOST}
+\author{Joshua Simpson}
+\studentID{1225043}
+\supervisor{Andrew Coles}
+
+\date{\today}
+
+\abstractFile{FrontMatter/abstract.tex}
+\ackFile{FrontMatter/acknowledgements.tex} 
+
+\begin{document}
+\createFrontMatter
+\onehalfspacing
+\tableofcontents
+\doublespacing
+
+
+\chapter{Introduction}
+Location based services have been developing over the past few decades, and are prevalent in several aspects of every day life - location based services range from the route-planning software that is used to figure out a morning commute, to live time-tabling services that use bus or train positions to give accurate estimates. It's safe to say that in some way or another, location services are prevalent in modern day life.
+
+However, GPS\footnote{ Global Positioning System - a system using satellites to provide precise location information} services only work to a certain level;  specifically, they only work to within a few feet at street level\cite{cook2005indoor}. Whilst this is still a feat, it leaves a large market gap for contextually aware services inside large buildings. 
+
+Contextually aware services are another rapidly developing technology, providing users with information or activities specific to their current location or situation, determining the suitability for such events by using sensor data\footnote{ Data such as location, temperature or time }. 
+
+There are previous studies on using local area wireless access points to provide this sensor data at a level more precise than GPS can currently allow, but they are usually run in controlled environments, deriving a single mathematical equation in order to determine distance from the access point with high precision\cite{996891}. Unfortunately, this is impractical in a lot of real world applications - such as university campuses.
+\newline \newline 
+
+
+\section{Project Aims}
+
+The main goal of this project is to provide a proof-of-concept mobile application that can provide location and route-planning services whilst also delivering contextually aware services in a specific building - all without using GPS - demonstrating the possibilities that this area of application development holds for developers. In extension, the project will aim to create software suite allowing for the efficent setup of a 'contextually aware building', as well as provide practical functionality to a variety of user groups ( by using the application to crowdsource data), to demonstrate the potential in this field. 
+
+To demonstrate a successful project, a large building with many potential locations is useful, as it shows the accuracy of of the location-finding and route-planning algorithms. To this end, the building that I am using to test this application is King's College London's Strand Campus\footnote{ It has not escaped my attention that this will also help all the new first years find Waterfront}. With roughly 17,000m2 of space and 9 floors to utilise, the application would not only be thoroughly tested but also most likely welcomed by King's 25,000 students\cite{headcount}.
+
+\section{Report Structure}
+
+This report will begin with a background on the project - taking a look at location based services and contextually aware services and the applications of both that are already available, along with an analysis of projects or papers that have attempted to solve the problem of location services at building level. This data will then be collated to analyse key problem areas during implementation. 
+
+Following this there will be an outline of the requirements and specification for the project - showing both the project itself and the chosen extensions - complete with justifications on decisions made in the specification.
+
+
+\chapter{Background}
+\section{Location Services}
+
+Defined as \textit{"services that integrate a mobile device's location or position with other information so as to provide added value to a user"}\cite{schiller2004location}, the origins of location information services date back to 1973, when the US Department of Defence developed GPS to overcome the limitations imposed by navigation systems in use at the time\cite{national1995global}. This original system has since been developed into an integral part of many mobile applications, including mapping and route planning applications, as well as forming the 'sensor' in a lot of contextually aware applications. There is a well established method that is used in order to ascertain location, called trilateration\footnote{The process of finding a location by measuring distances, using geometry}. Triangulation\footnote{The process of finding a location by estimating the direction in which signals are coming from} is another method used to determine location, but is mostly inapplicable in the context of mobile devices\footnote{It is also commonly mistaken for trilateration}.
+
+\subsection{Application: Google Maps}
+
+Google Maps is easily the most widely used mapping tool on the planet, with over 54\% of smartphone owners using the app on a regular basis in 2013 ( for comparison, this was 10\% more than Facebook at the time)\cite{googlemaps}. Google Maps are a chief provider of location information services, with advanced route planning and street-view functionality. They serve this data through their own API\footnote{https://developers.google.com/maps/}. The most interesting aspect of their service ( in relation to this paper, at least ) is their recent addition of the use of Wireless Access Points for their location services. Whilst they don't rely solely on it for location, they do use the data to increase accuracy and speed through their Maps application\cite{googlewifi}. Interestingly, Google collect this WiFi data by crowdsourcing through an 'opt out' scheme in the Google Maps application\cite{googlewifi2} - this may not be possible in the case of this project ( as Google have used WiFi in a more assistive manner ), but it provides a good basis from which to approach the problem.
+
+\subsection{Paper: Indoor Location Using Trilateration Characteristics}\cite{cook2005indoor}
+
+This paper is especially relevant to the problem, considering the use of Wireless Local Area Networks in order to achieve trilateration. This is achieved by measuring the signal strength for at least 3 access points, and using the signal strength to determine the distance from the access point. Once you have three accurate distances you can essentially create a 'Venn Diagram' of where the user is located.
+
+The paper goes on to state that there are inherent inaccuracies with this positioning technique, due to the variable nature of radio signals\cite{cook2005indoor}. 
+
+To circumvent these inaccuracies, an elegant averaging method was developed, which started returning an accurate 'average signal strength' after 40 readings.
+
+\subsubsection{Issues with the trilateration approach}
+- As stated above, the trilateration approach has difficulties providing accuracies:
+
+\textit{"Radio signals are extremely variable, particularly indoors, due to being reflected by obstacles or refracted round corners – known as multipath reflection. Environmental changes can also affect the signals, such as the number of people around. This means that the positioning technique is
+inherently inaccurate, with positions from raw Wi-Fi signals being in excess of 10m out. "}\cite{cook2005indoor}
+
+\noindent- Whilst there is a solution designed to solve this problem in the case of the test environment, an application in a building such as Kings would require a number of different formulae in order to provide accurate signal strength averaging for different areas of King's\footnote{ Because of the variables such as distance between routers, building material, and the number of users in any area at a given time}
+
+\noindent- Finally, in cases where the averaging solution is easily applicable, there \textit{should} be concerns regarding the impact on a mobile device's battery life when performing repeated scans and operations on the results of those scans.
+
+\subsection{Paper: }
+
+
+\include{Chapters/Body}
+\include{Chapters/DesignSpecification}
+\include{Chapters/Implementation}
+\include{Chapters/ProfessionalIssues}
+\include{Chapters/Evaluation}
+\include{Chapters/Conclusion}
+
+
+\bibliographystyle{plain}
+\bibliography{mybib}
+\addcontentsline{toc}{section}{Bibliography}
+
+
+\appendix
+\include{Appendices/appendix}
+\include{Appendices/UserGuide}
+\include{Appendices/SourceCode}
+\end{document}
