@@ -1,6 +1,7 @@
 package com.simpson.josh.lost;
 
 import android.app.Activity;
+import android.net.wifi.WifiEnterpriseConfig;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +30,8 @@ public class LoginDialog extends Activity {
             @Override
             public void onClick(View view) {
                 Log.d("6 and a half thousand"," fucking. Miles.");
+
+                
                 
             }
         });
