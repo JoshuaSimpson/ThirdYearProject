@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{abowd1999towards}
+Gregory~D Abowd, Anind~K Dey, Peter~J Brown, Nigel Davies, Mark Smith, and Pete
+  Steggles.
+\newblock Towards a better understanding of context and context-awareness.
+\newblock In {\em Handheld and ubiquitous computing}, pages 304--307. Springer
+  Berlin Heidelberg, 1999.
+
 \bibitem{996891}
 Yongguang Chen and Hisashi Kobayashi.
 \newblock Signal strength based indoor geolocation.

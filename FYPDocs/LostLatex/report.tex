@@ -64,15 +64,27 @@ To circumvent these inaccuracies, an elegant averaging method was developed, whi
 \subsubsection{Issues with the trilateration approach}
 - As stated above, the trilateration approach has difficulties providing accuracies:
 
-\textit{"Radio signals are extremely variable, particularly indoors, due to being reflected by obstacles or refracted round corners – known as multipath reflection. Environmental changes can also affect the signals, such as the number of people around. This means that the positioning technique is
-inherently inaccurate, with positions from raw Wi-Fi signals being in excess of 10m out. "}\cite{cook2005indoor}
+\textit{"Radio signals are extremely variable, particularly indoors, due to being reflected by obstacles or refracted round corners, known as multipath reflection. Environmental changes can also affect the signals, such as the number of people around. This means that the positioning technique is inherently inaccurate, with positions from raw Wi-Fi signals being in excess of 10m out. "}\cite{cook2005indoor}
 
 \noindent- Whilst there is a solution designed to solve this problem in the case of the test environment, an application in a building such as Kings would require a number of different formulae in order to provide accurate signal strength averaging for different areas of King's\footnote{ Because of the variables such as distance between routers, building material, and the number of users in any area at a given time}
 
 \noindent- Finally, in cases where the averaging solution is easily applicable, there \textit{should} be concerns regarding the impact on a mobile device's battery life when performing repeated scans and operations on the results of those scans.
 
-\subsection{Paper: }
+\subsection{Paper: More Stuff on Location - Fuzzy Location?} 
 
+\section{Context-Aware Services}
+
+Contextually aware services are services that use data that pertains to the user or application's current situation to provide actions or functionality specific to that scenario. It is defined by Abowd as 
+
+\textit{ "any information that can be used to characterize the situation of entities (i.e., whether a person, place or object) that are considered relevant to the interaction between a user and an application, including the user and the application themselves." }\cite{abowd1999towards}
+
+Contextually aware services use 'sensors' to fetch this information - examples include location data, temperature, even the camera on your phone could be used as a sensor for contextual services\footnote{Consider how recent smartphones have software that stops the screen coming out of standby if it thinks it's in your pocket}
+
+\subsection{Estimote}
+
+A rapidly accelerating tech start up, Estimote provides 'beacons' using low-power Bluetooth in order to send an ID\footnote{\url{http://estimote.com/api/getting-started/intro-to-beacons.html}} to an Estimote enabled application - these can then be programmatically associated with locations, events, etc. and calculates its distance from the phone using RSSI ( the received signal strength ), meaning that it can be used very effectively to provide location-based services. This is currently one of the most prominent devices currently using its base technology (iBeacon). 
+
+Currently the major drawback of the Estimote is the price, which limits Estimote beacons / stickers to small buildings – covering an area such as King’s would be incredibly costly\footnote{\url{http://estimote.com/#jump-to-products}}, and any structural changes regarding the beacons would require significant effort to represent in an application developed to use Estimote. Another issue is that - as stated above - using RSSI to fetch location information can become very complex in a large building with lots of people in it (which would cause signal attenuation at different levels throughout the day). 
 
 \include{Chapters/Body}
 \include{Chapters/DesignSpecification}

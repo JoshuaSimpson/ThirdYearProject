@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  15 APR 2015 00:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  15 APR 2015 03:16
 entering extended mode
 **C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/report.tex
 (C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/report.tex
@@ -382,16 +382,21 @@ Chapter 2.
 [4
 
 ] [5]
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 85.
+
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmtt.fd"
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [6]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Body.tex
 Chapter 3.
-) [6
+) [7
 
 
 ]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/DesignSpecif
 ication.tex
 Chapter 4.
-) [7
+) [8
 
 
 
@@ -399,7 +404,7 @@ Chapter 4.
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Implementati
 on.tex
 Chapter 5.
-) [8
+) [9
 
 
 
@@ -407,7 +412,7 @@ Chapter 5.
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Professional
 Issues.tex
 Chapter 6.
-) [9
+) [10
 
 
 
@@ -415,7 +420,7 @@ Chapter 6.
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Evaluation.t
 ex
 Chapter 7.
-) [10
+) [11
 
 
 
@@ -423,49 +428,43 @@ Chapter 7.
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Conclusion.t
 ex
 Chapter 8.
-) [11
+) [12
 
 
 
 ] (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.bbl
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 17.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmtt.fd"
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \hbox (badness 5771) in paragraph at lines 34--37
+Underfull \hbox (badness 5771) in paragraph at lines 41--44
 []\OT1/lmr/m/n/10 Felix Richter.  15 years of google.  $\OT1/lmtt/m/n/10 http :
  / / www . statista . com / chart / 1502 /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--50
+Underfull \hbox (badness 10000) in paragraph at lines 52--57
 []\OT1/lmr/m/n/10 Steven J. Vaughan-Nichols.  How google--and ev-ery-one else--
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--50
+Underfull \hbox (badness 10000) in paragraph at lines 52--57
 \OT1/lmr/m/n/10 gets wi-fi lo-ca-tion da-ta.  $\OT1/lmtt/m/n/10 http : / / www 
 . zdnet . com / article /$
  []
 
-) [12
+[13
 
 
-]
+]) [14]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.t
 ex
 Appendix A.
-) [13
+) [15
 
 
 ]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/UserGuide.
 tex
 Appendix B.
-) [14
+) [16
 
 
 
@@ -473,7 +472,7 @@ Appendix B.
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/SourceCode
 .tex
 Appendix C.
-) [15
+) [17
 
 
 
@@ -496,13 +495,13 @@ aux)
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/SourceCode
 .aux)) ) 
 Here is how much of TeX's memory you used:
- 3382 strings out of 495352
- 52798 string characters out of 3183049
- 112450 words of memory out of 3000000
- 6436 multiletter control sequences out of 15000+200000
- 52923 words of font info for 41 fonts, out of 3000000 for 9000
+ 3387 strings out of 495352
+ 52892 string characters out of 3183049
+ 112466 words of memory out of 3000000
+ 6440 multiletter control sequences out of 15000+200000
+ 53236 words of font info for 42 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,8n,34p,1175b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,8n,34p,1175b,286s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}{C:/Program
  Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9
 /fonts/enc/dvips/lm/lm-rm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
@@ -513,10 +512,10 @@ TeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
-mtt10.pfb>
-Output written on report.pdf (19 pages, 282389 bytes).
+mtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
+Output written on report.pdf (21 pages, 320111 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
