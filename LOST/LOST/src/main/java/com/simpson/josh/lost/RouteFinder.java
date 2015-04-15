@@ -4,10 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -27,8 +27,6 @@ public class RouteFinder extends Activity {
 
         DatabaseHelper db = new DatabaseHelper(this);
         Cursor getLocations = db.getLocNames();
-
-        Log.d("IT WORKED", "FUCKING FINALLY");
 
         //Initialise spinner
         start = (Spinner) findViewById(R.id.routeFrom);
@@ -51,21 +49,29 @@ public class RouteFinder extends Activity {
     }
 
     public void getPath(View view) {
-        DiGraph dg = MainActivity.myGraph;
-        Dijkstra pathFinder = new Dijkstra(MainActivity.myGraph);
+        if (start.getSelectedItem().toString() == end.getSelectedItem().toString()) {
+            Toast.makeText(this, "You're already there!", Toast.LENGTH_SHORT).show();
+        } else {
 
-        pathFinder.execute(dg.getNodeFromLocation(start.getSelectedItem().toString()));
-        LinkedList<Node> pathList = pathFinder.getPath(dg.getNodeFromLocation(end.getSelectedItem().toString()));
+            DiGraph dg = MainActivity.myGraph;
+            Dijkstra pathFinder = new Dijkstra(MainActivity.myGraph);
 
-        Log.d("Path List is: ", "" + pathList.size());
 
-        String[] newArray = new String[pathList.size()];
-        for (int i = 0; i < newArray.length; i++) {
-            newArray[i] = pathList.get(i).location;
+            pathFinder.execute(dg.getNodeFromID(start.getSelectedItemPosition() + 1));
+            LinkedList<Node> pathList = pathFinder.getPath(dg.getNodeFromID(end.getSelectedItemPosition() + 1));
+
+            if (pathList.size() == 0) {
+                Toast.makeText(this, "Could not find path", Toast.LENGTH_SHORT).show();
+            } else {
+                String[] newArray = new String[pathList.size()];
+                for (int i = 0; i < newArray.length; i++) {
+                    newArray[i] = pathList.get(i).location;
+                }
+
+                Intent newIntent = new Intent(this, RouteResults.class);
+                newIntent.putExtra("Path", newArray);
+                startActivity(newIntent);
+            }
         }
-
-        Intent newIntent = new Intent(this, RouteResults.class);
-        newIntent.putExtra("Path", newArray);
-        startActivity(newIntent);
     }
 }
