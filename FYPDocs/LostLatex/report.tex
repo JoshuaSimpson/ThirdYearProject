@@ -1,6 +1,8 @@
 \documentclass[11pt]{informatics-report}
 \usepackage{color}
 \usepackage[square,sort,comma,numbers]{natbib} 
+\usepackage{comment}
+\usepackage{url}
 
 
 \title{6CCS3PRJ Final Year\\\vspace{0.2cm} LOST}
@@ -27,13 +29,13 @@ However, GPS\footnote{ Global Positioning System - a system using satellites to 
 
 Contextually aware services are another rapidly developing technology, providing users with information or activities specific to their current location or situation, determining the suitability for such events by using sensor data\footnote{ Data such as location, temperature or time }. 
 
-There are previous studies on using local area wireless access points to provide this sensor data at a level more precise than GPS can currently allow, but they are usually run in controlled environments, deriving a single mathematical equation in order to determine distance from the access point with high precision\cite{996891}. Unfortunately, this is impractical in a lot of real world applications - such as university campuses.
+There are previous studies on using local area wireless access points to provide this sensor data at a level more precise than GPS can currently allow, but they are usually run in controlled environments, deriving a single mathematical equation in order to determine distance from the access point with high precision\cite{996891}. Unfortunately, this is impractical to apply as general use outside of a test environment.
 \newline \newline 
 
 
 \section{Project Aims}
 
-The main goal of this project is to provide a proof-of-concept mobile application that can provide location and route-planning services whilst also delivering contextually aware services in a specific building - all without using GPS - demonstrating the possibilities that this area of application development holds for developers. In extension, the project will aim to create software suite allowing for the efficent setup of a 'contextually aware building', as well as provide practical functionality to a variety of user groups ( by using the application to crowdsource data), to demonstrate the potential in this field. 
+The main goal of this project is to provide a proof-of-concept mobile application that can provide location and route-planning services whilst also delivering contextually aware services in a specific building - all without using GPS - demonstrating the possibilities that this area of application development holds for developers. Around this main feature, the project will aim to create software suite allowing for the efficent setup of a 'contextually aware building', as well as provide practical functionality to a variety of user groups ( by using the application to crowdsource data), to demonstrate the potential in this field. To achieve this, I will be collecting data on user location and wifi failure\footnote{A common occurence in the chosen building} throughout the building and providing a backend that displays this data in a useful manner.
 
 To demonstrate a successful project, a large building with many potential locations is useful, as it shows the accuracy of of the location-finding and route-planning algorithms. To this end, the building that I am using to test this application is King's College London's Strand Campus\footnote{ It has not escaped my attention that this will also help all the new first years find Waterfront}. With roughly 17,000m2 of space and 9 floors to utilise, the application would not only be thoroughly tested but also most likely welcomed by King's 25,000 students\cite{headcount}.
 
@@ -44,10 +46,11 @@ This report will begin with a background on the project - taking a look at locat
 Following this there will be an outline of the requirements and specification for the project - showing both the project itself and the chosen extensions - complete with justifications on decisions made in the specification.
 
 
-\chapter{Background}
+\chapter{Project Background and Main Points to Consider}
+
 \section{Location Services}
 
-Defined as \textit{"services that integrate a mobile device's location or position with other information so as to provide added value to a user"}\cite{schiller2004location}, the origins of location information services date back to 1973, when the US Department of Defence developed GPS to overcome the limitations imposed by navigation systems in use at the time\cite{national1995global}. This original system has since been developed into an integral part of many mobile applications, including mapping and route planning applications, as well as forming the 'sensor' in a lot of contextually aware applications. There is a well established method that is used in order to ascertain location, called trilateration\footnote{The process of finding a location by measuring distances, using geometry}. Triangulation\footnote{The process of finding a location by estimating the direction in which signals are coming from} is another method used to determine location, but is mostly inapplicable in the context of mobile devices\footnote{It is also commonly mistaken for trilateration}.
+Defined as \textit{"services that integrate a mobile device's location or position with other information so as to provide added value to a user"}\cite{schiller2004location}, the origins of location information services date back to 1973, when the US Department of Defence developed GPS to overcome the limitations imposed by navigation systems in use at the time\cite{national1995global}. This original system has since been developed into an integral part of many mobile applications, including mapping and route planning applications, as well as forming the 'sensor' in a lot of contextually aware applications. There is a well established method that is used in order to ascertain location, called trilateration\footnote{The process of finding a location by measuring distances, using geometry}. Triangulation\footnote{The process of finding a location by estimating the direction in which signals are coming from} is another method used to determine location, but is mostly inapplicable in the context of mobile devices\footnote{It is also commonly mistaken for trilateration}. Whilst I will not be developing an application that directly uses existing location technologies such as GPS, it is important to consider the practices used in such technologies when developing this project.
 
 \subsection{Application: Google Maps}
 
@@ -78,20 +81,93 @@ Contextually aware services are services that use data that pertains to the user
 
 \textit{ "any information that can be used to characterize the situation of entities (i.e., whether a person, place or object) that are considered relevant to the interaction between a user and an application, including the user and the application themselves." }\cite{abowd1999towards}
 
-Contextually aware services use 'sensors' to fetch this information - examples include location data, temperature, even the camera on your phone could be used as a sensor for contextual services\footnote{Consider how recent smartphones have software that stops the screen coming out of standby if it thinks it's in your pocket}
+Contextually aware services use 'sensors' to fetch this information - examples include location data, temperature, even the camera on your phone could be used as a sensor for contextual services\footnote{Consider how recent smartphones have software that stops the screen coming out of standby if it thinks it's in your pocket}.
 
 \subsection{Estimote}
 
-A rapidly accelerating tech start up, Estimote provides 'beacons' using low-power Bluetooth in order to send an ID\footnote{\url{http://estimote.com/api/getting-started/intro-to-beacons.html}} to an Estimote enabled application - these can then be programmatically associated with locations, events, etc. and calculates its distance from the phone using RSSI ( the received signal strength ), meaning that it can be used very effectively to provide location-based services. This is currently one of the most prominent devices currently using its base technology (iBeacon). 
+A rapidly accelerating tech start up, Estimote provides 'beacons' using low-power Bluetooth in order to send an ID\footnote{\url{http://estimote.com/api/getting-started/intro-to-beacons.html}} to an Estimote enabled application - these can then be programmatically associated with locations, events, etc. and calculates its distance from the phone using RSSI ( the received signal strength ) inside it's own API, meaning that it can be used very effectively to provide location-based services with minimal effort. This is so far the the most prominent product in the market using the iBeacon base.
 
 Currently the major drawback of the Estimote is the price, which limits Estimote beacons / stickers to small buildings – covering an area such as King’s would be incredibly costly\footnote{\url{http://estimote.com/#jump-to-products}}, and any structural changes regarding the beacons would require significant effort to represent in an application developed to use Estimote. Another issue is that - as stated above - using RSSI to fetch location information can become very complex in a large building with lots of people in it (which would cause signal attenuation at different levels throughout the day). 
 
-\include{Chapters/Body}
-\include{Chapters/DesignSpecification}
-\include{Chapters/Implementation}
-\include{Chapters/ProfessionalIssues}
-\include{Chapters/Evaluation}
-\include{Chapters/Conclusion}
+\subsection{Google Maps}
+
+As part of their vast toolset, Google Maps also has context-sensitive functions in it's API - an example is their 'Explore' feature\footnote{\url{http://google-latlong.blogspot.co.uk/2014/07/spend-more-time-exploring-with-google.html}}, which will show destinations of a certain type that are in the user's local area. The Explore function even takes into account time of day and weather in order to provide the best possible locations to the user.
+
+An interesting point to note is that the 'Explore' function was predated by a 'Search Nearby' function that was removed\footnote{\url{http://www.jsonline.com/blogs/news/247119811.html}} - possibly due to privacy concerns\footnote{Covered later in Ethical Concerns}.
+
+
+\subsection{Paper: An Architecture for Data Collection and Processing in Context-Aware Applications}\cite{salviarchitecture}
+
+In this paper, Dario Salvi \textit{et al} pose that whilst Context Aware systems are showing and developing a greater use in general applications, that the field is not "applied in the real world"\cite{salviarchitecture}. The paper then goes on to propse an architecture that access and uses contextual data differently to provide the developer with more possibility to develop what is referred to as 'real world applications'.
+
+Afterwards, the writers go on to set out three classes for collecting data - AtomicData\footnote{Singular pieces of information}, ContextData\footnote{Compositions of more than one piece of AtomicData}, and Relationships\footnote{Links between two ContextData}\cite{salviarchitecture}. These classes provide an interesting base for the data collection part of this project\footnote{ContextData holds the most interest, as I will need to collect multiple pieces of data}.
+
+Overall the paper presents some very useful points on using contextual data to return usable information.
+
+\section{Crowd Sourcing}
+
+Crowd sourcing is generally defined as using a group of people or community to generate a needed resource. It is mostly thought of in terms of popular crowd-funding sites such as Kickstarter, or Indiegogo, but the term extends to other resources, such as data or ideas\footnote{For example, Cracked.com - a satire website - uses its own staff, but also looks for stories contributed by it's readers}. Generally, data crowdsourcing follows a pattern of clients paying for information that they need, and users that receive rewards to collect or generate this information.
+
+\subsection{Captcha} 
+
+Captcha was originally invented as an identification system to help discern humans from robots when performing tasks online. This started out as just a verification system ( which is growing more and more elaborate as robots evolve ), but was eventually evolved into an aid to digitizing books\footnote{\url{http://www.npr.org/2013/10/04/191620023/can-you-crowdsource-without-even-knowing-it}}. The most interesting point about this is that most of the users of Captcha have no idea that they are crowd-sourcing a huge effort every time they solve a Captcha.
+
+\subsection{The 90-9-1 Rule for Participation Inequality in Social Media and Online Communities}\cite{participationinequality}
+
+This article addresses a major problem with crowdsourcing data which Nielsen refers to as participation inequality, stating that user participation often follows a 90-9-1 rule, with 90\% of users being "lurkers or users that will observe but not contribute"\cite{participationinequality} . Nielsen also covers how to overcome this participation inequality (after briefly summarizing with ‘you can’t’); one method in particular is of interest when considering the aims of this project and its associated application: 'make participation a side effect'  – essentially the act of collecting data without the user having to do anything - this is less intrusive to the user’s day-to-day use of the application, but can also have obvious ethical ramifications if the user is unaware if they are sourcing data.
+
+\section{Platform}
+
+Because of the nature of the application being developed, it makes the most sense to develop for a mobile device - whilst devices like laptops offer more power to process information, the dataset that needs to be taken does not require the extra resources. Alongside this, mobile devices lend themselves better to the data-collection aspect of the project, with background services that can perform operations whilst the phone is inactive in a user's pocket. Finally, it is easier for a user to take out their phone in order to ascertain their location than it would be for a user to take out their laptop to perform the same operation.
+
+With this in mind, the choice of platform then comes down to which type of mobile device to develop for - Android devices, or iOS devices. Whilst I could develop for both device types simultaneously using a platform such as Phonegap\footnote{http://phonegap.com/}, I have concerns about not using the native SDK for a platform - the abstraction provided by platforms such as Phonegap may reduce or restrict functionality that is necessary during development\footnote{Phonegap as an example, uses HTML, CSS and Javascript to create an application for both platforms simultaneously}. In the end, I decided to develop this for the Android platform alone.
+
+\subsection{Reasons for Android as a platform}
+
+The first point I considered whilst choosing a platform to use is the popularity of a platform - it makes sense to make the application available to the widest audience possible. In this case, Android dominates the market share, with 76.6\% of smartphones using the Android OS, compared to 19.7\% using iOS in the last quarter of 2014\cite{devicestats}.
+
+Another major concern when deciding upon device was the functionality provided by SDKs for both Android and iOS. When I reviewed the functionality for both devices, I was unsurprised to find that iOS does not allow access to lower-level functionality. What did surprise me is that statistics like wireless signal strength was amongst these lower level functions\cite{ios1}\cite{ios2}\footnote{Whilst StackOverflow is not preferable as a citable source, finding an admission from Apple on this point is very difficult}. This restriction of access was a major concern.
+
+\section{Ethical Concerns}
+
+When developing an application that uses any form of personal information, there are definite privacy concerns. This is exascerbated when considering that there will be location information being returned to a server that is accessible by staff members. In this respect, it is important to not only adhere strictly to Data Protection laws, but also to consider the user's privacy and wellbeing. To this end, I need to make sure to collect the least amount of data I can, and to anonymise this data as much as possible in order to avoid sending any user details that would affect their privacy. Alongside this it would be prudent to secure the repository of any stored data against unauthorised users.
+
+Another ethical point to consider is the code that I use to create this application. I should take due care to create this app usingi only my own code, except where express permission has been granted. In the same vein, I must make sure to adhere to all licenses for any libraries which I use in development.
+
+\chapter{Requirements and Specification}
+The client end of this project consists of two parts - an Android application that can determine user location ( LOST ) and provide route-planning inside the building, whilst feeding data to the backend, which will store the data and provide functions to view it as information. To aid the mapping of the building, a second Android application will be built for wireless data collection ( FOUND ).
+
+\section{LOST}
+
+\subsection{Functional Requirements}
+
+\begin{description}
+\item[F1] - The application will be able to retrieve the most recent SQLite database containing wireless access point location information upon startup.
+\item[F2] - The application will be able to accurately discern the user's location, using data provided by an SQLite database.
+\item[F3] - The application will be able to provide the user with route-planning data, allowing the user to select a start and an end point, and provide the shortest path between the two points.
+\item[F4] - The application will be able to discern whether the device is currently in the correct building for usage.
+\item[F5] - The application will send anonymous information on the user's location to the backend periodically, if it is in the correct building
+	\begin{description}
+	\item[F5.1] - The user will be able to turn off this functionality
+	\end{description}
+\item[F6] - The application will periodically check if it has a functioning internet connection - if it is in the correct building. If the internet connection is malfunctioning, it will save this data.
+	\begin{description}
+	\item[F6.1] - Once the application regains internet access, it will send location data, and the MAC address of malfunctioning router to the backend.
+	\item[F6.2] - The user will be able to turn off this functionality.
+\end{description}
+
+\subsection{Non-functional Requirements}
+
+\begin{description}
+
+\end{description}
+
+%\include{Chapters/Body}
+%\include{Chapters/DesignSpecification}
+%\include{Chapters/Implementation}
+%\include{Chapters/ProfessionalIssues}
+%\include{Chapters/Evaluation}
+%\include{Chapters/Conclusion}
 
 
 \bibliographystyle{plain}
@@ -100,7 +176,7 @@ Currently the major drawback of the Estimote is the price, which limits Estimote
 
 
 \appendix
-\include{Appendices/appendix}
-\include{Appendices/UserGuide}
-\include{Appendices/SourceCode}
+%\include{Appendices/appendix}
+%\include{Appendices/UserGuide}
+%\include{Appendices/SourceCode}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  15 APR 2015 03:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  16 APR 2015 00:29
 entering extended mode
 **C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/report.tex
 (C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/report.tex
@@ -208,38 +208,26 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count131
 )
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.aux
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Body.aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/DesignSpecif
-ication.aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Implementati
-on.aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Professional
-Issues.aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Evaluation.a
-ux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Conclusion.a
-ux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.a
-ux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/UserGuide.
-aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/SourceCode
-.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 16.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\comment\comment.sty"
+\CommentStream=\write3
+
+Excluding comment 'comment')
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 18.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
@@ -313,7 +301,7 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: FrontMatter/logo.png Graphic file (type png)
 
 <use FrontMatter/logo.png>
-Package pdftex.def Info: FrontMatter/logo.png used on input line 17.
+Package pdftex.def Info: FrontMatter/logo.png used on input line 19.
 (pdftex.def)             Requested size: 93.94933pt x 85.91946pt.
  [1
 
@@ -322,7 +310,7 @@ Package pdftex.def Info: FrontMatter/logo.png used on input line 17.
 itHub/FYPWork/FYPDocs/LostLatex/FrontMatter/logo.png (PNG copy)>]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\FrontMatter/abstract.
 tex)
-Underfull \hbox (badness 10000) in paragraph at lines 1--17
+Underfull \hbox (badness 10000) in paragraph at lines 1--19
 
  []
 
@@ -356,22 +344,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 2.
 )
-\tf@toc=\write3
+\tf@toc=\write4
  [1
 
 ]
 Chapter 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 26.
+(Font)              <8> on input line 28.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 26.
+(Font)              <6> on input line 28.
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--32
+Underfull \hbox (badness 10000) in paragraph at lines 32--34
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--32
+Underfull \hbox (badness 10000) in paragraph at lines 32--34
 
  []
 
@@ -382,140 +370,100 @@ Chapter 2.
 [4
 
 ] [5]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 85.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 88.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmtt.fd"
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [6]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Body.tex
+) [6] [7]
+[8] [9] [10]
 Chapter 3.
-) [7
-
-
-]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/DesignSpecif
-ication.tex
-Chapter 4.
-) [8
-
-
+[11
 
 ]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Implementati
-on.tex
-Chapter 5.
-) [9
 
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163 \end{description}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Professional
-Issues.tex
-Chapter 6.
-) [10
-
-
-
-]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Evaluation.t
-ex
-Chapter 7.
-) [11
-
-
-
-]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Conclusion.t
-ex
-Chapter 8.
-) [12
-
-
-
-] (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.bbl
-Underfull \hbox (badness 5771) in paragraph at lines 41--44
-[]\OT1/lmr/m/n/10 Felix Richter.  15 years of google.  $\OT1/lmtt/m/n/10 http :
- / / www . statista . com / chart / 1502 /$
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.bbl [12]
+Underfull \hbox (badness 3291) in paragraph at lines 7--10
+[]\OT1/lmr/m/n/10 Stack over-flow - mea-sur-ing sig-nal strength.  $\OT1/lmtt/m
+/n/10 http : / / stackoverflow . com /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--57
+Overfull \hbox (2.14235pt too wide) in paragraph at lines 7--10
+$\OT1/lmtt/m/n/10 questions / 21715690 / measuring-[]signal-[]strength-[]from-[
+]wifi-[]to-[]iphone-[]ipad$\OT1/lmr/m/n/10 . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--46
+$\OT1/lmtt/m/n/10 / / www . kcl . ac . uk / aboutkings / facts / ida / stats / 
+HeadcountSummary2012 . pdf$\OT1/lmr/m/n/10 ,
+ []
+
+[13
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 80--85
 []\OT1/lmr/m/n/10 Steven J. Vaughan-Nichols.  How google--and ev-ery-one else--
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--57
+Underfull \hbox (badness 10000) in paragraph at lines 80--85
 \OT1/lmr/m/n/10 gets wi-fi lo-ca-tion da-ta.  $\OT1/lmtt/m/n/10 http : / / www 
 . zdnet . com / article /$
  []
 
-[13
+)
 
+! LaTeX Error: \begin{description} on input line 144 ended by \end{document}.
 
-]) [14]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.t
-ex
-Appendix A.
-) [15
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.182 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
+[14] (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.aux) )
+(\end occurred inside a group at level 1)
 
-]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/UserGuide.
-tex
-Appendix B.
-) [16
-
-
-
-]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/SourceCode
-.tex
-Appendix C.
-) [17
-
-
-
-] (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.aux
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Body.aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/DesignSpecif
-ication.aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Implementati
-on.aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Professional
-Issues.aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Evaluation.a
-ux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Chapters/Conclusion.a
-ux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.a
-ux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/UserGuide.
-aux)
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/SourceCode
-.aux)) ) 
+### semi simple group (level 1) entered at line 144 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 3387 strings out of 495352
- 52892 string characters out of 3183049
- 112466 words of memory out of 3000000
- 6440 multiletter control sequences out of 15000+200000
+ 3361 strings out of 495352
+ 48878 string characters out of 3183049
+ 111522 words of memory out of 3000000
+ 6477 multiletter control sequences out of 15000+200000
  53236 words of font info for 42 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,8n,34p,1175b,286s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}{C:/Program
- Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9
-/fonts/enc/dvips/lm/lm-rm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr6.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
-mtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
-Output written on report.pdf (21 pages, 320111 bytes).
+ 34i,8n,34p,1383b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}{C:
+/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
+r8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmtt8.pfb>
+Output written on report.pdf (18 pages, 322767 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

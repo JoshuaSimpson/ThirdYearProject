@@ -1,4 +1,12 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{ios2}
+Stack overflow - iphone signal strength.
+
+\bibitem{ios1}
+Stack overflow - measuring signal strength.
+\newblock
+  \url{http://stackoverflow.com/questions/21715690/measuring-signal-strength-from-wifi-to-iphone-ipad}.
 
 \bibitem{abowd1999towards}
 Gregory~D Abowd, Anind~K Dey, Peter~J Brown, Nigel Davies, Mark Smith, and Pete
@@ -23,12 +31,25 @@ Google.
 \newblock Configure access points with google location service.
 \newblock \url{https://support.google.com/nexus/answer/1725632?hl=en}.
 
+\bibitem{devicestats}
+IDC.
+\newblock Smartphone os market share, q4 2014.
+\newblock \url{http://www.idc.com/prodserv/smartphone-os-market-share.jsp},
+  2014.
+
 \bibitem{headcount}
 King's~College London.
 \newblock King's college london headcount summary 2012-2013.
 \newblock
   \url{http://www.kcl.ac.uk/aboutkings/facts/ida/stats/HeadcountSummary2012.pdf},
   2012.
+
+\bibitem{participationinequality}
+Jabok Nielsen.
+\newblock The 90-9-1 rule for participation inequality in social media and
+  online communities.
+\newblock \url{http://www.nngroup.com/articles/participation-inequality/},
+  2006.
 
 \bibitem{national1995global}
 National Research Council (U.S.).~Committee on~the Future of~the Global
@@ -41,6 +62,13 @@ National Research Council (U.S.).~Committee on~the Future of~the Global
 Felix Richter.
 \newblock 15 years of google.
 \newblock \url{http://www.statista.com/chart/1502/15-years-of-google/}, 2013.
+
+\bibitem{salviarchitecture}
+Dario Salvi, Manuel Ottaviano, Ignacio Peinado, and Maria~Teresa Arredondo.
+\newblock An architecture for data collection and processing in context-aware
+  applications.
+\newblock In {\em Adjunct Proceedings of the 3rd European Conference on Ambient
+  Intelligence, AmI09, Salzburg, Austria}.
 
 \bibitem{schiller2004location}
 J.~Schiller and A.~Voisard.

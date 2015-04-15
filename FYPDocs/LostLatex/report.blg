@@ -1,12 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: report.aux
-A level-1 auxiliary file: Chapters/Body.aux
-A level-1 auxiliary file: Chapters/DesignSpecification.aux
-A level-1 auxiliary file: Chapters/Implementation.aux
-A level-1 auxiliary file: Chapters/ProfessionalIssues.aux
-A level-1 auxiliary file: Chapters/Evaluation.aux
-A level-1 auxiliary file: Chapters/Conclusion.aux
 The style file: plain.bst
-A level-1 auxiliary file: Appendices/appendix.aux
-A level-1 auxiliary file: Appendices/UserGuide.aux
-A level-1 auxiliary file: Appendices/SourceCode.aux
 Database file #1: mybib.bib
+Illegal end of database file---line 103 of file mybib.bib
+ :   howpublished={\url{http://stackoverflow.com/questions/2959567/iphone-signal-strength}}
+ :                                                                                         
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in ios1
+Warning--to sort, need author or key in ios2
+Warning--empty year in salviarchitecture
+(There was 1 error message)
