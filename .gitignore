@@ -1,0 +1,5 @@
+.log
+.keep
+
+/rails/log/
+/unicorn/
