@@ -3,6 +3,10 @@
 \usepackage[square,sort,comma,numbers]{natbib} 
 \usepackage{comment}
 \usepackage{url}
+\usepackage{graphicx}
+\usepackage{cleveref}
+\usepackage{hyperref}
+\graphicspath{ {Diagrams/}}
 
 
 \title{6CCS3PRJ Final Year\\\vspace{0.2cm} LOST}
@@ -23,7 +27,7 @@
 
 
 \chapter{Introduction}
-Location based services have been developing over the past few decades, and are prevalent in several aspects of every day life - location based services range from the route-planning software that is used to figure out a morning commute, to live time-tabling services that use bus or train positions to give accurate estimates. It's safe to say that in some way or another, location services are prevalent in modern day life.
+Location based services have been developing over the past few decades, and are prevalent in several aspects of every day life - location based services range from the route-planning software that is used to figure out a morning commute, to live time-tabling services that use bus or train positions to give accurate estimates. It is safe to say that in some way or another, location services are prevalent in modern day life.
 
 However, GPS\footnote{ Global Positioning System - a system using satellites to provide precise location information} services only work to a certain level;  specifically, they only work to within a few feet at street level\cite{cook2005indoor}. Whilst this is still a feat, it leaves a large market gap for contextually aware services inside large buildings. 
 
@@ -54,7 +58,7 @@ Defined as \textit{"services that integrate a mobile device's location or positi
 
 \subsection{Application: Google Maps}
 
-Google Maps is easily the most widely used mapping tool on the planet, with over 54\% of smartphone owners using the app on a regular basis in 2013 ( for comparison, this was 10\% more than Facebook at the time)\cite{googlemaps}. Google Maps are a chief provider of location information services, with advanced route planning and street-view functionality. They serve this data through their own API\footnote{https://developers.google.com/maps/}. The most interesting aspect of their service ( in relation to this paper, at least ) is their recent addition of the use of Wireless Access Points for their location services. Whilst they don't rely solely on it for location, they do use the data to increase accuracy and speed through their Maps application\cite{googlewifi}. Interestingly, Google collect this WiFi data by crowdsourcing through an 'opt out' scheme in the Google Maps application\cite{googlewifi2} - this may not be possible in the case of this project ( as Google have used WiFi in a more assistive manner ), but it provides a good basis from which to approach the problem.
+Google Maps is easily the most widely used mapping tool on the planet, with over 54\% of smartphone owners using the app on a regular basis in 2013 ( for comparison, this was 10\% more than Facebook at the time)\cite{googlemaps}. Google Maps are a chief provider of location information services, with advanced route planning and street-view functionality. They serve this data through their own API\footnote{https://developers.google.com/maps/}. The most interesting aspect of their service ( in relation to this paper, at least ) is their recent addition of the use of Wireless Access Points for their location services. Whilst they do not rely solely on it for location, they do use the data to increase accuracy and speed through their Maps application\cite{googlewifi}. Interestingly, Google collect this WiFi data by crowdsourcing through an 'opt out' scheme in the Google Maps application\cite{googlewifi2} - this may not be possible in the case of this project ( as Google have used WiFi in a more assistive manner ), but it provides a good basis from which to approach the problem.
 
 \subsection{Paper: Indoor Location Using Trilateration Characteristics}\cite{cook2005indoor}
 
@@ -81,13 +85,13 @@ Contextually aware services are services that use data that pertains to the user
 
 \textit{ "any information that can be used to characterize the situation of entities (i.e., whether a person, place or object) that are considered relevant to the interaction between a user and an application, including the user and the application themselves." }\cite{abowd1999towards}
 
-Contextually aware services use 'sensors' to fetch this information - examples include location data, temperature, even the camera on your phone could be used as a sensor for contextual services\footnote{Consider how recent smartphones have software that stops the screen coming out of standby if it thinks it's in your pocket}.
+Contextually aware services use 'sensors' to fetch this information - examples include location data, temperature, even the camera on your phone could be used as a sensor for contextual services\footnote{Consider how recent smartphones have software that stops the screen coming out of standby if it thinks it is in your pocket}.
 
 \subsection{Estimote}
 
 A rapidly accelerating tech start up, Estimote provides 'beacons' using low-power Bluetooth in order to send an ID\footnote{\url{http://estimote.com/api/getting-started/intro-to-beacons.html}} to an Estimote enabled application - these can then be programmatically associated with locations, events, etc. and calculates its distance from the phone using RSSI ( the received signal strength ) inside it's own API, meaning that it can be used very effectively to provide location-based services with minimal effort. This is so far the the most prominent product in the market using the iBeacon base.
 
-Currently the major drawback of the Estimote is the price, which limits Estimote beacons / stickers to small buildings – covering an area such as King’s would be incredibly costly\footnote{\url{http://estimote.com/#jump-to-products}}, and any structural changes regarding the beacons would require significant effort to represent in an application developed to use Estimote. Another issue is that - as stated above - using RSSI to fetch location information can become very complex in a large building with lots of people in it (which would cause signal attenuation at different levels throughout the day). 
+Currently the major drawback of the Estimote is the price, which limits Estimote beacons / stickers to small buildings – covering an area such as King’s would be incredibly costly\footnote{\url{http://estimote.com/\#jump-to-products}}, and any structural changes regarding the beacons would require significant effort to represent in an application developed to use Estimote. Another issue is that - as stated above - using RSSI to fetch location information can become very complex in a large building with lots of people in it (which would cause signal attenuation at different levels throughout the day). 
 
 \subsection{Google Maps}
 
@@ -126,21 +130,20 @@ With this in mind, the choice of platform then comes down to which type of mobil
 
 The first point I considered whilst choosing a platform to use is the popularity of a platform - it makes sense to make the application available to the widest audience possible. In this case, Android dominates the market share, with 76.6\% of smartphones using the Android OS, compared to 19.7\% using iOS in the last quarter of 2014\cite{devicestats}.
 
-Another major concern when deciding upon device was the functionality provided by SDKs for both Android and iOS. When I reviewed the functionality for both devices, I was unsurprised to find that iOS does not allow access to lower-level functionality. What did surprise me is that statistics like wireless signal strength was amongst these lower level functions\cite{ios1}\cite{ios2}\footnote{Whilst StackOverflow is not preferable as a citable source, finding an admission from Apple on this point is very difficult}. This restriction of access was a major concern.
+Another major concern when deciding upon device was the functionality provided by SDKs for both Android and iOS. When I reviewed the functionality for both devices, I was unsurprised to find that iOS does not allow access to lower-level functionality. What did surprise me is that statistics like wireless signal strength was amongst these lower level functions\cite{ios1}\cite{ios2}\footnote{Whilst StackOverflow is not preferable as a citable source, finding an admission from Apple on this point is very difficult}. This restriction of access was a major concern\footnote{Unfortunately, later modifications to the application to circumvent issues with using signal strength meant this was no longer an issue}
 
 \section{Ethical Concerns}
 
 When developing an application that uses any form of personal information, there are definite privacy concerns. This is exascerbated when considering that there will be location information being returned to a server that is accessible by staff members. In this respect, it is important to not only adhere strictly to Data Protection laws, but also to consider the user's privacy and wellbeing. To this end, I need to make sure to collect the least amount of data I can, and to anonymise this data as much as possible in order to avoid sending any user details that would affect their privacy. Alongside this it would be prudent to secure the repository of any stored data against unauthorised users.
 
-Another ethical point to consider is the code that I use to create this application. I should take due care to create this app usingi only my own code, except where express permission has been granted. In the same vein, I must make sure to adhere to all licenses for any libraries which I use in development.
+Another ethical point to consider is the code that is used to create this application. I should take due care to create this app using only my own code, except where express permission has been granted. In the same vein, I must make sure to adhere to all licenses for any libraries which I use in development.
 
-\chapter{Requirements and Specification}
-The client end of this project consists of two parts - an Android application that can determine user location ( LOST ) and provide route-planning inside the building, whilst feeding data to the backend, which will store the data and provide functions to view it as information. To aid the mapping of the building, a second Android application will be built for wireless data collection ( FOUND ).
+\chapter{Requirements}
+The client end of this project consists of two parts - an Android application that can determine user location ( LOST ) and provide route-planning inside the building, whilst feeding data to the backend, which will store the data and provide functions to view it as information. Alongside this, I will develop a secondary Android application ( FOUND ) so that I can easily collect wireless data to test the application with. FOUND will not be available for users of the resulting software package for this project, however when considering possible extensions after the BSc report, FOUND would be an active component to allow for the easy mapping of a building in a bespoke software package.
 
-\section{LOST}
+\section{LOST - Android Application}
 
 \subsection{Functional Requirements}
-
 \begin{description}
 \item[F1] - The application will be able to retrieve the most recent SQLite database containing wireless access point location information upon startup.
 \item[F2] - The application will be able to accurately discern the user's location, using data provided by an SQLite database.
@@ -154,13 +157,75 @@ The client end of this project consists of two parts - an Android application th
 	\begin{description}
 	\item[F6.1] - Once the application regains internet access, it will send location data, and the MAC address of malfunctioning router to the backend.
 	\item[F6.2] - The user will be able to turn off this functionality.
+	\end{description}
+\end{description}
+\subsection{Non-functional Requirements}
+\begin{description}
+\item[NF1] - Application will not cause an 'ANR' ( app not responding ) error on any 'low-end' smartphone ( at time of writing, low end specifications are considered to be 1Ghz dual core processor and 768mb RAM\footnote{Figures created by comparing phone specifications at \url{http://www.phonearena.com/news/Affordable-not-cheap-15-best-low-cost-smartphones_id58696}}).
+\item[NF2] - Application will provide location accurate to within 20 feet.
+\item[NF3] - Application will use as little battery life as possible, using less than 5\% battery life within an hour.
+\item[NF4] - Application will minimise data usage, making sure not to post data back using mobile data.
+\item[NF5] - Application will not send data that can be used to identify the user, or any information that may be personal to the user / a breach of Data Protection laws.
+\end{description}
+
+\section{Backend}
+\subsection{Functional Requirements}
+\begin{description}
+\item[F1] - Backend will operate a RESTful API that will allow the mobile application to post data to the server
+\item[F2] - Backend will store POSTed data to an SQL database
+\item[F3] - Backend will be retrieve data from SQL database, and display to user as information
+\item[F4] - Backend will require user authentication to allow access to displayed data
+\item[F5] - Backend will be able to store wifi location database, and serve it to a mobile device
 \end{description}
 
 \subsection{Non-functional Requirements}
 
 \begin{description}
-
+\item[NF1] - Backend will provide an easily navigable user interface
+\item[NF2] - Backend will show data in an easily readable manner
 \end{description}
+
+\section{FOUND - Android Application}
+
+\subsection{Functional Requirements}
+
+\begin{description}
+\item[F1] - Application will scan local wifi access points
+\item[F2] - Application will insert the top access point into an SQLite database as a node, along with an edge connecting it to another node in the directed graph
+\end{description}
+
+\chapter{Design}
+The application is split into two parts - therefore it will be detailed as a whole product, before the design of each component is analysed individually. Generally, the backend and the frontend application work as their own components, with the only interaction between the two being fetching the database, and sending data from the application to the database; because of this, an agile development cycle will be used. 
+
+Further to this, a basic version of the Android application will be developed first, and an inital deployment of the backend, with the ability to receive data from the mobile application after that - from then, incremental additions will be made to either component, building for functionality first, then returning later for optimisation. 
+\newpage
+
+\section{Component Diagram}
+\centerline{\includegraphics[scale=0.6]{ComponentDiagram}}
+\newpage
+
+\section{LOST}
+
+The 'front end' of the project, the LOST application provides most of the functionality detailed in the earlier chapters of this report. In this section, I will go into more detail as to what each function will need to do in order to provide the outlined functionality. You will find a \nameref{UseCase}, along with wireframes for each aspect in the Appendix. For clarification, each 'view' in an Android Application is called an Activity.
+
+\subsection{Finding Location}
+
+This is one of the most critical aspects of the application, and also one of the most challenging as a great deal of consideration needs to be paid towards efficiency, accuracy, and precision - it will generally be more expensive in terms of resources, and in fact battery power, to increase the precision.
+
+In order to ascertain location, the application will need to perform a scan of nearby wireless access points. The MAC address and signal strength of each access point will be collected, and put in descending\footnote{Or considering how signal strengths are measure, ascending. Signal strength is measured in DBm and measure as negative figures. The 'quieter' a signal is, the weaker it is - therefore a signal strength of -10 is much more powerful than a signal strength of -80} order of strength.
+The original intention\footnote{Results of this will be detailed in the 'Implementation' section of this report.} at this point was to use actual signal strength figures to get the most precise location information, as done by Cook \textit{et al}\cite{cook2005indoor}. 
+
+To get this location information, the top three MAC addresses in the list would be used to filter the location database down to a single node, representing that location\footnote{Discussed further in the Databases section}. This location would then be displayed to the user, along with an option to refresh this ( performing another scan, incase the user doesn't think they are in the right location ). There will also be a button that allows the user to use their given location as the start or end point for route planning.
+
+\subsection{Route Planning}
+
+This function ties in with the location finding function of the application - the user will either be able to load it normally, or load it from the 'Location Finder' part of the application - if this is the case then either the 'to' or 'from' sections of the application will contain the user's location.
+
+Regardless of how the activity is accessed, there will be two drop down lists, allowing the user to select the start and end points. The application will translate these selections into nodes in the directed graph created from the location database, and perform Dijkstra's algorithm to find the shortest path between the two locations. The nodes traversed in this path are displayed on the next Activity to show the user the path they need to take.
+
+\subsection{Data Upload}
+
+This function will run at regular intervals in the background, regardless of whether the app is open, as the chances of the user having the app open all the time are very slim - an average app sessions lasts barely more than a minute\cite{Bohmer:2011:FAA:2037373.2037383}. 
 
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
@@ -176,7 +241,7 @@ The client end of this project consists of two parts - an Android application th
 
 
 \appendix
-%\include{Appendices/appendix}
+\include{Appendices/appendix}
 %\include{Appendices/UserGuide}
 %\include{Appendices/SourceCode}
 \end{document}
