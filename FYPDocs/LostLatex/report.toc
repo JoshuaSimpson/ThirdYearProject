@@ -31,7 +31,8 @@
 \contentsline {section}{\numberline {4.2}LOST}{16}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Finding Location}{16}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Route Planning}{16}{subsection.4.2.2}
-\contentsline {section}{Bibliography}{18}{chapter*.3}
-\contentsline {chapter}{\numberline {A}Extra Information}{19}{appendix.A}
-\contentsline {section}{\numberline {A.1}Use Case Diagram}{19}{section.A.1}
-\contentsline {section}{\numberline {A.2}Wireframes}{20}{section.A.2}
+\contentsline {subsection}{\numberline {4.2.3}Data Upload}{17}{subsection.4.2.3}
+\contentsline {section}{Bibliography}{19}{chapter*.3}
+\contentsline {chapter}{\numberline {A}Extra Information}{20}{appendix.A}
+\contentsline {section}{\numberline {A.1}Use Case Diagram}{20}{section.A.1}
+\contentsline {section}{\numberline {A.2}Wireframes}{21}{section.A.2}

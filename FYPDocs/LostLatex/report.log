@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  16 APR 2015 10:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  17 APR 2015 01:22
 entering extended mode
 **C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/report.tex
 (C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/report.tex
@@ -541,8 +541,12 @@ File: Diagrams/ComponentDiagram.png Graphic file (type png)
 Package pdftex.def Info: Diagrams/ComponentDiagram.png used on input line 204.
 (pdftex.def)             Requested size: 512.5187pt x 454.70226pt.
  [15 <C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/Diagrams/Compone
-ntDiagram.png>]
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.bbl [16]
+ntDiagram.png>] [16]
+
+Package natbib Warning: Citation `Bohmer:2011:FAA:2037373.2037383' on page 17 u
+ndefined on input line 228.
+
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.bbl [17]
 Underfull \hbox (badness 1242) in paragraph at lines 4--7
 []\OT1/lmr/m/n/10 Stack over-flow - i-phone sig-nal strength.  []$\OT1/lmtt/m/n
 /10 http : / / stackoverflow . com / questions /$
@@ -554,7 +558,7 @@ Underfull \hbox (badness 1546) in paragraph at lines 37--41
 /n/10 http : / / www . idc . com / prodserv /$
  []
 
-[17
+[18
 
 ]
 Underfull \hbox (badness 4531) in paragraph at lines 64--67
@@ -574,38 +578,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--87
 w . zdnet . com / article /$
  []
 
-) [18]
+) [19]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.t
 ex
 Appendix A.
-<Diagrams/UseCase.png, id=341, 935.495pt x 436.63126pt>
+<Diagrams/UseCase.png, id=346, 935.495pt x 436.63126pt>
 File: Diagrams/UseCase.png Graphic file (type png)
 
 <use Diagrams/UseCase.png>
 Package pdftex.def Info: Diagrams/UseCase.png used on input line 4.
 (pdftex.def)             Requested size: 374.19136pt x 174.6494pt.
- [19
+ [20
 
 
  <C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/Diagrams/UseCase.png
->]) [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 243.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 243.
+>]) [21]
 
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 247.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 247.
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.aux
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.a
 ux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 243.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 247.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 247.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: E374B7CD823BD57842A7C0A33E745168;1215.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 247.
  ) 
 Here is how much of TeX's memory you used:
- 8653 strings out of 495352
- 140559 string characters out of 3183049
+ 8656 strings out of 495352
+ 140615 string characters out of 3183049
  243905 words of memory out of 3000000
- 11613 multiletter control sequences out of 15000+200000
+ 11614 multiletter control sequences out of 15000+200000
  53236 words of font info for 42 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,8n,34p,1383b,450s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -619,9 +625,9 @@ lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/lm/lmtt8.pfb>
-Output written on report.pdf (24 pages, 454364 bytes).
+Output written on report.pdf (25 pages, 455853 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 103 named destinations out of 1000 (max. 500000)
+ 415 PDF objects out of 1000 (max. 8388607)
+ 105 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
