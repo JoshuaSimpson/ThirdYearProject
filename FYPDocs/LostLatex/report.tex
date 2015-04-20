@@ -221,11 +221,19 @@ To get this location information, the top three MAC addresses in the list would 
 
 This function ties in with the location finding function of the application - the user will either be able to load it normally, or load it from the 'Location Finder' part of the application - if this is the case then either the 'to' or 'from' sections of the application will contain the user's location.
 
-Regardless of how the activity is accessed, there will be two drop down lists, allowing the user to select the start and end points. The application will translate these selections into nodes in the directed graph created from the location database, and perform Dijkstra's algorithm to find the shortest path between the two locations. The nodes traversed in this path are displayed on the next Activity to show the user the path they need to take.
+Regardless of how the activity is accessed, there will be two drop down lists, allowing the user to select the start and end points. The application will translate these selections into nodes in the directed graph created from the location database, and perform Dijkstra's algorithm to find the shortest path between the two locations. The nodes traversed in this path are displayed in order on the next Activity to show the user the path they need to take as a step-by-step route. A possible extension on this once functionality has been implemented would be to have each step highlight green when the user reaches the associated location, however this would most likely be done through repetitive wireless scanning, so steps would need to be taken to ensure that this doesn't rapidly drain battery. 
 
 \subsection{Data Upload}
 
+<<<<<<< HEAD
+This function will run at regular intervals in the background, regardless of whether the app is open, as the chances of the user having the app open all the time are very slim - studies show that an average app sessions lasts barely more than a minute\cite{Bohmer:2011:FAA:2037373.2037383}. Because this will be a repeating task running in the background at any time, it is imperative that the task is threaded properly, so as to avoid blocking the main thread with what could potentially be a long task. 
+
+Also important is to consider how regularly the information is sent - if the information is sent too frequently it will be a needless waste of resources, and will leave the resulting data set far larger than it needs to be, but too little and the resulting data set will be insubstantial. It was decided that an interval of 15 minutes is appropriate, as it is frequent enough that people may have moved areas, but infrequent enough that it won't use too many resources. 
+
+
+=======
 This function will run at regular intervals in the background, regardless of whether the app is open, as the chances of the user having the app open all the time are very slim - an average app session lasts barely more than a minute\cite{Bohmer:2011:FAA:2037373.2037383}. 
+>>>>>>> 5c0b6d2f2bb3248116bd3618e10aa87cbc4100ee
 
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
