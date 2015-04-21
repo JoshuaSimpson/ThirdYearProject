@@ -227,9 +227,7 @@ Regardless of how the activity is accessed, there will be two drop down lists, a
 
 This function will run at regular intervals in the background, regardless of whether the app is open, as the chances of the user having the app open all the time are very slim - studies show that an average app sessions lasts barely more than a minute\cite{Bohmer:2011:FAA:2037373.2037383}. Because this will be a repeating task running in the background at any time, it is imperative that the task is threaded properly, so as to avoid blocking the main thread with what could potentially be a long task. 
 
-Also important is to consider how regularly the information is sent - if the information is sent too frequently it will be a needless waste of resources, and will leave the resulting data set far larger than it needs to be, but too little and the resulting data set will be insubstantial. It was decided that an interval of 15 minutes is appropriate, as it is frequent enough that people may have moved areas, but infrequent enough that it won't use too many resources. 
-
-This function will run at regular intervals in the background, regardless of whether the app is open, as the chances of the user having the app open all the time are very slim - an average app session lasts barely more than a minute\cite{Bohmer:2011:FAA:2037373.2037383}. 
+Also important is to consider how regularly the information is sent - if the information is sent too frequently it will be a needless waste of resources, and will leave the resulting data set far larger than it needs to be, but too little and the resulting data set will be insubstantial. It was decided that an interval of 15 minutes is appropriate, as it is frequent enough that people may have moved areas, but infrequent enough that it won't use too many resources.
 
 \section{Backend}
 
@@ -248,12 +246,51 @@ The server also needs to be able to retrieve the data it has stored and present 
 
 \subsection{Security}
 
-It is important that all the data on the server is only accessible by authorised users - this means that a login should be required to access the site provided by the backend, along with any databases / data sources that it utilises. Further to this, any data that is sent in should be completely anonymised - whilst this is mostly a function of the mobile application, it would be pertinent to maintain this vigilance in all areas of the project. An example of how to anonymise the data at the backend would be to make sure that no data regarding the origin of the data is stored beyond that which is expected. If it does need to be stored, then the same standard of security applied to the rest of the backend should also be applied to this data.
+It is important that all the data on the server is only accessible by authorised users - this means that a login should be required to access the site provided by the backend, along with any databases / data sources that it utilises. Further to this, any data that is sent in should be completely anonymised - whilst this is mostly a function of the mobile application, it would be pertinent to maintain this vigilance in all areas of the project. An example of how to anonymise the data at the backend would be to make sure that no data regarding the origin of the data is stored beyond that which is expected. If the aforementioned data does need to be stored, then the same standard of security applied to the rest of the backend should also be applied to this data.
 
-http://delivery.acm.org/10.1145/1170000/1164798/p84-astrain.pdf?ip=82.2.92.239&id=1164798&acc=ACTIVE%20SERVICE&key=BF07A2EE685417C5%2EAC4A495B30CCB9B0%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=501587811&CFTOKEN=25626225&__acm__=1429594999_a4d564333eaf6e66b69ee1412d0fa816
 
-http://ac.els-cdn.com/S0165011403000915/1-s2.0-S0165011403000915-main.pdf?_tid=b73d34b2-e7e7-11e4-9d30-00000aacb362&acdnat=1429594492_c7c07783eade35fe760b64ea905442f7
+\section{Databases}
 
+At the end of this product, there will only be two databases in use - the locations database served by the backend and used by the mobile application, and the database that will store the data uploaded by the mobile application. The structure of these databases needs to be clearly defined as early as possible, so as to avoid having to make structural changes during development. 
+
+\subsection{Locations Database}
+
+The locations database will comprise of two tables - Nodes, and Edges, and will allow for the building of a directed graph in-application that can be used to find the shortest path to a location.
+
+\subsubsection{Nodes}
+
+The nodes table will contain nodes that represent each location that has been mapped in Kings. Its fields will be: 
+
+\begin{description}
+\item[ID] - ID of node, stored as an integer
+\item[Name] - Name of location, stored as a string
+\item[MAC] - MAC address of the corresponding wireless access point\footnote{Originally three MAC addresses for precision, but reduced to one after encountering issues as mentioned in 'Implementation'} - stored as a string
+\end{description}
+
+\subsubsection{Edges}
+
+The edges table will contain edges that represent connections between nodes. Its fields will be:
+
+\begin{description}
+\item[ID] - ID of edge, stored as an integer
+\item[StartNode] - The ID of the node that the edge begins at, stored as an integer
+\item[EndNode] - The ID of the node that the edge ends at, stored as an integer
+\item[Weight] - The amount of time taken to get from the StartNode to the EndNode, stored as an integer.
+\item[Method] - Not definite, as could be implied by the weight, but the method used to get from one node to another ( either walking or taking the lift in the case of KCL ). Stored as a string. 
+\end{description}
+
+\subsection{User Data}
+
+This database will contain the data that has been uploaded as people have used the mobile app - the data contained in this database will vary from table to table, depending on the sort of data that we want to collect from the user. Because of this, we will define a couple of example databases, as the other possibilities for collected data are endless. 
+
+\subsubsection{Location Reporting}
+
+An example database showing the locations / facilities in Kings that are being used in Kings, demonstrating the usability of both crowd-sourcing data and contextually aware mobile applications. 
+
+\begin{description}
+\item[ID] - ID of information upload, mostly for indexing purposes. Stored as an integer.
+\item[Location] - A string showing where the user was when the data was uploaded. Stored as a string.
+\item[Time] - Time of data recording ( which may well be different from the time of upload )
 
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
