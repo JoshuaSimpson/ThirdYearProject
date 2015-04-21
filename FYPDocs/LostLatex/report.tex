@@ -225,15 +225,35 @@ Regardless of how the activity is accessed, there will be two drop down lists, a
 
 \subsection{Data Upload}
 
-<<<<<<< HEAD
 This function will run at regular intervals in the background, regardless of whether the app is open, as the chances of the user having the app open all the time are very slim - studies show that an average app sessions lasts barely more than a minute\cite{Bohmer:2011:FAA:2037373.2037383}. Because this will be a repeating task running in the background at any time, it is imperative that the task is threaded properly, so as to avoid blocking the main thread with what could potentially be a long task. 
 
 Also important is to consider how regularly the information is sent - if the information is sent too frequently it will be a needless waste of resources, and will leave the resulting data set far larger than it needs to be, but too little and the resulting data set will be insubstantial. It was decided that an interval of 15 minutes is appropriate, as it is frequent enough that people may have moved areas, but infrequent enough that it won't use too many resources. 
 
-
-=======
 This function will run at regular intervals in the background, regardless of whether the app is open, as the chances of the user having the app open all the time are very slim - an average app session lasts barely more than a minute\cite{Bohmer:2011:FAA:2037373.2037383}. 
->>>>>>> 5c0b6d2f2bb3248116bd3618e10aa87cbc4100ee
+
+\section{Backend}
+
+The backend of the project, the web server will receive and present crowd-sourced data to authorised individuals. As a secondary function, it will also serve the locations database up to the mobile application - allowing for the storage and retrieval of the latest version incase the architecture of the building changes; either physically ( which is unlikely ), or logically ( where wireless access points are added, changed, or removed ). 
+
+
+\subsection{Public API - Receiving data, and serving the location database}
+
+The backend will need to present an open API, that the mobile application can POST data to. Once data has been POST'ed to these API endpoints, the server will need to validate the data before finally storing it. It is important that the API isn't subject to blocking - whilst efforts will be made to stagger uploads from the user end \footnote{Spreading operations instead of having the server deal with all of them at once}, it is important to make sure that the server deals with them all in a timely manner, and can handle lots of operations simultaneously.
+
+Another function of the API will be to receive requests for the locations database, and serve that database to the mobile application - usually for the first startup of the application, but also if any data in the database changes.  
+
+\subsection{Data Presentation}
+
+The server also needs to be able to retrieve the data it has stored and present it to an authorised user in a way that converts it from \textit{data} into \textit{information} - this means presenting it in a manner that is easy to read, and provides some function to the user. Originally, it should be able to just display the data to the user in a list ( where an access point has a fault / when people are in a location ) - but this should be expanded on, providing an analysis of the data and providing it in different forms, such as charts showing the usage of an area over a particular amount of time. An important extension to this would be to provide the user with a way to export the dataset out, so that they can generate information suited to their own needs.
+
+\subsection{Security}
+
+It is important that all the data on the server is only accessible by authorised users - this means that a login should be required to access the site provided by the backend, along with any databases / data sources that it utilises. Further to this, any data that is sent in should be completely anonymised - whilst this is mostly a function of the mobile application, it would be pertinent to maintain this vigilance in all areas of the project. An example of how to anonymise the data at the backend would be to make sure that no data regarding the origin of the data is stored beyond that which is expected. If it does need to be stored, then the same standard of security applied to the rest of the backend should also be applied to this data.
+
+
+
+
+
 
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}

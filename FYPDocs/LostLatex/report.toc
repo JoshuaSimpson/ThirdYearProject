@@ -32,7 +32,11 @@
 \contentsline {subsection}{\numberline {4.2.1}Finding Location}{16}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Route Planning}{16}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Data Upload}{17}{subsection.4.2.3}
-\contentsline {section}{Bibliography}{19}{chapter*.3}
-\contentsline {chapter}{\numberline {A}Extra Information}{20}{appendix.A}
-\contentsline {section}{\numberline {A.1}Use Case Diagram}{20}{section.A.1}
-\contentsline {section}{\numberline {A.2}Wireframes}{21}{section.A.2}
+\contentsline {section}{\numberline {4.3}Backend}{17}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Public API - Receiving data, and serving the location database}{17}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Data Presentation}{18}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Security}{18}{subsection.4.3.3}
+\contentsline {section}{Bibliography}{20}{chapter*.3}
+\contentsline {chapter}{\numberline {A}Extra Information}{21}{appendix.A}
+\contentsline {section}{\numberline {A.1}Use Case Diagram}{21}{section.A.1}
+\contentsline {section}{\numberline {A.2}Wireframes}{22}{section.A.2}
