@@ -33,7 +33,7 @@
 \contentsline {subsection}{\numberline {4.2.2}Route Planning}{16}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Data Upload}{17}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}Backend}{17}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Public API - Receiving data, and serving the location database}{17}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Public API - Receiving data, and serving the location database}{18}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Data Presentation}{18}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Security}{18}{subsection.4.3.3}
 \contentsline {section}{Bibliography}{20}{chapter*.3}
