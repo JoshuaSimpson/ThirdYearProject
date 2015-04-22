@@ -224,6 +224,10 @@ This function ties in with the location finding function of the application - th
 
 Regardless of how the activity is accessed, there will be two drop down lists, allowing the user to select the start and end points. The application will translate these selections into nodes in the directed graph created from the location database, and perform Dijkstra's algorithm to find the shortest path between the two locations. The nodes traversed in this path are displayed in order on the next Activity to show the user the path they need to take as a step-by-step route. A possible extension on this once functionality has been implemented would be to have each step highlight green when the user reaches the associated location, however this would most likely be done through repetitive wireless scanning, so steps would need to be taken to ensure that this doesn't rapidly drain battery. 
 
+\subsubsection{Choosing an algorithm}
+
+Because of the limited power available to a mobile device, alongside the short attention span of users\footnote{And indeed Google's limit before declaring an application unresponsive}, it was important to select the most efficient algorithm for the problem being faced. Another algorithm which could have been used in this instance would have been Bellman-Ford's algorithm. After research into, and a comparison of, the two algorithms it is shown that Dijkstra's algorithm is much more efficient than Bellman-Ford's\cite{thippeswamystudy}, with the latter being used only in the case of directed graphs with negative edge weights ( a situation that Dijkstra's algorithm is not equipped to deal with ) - as there are no negative edge weights when travelling from one area to another, Dijkstra's algorithm is clearly the best choice.
+
 \subsection{Recognising access point faults}
 
 One of the chosen forms of data to upload is faults with access points, as this shows a useful application of the concepts that form the foundation of this project. In order to retrieve this data, the mobile application needs to be able to recognise when it is in Kings, when it is using a Kings wireless access point, and when that access point is having issue. However, there is an obvious issue when trying to upload data about malfunctioning access points - the lack of internet. To solve this, we need to add functionality for caching data.
@@ -346,7 +350,7 @@ In this section I will provide an analysis of each class in the application, alo
 
 \subsubsection{Activity: Main Menu}
 
-The first activity a user will see upon opening the application - at first glance this activity just stands as a gateway to the rest of the application, but as soon as the application has started up, it retrieves the latest version of the locations database, and then opens that database to build a directed graph, using the DiGraph class.
+The first activity a user will see upon opening the application - at first glance this activity just stands as a gateway to the rest of the application, but as soon as the application has started up, it retrieves the latest version of the locations database, and then opens that database to build a directed graph, using the DiGraph class. Finally, it kickstarts the background service that pushes data to the backend.
 
 It was important to make sure that this operation in the background ran in a seperate thread to the GUI, or there would have been issues with blocking whilst the operation was carried out ( problems that would become more prevalent the larger the database became ).
 
@@ -372,10 +376,66 @@ nodeIDList.get(0);
 would be the same as
 
 \begin{lstlisting}[frame=single]
-nodeLocationList("The first recorded location");
+nodeMAC.get("MAC address of the first Node");
 \end{lstlisting}
 
 The problem with this approach is that when originally adding each Node to the DiGraph, the operation is now much more expensive to perform, and there is exponentially more space used per Node - however the ability to easily retrieve each node offsets this initally expensive operation, and the memory usage is still negligible in terms of the memory available to the device.
+
+\subsubsection{Activity: Location Finder}
+
+When this activity is opened, a wifi scan is immediately performed, and a loading screen shown until the Activity has received and processed the results. The results are returned in a <ScanResults> List, which is then ordered using a comparator, according to signal strength ( from the best quality to the lowest quality ). The top result is taken, and its MAC address used to find the Node relevant to that user's location in the DiGraph. Finally, the user's location is extrapolated by getting the 'location' variable from the Node.
+
+The original plan for this class involved using the top three access points to get a much more precise estimate of the user's location using trilateration. Unfortunately, because of the variation of signal strengths at any given point ( a figure that can even be affected by another person's body ), the top three MAC addresses in any given place can change constantly. To get an accurate result would require having populated the database with every possible variation for every area, resulting in an exponential increase in the amount of data that needs to be taken ( and therefore Nodes required ). 
+
+Once this activity has pinpointed your location, the loading screen will be replaced by that location, along with a button to refresh the location ( which will start another scan ), and a button that will use the current location as the start point in the route planning activity.
+
+\subsubsection{Activity: Route Planning}
+
+This activity provides two drop down lists - each populated with all of the locations that are currently present in the directed graph. The user can select a start point, and an end point and once the 'Find Route' button has been pressed, the activity fetches the relevant nodes for both locations ( by using their position in the drop down lists as the node ID, and fetching from the nodeIDList ). It then applies Dijkstra's algorithm to the start node to find the shortest distance to all of the nodes in the directed graph, before using the second node as an argument to find a path between the two.
+
+The resulting path is then displayed in the next activity - each step in the path is used to create an 'inflatable' - inflatables allow for the dynamic creation of activities by using the same small section of the layout and filling it with changeable content.
+
+\subsubsection{Class: Dijkstra}
+
+Dijkstra's algorithm is the chosen shortest path algorithm for this project, and provides all of the functionality behind the route planning activity. The implementation of Dijkstra's algorithm written for this project will take a directed graph object upon instantiation of a 'Dijkstra' object:
+
+\begin{lstlisting}[frame=single]
+DiGraph dg = MainActivity.myGraph;
+Dijkstra pathFinder = new Dijkstra(MainActivity.myGraph);
+\end{lstlisting}
+
+To run the algorithm, it is passed a source node:
+
+\begin{lstlisting}[frame=single]
+pathFinder.execute(dg.getNodeFromID(start.getSelectedItemPosition() + 1));
+\end{lstlisting}
+
+This finds the shortest path for all nodes from that source node, filling out the 'predecessors' map variable with pairs containing the node, then the node preceding it. To retrieve a path, a LinkedList is generated by stepping backwards from a given end node:
+
+\begin{lstlisting}[frame=single]
+LinkedList<Node> pathList = pathFinder.getPath(dg.getNodeFromID
+	(end.getSelectedItemPosition() + 1));
+\end{lstlisting}
+
+\begin{lstlisting}[frame=single]
+public LinkedList<Node> getPath(Node target) {
+        LinkedList<Node> path = new LinkedList<Node>();
+        Node step = target;
+        // check if a path exists
+        if (predecessors.get(step) == null) {
+            return path;
+        }
+        path.add(step);
+        while (predecessors.get(step) != null) {
+            step = predecessors.get(step);
+            path.add(step);
+        }
+        // Put it into the correct order
+        Collections.reverse(path);
+        return path;
+    }
+\end{lstlisting}
+
 
 
 %\include{Chapters/Body}

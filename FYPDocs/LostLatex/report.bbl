@@ -37,6 +37,17 @@ B~Cook, G~Buckberry, I~Scowcroft, J~Mitchell, and T~Allen.
 \newblock Indoor location using trilateration characteristics.
 \newblock In {\em Proc. London Communications Symposium}, pages 147--150, 2005.
 
+\bibitem{androidstats}
+Google.
+\newblock Android platform version statistics.
+\newblock
+  \url{https://developer.android.com/about/dashboards/index.html?utm_source=suzunone}.
+
+\bibitem{appcompat}
+Google.
+\newblock Android support libraries.
+\newblock \url{http://developer.android.com/tools/support-library/index.html}.
+
 \bibitem{googlewifi}
 Google.
 \newblock Configure access points with google location service.
@@ -86,6 +97,11 @@ J.~Schiller and A.~Voisard.
 \newblock {\em Location-Based Services}.
 \newblock The Morgan Kaufmann Series in Data Management Systems. Elsevier
   Science, 2004.
+
+\bibitem{thippeswamystudy}
+K~Thippeswamy, J~Hanumanthappa, and DH~Manjaiah.
+\newblock A study on contrast and comparison between bellman-ford algorithm and
+  dijkstra’s algorithm.
 
 \bibitem{googlewifi2}
 Steven~J. Vaughan-Nichols.
