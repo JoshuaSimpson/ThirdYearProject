@@ -27,8 +27,6 @@ public class MainActivity extends Activity {
         FaultDatabaseHelper fdh = new FaultDatabaseHelper(this);
 
         if (!sharedPrefs.contains("FirstTime")) {
-            Log.d("Cool, make a thing", "NOW");
-
             ed.putBoolean("FirstTime", true);
             ed.putBoolean("Location", true);
             ed.putBoolean("Wireless", true);
@@ -36,7 +34,7 @@ public class MainActivity extends Activity {
             Downloader dl = new Downloader();
             dl.execute(this.getFilesDir().toString());
             try {
-                //Just delays anything else running until we know the file is downloaded. Hacky, but it works
+                //Just delays anything else running until we know the file is downloaded
                 dl.get();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -73,13 +71,9 @@ public class MainActivity extends Activity {
 
                 for (int i = 1; i < myGraph.adjSizeTest(); i++) {
                     if (myGraph.getNodeFromID(i) == null) {
-                        Log.d("Whoops", "A daisy");
-                        Log.d("REALLY COME ON DIGRAPH", "" + myGraph.getAdjacency(myGraph.getNodeFromID(i)).size());
                     } else if (myGraph.getAdjacency(myGraph.getNodeFromID(i)).size() == 0) {
-                        Log.d("We have an outlier", "It's node: " + i);
                     }
                 }
-                Log.d("WHAT THE SHIT", "" + myGraph.getEdgeCount());
             }
         }).run();
 
