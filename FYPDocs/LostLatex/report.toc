@@ -21,8 +21,8 @@
 \contentsline {section}{\numberline {3.1}LOST - Android Application}{11}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Functional Requirements}{11}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Non-functional Requirements}{12}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Backend}{12}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Functional Requirements}{12}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.2}Backend}{13}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Functional Requirements}{13}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Non-functional Requirements}{13}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}FOUND - Android Application}{13}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Functional Requirements}{13}{subsection.3.3.1}
@@ -31,15 +31,30 @@
 \contentsline {section}{\numberline {4.2}LOST}{16}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Finding Location}{16}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Route Planning}{16}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Data Upload}{17}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Backend}{17}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Public API - Receiving data, and serving the location database}{17}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.2.3}Recognising access point faults}{17}{subsection.4.2.3}
+\contentsline {subsubsection}{Caching Data}{17}{section*.3}
+\contentsline {subsection}{\numberline {4.2.4}Data Upload}{17}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Backend}{18}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Public API - Receiving data, and serving the location database}{18}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Data Presentation}{18}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Security}{18}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}Databases}{18}{section.4.4}
+\contentsline {subsection}{\numberline {4.3.3}Security}{19}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Databases}{19}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Locations Database}{19}{subsection.4.4.1}
-\contentsline {subsubsection}{Nodes}{19}{section*.3}
-\contentsline {subsubsection}{Edges}{19}{section*.4}
-\contentsline {subsection}{\numberline {4.4.2}User Data}{19}{subsection.4.4.2}
-\contentsline {subsubsection}{}{20}{section*.5}
-\contentsline {section}{Bibliography}{22}{chapter*.6}
+\contentsline {subsubsection}{Nodes}{19}{section*.4}
+\contentsline {subsubsection}{Edges}{20}{section*.5}
+\contentsline {subsection}{\numberline {4.4.2}User Data}{20}{subsection.4.4.2}
+\contentsline {subsubsection}{Location Reporting}{20}{section*.6}
+\contentsline {subsubsection}{Access Point Recording}{21}{section*.7}
+\contentsline {chapter}{\numberline {5}Implementation}{22}{chapter.5}
+\contentsline {section}{\numberline {5.1}LOST}{22}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Toolkit}{22}{subsection.5.1.1}
+\contentsline {subsubsection}{Languages Used}{22}{section*.8}
+\contentsline {subsubsection}{Development Environment}{22}{section*.9}
+\contentsline {subsubsection}{Libraries Used}{23}{section*.10}
+\contentsline {subsection}{\numberline {5.1.2}Component Analysis}{23}{subsection.5.1.2}
+\contentsline {subsubsection}{Activity: Main Menu}{23}{section*.11}
+\contentsline {subsubsection}{Class: DiGraph}{23}{section*.12}
+\contentsline {section}{Bibliography}{26}{chapter*.13}
+\contentsline {chapter}{\numberline {A}Extra Information}{27}{appendix.A}
+\contentsline {section}{\numberline {A.1}Use Case Diagram}{27}{section.A.1}
+\contentsline {section}{\numberline {A.2}Wireframes}{28}{section.A.2}

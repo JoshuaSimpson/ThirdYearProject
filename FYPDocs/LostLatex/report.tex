@@ -139,7 +139,7 @@ When developing an application that uses any form of personal information, there
 Another ethical point to consider is the code that is used to create this application. I should take due care to create this app using only my own code, except where express permission has been granted. In the same vein, I must make sure to adhere to all licenses for any libraries which I use in development.
 
 \chapter{Requirements}
-The client end of this project consists of two parts - an Android application that can determine user location ( LOST ) and provide route-planning inside the building, whilst feeding data to the backend, which will store the data and provide functions to view it as information. Alongside this, I will develop a secondary Android application ( FOUND ) so that I can easily collect wireless data to test the application with. FOUND will not be available for users of the resulting software package for this project, however when considering possible extensions after the BSc report, FOUND would be an active component to allow for the easy mapping of a building in a bespoke software package.
+The client end of this project consists of two parts - an Android application that can determine user location ( LOST ) and provide route-planning inside the building, whilst feeding data to the backend, which will store the data and provide functions to view it as information. During implementation, I later developed a secondary Android application ( FOUND ) so that I could easily collect wireless data to test the application with. FOUND will not be available for users of the resulting software package for this project, however when considering possible extensions after the BSc report, FOUND would be an active component to allow for the easy mapping of a building in a bespoke software package. Because of the late addition of FOUND to the project, I will cover it briefly in Design, but give an in-depth analysis of the application in the Implementation section of this report.
 
 \section{LOST - Android Application}
 
@@ -166,6 +166,7 @@ The client end of this project consists of two parts - an Android application th
 \item[NF3] - Application will use as little battery life as possible, using less than 5\% battery life within an hour.
 \item[NF4] - Application will minimise data usage, making sure not to post data back using mobile data.
 \item[NF5] - Application will not send data that can be used to identify the user, or any information that may be personal to the user / a breach of Data Protection laws.
+\item[NF6] - Application will be usable on android versions 4.0.0 upwards, covering more than 90\% of android devices\cite{androidstats}.
 \end{description}
 
 \section{Backend}
@@ -197,7 +198,7 @@ The client end of this project consists of two parts - an Android application th
 \chapter{Design}
 The application is split into two parts - therefore it will be detailed as a whole product, before the design of each component is analysed individually. Generally, the backend and the frontend application work as their own components, with the only interaction between the two being fetching the database, and sending data from the application to the database; because of this, an agile development cycle will be used. 
 
-Further to this, a basic version of the Android application will be developed first, and an inital deployment of the backend, with the ability to receive data from the mobile application after that - from then, incremental additions will be made to either component, building for functionality first, then returning later for optimisation. 
+Further to this, a basic version of the Android application will be developed first, followed by an inital deployment of the backend, with the ability to receive data from the mobile application after that - from then, incremental additions will be made to either component, building for functionality first, then returning later for optimisation. 
 \newpage
 
 \section{Component Diagram}
@@ -223,6 +224,14 @@ This function ties in with the location finding function of the application - th
 
 Regardless of how the activity is accessed, there will be two drop down lists, allowing the user to select the start and end points. The application will translate these selections into nodes in the directed graph created from the location database, and perform Dijkstra's algorithm to find the shortest path between the two locations. The nodes traversed in this path are displayed in order on the next Activity to show the user the path they need to take as a step-by-step route. A possible extension on this once functionality has been implemented would be to have each step highlight green when the user reaches the associated location, however this would most likely be done through repetitive wireless scanning, so steps would need to be taken to ensure that this doesn't rapidly drain battery. 
 
+\subsection{Recognising access point faults}
+
+One of the chosen forms of data to upload is faults with access points, as this shows a useful application of the concepts that form the foundation of this project. In order to retrieve this data, the mobile application needs to be able to recognise when it is in Kings, when it is using a Kings wireless access point, and when that access point is having issue. However, there is an obvious issue when trying to upload data about malfunctioning access points - the lack of internet. To solve this, we need to add functionality for caching data.
+
+\subsubsection{Caching Data}
+
+Because there will be times when collected data can not be sent back to the server ( either through malfunction or lack of connection ), it is important to keep the data - making sure it is properly timestamped for when it is uploaded - and then upload it when a connection becomes available again. An important problem to consider here is that data may become irrelevant if it is uploaded after too long a period of time, so it is worth looking into functions that clear items of a certain age out of the cache. 
+
 \subsection{Data Upload}
 
 This function will run at regular intervals in the background, regardless of whether the app is open, as the chances of the user having the app open all the time are very slim - studies show that an average app sessions lasts barely more than a minute\cite{Bohmer:2011:FAA:2037373.2037383}. Because this will be a repeating task running in the background at any time, it is imperative that the task is threaded properly, so as to avoid blocking the main thread with what could potentially be a long task. 
@@ -236,7 +245,7 @@ The backend of the project, the web server will receive and present crowd-source
 
 \subsection{Public API - Receiving data, and serving the location database}
 
-The backend will need to present an open API, that the mobile application can POST data to. Once data has been POST'ed to these API endpoints, the server will need to validate the data before finally storing it. It is important that the API isn't subject to blocking - whilst efforts will be made to stagger uploads from the user end \footnote{Spreading operations instead of having the server deal with all of them at once}, it is important to make sure that the server deals with them all in a timely manner, and can handle lots of operations simultaneously.
+The backend will need to present a RESTful API, that the mobile application can POST data to. Once data has been POST'ed to these API endpoints, the server will need to validate the data before finally storing it. It is important that the API isn't subject to blocking - whilst efforts will be made to stagger uploads from the user end \footnote{Spreading operations instead of having the server deal with all of them at once}, it is important to make sure that the server deals with them all in a timely manner, and can handle lots of operations simultaneously.
 
 Another function of the API will be to receive requests for the locations database, and serve that database to the mobile application - usually for the first startup of the application, but also if any data in the database changes.  
 
@@ -290,7 +299,84 @@ An example database showing the locations / facilities in Kings that are being u
 \begin{description}
 \item[ID] - ID of information upload, mostly for indexing purposes. Stored as an integer.
 \item[Location] - A string showing where the user was when the data was uploaded. Stored as a string.
-\item[Time] - Time of data recording ( which may well be different from the time of upload )
+\item[Time] - Date / Time that data is recorded ( which may well be different from the time of upload ), stored as a string.
+\end{description}
+\newpage
+
+\subsubsection{Access Point Recording}
+\begin{description}
+\item[ID] - ID of information upload, mostly for indexing purposes. Stored as an integer.
+\item[MAC] - MAC address of reported access point. Stored as a string.
+\item[Location] - Location of issue. Stored as a string.
+\item[Time] - Date / Time that data is recorded. Stored as a string.
+\item[Notes] - Notes about the issue - to be used by users of the backend. Stored as a string.
+\item[Time uploaded] - The time that the data was pushed to the server. Stored as a string.
+\end{description}
+
+\chapter{Implementation}
+
+In this section I will cover the implementation of the various parts of the project in greater detail, explaining the various components that make up these parts, and the choices behind them.
+
+\section{LOST}
+
+\subsection{Toolkit}
+
+\subsubsection{Languages Used}
+As an Android application, LOST was written almost completely in Java, using XML for layout files and SQL to manage the database. Whilst there is the option to use C / C++ to write directly for the Linux operating system that Android is based on, it is not recommended by Google.
+
+\subsubsection{Development Environment}
+
+When I started developing LOST, I was using Eclipse - however about a month in I switched from Eclipse to IntelliJ for several reasons. Eclipse seemed to be inherently bug-ridden, requiring a restart frequently which was disruptive to work-flow. Alongside this, IntelliJ made much better use of available plugins - including plugins that provided great Git integration, which I used for version control. 
+
+Whilst developing, each build was tested on two Android phones - one older, now low-end phone, and one much more recent high end phone, providing a good analysis of application performance over different devices.
+
+\subsubsection{Libraries Used}
+
+Whilst developing LOST, I used three different libraries - two of which were critical to the implementation of the application, and a third which provided ease of use whilst developing. 
+
+The first library used was the Google Play App Compatibility support library\cite{appcompat} - this library allows developers to use Android components on older devices that have been introduced in newer implementations of the Android operating system, providing greater coverage and compatibility. 
+
+The second library I used was the Apache Commons library, which provided functionality to perform the network operations necessary to upload data to the server - most importantly it allowed for the crafting and delivery of HTTP POST requests.
+
+The third library was the SQLiteAssetHelper library, which provided an extension to the SQLite functionality already included in the Android API. It searches for database files in all the directories that assets would normally be put in, and allowed easy manipulation of databases across different devices.
+
+\subsection{Component Analysis}
+
+In this section I will provide an analysis of each class in the application, along with the functions that are performed within each activity.
+
+\subsubsection{Activity: Main Menu}
+
+The first activity a user will see upon opening the application - at first glance this activity just stands as a gateway to the rest of the application, but as soon as the application has started up, it retrieves the latest version of the locations database, and then opens that database to build a directed graph, using the DiGraph class.
+
+It was important to make sure that this operation in the background ran in a seperate thread to the GUI, or there would have been issues with blocking whilst the operation was carried out ( problems that would become more prevalent the larger the database became ).
+
+\subsubsection{Class: DiGraph} 
+
+This class is critical to the function of the application - with all of the location based functions in the application using stored in an object of this class. The DiGraph class uses custom made Node and Edge classes to create a directed graph within the application, allowing for the later implementation of Dijkstra's algorithm. Each Node represents a location within Kings, with each Edge representing a connection between those two locations.
+
+One of the most critical aspects of the class is the global variable that forms its adjacency list, details each Node's adjacent Nodes, and the Edges that connect them. Finding a data structure in which to store these three pieces of information, whilst also making them easily retrievable was difficult - eventually a HashMap within a HashMap was used. 
+
+In order to allow for the easy retrieval of nodes using different identifying factors, it was necessary to implement a rough type of custom indexing, which involved taking the Nodes that were in the adjacency list and creating Maps for them for any data type that would be needed to call a Node. An example would be:
+
+\begin{lstlisting}[frame=single]
+public static Map<Integer, Node> nodeIDList;
+public static Map<String, Node> nodeLocationList;
+public static Map<String, Node> nodeMAC;  
+\end{lstlisting}
+
+Each map in the above code stores a seperate copy of the list of Nodes, with whichever data is used to find it using the .get() method. For example, using 
+
+\begin{lstlisting}[frame=single]
+nodeIDList.get(0);
+\end{lstlisting}
+would be the same as
+
+\begin{lstlisting}[frame=single]
+nodeLocationList("The first recorded location");
+\end{lstlisting}
+
+The problem with this approach is that when originally adding each Node to the DiGraph, the operation is now much more expensive to perform, and there is exponentially more space used per Node - however the ability to easily retrieve each node offsets this initally expensive operation, and the memory usage is still negligible in terms of the memory available to the device.
+
 
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
