@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k+kd}{public} \PYGdefault{k+kt}{void} \PYGdefault{n+nf}{onReceive}\PYGdefault{o}{(}\PYGdefault{n}{Context} \PYGdefault{n}{c}\PYGdefault{o}{,} \PYGdefault{n}{Intent} \PYGdefault{n}{intent}\PYGdefault{o}{)} \PYGdefault{o}{\PYGdefaultZob{}}
+            \PYGdefault{n}{unregisterReceiver}\PYGdefault{o}{(}\PYGdefault{k}{this}\PYGdefault{o}{);}
+            \PYGdefault{k}{new} \PYGdefault{n}{Thread}\PYGdefault{o}{(}\PYGdefault{k}{new} \PYGdefault{n}{Runnable}\PYGdefault{o}{()} \PYGdefault{o}{\PYGdefaultZob{}}
+            	\PYGdefault{o}{....}
+\PYGdefault{n}{SystemClock}\PYGdefault{o}{.}\PYGdefault{n+na}{sleep}\PYGdefault{o}{(}\PYGdefault{l+m+mi}{900000}\PYGdefault{o}{);}
+\PYGdefault{n}{registerReceiver}\PYGdefault{o}{(}\PYGdefault{n}{scanReceiver}\PYGdefault{o}{,}
+	\PYGdefault{k}{new} \PYGdefault{n}{IntentFilter}\PYGdefault{o}{(}\PYGdefault{n}{WifiManager}\PYGdefault{o}{.}\PYGdefault{n+na}{SCAN\PYGdefaultZus{}RESULTS\PYGdefaultZus{}AVAILABLE\PYGdefaultZus{}ACTION}\PYGdefault{o}{));}
+\PYGdefault{o}{\PYGdefaultZcb{}.}\PYGdefault{n+na}{start}\PYGdefault{o}{();}
+\end{Verbatim}

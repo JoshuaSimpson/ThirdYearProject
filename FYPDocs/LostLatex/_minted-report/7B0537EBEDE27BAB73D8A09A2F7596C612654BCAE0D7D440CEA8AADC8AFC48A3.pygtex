@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k+kd}{public} \PYGdefault{n}{LinkedList}\PYGdefault{o}{\PYGdefaultZlt{}}\PYGdefault{n}{Node}\PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n+nf}{getPath}\PYGdefault{o}{(}\PYGdefault{n}{Node} \PYGdefault{n}{target}\PYGdefault{o}{)} \PYGdefault{o}{\PYGdefaultZob{}}
+        \PYGdefault{n}{LinkedList}\PYGdefault{o}{\PYGdefaultZlt{}}\PYGdefault{n}{Node}\PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{path} \PYGdefault{o}{=} \PYGdefault{k}{new} \PYGdefault{n}{LinkedList}\PYGdefault{o}{\PYGdefaultZlt{}}\PYGdefault{n}{Node}\PYGdefault{o}{\PYGdefaultZgt{}();}
+        \PYGdefault{n}{Node} \PYGdefault{n}{step} \PYGdefault{o}{=} \PYGdefault{n}{target}\PYGdefault{o}{;}
+        \PYGdefault{c+c1}{// Check if a path exists}
+        \PYGdefault{k}{if} \PYGdefault{o}{(}\PYGdefault{n}{predecessors}\PYGdefault{o}{.}\PYGdefault{n+na}{get}\PYGdefault{o}{(}\PYGdefault{n}{step}\PYGdefault{o}{)} \PYGdefault{o}{==} \PYGdefault{k+kc}{null}\PYGdefault{o}{)} \PYGdefault{o}{\PYGdefaultZob{}}
+            \PYGdefault{k}{return} \PYGdefault{n}{path}\PYGdefault{o}{;}
+        \PYGdefault{o}{\PYGdefaultZcb{}}
+        \PYGdefault{n}{path}\PYGdefault{o}{.}\PYGdefault{n+na}{add}\PYGdefault{o}{(}\PYGdefault{n}{step}\PYGdefault{o}{);}
+        \PYGdefault{k}{while} \PYGdefault{o}{(}\PYGdefault{n}{predecessors}\PYGdefault{o}{.}\PYGdefault{n+na}{get}\PYGdefault{o}{(}\PYGdefault{n}{step}\PYGdefault{o}{)} \PYGdefault{o}{!=} \PYGdefault{k+kc}{null}\PYGdefault{o}{)} \PYGdefault{o}{\PYGdefaultZob{}}
+            \PYGdefault{n}{step} \PYGdefault{o}{=} \PYGdefault{n}{predecessors}\PYGdefault{o}{.}\PYGdefault{n+na}{get}\PYGdefault{o}{(}\PYGdefault{n}{step}\PYGdefault{o}{);}
+            \PYGdefault{n}{path}\PYGdefault{o}{.}\PYGdefault{n+na}{add}\PYGdefault{o}{(}\PYGdefault{n}{step}\PYGdefault{o}{);}
+        \PYGdefault{o}{\PYGdefaultZcb{}}
+        \PYGdefault{c+c1}{// Put it into the correct order}
+        \PYGdefault{n}{Collections}\PYGdefault{o}{.}\PYGdefault{n+na}{reverse}\PYGdefault{o}{(}\PYGdefault{n}{path}\PYGdefault{o}{);}
+        \PYGdefault{k}{return} \PYGdefault{n}{path}\PYGdefault{o}{;}
+    \PYGdefault{o}{\PYGdefaultZcb{}}
+\end{Verbatim}

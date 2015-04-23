@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{n}{LinkedList}\PYGdefault{o}{\PYGdefaultZlt{}}\PYGdefault{n}{Node}\PYGdefault{o}{\PYGdefaultZgt{}} \PYGdefault{n}{pathList} \PYGdefault{o}{=} \PYGdefault{n}{pathFinder}\PYGdefault{o}{.}\PYGdefault{n+na}{getPath}\PYGdefault{o}{(}\PYGdefault{n}{dg}\PYGdefault{o}{.}\PYGdefault{n+na}{getNodeFromID}
+	\PYGdefault{o}{(}\PYGdefault{n}{end}\PYGdefault{o}{.}\PYGdefault{n+na}{getSelectedItemPosition}\PYGdefault{o}{()} \PYGdefault{o}{+} \PYGdefault{l+m+mi}{1}\PYGdefault{o}{));}
+\end{Verbatim}

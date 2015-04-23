@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nc}{self}\PYGdefault{o}{.}\PYGdefault{n+nf}{get\PYGdefaultZus{}location\PYGdefaultZus{}count}\PYGdefault{p}{(}\PYGdefault{n}{location}\PYGdefault{p}{)}
+	\PYGdefault{n}{summary} \PYGdefault{o}{=} \PYGdefault{n+no}{Location}\PYGdefault{o}{.}\PYGdefault{n}{where}\PYGdefault{p}{(}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}loc == ? AND time \PYGdefaultZgt{} ?\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{location}\PYGdefault{p}{,}
+	\PYGdefault{p}{(}\PYGdefault{n+no}{DateTime}\PYGdefault{o}{.}\PYGdefault{n}{now} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{7}\PYGdefault{o}{.}\PYGdefault{n}{days}\PYGdefault{p}{))}\PYGdefault{o}{.}\PYGdefault{n}{group}\PYGdefault{p}{(}\PYGdefault{l+s+ss}{:time}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{count}
+	\PYGdefault{n}{past\PYGdefaultZus{}week} \PYGdefault{o}{=} \PYGdefault{p}{((}\PYGdefault{n+no}{Date}\PYGdefault{o}{.}\PYGdefault{n}{today} \PYGdefault{o}{\PYGdefaultZhy{}} \PYGdefault{l+m+mi}{7}\PYGdefault{p}{)}\PYGdefault{o}{..} \PYGdefault{n+no}{Date}\PYGdefault{o}{.}\PYGdefault{n}{today}\PYGdefault{p}{)}
+
+	\PYGdefault{n}{past\PYGdefaultZus{}week} \PYGdefault{o}{=} \PYGdefault{n}{past\PYGdefaultZus{}week}\PYGdefault{o}{.}\PYGdefault{n}{map} \PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{o}{|}\PYGdefault{n}{d}\PYGdefault{o}{|} \PYGdefault{n}{d}\PYGdefault{o}{.}\PYGdefault{n}{strftime} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}\PYGdefaultZpc{}y\PYGdefaultZhy{}\PYGdefaultZpc{}m\PYGdefaultZhy{}\PYGdefaultZpc{}d\PYGdefaultZdq{}} \PYGdefault{p}{\PYGdefaultZcb{}}
+
+	\PYGdefault{n}{summary} \PYGdefault{o}{=} \PYGdefault{n+no}{Hash}\PYGdefault{o}{[}\PYGdefault{n}{summary}\PYGdefault{o}{.}\PYGdefault{n}{map}\PYGdefault{p}{\PYGdefaultZob{}} \PYGdefault{o}{|}\PYGdefault{n}{k}\PYGdefault{p}{,} \PYGdefault{n}{v}\PYGdefault{o}{|} \PYGdefault{o}{[}\PYGdefault{n}{k}\PYGdefault{o}{.}\PYGdefault{n}{strftime}\PYGdefault{p}{(}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}\PYGdefaultZpc{}y\PYGdefaultZhy{}\PYGdefaultZpc{}m\PYGdefaultZhy{}\PYGdefaultZpc{}d\PYGdefaultZdq{}}\PYGdefault{p}{),} \PYGdefault{n}{v}\PYGdefault{o}{]}\PYGdefault{p}{\PYGdefaultZcb{}}\PYGdefault{o}{]}
+
+	\PYGdefault{n}{final\PYGdefaultZus{}result} \PYGdefault{o}{=}\PYGdefault{n+no}{Hash}\PYGdefault{o}{[*}\PYGdefault{n}{past\PYGdefaultZus{}week}\PYGdefault{o}{.}\PYGdefault{n}{map}\PYGdefault{p}{(}\PYGdefault{o}{\PYGdefaultZam{}}\PYGdefault{l+s+ss}{:to\PYGdefaultZus{}s}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{product}\PYGdefault{p}{(}\PYGdefault{o}{[}\PYGdefault{l+m+mi}{0}\PYGdefault{o}{]}\PYGdefault{p}{)}\PYGdefault{o}{.}\PYGdefault{n}{flatten}\PYGdefault{o}{].}\PYGdefault{n}{merge}
+	\PYGdefault{n+no}{Hash}\PYGdefault{o}{[*}\PYGdefault{n}{summary}\PYGdefault{o}{.}\PYGdefault{n}{flatten}\PYGdefault{o}{]}
+
+	\PYGdefault{n}{final\PYGdefaultZus{}result}\PYGdefault{o}{.}\PYGdefault{n}{to\PYGdefaultZus{}a}
+\PYGdefault{k}{end}
+\end{Verbatim}

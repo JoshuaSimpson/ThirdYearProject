@@ -595,8 +595,21 @@ end
 FOUND was never meant to be a part of the original application - rather it became a necessity after a short amount of time spent attempting to gather wireless location data. FOUND is a mobile application designed to build a database that the main application ( LOST ) can transform into a directed graph. The toolkit used is the same as was used to develop the LOST application.
 
 \subsection{Activity: Main Function}
-The application has only one activity, dedicated to it's one function.
-take a scan of local wireless points, create a Node for the main application based on that location ( and with a name given by the user )
+The application has only one activity, dedicated to it's one function. Because it an application designed for my ease of use, and never actually meant to be seen by the user, it would be appropriate to consider it as a  kludge\footnote{http://dictionary.reference.com/browse/kludge} when analysing it in terms of UX, usability and functionality.
+
+The application will take a scan of local wireless points, and create a database record that will be readable as a Node object in the main LOST application. If this is the first Node in the database then it will leave it at that. If it is not then it will also create an Edge connecting the newly created Node to the last created Node ( or a user-selected Node ). There is also option to create more than one edge from the newly created Node, attaching to to multiple other Nodes in the case of locations being connected in multiple ways.
+
+Finally, there is a function which POSTs the database to the backend, so that it can be retrieved by all versions of the main application with ease.
+
+\section{Testing}
+
+
+
+\chapter{Evaluation}
+
+
+
+
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
 %\include{Chapters/Implementation}
