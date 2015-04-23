@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  23 APR 2015 18:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  23 APR 2015 20:33
 entering extended mode
 **report.tex
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.tex
@@ -537,7 +537,7 @@ LaTeX Info: Redefining \nameref on input line 23.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<FrontMatter/logo.png, id=107, 234.8775pt x 214.8025pt>
+<FrontMatter/logo.png, id=119, 234.8775pt x 214.8025pt>
 File: FrontMatter/logo.png Graphic file (type png)
 
 <use FrontMatter/logo.png>
@@ -638,7 +638,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--165
 Chapter 4.
 [14
 
-] <Diagrams/ComponentDiagram.png, id=326, 854.19125pt x 757.83125pt>
+] <Diagrams/ComponentDiagram.png, id=341, 854.19125pt x 757.83125pt>
 File: Diagrams/ComponentDiagram.png Graphic file (type png)
 
 <use Diagrams/ComponentDiagram.png>
@@ -680,8 +680,16 @@ EBEDE27BAB73D8A09A2F7596C612654BCAE0D7D440CEA8AADC8AFC48A3.pygtex) [27]
 AD45CEF4043713CC8A4620B9F281A265E7E12B448F60CEE1FD5ABE5C2B.pygtex) [32]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/93D57D
 7BCB323597A697F7B45EDB4D0281A265E7E12B448F60CEE1FD5ABE5C2B.pygtex [33])
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.bbl [34]
-[35]
+[34] [35]
+Chapter 6.
+
+Overfull \hbox (151.64584pt too wide) in paragraph at lines 615--622
+ [] 
+ []
+
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.bbl [36
+
+]
 Underfull \hbox (badness 1242) in paragraph at lines 4--7
 []\OT1/lmr/m/n/10 Stack over-flow - i-phone sig-nal strength.  []$\OT1/lmtt/m/n
 /10 http : / / stackoverflow . com / questions /
@@ -699,7 +707,7 @@ Underfull \hbox (badness 5847) in paragraph at lines 52--55
 ttp : / / developer . android . com / tools /
  []
 
-[36
+[37
 
 ]
 Underfull \hbox (badness 1546) in paragraph at lines 62--66
@@ -725,17 +733,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--117
 w . zdnet . com / article /
  []
 
-) [37]
+) [38]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.t
 ex
 Appendix A.
-<Diagrams/UseCase.png, id=530, 935.495pt x 436.63126pt>
+<Diagrams/UseCase.png, id=548, 935.495pt x 436.63126pt>
 File: Diagrams/UseCase.png Graphic file (type png)
 
 <use Diagrams/UseCase.png>
 Package pdftex.def Info: Diagrams/UseCase.png used on input line 4.
 (pdftex.def)             Requested size: 374.19136pt x 174.6494pt.
- [38
+ [39
 
 
  <C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/Diagrams/UseCase.png
@@ -745,29 +753,29 @@ File: Diagrams/ComponentDiagram.png Graphic file (type png)
 Package pdftex.def Info: Diagrams/ComponentDiagram.png used on input line 9.
 (pdftex.def)             Requested size: 427.09459pt x 378.9147pt.
 )
-Overfull \hbox (15.1547pt too wide) in paragraph at lines 9--619
+Overfull \hbox (15.1547pt too wide) in paragraph at lines 9--636
 [] 
  []
 
-[39]
+[40]
 runsystem(del "report.pyg")...executed.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 622.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 622.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 639.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 639.
  (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.aux
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.a
 ux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 622.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 622.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 639.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 639.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 41DC4A64FE1B530685BFCE87E8852DB8;1546.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 622.
+(rerunfilecheck)             Checksum: 715187C57146FFE687493937AC06C307;1717.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 639.
  ) 
 Here is how much of TeX's memory you used:
- 11069 strings out of 495352
- 189099 string characters out of 3183049
+ 11075 strings out of 495352
+ 189158 string characters out of 3183049
  320808 words of memory out of 3000000
- 13854 multiletter control sequences out of 15000+200000
+ 13857 multiletter control sequences out of 15000+200000
  53857 words of font info for 44 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,8n,34p,1326b,532s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -782,9 +790,9 @@ gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb>
-Output written on report.pdf (43 pages, 565804 bytes).
+Output written on report.pdf (44 pages, 569124 bytes).
 PDF statistics:
- 623 PDF objects out of 1000 (max. 8388607)
- 185 named destinations out of 1000 (max. 500000)
- 224 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 188 named destinations out of 1000 (max. 500000)
+ 248 words of extra memory for PDF output out of 10000 (max. 10000000)
 

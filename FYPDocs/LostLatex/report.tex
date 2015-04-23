@@ -173,18 +173,18 @@ The client end of this project consists of two parts - an Android application th
 \section{Backend}
 \subsection{Functional Requirements}
 \begin{description}
-\item[F1] - Backend will operate a RESTful API that will allow the mobile application to post data to the server
-\item[F2] - Backend will store POSTed data to an SQL database
-\item[F3] - Backend will be retrieve data from SQL database, and display to user as information
-\item[F4] - Backend will require user authentication to allow access to displayed data
-\item[F5] - Backend will be able to store wifi location database, and serve it to a mobile device
+\item[F7] - Backend will operate a RESTful API that will allow the mobile application to post data to the server
+\item[F8] - Backend will store POSTed data to an SQL database
+\item[F9] - Backend will be retrieve data from SQL database, and display to user as information
+\item[F10] - Backend will require user authentication to allow access to displayed data
+\item[F11] - Backend will be able to store wifi location database, and serve it to a mobile device
 \end{description}
 
 \subsection{Non-functional Requirements}
 
 \begin{description}
-\item[NF1] - Backend will provide an easily navigable user interface
-\item[NF2] - Backend will show data in an easily readable manner
+\item[NF7] - Backend will provide an easily navigable user interface
+\item[NF8] - Backend will show data in an easily readable manner
 \end{description}
 
 \section{FOUND - Android Application}
@@ -192,8 +192,8 @@ The client end of this project consists of two parts - an Android application th
 \subsection{Functional Requirements}
 
 \begin{description}
-\item[F1] - Application will scan local wifi access points
-\item[F2] - Application will insert the top access point into an SQLite database as a node, along with an edge connecting it to another node in the directed graph
+\item[F12] - Application will scan local wifi access points
+\item[F13] - Application will insert the top access point into an SQLite database as a node, along with an edge connecting it to another node in the directed graph
 \end{description}
 
 \chapter{Design}
@@ -607,8 +607,13 @@ Finally, there is a function which POSTs the database to the backend, so that it
 
 \chapter{Evaluation}
 
+In this chapter I will evaluate the body of work that has been created as a result of this project, both against the requirements laid out in Chapter 3, and critically as a project.
 
+\section{Requirements Analysis}
 
+\subsection{ Functional Requirements } 
+
+\subsubsection{F1 - Application will be able to retrieve most recent SQLite database containing wireless access point location information upon startup}
 
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
