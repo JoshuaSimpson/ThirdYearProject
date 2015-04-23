@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  22 APR 2015 20:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.4.14)  23 APR 2015 15:46
 entering extended mode
-**C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/report.tex
-(C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/report.tex
+**report.tex
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 
@@ -321,24 +321,134 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip45
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\minted\minted.sty"
+Package: minted 2015/01/31 v2.0 Yet another Pygments shim for LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count142
+\FV@InFile=\read2
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count143
+\FV@StepNumber=\count144
+\FV@OutFile=\write4
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count145
+\float@exts=\toks19
+\float@box=\box29
+\@float@everytoks=\toks20
+\@floatcapt=\box30
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count146
+\calc@Bcount=\count147
+\calc@Adimen=\dimen121
+\calc@Bdimen=\dimen122
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count148
+\calc@Cskip=\skip48
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ifplatform\ifplatform.sty"
+Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\catchfile.sty"
+Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
+Package: etoolbox 2015/03/19 v2.1d e-TeX tools for LaTeX (JAW)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\misc\etex.sty"
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count149
+)
+\etb@tempcnta=\count150
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
+\@xs@message=\write5
+\integerpart=\count151
+\decimalpart=\count152
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\lineno\lineno.sty"
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count153
+\output=\toks21
+\linenoprevgraf=\count154
+\linenumbersep=\dimen123
+\linenumberwidth=\dimen124
+\c@linenumber=\count155
+\c@pagewiselinenumber=\count156
+\c@LN@truepage=\count157
+\c@internallinenumber=\count158
+\c@internallinenumbers=\count159
+\quotelinenumbersep=\dimen125
+\bframerule=\dimen126
+\bframesep=\dimen127
+\bframebox=\box31
+LaTeX Info: Redefining \\ on input line 3056.
+)
+\minted@appexistsfile=\read3
+\FV@BreakIndent=\dimen128
+\FV@BreakSymbolSepLeft=\dimen129
+\FV@BreakSymbolSepRight=\dimen130
+\FV@BreakSymbolIndentLeft=\dimen131
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 677
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmtt.fd"
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+\FV@BreakSymbolIndentRight=\dimen132
+\c@FancyVerbLineBreakLast=\count160
+\FV@LineBox=\box32
+\FV@LineIndentBox=\box33
+\minted@bgbox=\box34
+\minted@code=\write6
+\c@minted@FancyVerbLineTemp=\count161
+\@float@every@listing=\toks22
+\c@listing=\count162
+)
+runsystem(if not exist "_minted-report" mkdir "_minted-report")...executed.
+
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set >"re
+port.aex" <nul: /p x=^%~$PATH:i>>"report.aex")...executed.
+
+runsystem(del "report.aex")...executed.
+
+
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/defaul
+t.pygstyle)
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.aux
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.a
 ux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 23.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -376,24 +486,24 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count142
-\AtBeginShipoutBox=\box28
-Package hyperref Info: Link coloring OFF on input line 22.
+\c@lstlisting=\count163
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring OFF on input line 23.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count143
+\c@section@level=\count164
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
 
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.out)
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.out)
-\@outlinefile=\write4
+\@outlinefile=\write7
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: <default>
@@ -427,11 +537,11 @@ LaTeX Info: Redefining \nameref on input line 22.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<FrontMatter/logo.png, id=99, 234.8775pt x 214.8025pt>
+<FrontMatter/logo.png, id=103, 234.8775pt x 214.8025pt>
 File: FrontMatter/logo.png Graphic file (type png)
 
 <use FrontMatter/logo.png>
-Package pdftex.def Info: FrontMatter/logo.png used on input line 23.
+Package pdftex.def Info: FrontMatter/logo.png used on input line 24.
 (pdftex.def)             Requested size: 93.94933pt x 85.91946pt.
  [1
 
@@ -440,7 +550,7 @@ Package pdftex.def Info: FrontMatter/logo.png used on input line 23.
 itHub/FYPWork/FYPDocs/LostLatex/FrontMatter/logo.png (PNG copy)>]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\FrontMatter/abstract.
 tex)
-Underfull \hbox (badness 10000) in paragraph at lines 1--23
+Underfull \hbox (badness 10000) in paragraph at lines 1--24
 
  []
 
@@ -448,14 +558,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.23 \createFrontMatter
+l.24 \createFrontMatter
                         [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.23 \createFrontMatter
+l.24 \createFrontMatter
                         [1]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\FrontMatter/acknowled
 gements.tex) [0
@@ -484,27 +594,27 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 2.
 )
-\tf@toc=\write5
+\tf@toc=\write8
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 \chapter
+l.30 \chapter
              {Introduction} [1
 
 ]
 Chapter 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 32.
+(Font)              <8> on input line 33.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 32.
+(Font)              <6> on input line 33.
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--38
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
 
  []
 
@@ -514,134 +624,160 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--38
 Chapter 2.
 [4
 
-] [5]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 92.
-
- ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmtt.fd"
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [6] [7]
-[8] [9] [10]
+] [5] [6] [7] [8] [9] [10]
 Chapter 3.
 [11
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 164--164
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
 [][][]\OT1/lmr/m/n/8 Figures cre-at-ed by com-par-ing phone spec-i-fi-ca-tion-s
- at []$\OT1/lmtt/m/n/8 http : / / www . phonearena . com / news /$
+ at []$\OT1/lmtt/m/n/8 http : / / www . phonearena . com / news /
  []
 
 [12] [13]
 Chapter 4.
 [14
 
-] <Diagrams/ComponentDiagram.png, id=316, 854.19125pt x 757.83125pt>
+] <Diagrams/ComponentDiagram.png, id=321, 854.19125pt x 757.83125pt>
 File: Diagrams/ComponentDiagram.png Graphic file (type png)
 
 <use Diagrams/ComponentDiagram.png>
-Package pdftex.def Info: Diagrams/ComponentDiagram.png used on input line 205.
+Package pdftex.def Info: Diagrams/ComponentDiagram.png used on input line 206.
 (pdftex.def)             Requested size: 512.5187pt x 454.70226pt.
  [15 <C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/Diagrams/Compone
 ntDiagram.png>] [16] [17] [18] [19] [20]
-[21]
+[21] [22]
 Chapter 5.
-[22
+[23
 
-] [23]
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 362.
-
- ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmr.fd"
-File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+] [24]
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/8DC606
+BB494DAAC72E8467C4BF00AC3812654BCAE0D7D440CEA8AADC8AFC48A3.pygtex
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 2.
 )
-LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 362.
-
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.bbl [24]
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/57D802
+4C4A8FA78871E3E702FE05197E12654BCAE0D7D440CEA8AADC8AFC48A3.pygtex)
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/AA59F6
+E938E9B9896AC09BA337BF055A12654BCAE0D7D440CEA8AADC8AFC48A3.pygtex) [25]
+[26]
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/39E2FD
+4D57F720A838CD9B449174BD2512654BCAE0D7D440CEA8AADC8AFC48A3.pygtex)
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/67E73D
+7B3F407190D144DE08B9F1FC8112654BCAE0D7D440CEA8AADC8AFC48A3.pygtex)
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/DE3E7B
+E9FF813CA3FF5EBF6EFED74F5212654BCAE0D7D440CEA8AADC8AFC48A3.pygtex)
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/7B0537
+EBEDE27BAB73D8A09A2F7596C612654BCAE0D7D440CEA8AADC8AFC48A3.pygtex) [27]
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/134847
+1274119FE9DEF91FBAC8B2B16812654BCAE0D7D440CEA8AADC8AFC48A3.pygtex) [28]
+[29] [30]
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\_minted-report/217250
+257D9B2202FC74C3DD5D59EC704C509A80AA1AE661ED7821977D215E12.pygtex)
+(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.bbl [31]
 Underfull \hbox (badness 1242) in paragraph at lines 4--7
 []\OT1/lmr/m/n/10 Stack over-flow - i-phone sig-nal strength.  []$\OT1/lmtt/m/n
-/10 http : / / stackoverflow . com / questions /$
+/10 http : / / stackoverflow . com / questions /
  []
 
 
-Underfull \hbox (badness 5847) in paragraph at lines 47--50
+Underfull \hbox (badness 2237) in paragraph at lines 47--50
+[]\OT1/lmr/m/n/10 Google.  An-droid ser-vices.  []$\OT1/lmtt/m/n/10 http : / / 
+developer . android . com / guide / components /
+ []
+
+
+Underfull \hbox (badness 5847) in paragraph at lines 52--55
 []\OT1/lmr/m/n/10 Google.  An-droid sup-port li-braries.  []$\OT1/lmtt/m/n/10 h
-ttp : / / developer . android . com / tools /$
+ttp : / / developer . android . com / tools /
  []
 
-[25
+[32
 
 ]
-Underfull \hbox (badness 1546) in paragraph at lines 57--61
+Underfull \hbox (badness 1546) in paragraph at lines 62--66
 []\OT1/lmr/m/n/10 IDC.  S-mart-phone os mar-ket share, q4 2014.  []$\OT1/lmtt/m
-/n/10 http : / / www . idc . com / prodserv /$
+/n/10 http : / / www . idc . com / prodserv /
  []
 
 
-Underfull \hbox (badness 4531) in paragraph at lines 84--87
+Underfull \hbox (badness 4531) in paragraph at lines 89--92
 []\OT1/lmr/m/n/10 Felix Richter.  15 years of google.  []$\OT1/lmtt/m/n/10 http
- : / / www . statista . com / chart / 1502 /$
+ : / / www . statista . com / chart / 1502 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--107
+Underfull \hbox (badness 10000) in paragraph at lines 112--117
 []\OT1/lmr/m/n/10 Steven J. Vaughan-Nichols.  How google--and ev-ery-one else--
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--107
+Underfull \hbox (badness 10000) in paragraph at lines 112--117
 \OT1/lmr/m/n/10 gets wi-fi lo-ca-tion da-ta.  []$\OT1/lmtt/m/n/10 http : / / ww
-w . zdnet . com / article /$
+w . zdnet . com / article /
  []
 
-) [26]
+) [33]
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.t
 ex
 Appendix A.
-<Diagrams/UseCase.png, id=436, 935.495pt x 436.63126pt>
+<Diagrams/UseCase.png, id=496, 935.495pt x 436.63126pt>
 File: Diagrams/UseCase.png Graphic file (type png)
 
 <use Diagrams/UseCase.png>
 Package pdftex.def Info: Diagrams/UseCase.png used on input line 4.
 (pdftex.def)             Requested size: 374.19136pt x 174.6494pt.
- [27
+ [34
 
 
  <C:/Users/Josh/Documents/GitHub/FYPWork/FYPDocs/LostLatex/Diagrams/UseCase.png
->]) [28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 398.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 398.
+>]
+File: Diagrams/ComponentDiagram.png Graphic file (type png)
+ <use Diagrams/ComponentDiagram.png>
+Package pdftex.def Info: Diagrams/ComponentDiagram.png used on input line 9.
+(pdftex.def)             Requested size: 427.09459pt x 378.9147pt.
+)
+Overfull \hbox (15.1547pt too wide) in paragraph at lines 9--538
+[] 
+ []
 
-(C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.aux
+[35]
+runsystem(del "report.pyg")...executed.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 541.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 541.
+ (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\report.aux
 (C:\Users\Josh\Documents\GitHub\FYPWork\FYPDocs\LostLatex\Appendices/appendix.a
 ux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 398.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 398.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 541.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 541.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: F9A389D66B72D7761EADAC78F555F150;1431.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 398.
+(rerunfilecheck)             Checksum: A5A64898D78970C2F664D89490BDD548;1493.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 541.
  ) 
 Here is how much of TeX's memory you used:
- 8729 strings out of 495352
- 141684 string characters out of 3183049
- 246905 words of memory out of 3000000
- 11642 multiletter control sequences out of 15000+200000
- 53236 words of font info for 42 fonts, out of 3000000 for 9000
+ 11035 strings out of 495352
+ 187485 string characters out of 3183049
+ 320808 words of memory out of 3000000
+ 13846 multiletter control sequences out of 15000+200000
+ 53857 words of font info for 44 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,8n,34p,1383b,1149s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,8n,34p,1326b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}{C:/Program Files
-/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts
-/enc/dvips/lm/lm-rm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
-Output written on report.pdf (32 pages, 486609 bytes).
+/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx
+12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtti10.pfb>
+Output written on report.pdf (39 pages, 553189 bytes).
 PDF statistics:
- 518 PDF objects out of 1000 (max. 8388607)
- 147 named destinations out of 1000 (max. 500000)
- 208 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 584 PDF objects out of 1000 (max. 8388607)
+ 168 named destinations out of 1000 (max. 500000)
+ 216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

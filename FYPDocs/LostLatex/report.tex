@@ -7,6 +7,7 @@
 \usepackage{cleveref}
 \usepackage{hyperref}
 \graphicspath{ {Diagrams/}}
+\usepackage{minted}
 
 
 \title{6CCS3PRJ Final Year\\\vspace{0.2cm} LOST}
@@ -27,9 +28,9 @@
 
 
 \chapter{Introduction}
-Location based services have been developing over the past few decades, and are prevalent in several aspects of every day life - location based services range from the route-planning software that is used to figure out a morning commute, to live time-tabling services that use bus or train positions to give accurate estimates. It is safe to say that in some way or another, location services are prevalent in modern day life.
+Location based services have been developing rapidly over the past few decades, and are used in various aspects of technology - ranging from the route-planning software that is used to figure out a morning commute, to live time-tabling services that use bus or train positions to give accurate estimates on arrival times, to advertising based on the user's current location. It is safe to say that in some way or another, location services are prevalent in modern day life.
 
-However, GPS\footnote{ Global Positioning System - a system using satellites to provide precise location information} services only work to a certain level;  specifically, they only work to within a few feet at street level\cite{cook2005indoor}. Whilst this is still a feat, it leaves a large market gap for contextually aware services inside large buildings. 
+However, GPS\footnote{ Global Positioning System - a system using satellites to provide precise location information} -the most prominent form of location detection - only works to a certain level;  specifically to within a few feet at street level\cite{cook2005indoor}. Whilst achieving this level of precision a feat of engineering, it leaves a large market gap for providing truly localised contextually aware services. 
 
 Contextually aware services are another rapidly developing technology, providing users with information or activities specific to their current location or situation, determining the suitability for such events by using sensor data\footnote{ Data such as location, temperature or time }. 
 
@@ -334,7 +335,7 @@ When I started developing LOST, I was using Eclipse - however about a month in I
 
 Whilst developing, each build was tested on two Android phones - one older, now low-end phone, and one much more recent high end phone, providing a good analysis of application performance over different devices.
 
-\subsubsection{Libraries Used}
+\subsubsection{Libraries / Frameworks Used}
 
 Whilst developing LOST, I used three different libraries - two of which were critical to the implementation of the application, and a third which provided ease of use whilst developing. 
 
@@ -362,32 +363,36 @@ One of the most critical aspects of the class is the global variable that forms 
 
 In order to allow for the easy retrieval of nodes using different identifying factors, it was necessary to implement a rough type of custom indexing, which involved taking the Nodes that were in the adjacency list and creating Maps for them for any data type that would be needed to call a Node. An example would be:
 
-\begin{lstlisting}[frame=single]
+\begin{minted}[frame=single]{Java}
 public static Map<Integer, Node> nodeIDList;
 public static Map<String, Node> nodeLocationList;
 public static Map<String, Node> nodeMAC;  
-\end{lstlisting}
+\end{minted}
 
 Each map in the above code stores a seperate copy of the list of Nodes, with whichever data is used to find it using the .get() method. For example, using 
 
-\begin{lstlisting}[frame=single]
+\begin{minted}[frame=single]{Java}
 nodeIDList.get(0);
-\end{lstlisting}
+\end{minted}
 would be the same as
 
-\begin{lstlisting}[frame=single]
+\begin{minted}[frame=single]{Java}
 nodeMAC.get("MAC address of the first Node");
-\end{lstlisting}
+\end{minted}
 
 The problem with this approach is that when originally adding each Node to the DiGraph, the operation is now much more expensive to perform, and there is exponentially more space used per Node - however the ability to easily retrieve each node offsets this initally expensive operation, and the memory usage is still negligible in terms of the memory available to the device.
 
 \subsubsection{Activity: Location Finder}
 
-When this activity is opened, a wifi scan is immediately performed, and a loading screen shown until the Activity has received and processed the results. The results are returned in a <ScanResults> List, which is then ordered using a comparator, according to signal strength ( from the best quality to the lowest quality ). The top result is taken, and its MAC address used to find the Node relevant to that user's location in the DiGraph. Finally, the user's location is extrapolated by getting the 'location' variable from the Node.
+When this activity is opened, a wifi scan is immediately performed, and a loading screen shown until the Activity has received and processed the results. The completion of a wifi scan triggers a WIFI\_SCAN\_RESULTS\_AVAILABLE event which is listened for by the BroadcastReceiver class. When the BroadcastReceiver receives this action, it triggers an onReceive method where the results can be fetched and operations run as a response to this action.
+
+The results are returned in a <ScanResults> List, which is then ordered using a comparator, according to signal strength ( from the best quality to the lowest quality ). The top result is taken, and its MAC address used to find the Node relevant to that user's location in the DiGraph. Finally, the user's location is extrapolated by getting the 'location' variable from the Node.
 
 The original plan for this class involved using the top three access points to get a much more precise estimate of the user's location using trilateration. Unfortunately, because of the variation of signal strengths at any given point ( a figure that can even be affected by another person's body ), the top three MAC addresses in any given place can change constantly. To get an accurate result would require having populated the database with every possible variation for every area, resulting in an exponential increase in the amount of data that needs to be taken ( and therefore Nodes required ). 
 
 Once this activity has pinpointed your location, the loading screen will be replaced by that location, along with a button to refresh the location ( which will start another scan ), and a button that will use the current location as the start point in the route planning activity.
+
+An interesting feature provided by the BroadcastReceiver is that it will listen for \textit{any} trigger of the SCAN\_RESULTS\_AVAILABLE action, meaning that when the system performs a wifi scan seperate from the application, the application will perform the operation defined in it's onReceive anyway - this means that the location will auto-update without having to trigger multiple scans, ultimately meaning a more economical use of resources.
 
 \subsubsection{Activity: Route Planning}
 
@@ -399,29 +404,29 @@ The resulting path is then displayed in the next activity - each step in the pat
 
 Dijkstra's algorithm is the chosen shortest path algorithm for this project, and provides all of the functionality behind the route planning activity. The implementation of Dijkstra's algorithm written for this project will take a directed graph object upon instantiation of a 'Dijkstra' object:
 
-\begin{lstlisting}[frame=single]
+\begin{minted}[frame=single]{Java}
 DiGraph dg = MainActivity.myGraph;
 Dijkstra pathFinder = new Dijkstra(MainActivity.myGraph);
-\end{lstlisting}
+\end{minted}
 
 To run the algorithm, it is passed a source node:
 
-\begin{lstlisting}[frame=single]
+\begin{minted}[frame=single]{Java}
 pathFinder.execute(dg.getNodeFromID(start.getSelectedItemPosition() + 1));
-\end{lstlisting}
+\end{minted}
 
 This finds the shortest path for all nodes from that source node, filling out the 'predecessors' map variable with pairs containing the node, then the node preceding it. To retrieve a path, a LinkedList is generated by stepping backwards from a given end node:
 
-\begin{lstlisting}[frame=single]
+\begin{minted}[frame=single]{Java}
 LinkedList<Node> pathList = pathFinder.getPath(dg.getNodeFromID
 	(end.getSelectedItemPosition() + 1));
-\end{lstlisting}
+\end{minted}
 
-\begin{lstlisting}[frame=single]
+\begin{minted}[frame=single]{Java}
 public LinkedList<Node> getPath(Node target) {
         LinkedList<Node> path = new LinkedList<Node>();
         Node step = target;
-        // check if a path exists
+        // Check if a path exists
         if (predecessors.get(step) == null) {
             return path;
         }
@@ -434,8 +439,123 @@ public LinkedList<Node> getPath(Node target) {
         Collections.reverse(path);
         return path;
     }
-\end{lstlisting}
+\end{minted}
 
+\subsubsection{Service: LocationPush}
+
+Services are components within Android applications that can perform operations in the background that don't require a graphical user interface\cite{androidservices} - therefore it serves as the perfect platform from which to routinely push data without requiring user input.
+
+Firstly, it is worth noting that a Service does run in the main thread of it's hosting process - therefore any long running operations should be be run within a new thread so as to avoid blocking on the main.
+
+The first thing the service does is trigger a wifiscan in much the same manner as the Location Finder activity does - the main difference being that when the BroadcastReceiver is triggered the first time, it is then unregistered to prevent the repeated triggering of the operation defined in it's onReceive.
+
+After this first trigger, the Service will create a new thread, and attempt to connect to google - if it cannot connect it will check the status of the internet connection and then create a 'fault' record in an SQLite database, noting the time and any details that can be provided as to where the failure occurred. If it can connect, the Service will POST the location data in JSON format, before checking to see if there are any faults in the aforementioned database - if there are it will POST each fault individually in JSON format\footnote{Expensive, no?}.
+
+Finally, the thread will sleep for 15 minutes - upon waking, it will register the BroadcastReceiver again so that it can listen for the next SCAN\_RESULTS\_AVAILABLE action that the device provides. This again allows for an economical use of resources whilst running in the background, instead of triggering a wifiscan itself every 15 minutes:
+
+
+\begin{minted}[frame=single]{Java}
+public void onReceive(Context c, Intent intent) {
+            unregisterReceiver(this);
+            new Thread(new Runnable() {
+            	....
+SystemClock.sleep(900000);
+registerReceiver(scanReceiver, 
+	new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+}.start();
+
+\end{minted}
+
+\subsubsection{Activity: Settings}
+
+This Activity provides very little towards functionality, instead providing utility. Firstly, it provides a warning to the user that the app will collect data at regular intervals, and provides checkboxes that allow the user to opt out of the data collection. During development, another feature was also added to provide more utility to the user - a button that will open a dialog for the user to enter their King's username and password.
+
+This data is then used to create correctly set up wireless profiles for both AccessKings and Eduroam. This idea is meant to provide more functionality to the user from the application, and also helps to make sure that the user doesn't have connection issues due to authentication when in Kings.
+
+Unfortunately, during implementation there was a major issue discovered - the functionality to programatically add a wireless profile for a WPA-Enterprise network was only added in 4.3, and so far is not available for earlier Android versions. An implementation using this would violate non-functional requirement NF6, so if this application were to progress beyond the BSc report, multiple versions of the application would be supported using Google's multiple APK support.
+
+\subsection{Difficulties during implementation}
+
+Whilst developing the mobile application I encountered the majority of the difficulties for this project - mostly due to having to implement complex methods such as a functioning Dijkstra's algorithm, but mostly trying to develop a method to determine the user's location that was accurate, with as much precision as possible. After extensive testing, it became clear that the originally planned '3 MAC' method, where I would use a combination of trilateration and fuzzy location determination\footnote{A method for roughly determining location} to determine a precise\footnote{To within 5-10 feet} location, however the rate of success for accurately finding the user's location was too low - most of the time the application returning that it didn't recognise the area - this is mostly due to the original implementation.
+
+This original implementation took the top three MAC address and concatenated them, meaning that to find a match the user had to be in the location where that exact combination happens again - however, as covered by Cook et al, radio signals are extremely variable\cite{cook2005indoor}, and this had a major impact. 
+
+Because of the limited amount of time available, it was necessary to establish a working, accurate proof-of-concept before trying to develop a higher level of precision, and so the current implementation is almost guaranteed to find your location within Kings\footnote{ 'Almost' because of mobile wireless hotspots and the like causing inaccuracies }. 
+
+\section{Backend}
+
+\subsection{Toolkit}
+
+\subsubsection{Languages Used}
+
+To develop the backend I looked into the functionality provided by a few different languages - with very little grounding in web server development it was important to pick a language that wouldn't turn out to lack functionality that I required later on.
+
+Eventually, Ruby was chosen as the language, using the Ruby on Rails web framework to develop the backend. Ruby on Rails allows for rapid prototyping, so I could focus on implementing functionality quickly and effectively. As a proof-of-concept project, this was an important factor in choice\footnote{Admittedly another was that Ruby on Rails is 'optimised for programmer happiness'}.
+
+\subsubsection{Development Environment}
+
+Setting up an optimal development environment for the backend was much tricker than for the Android application, but there were several tools that streamlined the process. Firstly, a Digital Ocean server was rented for the duration of the project - Digital Ocean provide 'ready to deploy' droplets - essentially allowing me to rent a server that came with a version of Ubuntu and any web server stack already installed - after this I just had to familiarise myself with the server and the language itself.
+
+Outside of this server, I used Sublime text editor, along with the SFTP plugin to edit files locally and push them back to the server - this was mostly when I was implementing larger functions - for smaller functions I would use SSH and Vim. Also useful was the Rails console, which provided a shell to test code in before implementing it in the application proper.
+
+\subsubsection{Libraries / Frameworks Used}
+
+Libraries in Rails are given the name 'Gems' - implementing them in a Ruby on Rails ( RoR ) server is fairly easy to perform and they can provide some great additional functionality that would be difficult / time-consuming to write from scratch. To this end I used two Gems that aren't automatically packed with RoR.
+
+Devise was the first Gem - Devise provides easily implementable user and session management, allowing for the quick development and continued rapid prototyping of a strong authentication system. To write my own user authenticaton with a Gem like Devise available would have been a waste of time, and almost definitely would not have provided the completeness of security that Devise does. 
+
+The other Gem that I used was the Bootstrap Gem. Bootstrap, developed by Twitter, provides a front-end framework for easy deployment of intuitive, good looking sites. It also focuses on making any front end-code written responsive - meaning that it will run effectively on mobile phones. Whilst this wasn't critical, the overall package allowed for rapid-prototyping much easier by alleviating any concerns as to the front-end. As a developer that works mostly with back-end / functional code, this was a highly valuable Gem.
+
+I also used one Javascript API called Highcharts - Highcharts provides an API for charting data, allowing the development of good looking data visualisation views. This was crucial for turning the stored data into information, and whilst it took some work to get Highcharts working well with RoR, it was time well spent and Highcharts helped to develop professional looking charts that would not have been possible had I wrote the function myself.
+
+\subsection{Component Analysis: API}
+
+In this section I will run through each endpoint of the API, showing the data the JSON that it takes in, and the action performed when each endpoint is consumed.
+
+\subsubsection{POST: /locations}
+
+When a JSON of the form :
+
+\begin{minted}[frame=single]{JSON}
+{"loc" : location, "time" : time-of-record}
+\end{minted}
+
+is POSTed to the above endpoint, the server will create a new location record, with the value of 'location' as it's location, and using 'time' as the time recorded. This is one of the most used endpoints, as it is the endpoint that the mobile application posts to every 15 minutes.
+
+\subsubsection{POST: /accesspoints}
+
+When a JSON of the form :
+
+\begin{minted}[frame=single]{JSON}
+{ "mac" : mac, "location" : location, "time" : time, "notes" : notes }
+
+is POSTed to the above endpoint, the server will create a new access point fault record, using each of the key-value pairs in the JSON post for the relevant field in the database.
+
+\subsubsection{POST: /dbs}
+
+This endpoint is reserved for the secondary mobile application, designed to allow for the easy sharing of a locations database created within the application. When a file is posted to this address, it is stored on the server, under the path /public/dbs/.
+
+\subsubsection{GET: /dbs/get}
+
+This endpoint allows the main android application to fetch a created locations database from the server - a GET request will return the database file.
+
+\subsection{Component Analysis: Site}
+
+The frontend of the server presents the data that has been collected through the mobile application to an authorised user - firstly as raw data, but with the option to view the data in graph format. 
+
+\subsubsection{Index}
+
+The root of the site provides a fragment view of the data that a user could see by clicking on the relevant section of the site - it displays a small portion of the current Access Point Fault list, along with a chart showing total location usage over the past 7 days.
+
+\subsubsection{Locations}
+
+The locations list shows each record that has been created by a POST from the mobile application, with the details of which location the record was created at, and the timestamp for the record. There are links on each row to either view or delete the record. When the record is viewed, the user is taken to a page showing the usage of that location over the past 7, 14 and 28 days. 
+
+Additionally, from the main locations list, the user can click a button at the bottom which will download the entire list in .csv format, allowing the user to load the dataset into their own program and create their own information sets from there.
+
+\subsubsection{Access Point Faults}
+
+The access point faults list functions in much the same way as the locations list, showing the MAC address of the malfunctioning access point, along with it's location, the timestamp for when the problem was discovered, and any notes pertaining to the issue. The options for each of these records are either 'Show', 'Delete', or 'Edit'. Show will take the user to a page that shows only that record's details. Delete will delete the record, and Edit allows the user to modify the record - allowing for the updating of the Notes field. 
 
 
 %\include{Chapters/Body}
@@ -449,8 +569,6 @@ public LinkedList<Node> getPath(Node target) {
 \bibliographystyle{plain}
 \bibliography{mybib}
 \addcontentsline{toc}{section}{Bibliography}
-
-
 \appendix
 \include{Appendices/appendix}
 %\include{Appendices/UserGuide}

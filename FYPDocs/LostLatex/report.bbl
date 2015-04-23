@@ -43,6 +43,11 @@ Google.
 \newblock
   \url{https://developer.android.com/about/dashboards/index.html?utm_source=suzunone}.
 
+\bibitem{androidservices}
+Google.
+\newblock Android services.
+\newblock \url{http://developer.android.com/guide/components/services.html}.
+
 \bibitem{appcompat}
 Google.
 \newblock Android support libraries.
