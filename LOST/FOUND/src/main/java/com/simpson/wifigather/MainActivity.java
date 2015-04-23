@@ -26,6 +26,7 @@ public class MainActivity extends Activity {
     static List<ScanResult> results;
     static EditText et;
     static Spinner sp;
+    static Spinner additionalSp;
     BroadcastReceiver wifiReceiver;
     TextView tv;
     wifiScanReceiver scanReceiver;
@@ -46,6 +47,9 @@ public class MainActivity extends Activity {
         sp.setAdapter(dataAdapter);
 
         updateSpinner();
+
+        additionalSp = (Spinner)findViewById(R.id.additionalEdge);
+        additionalSp.setAdapter(dataAdapter);
 
         et = (EditText)findViewById(R.id.locationText);
 
@@ -146,6 +150,13 @@ public class MainActivity extends Activity {
                     dh.insertEdge(dh.getEdgeCount() + 1, sp.getSelectedItemPosition(), dh.getNodeCount(), 1, "Walk");
                     dh.insertEdge(dh.getEdgeCount() + 1, dh.getNodeCount(), sp.getSelectedItemPosition(), 1, "Walk");
                     updateSpinner();
+
+                if(additionalSp.getSelectedItem().toString() != "Nothing")
+                {
+                    dh.insertEdge(dh.getEdgeCount() + 1, additionalSp.getSelectedItemPosition(), dh.getNodeCount(), 1, "Walk");
+                    dh.insertEdge(dh.getEdgeCount() + 1, dh.getNodeCount(), additionalSp.getSelectedItemPosition(),  1, "Walk");
+                    updateSpinner();
+                }
                 }
                 Toast.makeText(getApplicationContext(), dh.getNodeCount() + " Stuff", Toast.LENGTH_SHORT).show();
                 scanButton.setEnabled(true);

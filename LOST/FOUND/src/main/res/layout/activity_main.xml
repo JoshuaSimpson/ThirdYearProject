@@ -13,8 +13,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Record Location"
-            android:layout_alignTop="@+id/spinner" android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_below="@+id/additionalEdge" android:layout_centerHorizontal="true"
+            android:layout_marginTop="47dp"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,10 +28,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinner"
-            android:layout_marginTop="76dp"
-            android:layout_below="@+id/locationText" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:layout_toLeftOf="@+id/scanButton"
-            android:layout_toStartOf="@+id/scanButton"/>
+            android:layout_above="@+id/additionalEdge" android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" android:layout_marginBottom="51dp"/>
+
+    <Spinner android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/additionalEdge"
+             android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+             android:layout_alignParentStart="true"/>
 
 
 </RelativeLayout>
