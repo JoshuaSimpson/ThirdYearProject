@@ -67,8 +67,17 @@
 \contentsline {subsubsection}{Development Environment}{30}{section*.20}
 \contentsline {subsubsection}{Libraries / Frameworks Used}{30}{section*.21}
 \contentsline {subsection}{\numberline {5.2.2}Component Analysis: API}{31}{subsection.5.2.2}
-\contentsline {subsubsection}{/locations}{31}{section*.22}
-\contentsline {section}{Bibliography}{33}{chapter*.23}
-\contentsline {chapter}{\numberline {A}Extra Information}{34}{appendix.A}
-\contentsline {section}{\numberline {A.1}Use Case Diagram}{34}{section.A.1}
-\contentsline {section}{\numberline {A.2}Component Diagram}{35}{section.A.2}
+\contentsline {subsubsection}{POST: /locations}{31}{section*.22}
+\contentsline {subsubsection}{POST: /accesspoints}{31}{section*.23}
+\contentsline {subsubsection}{POST: /dbs}{32}{section*.24}
+\contentsline {subsubsection}{GET: /dbs/get}{32}{section*.25}
+\contentsline {subsection}{\numberline {5.2.3}Component Analysis: Site}{32}{subsection.5.2.3}
+\contentsline {subsubsection}{Login}{32}{section*.26}
+\contentsline {subsubsection}{Index}{32}{section*.27}
+\contentsline {subsubsection}{Locations}{33}{section*.28}
+\contentsline {subsubsection}{Access Point Faults}{33}{section*.29}
+\contentsline {subsection}{\numberline {5.2.4}Difficulties during implementation}{33}{subsection.5.2.4}
+\contentsline {section}{Bibliography}{36}{chapter*.30}
+\contentsline {chapter}{\numberline {A}Extra Information}{37}{appendix.A}
+\contentsline {section}{\numberline {A.1}Use Case Diagram}{37}{section.A.1}
+\contentsline {section}{\numberline {A.2}Component Diagram}{38}{section.A.2}

@@ -528,7 +528,7 @@ When a JSON of the form :
 
 \begin{minted}[frame=single]{JSON}
 { "mac" : mac, "location" : location, "time" : time, "notes" : notes }
-
+\end{minted}
 is POSTed to the above endpoint, the server will create a new access point fault record, using each of the key-value pairs in the JSON post for the relevant field in the database.
 
 \subsubsection{POST: /dbs}
@@ -542,6 +542,16 @@ This endpoint allows the main android application to fetch a created locations d
 \subsection{Component Analysis: Site}
 
 The frontend of the server presents the data that has been collected through the mobile application to an authorised user - firstly as raw data, but with the option to view the data in graph format. 
+
+\subsubsection{Login}
+
+Before any of the pages on the site can be accessed, the user will need to log in. If they try to access any of the views available from the site wihout having logged in first they will be redirected to a login dialog. This functionality is thanks to the Devise Gem, allowing for session-authentication. This is implemented using one line of code:
+
+\begin{minted}[frame=single]{Ruby}
+before_filter :authenticate_user!
+\end{minted}
+
+Which checks to see if the user currently has a session.
 
 \subsubsection{Index}
 
@@ -557,7 +567,36 @@ Additionally, from the main locations list, the user can click a button at the b
 
 The access point faults list functions in much the same way as the locations list, showing the MAC address of the malfunctioning access point, along with it's location, the timestamp for when the problem was discovered, and any notes pertaining to the issue. The options for each of these records are either 'Show', 'Delete', or 'Edit'. Show will take the user to a page that shows only that record's details. Delete will delete the record, and Edit allows the user to modify the record - allowing for the updating of the Notes field. 
 
+\subsection{Difficulties during implementation}
 
+Whilst RoR makes a point of being easy to rapidly deploy with, there were still some issues, not least because of the learning curve of web development, which was added to by having to develop an API alongside the user website.
+
+The biggest issue I faced whilst implementing the backend was using the Highcharts API - whilst it massively sped up the process of creating sleek charts, it was a challenge to pull the correct data from Ruby's Active Record to use with Highcharts. Eventually, a method was created in the model manager for the locations: 
+
+\begin{minted}[frame=single]{Ruby}
+def self.get_location_count(location)
+	summary = Location.where("loc == ? AND time > ?", location, 
+	(DateTime.now - 7.days)).group(:time).count
+	past_week = ((Date.today - 7).. Date.today)
+
+	past_week = past_week.map {|d| d.strftime "%y-%m-%d" }
+
+	summary = Hash[summary.map{ |k, v| [k.strftime("%y-%m-%d"), v]}]
+
+	final_result =Hash[*past_week.map(&:to_s).product([0]).flatten].merge 
+	Hash[*summary.flatten]
+
+	final_result.to_a
+end
+\end{minted}
+
+\section{FOUND}
+
+FOUND was never meant to be a part of the original application - rather it became a necessity after a short amount of time spent attempting to gather wireless location data. FOUND is a mobile application designed to build a database that the main application ( LOST ) can transform into a directed graph. The toolkit used is the same as was used to develop the LOST application.
+
+\subsection{Activity: Main Function}
+The application has only one activity, dedicated to it's one function.
+take a scan of local wireless points, create a Node for the main application based on that location ( and with a name given by the user )
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
 %\include{Chapters/Implementation}
