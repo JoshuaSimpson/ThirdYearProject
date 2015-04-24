@@ -65,24 +65,24 @@
 \contentsline {subsection}{\numberline {5.2.1}Toolkit}{30}{subsection.5.2.1}
 \contentsline {subsubsection}{Languages Used}{30}{section*.19}
 \contentsline {subsubsection}{Development Environment}{30}{section*.20}
-\contentsline {subsubsection}{Libraries / Frameworks Used}{30}{section*.21}
+\contentsline {subsubsection}{Libraries / Frameworks Used}{31}{section*.21}
 \contentsline {subsection}{\numberline {5.2.2}Component Analysis: API}{31}{subsection.5.2.2}
 \contentsline {subsubsection}{POST: /locations}{31}{section*.22}
-\contentsline {subsubsection}{POST: /accesspoints}{31}{section*.23}
+\contentsline {subsubsection}{POST: /accesspoints}{32}{section*.23}
 \contentsline {subsubsection}{POST: /dbs}{32}{section*.24}
 \contentsline {subsubsection}{GET: /dbs/get}{32}{section*.25}
 \contentsline {subsection}{\numberline {5.2.3}Component Analysis: Site}{32}{subsection.5.2.3}
 \contentsline {subsubsection}{Login}{32}{section*.26}
-\contentsline {subsubsection}{Index}{32}{section*.27}
+\contentsline {subsubsection}{Index}{33}{section*.27}
 \contentsline {subsubsection}{Locations}{33}{section*.28}
 \contentsline {subsubsection}{Access Point Faults}{33}{section*.29}
 \contentsline {subsection}{\numberline {5.2.4}Difficulties during implementation}{33}{subsection.5.2.4}
 \contentsline {section}{\numberline {5.3}FOUND}{34}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Activity: Main Function}{34}{subsection.5.3.1}
 \contentsline {section}{\numberline {5.4}Testing}{35}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Unit Testing}{35}{subsection.5.4.1}
 \contentsline {chapter}{\numberline {6}Evaluation}{36}{chapter.6}
 \contentsline {section}{\numberline {6.1}Requirements Analysis}{36}{section.6.1}
-\contentsline {section}{Bibliography}{38}{chapter*.30}
-\contentsline {chapter}{\numberline {A}Extra Information}{39}{appendix.A}
-\contentsline {section}{\numberline {A.1}Use Case Diagram}{39}{section.A.1}
-\contentsline {section}{\numberline {A.2}Component Diagram}{40}{section.A.2}
+\contentsline {subsection}{\numberline {6.1.1} Functional Requirements }{36}{subsection.6.1.1}
+\contentsline {subsubsection}{F1 - Application will be able to retrieve most recent SQLite database containing wireless access point location information upon startup}{36}{section*.30}
+\contentsline {section}{Bibliography}{38}{chapter*.31}

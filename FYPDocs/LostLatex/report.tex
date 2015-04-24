@@ -478,7 +478,7 @@ Unfortunately, during implementation there was a major issue discovered - the fu
 
 Whilst developing the mobile application I encountered the majority of the difficulties for this project - mostly due to having to implement complex methods such as a functioning Dijkstra's algorithm, but mostly trying to develop a method to determine the user's location that was accurate, with as much precision as possible. After extensive testing, it became clear that the originally planned '3 MAC' method, where I would use a combination of trilateration and fuzzy location determination\footnote{A method for roughly determining location} to determine a precise\footnote{To within 5-10 feet} location, however the rate of success for accurately finding the user's location was too low - most of the time the application returning that it didn't recognise the area - this is mostly due to the original implementation.
 
-This original implementation took the top three MAC address and concatenated them, meaning that to find a match the user had to be in the location where that exact combination happens again - however, as covered by Cook et al, radio signals are extremely variable\cite{cook2005indoor}, and this had a major impact. 
+This original implementation took the top three MAC address and concatenated them, meaning that to find a match the user had to be in the location where that exact combination happens again - however, as covered by Cook et al, radio signals are extremely variable\cite{cook2005indoor}, and this had a major impact. An example of this is shown in the Appendix - two subsequent screenshots showing a refresh with a colleague next to me and with that colleague three feet away, showing two completely different results. This was a repeatable occurrence. 
 
 Because of the limited amount of time available, it was necessary to establish a working, accurate proof-of-concept before trying to develop a higher level of precision, and so the current implementation is almost guaranteed to find your location within Kings\footnote{ 'Almost' because of mobile wireless hotspots and the like causing inaccuracies }. 
 
@@ -603,6 +603,11 @@ Finally, there is a function which POSTs the database to the backend, so that it
 
 \section{Testing}
 
+\subsection{Unit Testing}
+
+Of which there was fuck all
+
+Monkey seed - whilst Monkey will bombard the phone with random events until it causes a bug, it can be difficult to get Monkey to replicate that same sequence of events. By specifying the seed for the random event generator, the sequence of events can be repeated - this allowed for an easier analysis of any implemented bugfixes. 
 
 
 \chapter{Evaluation}
@@ -614,6 +619,7 @@ In this chapter I will evaluate the body of work that has been created as a resu
 \subsection{ Functional Requirements } 
 
 \subsubsection{F1 - Application will be able to retrieve most recent SQLite database containing wireless access point location information upon startup}
+
 
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
