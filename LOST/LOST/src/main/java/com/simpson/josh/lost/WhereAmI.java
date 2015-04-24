@@ -83,14 +83,12 @@ public class WhereAmI extends Activity {
                 };
                 //Sort 'dem WiFis
                 Collections.sort(results, resultComparator);
-                locationString = MainActivity.myGraph.getLocFromMac(results.get(0).BSSID);
-                if(locationString == "Location not found")
+                for(int i = 0 ; i < results.size() ; i++ )
                 {
-                    locationString = MainActivity.myGraph.getLocFromMac(results.get(1).BSSID);
-                    if(locationString == "Location not found")
+                    if(!MainActivity.myGraph.getLocFromMac(results.get(i).BSSID).equals("Location not found"))
                     {
-                        locationString = MainActivity.myGraph.getLocFromMac(results.get(2).BSSID);
-
+                        locationString = MainActivity.myGraph.getLocFromMac(results.get(i).BSSID);
+                        break;
                     }
                 }
                 resultString = "You're at: \n \n " + locationString;
