@@ -14,7 +14,8 @@
         android:theme="@style/Base.ThemeOverlay.AppCompat.Dark" >
         <activity
             android:name="com.simpson.josh.lost.MainActivity"
-            android:label="@string/app_name" >
+            android:screenOrientation="portrait"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,18 +24,22 @@
         </activity>
         <activity
             android:name="com.simpson.josh.lost.WhereAmI"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_where_am_i" >
         </activity>
         <activity
             android:name="com.simpson.josh.lost.RouteFinder"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_where_am_i" >
         </activity>
         <activity
             android:name="com.simpson.josh.lost.RouteResults"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_route_results" >
         </activity>
         <activity
             android:name="com.simpson.josh.lost.settings"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_settings" >
         </activity>
 
@@ -43,6 +48,7 @@
 
         <activity
             android:name="com.simpson.josh.lost.LoginDialog"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_login_dialog"
             android:theme="@android:style/Theme.Dialog" >
         </activity>
