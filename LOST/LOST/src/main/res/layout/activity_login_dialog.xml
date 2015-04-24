@@ -12,7 +12,7 @@
             android:id="@+id/usernameBox"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:inputType="textNoSuggestions"
             android:hint="K number"
             android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
