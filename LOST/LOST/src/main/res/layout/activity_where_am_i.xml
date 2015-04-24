@@ -33,7 +33,15 @@
             android:id="@+id/imageButton"
             android:src="@drawable/ic_action_refresh"
             android:onClick="refresh"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
+            android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/getDirections"
+            android:src="@drawable/ic_action_directions"
+            android:onClick="getDirections"
+            android:visibility="invisible"
+            android:layout_above="@+id/imageButton" android:layout_centerHorizontal="true"
+            android:layout_marginBottom="62dp"/>
 
 </RelativeLayout>

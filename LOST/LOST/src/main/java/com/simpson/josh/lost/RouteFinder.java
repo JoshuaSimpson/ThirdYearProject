@@ -46,6 +46,9 @@ public class RouteFinder extends Activity {
         do {
             spinAdapter.add(getLocations.getString(0));
         } while (getLocations.moveToNext());
+
+        Intent thisIntent = getIntent();
+        start.setSelection(thisIntent.getIntExtra("Location", 0));
     }
 
     public void getPath(View view) {

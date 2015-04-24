@@ -61,14 +61,15 @@ public class DiGraph {
     }
 
     public String getLocFromMac(String mac) {
-        String nopeOut = "";
+        String location = "";
         try {
-            nopeOut = nodeMAC.get(mac).location;
+            location = nodeMAC.get(mac).location;
         } catch (Exception e) {
-            nopeOut = "Seriously just nope it all";
+            location = "Location not found";
         }
-        return nopeOut;
+        return location;
     }
+
 
     //Test method
     public void printMACS() {

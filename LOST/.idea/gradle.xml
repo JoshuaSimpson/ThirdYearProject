@@ -5,13 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/FOUND" />
-            <option value="$PROJECT_DIR$/LOST" />
-          </set>
-        </option>
+        <option name="gradleJvm" value="1.7" />
       </GradleProjectSettings>
     </option>
   </component>

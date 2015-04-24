@@ -12,7 +12,7 @@
             android:layout_marginTop="30dp"
             android:id="@+id/label1" android:layout_weight="0.05"/>
     <Spinner
-            android:layout_width="117dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:id="@+id/routeFrom"
@@ -27,7 +27,7 @@
             android:layout_marginTop="30dp"
             android:id="@+id/label2" android:layout_weight="0.05"/>
     <Spinner
-            android:layout_width="117dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:id="@+id/routeTo"
