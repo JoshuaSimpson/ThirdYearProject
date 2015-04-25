@@ -48,7 +48,9 @@ To demonstrate a successful project, a large building with many potential locati
 
 This report will begin with a background on the project - taking a look at location based services and contextually aware services and the applications of both that are already available, along with an analysis of projects or papers that have attempted to solve the problem of location services at building level. This data will then be collated to analyse key problem areas during implementation. 
 
-Following this there will be an outline of the requirements and specification for the project - showing both the project itself and the chosen extensions - complete with justifications on decisions made in the specification.
+Following this there will be an outline of the requirements and specification for the project - showing both the project itself and the chosen extensions - complete with justifications on decisions made in the specification. Next, the implementation of each component in the project will be described and analysed. 
+
+Finally, there will be an evaluation of the final implementation, comparing the result against the expectations set out in the Design chapter. This will be followed by a conclusion containing final thoughts about the project, and detailing future work that would follow as a result of work done in this project. 
 
 
 \chapter{Project Background and Main Points to Consider}
@@ -296,6 +298,7 @@ The edges table will contain edges that represent connections between nodes. Its
 \subsection{User Data}
 
 This database will contain the data that has been uploaded as people have used the mobile app - the data contained in this database will vary from table to table, depending on the sort of data that we want to collect from the user. Because of this, we will define a couple of example databases, as the other possibilities for collected data are endless. 
+\newpage
 
 \subsubsection{Location Reporting}
 
@@ -306,7 +309,6 @@ An example database showing the locations / facilities in Kings that are being u
 \item[Location] - A string showing where the user was when the data was uploaded. Stored as a string.
 \item[Time] - Date / Time that data is recorded ( which may well be different from the time of upload ), stored as a string.
 \end{description}
-\newpage
 
 \subsubsection{Access Point Recording}
 \begin{description}
@@ -386,7 +388,23 @@ The problem with this approach is that when originally adding each Node to the D
 
 When this activity is opened, a wifi scan is immediately performed, and a loading screen shown until the Activity has received and processed the results. The completion of a wifi scan triggers a WIFI\_SCAN\_RESULTS\_AVAILABLE event which is listened for by the BroadcastReceiver class. When the BroadcastReceiver receives this action, it triggers an onReceive method where the results can be fetched and operations run as a response to this action.
 
-The results are returned in a <ScanResults> List, which is then ordered using a comparator, according to signal strength ( from the best quality to the lowest quality ). The top result is taken, and its MAC address used to find the Node relevant to that user's location in the DiGraph. Finally, the user's location is extrapolated by getting the 'location' variable from the Node.
+The results are returned in a <ScanResults> List, which is then ordered using a comparator, according to signal strength ( from the best quality to the lowest quality ). In the best case, the top result is taken, and its MAC address used to find the Node relevant to that user's location in the DiGraph. Because of the issues with signal variance that have been described throughout this report, this is not always the case. To cover this occurence, the implementation will loop through the results list until it hits the first recognisable MAC address.
+
+\begin{minted}[frame=single]{Java}
+for(int i = 0 ; i < results.size() ; i++ )
+{
+    if(!MainActivity.myGraph.getLocFromMac(results.get(i).BSSID)
+    .equals("Location not found"))
+    {
+        locationString = MainActivity.myGraph.getLocFromMac
+        (results.get(i).BSSID);
+        break;
+    }
+}
+resultString = "You're at: \n \n " + locationString;
+\end{minted}
+
+Finally, the user's location is extrapolated by getting the 'location' variable from the Node.
 
 The original plan for this class involved using the top three access points to get a much more precise estimate of the user's location using trilateration. Unfortunately, because of the variation of signal strengths at any given point ( a figure that can even be affected by another person's body ), the top three MAC addresses in any given place can change constantly. To get an accurate result would require having populated the database with every possible variation for every area, resulting in an exponential increase in the amount of data that needs to be taken ( and therefore Nodes required ). 
 
@@ -472,7 +490,7 @@ This Activity provides very little towards functionality, instead providing util
 
 This data is then used to create correctly set up wireless profiles for both AccessKings and Eduroam. This idea is meant to provide more functionality to the user from the application, and also helps to make sure that the user doesn't have connection issues due to authentication when in Kings.
 
-Unfortunately, during implementation there was a major issue discovered - the functionality to programatically add a wireless profile for a WPA-Enterprise network was only added in 4.3, and so far is not available for earlier Android versions. An implementation using this would violate non-functional requirement NF6, so if this application were to progress beyond the BSc report, multiple versions of the application would be supported using Google's multiple APK support.
+Unfortunately, during implementation there was a major issue discovered - the functionality to programatically add a wireless profile for a WPA-Enterprise network was only added in Android version 4.3, and so far is not available for earlier Android versions. An implementation using this would violate non-functional requirement NF6, so the application will make sure that the device it's running on is at the required Android version, else it will not display that functionality - the rest of the application will continue to function as normal.
 
 \subsection{Difficulties during implementation}
 
@@ -480,7 +498,7 @@ Whilst developing the mobile application I encountered the majority of the diffi
 
 This original implementation took the top three MAC address and concatenated them, meaning that to find a match the user had to be in the location where that exact combination happens again - however, as covered by Cook et al, radio signals are extremely variable\cite{cook2005indoor}, and this had a major impact. An example of this is shown in the Appendix - two subsequent screenshots showing a refresh with a colleague next to me and with that colleague three feet away, showing two completely different results. This was a repeatable occurrence. 
 
-Because of the limited amount of time available, it was necessary to establish a working, accurate proof-of-concept before trying to develop a higher level of precision, and so the current implementation is almost guaranteed to find your location within Kings\footnote{ 'Almost' because of mobile wireless hotspots and the like causing inaccuracies }. 
+Because of the limited amount of time available, it was necessary to establish a working, accurate proof-of-concept before trying to develop a higher level of precision, and so the current implementation is almost guaranteed to accurately discern your location within Kings.
 
 \section{Backend}
 
@@ -590,6 +608,8 @@ def self.get_location_count(location)
 end
 \end{minted}
 
+The issue with the above code is that it only works for one part of the Highcharts API, with different types of graph obviously requiring data output in different manners. 
+
 \section{FOUND}
 
 FOUND was never meant to be a part of the original application - rather it became a necessity after a short amount of time spent attempting to gather wireless location data. FOUND is a mobile application designed to build a database that the main application ( LOST ) can transform into a directed graph. The toolkit used is the same as was used to develop the LOST application.
@@ -603,25 +623,75 @@ Finally, there is a function which POSTs the database to the backend, so that it
 
 \section{Testing}
 
-\subsection{Unit Testing}
+During the development of this application, testing was important after the implementation of each new feature. Unfortunately automating this through unit testing was in almost every case, not possible. Because of the nature of this project requiring actual location information taken from the environment it is to be used in, it was much easier for any testing of functionality, and indeed any regression testing, to be performed by testing on the two development phones, making sure that everything that happened was logged using logcat.
 
-Of which there was fuck all
+\subsection{Monkey}
 
-Monkey seed - whilst Monkey will bombard the phone with random events until it causes a bug, it can be difficult to get Monkey to replicate that same sequence of events. By specifying the seed for the random event generator, the sequence of events can be repeated - this allowed for an easier analysis of any implemented bugfixes. 
+Whilst not unit testing itself, one tool I did use was Monkey. Monkey simulates a user-defined number of completely random events against the app to see whether any combination of events would cause a crash. This was useful, and performed at the introduction and completion of any new functions.
 
-Lack of unit testing because of the nature of the project - it was based around finding locations and so any testing was easier to perform on site on the actual phone. Regression testing worked in much the same manner. 
+\subsubsection{Seeding}
+
+An interesting point to note is that whilst Monkey will bombard the phone with random events until it causes a bug, it can be difficult to get Monkey to replicate that same sequence of events. By specifying the seed for the random event generator, the sequence of events can be repeated - this allowed for an easier analysis of any implemented bugfixes. 
 
 
 \chapter{Evaluation}
 
-In this chapter I will evaluate the body of work that has been created as a result of this project, both against the requirements laid out in Chapter 3, and critically as a project.
+In this chapter I will evaluate each componeont that has been created as a result of this project, both against the requirements laid out in Chapter 3, and critically as a component of the project.
 
-\section{Requirements Analysis}
+\section{LOST} 
 
-\subsection{ Functional Requirements } 
+All of the requirements originally laid out for the LOST module of the project were successfully achieved - the application will succesfully give the user their location in any mapped location, the successful implementation of Dijkstra's algorithm means that the user \textit{will} be provided with the shortest location to their destination, and the application returns useful data to a backend. The application does this all with currently discovered bugs or crashes, and the implementation does a lot of work in the background to make sure that the entire experience flows well. However there do remain some comments to be made on the final implementation.
 
-\subsubsection{F1 - Application will be able to retrieve most recent SQLite database containing wireless access point location information upon startup}
+Firstly and most importantly is the location determination functionality - whilst the requirement of accurately discerning the user's location has been achieved, the accuracy and precision of the implementation is not ideal. The application will give the user a location 99\% of the time, but this may not always be accurate, as touched upon briefly in the Implementation chapter. Such a problem was the signal variation that there were cases where the closest router in a room would come at a lower signal strength than a router in the adjourning corridor, and therefore the user whilst the user would receive a roughly accurate location, it wouldn't be the textit{most} accurate location. Obviously this meant that the precision of the application was also thrown off.
 
+In order to combat this, when creating the locations, many nodes would be created for a single location ( to try and cover all possible scenarios ) - this caused it's own problems - for starters any duplicate nodes would also be shown in the Route Finder part of the application, as the user needed to be able to navigate from any one of these nodes. 
+
+Finally, the user interface, whilst simple to use, is fairly bland - whilst the aim of the project was to provide a proof-of-concept application, the application was designed with a large user element in mind, and this does not show through as well as it could do in the UI.
+
+\section{Backend}
+
+Again, all of the requirements have been satisfied. There is a secured backend that takes information from the mobile application in the form of an API and provides that data as easily accessible, useful information to a user. 
+
+Ideally, the backend would display data more thoroughly, and in more ways; whilst an attempt to provide the widest range of data visualisations has been provided through the exporting of available data to a .csv file, it does not completely make up for this lack of functionality being directly available.
+
+\section{FOUND}
+
+Whilst this tool was never designed to be part of the project whole, it provided an incredibly useful function - albeit not perfectly. It allowed for the building of a directed graph in database format whilst moving using only a mobile phone, and was not capable of creating an invalid directed graph - but when testing the location database around the university, it showed that the data taken for each location was not always accurate, and so required multiple nodes to be created for a lot of locations.
+
+This could again be attributed to the signal variance discussed throughout the report, but some fault also lies in the data structure originally designed to store this information.
+
+
+\chapter{Conclusion}
+
+\section{Final Thoughts}
+
+When this project started, I found myself considering the problem environment with too much attention paid to the real-world environment, instead of abstracting the problem out to a more logical problem - it is a mindset that I was forced to take during the course of the project and that will be invaluable to me as a developer in future projects. 
+
+An important lesson learned was to avoid 'feature-creeping' - during implementation I constantly found myself digressing from the development of a feature to add in a function that wasn't necessarily needed in the first place - whilst some of them have been useful ( such as the FOUND application ), others could have taken a much lower priority ( such as the semi-automated wifi configuration setup functionality in LOST ). 
+
+As a proof of concept project, I believe that this project has succeeded - the result has been a working system that provides a location based contextually aware environment, without relying on GPS - this proves that location technology can develop beyond the current scale that GPS provides. Overall though, I feel as if each component in the project could provide more functionality than it already does. There is always more that can be done to develop a system, and in the case of this project, this is especially true. 
+
+\section{Future Work}
+
+This project has provided some fascinating experience, and there are many avenues to consider for future development.
+
+\subsection{Location Determination}
+
+The current application provides a location, but not necessarily the most accurate. Once modifications have been made to the underlying data structure as described below, the accuracy can be increased by creating locations using multiple MAC addresses - as originally intended - just by collecting the two highest strength MAC addresses per scenario instead of one, the accuracy and precision can be dramatically increased, with each additional MAC address acting to reduce the field around the first that the user could be in.
+
+\subsection{LOST}
+
+Unfortunately, most future work for the LOST application is more aimed at the user experience, and less at providing meaningful contributions to the original problem. This covers additions like providing social integration so that users can provide low-level location information and route-planning information to others. Whilst useful when considering it's application in the context of the environment it is currently being applied in, it does not provide any real significance, and would infact be rather gimmicky.
+
+\subsection{FOUND}
+
+The most interesting piece of future work I would like to pursue would be to redesign the FOUND application outside of it's original parameters as my own utility. With careful attention, and modifications made to the underlying data structure for recording locations, the FOUND application could potentially become a useful development tool for mapping large areas with little expense\footnote{Obviously with the provision that there are available wireless access points}. The eventual result of this would be easily developable and deployable bespoke contextually aware systems. 
+
+To this end, the structure for storing locations would need to be changed - instead making sure that only one node is stored for an area, but with multiple MAC addresses to cover all potential signal variation scenarios. This would also tie in with another major point - the location determination method itself.
+
+%http://dl.acm.org/citation.cfm?id=1164798&CFID=501587811&CFTOKEN=25626225
+%http://creately.com/?tempID=gc7qvpsj1&action=login&destination=creately-login
+%http://www.gotealeaf.com/blog/how-to-use-devise-in-rails-for-authentication
 
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
@@ -630,10 +700,10 @@ In this chapter I will evaluate the body of work that has been created as a resu
 %\include{Chapters/Evaluation}
 %\include{Chapters/Conclusion}
 
-
+\chapter{Bibliography}
 \bibliographystyle{plain}
 \bibliography{mybib}
-\addcontentsline{toc}{section}{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
 \appendix
 \include{Appendices/appendix}
 %\include{Appendices/UserGuide}
