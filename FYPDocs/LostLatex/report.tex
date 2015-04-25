@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \graphicspath{ {Diagrams/}}
 \usepackage{minted}
+\usepackage{mathtools}
 
 
 \title{6CCS3PRJ Final Year\\\vspace{0.2cm} LOST}
@@ -28,25 +29,25 @@
 
 
 \chapter{Introduction}
-Location based services have been developing rapidly over the past few decades, and are used in various aspects of technology - ranging from the route-planning software that is used to figure out a morning commute, to live time-tabling services that use bus or train positions to give accurate estimates on arrival times, to advertising based on the user's current location. It is safe to say that in some way or another, location services are prevalent in modern day life.
+Location based services have been developing rapidly over the past few decades, and are used in various aspects of technology - ranging from the route-planning software that is used to figure out a morning commute, to live time-tabling services that use bus or train positions to give accurate estimates on arrival times, to advertising based on the user's current location. It is safe to say that location services are prevalent in modern day life.
 
-However, GPS\footnote{ Global Positioning System - a system using satellites to provide precise location information} -the most prominent form of location detection - only works to a certain level;  specifically to within a few feet at street level\cite{cook2005indoor}. Whilst achieving this level of precision a feat of engineering, it leaves a large market gap for providing truly localised contextually aware services. 
+However, GPS\footnote{ Global Positioning System - a system using satellites to provide precise location information} - the most prominent form of location detection - only works to a certain level;  specifically to within a few feet at street level\cite{cook2005indoor}. Whilst achieving this level of precision is a feat of engineering, it leaves a large market gap for providing truly localised contextually aware services. 
 
 Contextually aware services are another rapidly developing technology, providing users with information or activities specific to their current location or situation, determining the suitability for such events by using sensor data\footnote{ Data such as location, temperature or time }. 
 
-There are previous studies on using local area wireless access points to provide this sensor data at a level more precise than GPS can currently allow, but they are usually run in controlled environments, deriving a single mathematical equation in order to determine distance from the access point with high precision\cite{996891}. Unfortunately, this is impractical to apply as general use outside of a test environment.
+There are previous studies on using local area wireless access points to provide this sensor data at a level more precise than GPS can currently allow, but they are usually run in controlled environments, deriving a single mathematical equation in order to determine distance from the access point with high precision\cite{996891}. Unfortunately, this is impractical to apply to general use outside of a test environment.
 \newline \newline 
 
 
 \section{Project Aims}
 
-The main goal of this project is to provide a proof-of-concept mobile application that can provide location and route-planning services whilst also delivering contextually aware services in a specific building - all without using GPS - demonstrating the possibilities that this area of application development holds for developers. Around this main feature, the project will aim to create software suite allowing for the efficent setup of a 'contextually aware building', as well as provide practical functionality to a variety of user groups ( by using the application to crowdsource data), to demonstrate the potential in this field. To achieve this, I will be collecting data on user location and wifi failure\footnote{A common occurence in the chosen building} throughout the building and providing a backend that displays this data in a useful manner.
+The main goal of this project is to provide a proof-of-concept mobile application that can provide location and route-planning services whilst also delivering contextually aware services in a specific building - all without using GPS - demonstrating the possibilities that this area of application development holds for developers. Around this main feature, the project will aim to create a software suite allowing for the efficent setup of a 'contextually aware building', as well as provide practical functionality to a variety of user groups (by using the application to crowdsource data), to demonstrate the potential in this field. To achieve this, I will be collecting data on user location and WiFi failure\footnote{A common occurence in the chosen building} throughout the building and providing a backend that displays this data in a useful manner.
 
-To demonstrate a successful project, a large building with many potential locations is useful, as it shows the accuracy of of the location-finding and route-planning algorithms. To this end, the building that I am using to test this application is King's College London's Strand Campus\footnote{ It has not escaped my attention that this will also help all the new first years find Waterfront}. With roughly 17,000m2 of space and 9 floors to utilise, the application would not only be thoroughly tested but also most likely welcomed by King's 25,000 students\cite{headcount}.
+To demonstrate a successful project, a large building with many potential locations is useful, as it shows the accuracy of of the location-finding and route-planning algorithms. To this end, the building that I am using to test this application is King's College London's Strand Campus\footnote{It has not escaped my attention that this will also help all the new first years find Waterfront}. With roughly 17,000m2 of space and 9 floors to utilise, the application would not only be thoroughly tested but also most likely welcomed by King's 25,000 students\cite{headcount}.
 
 \section{Report Structure}
 
-This report will begin with a background on the project - taking a look at location based services and contextually aware services and the applications of both that are already available, along with an analysis of projects or papers that have attempted to solve the problem of location services at building level. This data will then be collated to analyse key problem areas during implementation. 
+This report will begin with a background on the project - taking a look at location based services and contextually aware services and the applications of both that are already available, along with an analysis of projects and papers that have attempted to solve the problem of location services at building level. This data will then be collated to analyse key problem areas during implementation. 
 
 Following this there will be an outline of the requirements and specification for the project - showing both the project itself and the chosen extensions - complete with justifications on decisions made in the specification. Next, the implementation of each component in the project will be described and analysed. 
 
@@ -61,9 +62,9 @@ Defined as \textit{"services that integrate a mobile device's location or positi
 
 \subsection{Application: Google Maps}
 
-Google Maps is easily the most widely used mapping tool on the planet, with over 54\% of smartphone owners using the app on a regular basis in 2013 ( for comparison, this was 10\% more than Facebook at the time)\cite{googlemaps}. Google Maps are a chief provider of location information services, with advanced route planning and street-view functionality. They serve this data through their own API\footnote{https://developers.google.com/maps/}. The most interesting aspect of their service ( in relation to this paper, at least ) is their recent addition of the use of Wireless Access Points for their location services. Whilst they do not rely solely on it for location, they do use the data to increase accuracy and speed through their Maps application\cite{googlewifi}. Interestingly, Google collect this WiFi data by crowdsourcing through an 'opt out' scheme in the Google Maps application\cite{googlewifi2} - this may not be possible in the case of this project ( as Google have used WiFi in a more assistive manner ), but it provides a good basis from which to approach the problem.
+Google Maps is easily the most widely used mapping tool on the planet, with over 54\% of smartphone owners using the app on a regular basis in 2013 (for comparison, this was 10\% more than Facebook at the time)\cite{googlemaps}. Google Maps are a chief provider of location information services, with advanced route planning and street-view functionality. They serve this data through their own API\footnote{https://developers.google.com/maps/}. The most interesting aspect of their service (in relation to this paper, at least) is their recent addition of the use of Wireless Access Points for their location services. Whilst they do not rely solely on it for location, they do use the data to increase accuracy and speed through their Maps application\cite{googleWiFi}. Interestingly, Google collect this WiFi data by crowdsourcing through an 'opt out' scheme in the Google Maps application\cite{googleWiFi2} - this may not be possible in the case of this project (as Google have used WiFi in a more assistive manner), but it provides a good basis from which to approach the problem.
 
-\subsection{Paper: Indoor Location Using Trilateration Characteristics}\cite{cook2005indoor}
+\subsection{Paper: Indoor Location Using Trilateration Characteristics\cite{cook2005indoor}}
 
 This paper is especially relevant to the problem, considering the use of Wireless Local Area Networks in order to achieve trilateration. This is achieved by measuring the signal strength for at least 3 access points, and using the signal strength to determine the distance from the access point. Once you have three accurate distances you can essentially create a 'Venn Diagram' of where the user is located.
 
@@ -72,13 +73,13 @@ The paper goes on to state that there are inherent inaccuracies with this positi
 To circumvent these inaccuracies, an elegant averaging method was developed, which started returning an accurate 'average signal strength' after 40 readings.
 
 \subsubsection{Issues with the trilateration approach}
-- As stated above, the trilateration approach has difficulties providing accuracies:
+As stated above, the trilateration approach has difficulties providing accuracies:
 
-\textit{"Radio signals are extremely variable, particularly indoors, due to being reflected by obstacles or refracted round corners, known as multipath reflection. Environmental changes can also affect the signals, such as the number of people around. This means that the positioning technique is inherently inaccurate, with positions from raw Wi-Fi signals being in excess of 10m out. "}\cite{cook2005indoor}
+\textit{"Radio signals are extremely variable, particularly indoors, due to being reflected by obstacles or refracted round corners, known as multipath reflection. Environmental changes can also affect the signals, such as the number of people around. This means that the positioning technique is inherently inaccurate, with positions from raw Wi-Fi signals being in excess of 10m out."}\cite{cook2005indoor}
 
-\noindent- Whilst there is a solution designed to solve this problem in the case of the test environment, an application in a building such as Kings would require a number of different formulae in order to provide accurate signal strength averaging for different areas of King's\footnote{ Because of the variables such as distance between routers, building material, and the number of users in any area at a given time}
+Whilst there is a solution designed to solve this problem in the case of the test environment, an application in a building such as King's would require a number of different formulae in order to provide accurate signal strength averaging for different areas of King's\footnote{Because of the variables such as distance between routers, building material, and the number of users in any area at a given time}
 
-\noindent- Finally, in cases where the averaging solution is easily applicable, there \textit{should} be concerns regarding the impact on a mobile device's battery life when performing repeated scans and operations on the results of those scans.
+Finally, in cases where the averaging solution is easily applicable, there \textit{should} be concerns regarding the impact on a mobile device's battery life when performing repeated scans and operations on the results of those scans.
 
 \subsection{Paper: More Stuff on Location - Fuzzy Location?} 
 
@@ -88,13 +89,13 @@ Contextually aware services are services that use data that pertains to the user
 
 \textit{ "any information that can be used to characterize the situation of entities (i.e., whether a person, place or object) that are considered relevant to the interaction between a user and an application, including the user and the application themselves." }\cite{abowd1999towards}
 
-Contextually aware services use 'sensors' to fetch this information - examples include location data, temperature, even the camera on your phone could be used as a sensor for contextual services\footnote{Consider how recent smartphones have software that stops the screen coming out of standby if it thinks it is in your pocket}.
+Contextually aware services use 'sensors' to fetch this information - examples include location data, temperature, even the camera on a phone could be used as a sensor for contextual services\footnote{Consider how recent smartphones have software that stops the screen coming out of standby if it thinks it is in your pocket}.
 
 \subsection{Estimote}
 
-A rapidly accelerating tech start up, Estimote provides 'beacons' using low-power Bluetooth in order to send an ID\footnote{\url{http://estimote.com/api/getting-started/intro-to-beacons.html}} to an Estimote enabled application - these can then be programmatically associated with locations, events, etc. and calculates its distance from the phone using RSSI ( the received signal strength ) inside it's own API, meaning that it can be used very effectively to provide location-based services with minimal effort. This is so far the the most prominent product in the market using the iBeacon base.
+A rapidly accelerating tech start up, Estimote provides 'beacons' using low-power Bluetooth in order to send an ID\footnote{\url{http://estimote.com/api/getting-started/intro-to-beacons.html}} to an Estimote enabled application - these can then be programmatically associated with locations, events, etc. and calculates its distance from the phone using RSSI (the received signal strength) inside it's own API, meaning that it can be used very effectively to provide location-based services with minimal effort. This is so far the the most prominent product in the market using the iBeacon base.
 
-Currently the major drawback of the Estimote is the price, which limits Estimote beacons / stickers to small buildings – covering an area such as King’s would be incredibly costly\footnote{\url{http://estimote.com/\#jump-to-products}}, and any structural changes regarding the beacons would require significant effort to represent in an application developed to use Estimote. Another issue is that - as stated above - using RSSI to fetch location information can become very complex in a large building with lots of people in it (which would cause signal attenuation at different levels throughout the day). 
+Currently the major drawback of the Estimote is the price, which limits Estimote beacons/stickers to small buildings – covering an area such as King’s would be incredibly costly\footnote{\url{http://estimote.com/\#jump-to-products}}, and any structural changes regarding the beacons would require significant effort to represent in an application developed to use Estimote. Another issue is that - as stated above - using RSSI to fetch location information can become very complex in a large building with lots of people in it (which would cause signal attenuation at different levels throughout the day). 
 
 \subsection{Google Maps}
 
@@ -103,7 +104,7 @@ As part of their vast toolset, Google Maps also has context-sensitive functions 
 An interesting point to note is that the 'Explore' function was predated by a 'Search Nearby' function that was removed\footnote{\url{http://www.jsonline.com/blogs/news/247119811.html}} - possibly due to privacy concerns\footnote{Covered later in Ethical Concerns}.
 
 
-\subsection{Paper: An Architecture for Data Collection and Processing in Context-Aware Applications}\cite{salviarchitecture}
+\subsection{Paper: An Architecture for Data Collection and Processing in Context-Aware Applications\cite{salviarchitecture}}
 
 In this paper, Dario Salvi \textit{et al} pose that whilst Context Aware systems are showing and developing a greater use in general applications, that the field is not "applied in the real world"\cite{salviarchitecture}. The paper then goes on to propse an architecture that access and uses contextual data differently to provide the developer with more possibility to develop what is referred to as 'real world applications'.
 
@@ -113,15 +114,15 @@ Overall the paper presents some very useful points on using contextual data to r
 
 \section{Crowd Sourcing}
 
-Crowd sourcing is generally defined as using a group of people or community to generate a needed resource. It is mostly thought of in terms of popular crowd-funding sites such as Kickstarter, or Indiegogo, but the term extends to other resources, such as data or ideas\footnote{For example, Cracked.com - a satire website - uses its own staff, but also looks for stories contributed by it's readers}. Generally, data crowdsourcing follows a pattern of clients paying for information that they need, and users that receive rewards to collect or generate this information.
+Crowd sourcing is generally defined as using a group of people or community to generate a needed resource. It is mostly thought of in terms of popular crowd-funding sites such as Kickstarter or Indiegogo, but the term extends to other resources, such as data or ideas\footnote{For example, Cracked.com - a satire website - uses its own staff, but also looks for stories contributed by it's readers}. Generally, data crowdsourcing follows a pattern of clients paying for information that they need, and users that receive rewards to collect or generate this information.
 
-\subsection{Captcha} 
+\subsection{reCAPTCHA} 
 
-Captcha was originally invented as an identification system to help discern humans from robots when performing tasks online. This started out as just a verification system ( which is growing more and more elaborate as robots evolve ), but was eventually evolved into an aid to digitizing books\footnote{\url{http://www.npr.org/2013/10/04/191620023/can-you-crowdsource-without-even-knowing-it}}. The most interesting point about this is that most of the users of Captcha have no idea that they are crowd-sourcing a huge effort every time they solve a Captcha.
+reCAPTCHA was originally invented as an identification system to help discern humans from robots when performing tasks online. This started out as just a verification system (which is growing more and more elaborate as robots evolve), but was eventually evolved into an aid to digitizing books\footnote{\url{http://www.npr.org/2013/10/04/191620023/can-you-crowdsource-without-even-knowing-it}}. The most interesting point about this is that most of the users of reCAPTCHA have no idea that they are crowd-sourcing a huge effort every time they solve a reCAPTCHA.
 
-\subsection{The 90-9-1 Rule for Participation Inequality in Social Media and Online Communities}\cite{participationinequality}
+\subsection{The 90-9-1 Rule for Participation Inequality in Social Media and Online Communities\cite{participationinequality}}
 
-This article addresses a major problem with crowdsourcing data which Nielsen refers to as participation inequality, stating that user participation often follows a 90-9-1 rule, with 90\% of users being "lurkers or users that will observe but not contribute"\cite{participationinequality} . Nielsen also covers how to overcome this participation inequality (after briefly summarizing with ‘you can’t’); one method in particular is of interest when considering the aims of this project and its associated application: 'make participation a side effect'  – essentially the act of collecting data without the user having to do anything - this is less intrusive to the user’s day-to-day use of the application, but can also have obvious ethical ramifications if the user is unaware if they are sourcing data.
+This article addresses a major problem with crowdsourcing data which Nielsen refers to as participation inequality, stating that user participation often follows a 90-9-1 rule, with 90\% of users being "lurkers or users that will observe but not contribute"\cite{participationinequality}. Nielsen also covers how to overcome this participation inequality (after briefly summarizing with ‘you can’t’); one method in particular is of interest when considering the aims of this project and its associated application: 'make participation a side effect'  – essentially the act of collecting data without the user having to do anything - this is less intrusive to the user’s day-to-day use of the application, but can also have obvious ethical ramifications if the user is unaware if they are sourcing data.
 
 \section{Platform}
 
@@ -142,7 +143,7 @@ When developing an application that uses any form of personal information, there
 Another ethical point to consider is the code that is used to create this application. I should take due care to create this app using only my own code, except where express permission has been granted. In the same vein, I must make sure to adhere to all licenses for any libraries which I use in development.
 
 \chapter{Requirements}
-The client end of this project consists of two parts - an Android application that can determine user location ( LOST ) and provide route-planning inside the building, whilst feeding data to the backend, which will store the data and provide functions to view it as information. During implementation, I later developed a secondary Android application ( FOUND ) so that I could easily collect wireless data to test the application with. FOUND will not be available for users of the resulting software package for this project, however when considering possible extensions after the BSc report, FOUND would be an active component to allow for the easy mapping of a building in a bespoke software package. Because of the late addition of FOUND to the project, I will cover it briefly in Design, but give an in-depth analysis of the application in the Implementation section of this report.
+The client end of this project consists of two parts - an Android application that can determine user location (LOST) and provide route-planning inside the building, whilst feeding data to the backend, which will store the data and provide functions to view it as information. During implementation, I later developed a secondary Android application (FOUND) so that I could easily collect wireless data to test the application with. FOUND will not be available for users of the resulting software package for this project, however when considering possible extensions after the BSc report, FOUND would be an active component to allow for the easy mapping of a building in a bespoke software package. Because of the late addition of FOUND to the project I will cover it briefly in Design, but give an in-depth analysis of the application in the Implementation section of this report.
 
 \section{LOST - Android Application}
 
@@ -152,11 +153,11 @@ The client end of this project consists of two parts - an Android application th
 \item[F2] - The application will be able to accurately discern the user's location, using data provided by an SQLite database.
 \item[F3] - The application will be able to provide the user with route-planning data, allowing the user to select a start and an end point, and provide the shortest path between the two points.
 \item[F4] - The application will be able to discern whether the device is currently in the correct building for usage.
-\item[F5] - The application will send anonymous information on the user's location to the backend periodically, if it is in the correct building
+\item[F5] - The application will send anonymous information on the user's location to the backend periodically, if it is in the correct building.
 	\begin{description}
-	\item[F5.1] - The user will be able to turn off this functionality
+	\item[F5.1] - The user will be able to turn off this functionality.
 	\end{description}
-\item[F6] - The application will periodically check if it has a functioning internet connection - if it is in the correct building. If the internet connection is malfunctioning, it will save this data.
+\item[F6] - The application will periodically check if it has a functioning internet connection if it is in the correct building. If the internet connection is malfunctioning, it will save this data.
 	\begin{description}
 	\item[F6.1] - Once the application regains internet access, it will send location data, and the MAC address of malfunctioning router to the backend.
 	\item[F6.2] - The user will be able to turn off this functionality.
@@ -164,29 +165,29 @@ The client end of this project consists of two parts - an Android application th
 \end{description}
 \subsection{Non-functional Requirements}
 \begin{description}
-\item[NF1] - Application will not cause an 'ANR' ( app not responding ) error on any 'low-end' smartphone ( at time of writing, low end specifications are considered to be 1Ghz dual core processor and 768mb RAM\footnote{Figures created by comparing phone specifications at \url{http://www.phonearena.com/news/Affordable-not-cheap-15-best-low-cost-smartphones_id58696}}).
+\item[NF1] - Application will not cause an 'ANR' (app not responding) error on any 'low-end' smartphone (at time of writing, low end specifications are considered to be 1Ghz dual core processor and 768mb RAM\footnote{Figures created by comparing phone specifications at \url{http://www.phonearena.com/news/Affordable-not-cheap-15-best-low-cost-smartphones_id58696}}).
 \item[NF2] - Application will provide location accurate to within 20 feet.
 \item[NF3] - Application will use as little battery life as possible, using less than 5\% battery life within an hour.
 \item[NF4] - Application will minimise data usage, making sure not to post data back using mobile data.
-\item[NF5] - Application will not send data that can be used to identify the user, or any information that may be personal to the user / a breach of Data Protection laws.
+\item[NF5] - Application will not send data that can be used to identify the user, or any information that may be personal to the user/a breach of Data Protection laws.
 \item[NF6] - Application will be usable on android versions 4.0.0 upwards, covering more than 90\% of android devices\cite{androidstats}.
 \end{description}
 
 \section{Backend}
 \subsection{Functional Requirements}
 \begin{description}
-\item[F7] - Backend will operate a RESTful API that will allow the mobile application to post data to the server
-\item[F8] - Backend will store POSTed data to an SQL database
-\item[F9] - Backend will be retrieve data from SQL database, and display to user as information
-\item[F10] - Backend will require user authentication to allow access to displayed data
-\item[F11] - Backend will be able to store wifi location database, and serve it to a mobile device
+\item[F7] - Backend will operate a RESTful API that will allow the mobile application to post data to the server.
+\item[F8] - Backend will save POSTed data to an SQL database.
+\item[F9] - Backend will retrieve data from SQL database, and display this data to user as information.
+\item[F10] - Backend will require user authentication to allow access to displayed data.
+\item[F11] - Backend will be able to store WiFi location database, and serve it to a mobile device.
 \end{description}
 
 \subsection{Non-functional Requirements}
 
 \begin{description}
-\item[NF7] - Backend will provide an easily navigable user interface
-\item[NF8] - Backend will show data in an easily readable manner
+\item[NF7] - Backend will provide an easily navigable user interface.
+\item[NF8] - Backend will show data in an easily readable manner.
 \end{description}
 
 \section{FOUND - Android Application}
@@ -194,14 +195,14 @@ The client end of this project consists of two parts - an Android application th
 \subsection{Functional Requirements}
 
 \begin{description}
-\item[F12] - Application will scan local wifi access points
-\item[F13] - Application will insert the top access point into an SQLite database as a node, along with an edge connecting it to another node in the directed graph
+\item[F12] - Application will scan local WiFi access points.
+\item[F13] - Application will insert the top access point into an SQLite database as a node, along with an edge connecting it to another node in the directed graph.
 \end{description}
 
 \chapter{Design}
-The application is split into two parts - therefore it will be detailed as a whole product, before the design of each component is analysed individually. Generally, the backend and the frontend application work as their own components, with the only interaction between the two being fetching the database, and sending data from the application to the database; because of this, an agile development cycle will be used. 
+The application is split into two parts - therefore it will be detailed as a whole product before the design of each component is analysed individually. Generally, the backend and the frontend application work as their own components, with the only interaction between the two being fetching the database, and sending data from the application to the database; because of this, an agile development cycle will be used. 
 
-Further to this, a basic version of the Android application will be developed first, followed by an inital deployment of the backend, with the ability to receive data from the mobile application after that - from then, incremental additions will be made to either component, building for functionality first, then returning later for optimisation. 
+Further to this, a basic version of the Android application will be developed first, followed by an inital deployment of the backend, with the ability to receive data from the mobile application after that - from then, incremental additions will be made to both components, building for functionality first, then returning later for optimisation. 
 \newpage
 
 \section{Component Diagram}
@@ -210,34 +211,34 @@ Further to this, a basic version of the Android application will be developed fi
 
 \section{LOST}
 
-The 'front end' of the project, the LOST application provides most of the functionality detailed in the earlier chapters of this report. In this section, I will go into more detail as to what each function will need to do in order to provide the outlined functionality. You will find a \nameref{UseCase}, along with wireframes for each aspect in the Appendix. For clarification, each 'view' in an Android Application is called an Activity.
+The 'front end' of the project, the LOST application provides most of the functionality detailed in the earlier chapters of this report. In this section, I will go into more detail as to what each function will need to do in order to provide the outlined functionality. A use case diagram can be found in the Appendix. For clarification, each 'view' in an Android Application is called an Activity.
 
 \subsection{Finding Location}
 
 This is one of the most critical aspects of the application, and also one of the most challenging as a great deal of consideration needs to be paid towards efficiency, accuracy, and precision - it will generally be more expensive in terms of resources, and in fact battery power, to increase the precision.
 
-In order to ascertain location, the application will need to perform a scan of nearby wireless access points. The MAC address and signal strength of each access point will be collected, and put in descending\footnote{Or considering how signal strengths are measure, ascending. Signal strength is measured in DBm and measure as negative figures. The 'quieter' a signal is, the weaker it is - therefore a signal strength of -10 is much more powerful than a signal strength of -80} order of strength.
+In order to ascertain location, the application will need to perform a scan of nearby wireless access points. The MAC address and signal strength of each access point will be collected, and sorted in descending\footnote{Or considering how signal strengths are measure, ascending. Signal strength is measured in DBm and measure as negative figures. The 'quieter' a signal is, the weaker it is - therefore a signal strength of -10 is much more powerful than a signal strength of -80} order of strength.
 The original intention\footnote{Results of this will be detailed in the 'Implementation' section of this report.} at this point was to use actual signal strength figures to get the most precise location information, as done by Cook \textit{et al}\cite{cook2005indoor}. 
 
-To get this location information, the top three MAC addresses in the list would be used to filter the location database down to a single node, representing that location\footnote{Discussed further in the Databases section}. This location would then be displayed to the user, along with an option to refresh this ( performing another scan, incase the user doesn't think they are in the right location ). There will also be a button that allows the user to use their given location as the start or end point for route planning.
+To get this location information, the top three MAC addresses in the list would be used to filter the location database down to a single node, representing that location\footnote{Discussed further in the Databases section}. This location would then be displayed to the user, along with an option to refresh this (performing another scan to reaffirm the location given). There will also be a button that allows the user to use their given location as the start or end point for route planning.
 
 \subsection{Route Planning}
 
 This function ties in with the location finding function of the application - the user will either be able to load it normally, or load it from the 'Location Finder' part of the application - if this is the case then either the 'to' or 'from' sections of the application will contain the user's location.
 
-Regardless of how the activity is accessed, there will be two drop down lists, allowing the user to select the start and end points. The application will translate these selections into nodes in the directed graph created from the location database, and perform Dijkstra's algorithm to find the shortest path between the two locations. The nodes traversed in this path are displayed in order on the next Activity to show the user the path they need to take as a step-by-step route. A possible extension on this once functionality has been implemented would be to have each step highlight green when the user reaches the associated location, however this would most likely be done through repetitive wireless scanning, so steps would need to be taken to ensure that this doesn't rapidly drain battery. 
+Regardless of how the activity is accessed, there will be two drop down lists, allowing the user to select the start and end points. The application will translate these selections into nodes in the directed graph created from the location database, and use Dijkstra's algorithm to find the shortest path between the two locations. The nodes traversed in this path are displayed in order on the next Activity to show the user the path they need to take as a step-by-step route. A possible extension to this would be to have each step highlight green when the user reaches the associated location, however this would most likely be done through repetitive wireless scanning, so steps would need to be taken to ensure that this doesn't rapidly drain battery. 
 
 \subsubsection{Choosing an algorithm}
 
-Because of the limited power available to a mobile device, alongside the short attention span of users\footnote{And indeed Google's limit before declaring an application unresponsive}, it was important to select the most efficient algorithm for the problem being faced. Another algorithm which could have been used in this instance would have been Bellman-Ford's algorithm. After research into, and a comparison of, the two algorithms it is shown that Dijkstra's algorithm is much more efficient than Bellman-Ford's\cite{thippeswamystudy}, with the latter being used only in the case of directed graphs with negative edge weights ( a situation that Dijkstra's algorithm is not equipped to deal with ) - as there are no negative edge weights when travelling from one area to another, Dijkstra's algorithm is clearly the best choice.
+Because of the limited power available to a mobile device, alongside the short attention span of users\footnote{And indeed Google's limit before declaring an application unresponsive}, it was important to select the most efficient algorithm for the problem being faced. Dijkstra's algorithm was selected, however another algorithm which could have been used in this instance would have been Bellman-Ford's algorithm. After research into, and a comparison of, the two algorithms it is shown that Dijkstra's algorithm is much more efficient than Bellman-Ford's\cite{thippeswamystudy}, with the latter being used only in the case of directed graphs with negative edge weights (a situation that Dijkstra's algorithm is not equipped to deal with) - as there are no negative edge weights when travelling from one area to another, Dijkstra's algorithm is clearly the best choice.
 
 \subsection{Recognising access point faults}
 
-One of the chosen forms of data to upload is faults with access points, as this shows a useful application of the concepts that form the foundation of this project. In order to retrieve this data, the mobile application needs to be able to recognise when it is in Kings, when it is using a Kings wireless access point, and when that access point is having issue. However, there is an obvious issue when trying to upload data about malfunctioning access points - the lack of internet. To solve this, we need to add functionality for caching data.
+One of the chosen forms of data to upload is faults with access points, as this shows a useful application of the concepts that form the foundation of this project. In order to retrieve this data, the mobile application needs to be able to recognise when it is in King's, when it is using a King's wireless access point, and when that access point is having issue. However, there is an obvious issue when trying to upload data about malfunctioning access points - the lack of internet. To solve this, we need to add functionality for caching data.
 
 \subsubsection{Caching Data}
 
-Because there will be times when collected data can not be sent back to the server ( either through malfunction or lack of connection ), it is important to keep the data - making sure it is properly timestamped for when it is uploaded - and then upload it when a connection becomes available again. An important problem to consider here is that data may become irrelevant if it is uploaded after too long a period of time, so it is worth looking into functions that clear items of a certain age out of the cache. 
+Because there will be times when collected data cannot be sent back to the server (either through malfunction or lack of connection), it is important to keep the data - making sure it is properly timestamped for when it is uploaded - and then upload it when a connection becomes available again. An important problem to consider here is that data may become irrelevant if it is uploaded after too long a period of time, so it is worth looking into functions that clear items of a certain age out of the cache. 
 
 \subsection{Data Upload}
 
@@ -247,35 +248,35 @@ Also important is to consider how regularly the information is sent - if the inf
 
 \section{Backend}
 
-The backend of the project, the web server will receive and present crowd-sourced data to authorised individuals. As a secondary function, it will also serve the locations database up to the mobile application - allowing for the storage and retrieval of the latest version incase the architecture of the building changes; either physically ( which is unlikely ), or logically ( where wireless access points are added, changed, or removed ). A critical aspect, in order to maintain trust, and compliance with Data Protection laws, along with the BCS Code of Conduct, is to limit the access to the data to only those who need it.
+The web server (the backend of the project) will receive and present crowd-sourced data to authorised individuals. As a secondary function, it will also serve the locations database up to the mobile application - allowing for the storage and retrieval of the latest version in case the architecture of the building changes; either physically (which is unlikely), or logically (where wireless access points are added, changed, or removed). A critical aspect, in order to maintain trust, and compliance with Data Protection laws, along with the BCS Code of Conduct, is to limit the access to the data to only those who need it.
 
 
-\subsection{Public API - Receiving data, and serving the location database}
+\subsection{Public API - Receiving data and serving the location database}
 
-The backend will need to present a RESTful API, that the mobile application can POST data to. Once data has been POST'ed to these API endpoints, the server will need to validate the data before finally storing it. It is important that the API isn't subject to blocking - whilst efforts will be made to stagger uploads from the user end \footnote{Spreading operations instead of having the server deal with all of them at once}, it is important to make sure that the server deals with them all in a timely manner, and can handle lots of operations simultaneously.
+The backend will need to present a RESTful API, that the mobile application can POST data to. Once data has been POSTed to these API endpoints, the server will need to validate the data before finally storing it. It is important that the API isn't subject to blocking - whilst efforts will be made to stagger uploads from the user end \footnote{Spreading operations instead of having the server deal with all of them at once}, it is important to make sure that the server deals with them all in a timely manner, and can handle lots of operations simultaneously.
 
 Another function of the API will be to receive requests for the locations database, and serve that database to the mobile application - usually for the first startup of the application, but also if any data in the database changes.  
 
 \subsection{Data Presentation}
 
-The server also needs to be able to retrieve the data it has stored and present it to an authorised user in a way that converts it from \textit{data} into \textit{information} - this means presenting it in a manner that is easy to read, and provides some function to the user. Originally, it should be able to just display the data to the user in a list ( where an access point has a fault / when people are in a location ) - but this should be expanded on, providing an analysis of the data and providing it in different forms, such as charts showing the usage of an area over a particular amount of time. An important extension to this would be to provide the user with a way to export the dataset out, so that they can generate information suited to their own needs.
+The server also needs to be able to retrieve the data it has stored and present it to an authorised user in a way that converts it from \textit{data} into \textit{information} - this means presenting it in a manner that is easy to read, and provides some function to the user. Originally, it should be able to just display the data to the user in a list (where an access point has a fault/when people are in a location) - but this should be expanded on, providing an analysis of the data and providing it in different forms, such as charts showing the usage of an area over a particular amount of time. An important extension to this would be to provide the user with a way to export the dataset out, so that they can generate information suited to their own needs.
 
 \subsection{Security}
 
-It is important that all the data on the server is only accessible by authorised users - this means that a login should be required to access the site provided by the backend, along with any databases / data sources that it utilises. Further to this, any data that is sent in should be completely anonymised - whilst this is mostly a function of the mobile application, it would be pertinent to maintain this vigilance in all areas of the project. An example of how to anonymise the data at the backend would be to make sure that no data regarding the origin of the data is stored beyond that which is expected. If the aforementioned data does need to be stored, then the same standard of security applied to the rest of the backend should also be applied to this data.
+It is important that all the data on the server is only accessible by authorised users - this means that a login should be required to access the site provided by the backend, along with any databases/data sources that it utilises. Further to this, any data that is sent in should be completely anonymised - whilst this is mostly a function of the mobile application, it would be pertinent to maintain this vigilance in all areas of the project. An example of how to anonymise the data at the backend would be to make sure that no data regarding the origin of the data is stored beyond that which is expected. If the aforementioned data does need to be stored, then the same standard of security applied to the rest of the backend should also be applied to this data.
 
 
 \section{Databases}
 
-At the end of this product, there will only be two databases in use - the locations database served by the backend and used by the mobile application, and the database that will store the data uploaded by the mobile application. The structure of these databases needs to be clearly defined as early as possible, so as to avoid having to make structural changes during development. 
+At the end of this project, there will only be two databases in use - the locations database served by the backend and used by the mobile application, and the database that will store the data uploaded by the mobile application. The structure of these databases needs to be clearly defined as early as possible, so as to avoid having to make structural changes during development. 
 
 \subsection{Locations Database}
 
-The locations database will comprise of two tables - Nodes, and Edges, and will allow for the building of a directed graph in-application that can be used to find the shortest path to a location.
+The locations database will consist of two tables - Nodes and Edges - and will allow for the building of a directed graph in-application that can be used to find the shortest path to a location.
 
 \subsubsection{Nodes}
 
-The nodes table will contain nodes that represent each location that has been mapped in Kings. Its fields will be: 
+The nodes table will contain nodes that represent each location that has been mapped in King's. Its fields will be: 
 
 \begin{description}
 \item[ID] - ID of node, stored as an integer
@@ -292,22 +293,22 @@ The edges table will contain edges that represent connections between nodes. Its
 \item[StartNode] - The ID of the node that the edge begins at, stored as an integer
 \item[EndNode] - The ID of the node that the edge ends at, stored as an integer
 \item[Weight] - The amount of time taken to get from the StartNode to the EndNode, stored as an integer.
-\item[Method] - Not definite, as could be implied by the weight, but the method used to get from one node to another ( either walking or taking the lift in the case of KCL ). Stored as a string. 
+\item[Method] - Not definite, as could be implied by the weight, but the method used to get from one node to another (either walking or taking the lift in the case of KCL). Stored as a string. 
 \end{description}
 
 \subsection{User Data}
 
-This database will contain the data that has been uploaded as people have used the mobile app - the data contained in this database will vary from table to table, depending on the sort of data that we want to collect from the user. Because of this, we will define a couple of example databases, as the other possibilities for collected data are endless. 
+This database will contain the data that has been uploaded as people have used the mobile app - the data contained in this database will vary from table to table, depending on the sort of data that we want to collect from the user. Because of this, we will define a small number of example databases, as the other possibilities for collected data are vast. 
 \newpage
 
 \subsubsection{Location Reporting}
 
-An example database showing the locations / facilities in Kings that are being used in Kings, demonstrating the usability of both crowd-sourcing data and contextually aware mobile applications. 
+An example database showing the locations/facilities in King's that are being used in King's, demonstrating the usability of both crowd-sourcing data and contextually aware mobile applications. 
 
 \begin{description}
 \item[ID] - ID of information upload, mostly for indexing purposes. Stored as an integer.
 \item[Location] - A string showing where the user was when the data was uploaded. Stored as a string.
-\item[Time] - Date / Time that data is recorded ( which may well be different from the time of upload ), stored as a string.
+\item[Time] - Date/Time that data is recorded (which may well be different from the time of upload), stored as a string.
 \end{description}
 
 \subsubsection{Access Point Recording}
@@ -315,7 +316,7 @@ An example database showing the locations / facilities in Kings that are being u
 \item[ID] - ID of information upload, mostly for indexing purposes. Stored as an integer.
 \item[MAC] - MAC address of reported access point. Stored as a string.
 \item[Location] - Location of issue. Stored as a string.
-\item[Time] - Date / Time that data is recorded. Stored as a string.
+\item[Time] - Date/Time that data is recorded. Stored as a string.
 \item[Notes] - Notes about the issue - to be used by users of the backend. Stored as a string.
 \item[Time uploaded] - The time that the data was pushed to the server. Stored as a string.
 \end{description}
@@ -329,13 +330,13 @@ In this section I will cover the implementation of the various parts of the proj
 \subsection{Toolkit}
 
 \subsubsection{Languages Used}
-As an Android application, LOST was written almost completely in Java, using XML for layout files and SQL to manage the database. Whilst there is the option to use C / C++ to write directly for the Linux operating system that Android is based on, it is not recommended by Google.
+As an Android application, LOST was written almost completely in Java, using XML for layout files and SQL to manage the database. Whilst there is the option to use C/C++ to write directly for the Linux operating system that Android is based on, it is not recommended by Google.
 
 \subsubsection{Development Environment}
 
-When I started developing LOST, I was using Eclipse - however about a month in I switched from Eclipse to IntelliJ for several reasons. Eclipse seemed to be inherently bug-ridden, requiring a restart frequently which was disruptive to work-flow. Alongside this, IntelliJ made much better use of available plugins - including plugins that provided great Git integration, which I used for version control. 
+When I started developing LOST, I was using Eclipse - however about a month in I switched from Eclipse to IntelliJ for several reasons. Eclipse seemed to be inherently bug-ridden, requiring a restart frequently which was disruptive to work-flow. Alongside this IntelliJ made much better use of available plugins - including plugins that provided great Git integration, which I used for version control. 
 
-Whilst developing, each build was tested on two Android phones - one older, now low-end phone, and one much more recent high end phone, providing a good analysis of application performance over different devices.
+Whilst developing, each build was tested on two Android phones - one older, now low-end phone, and one much more recent high-end phone, providing a good analysis of application performance over different devices.
 
 \subsubsection{Libraries / Frameworks Used}
 
@@ -353,13 +354,13 @@ In this section I will provide an analysis of each class in the application, alo
 
 \subsubsection{Activity: Main Menu}
 
-The first activity a user will see upon opening the application - at first glance this activity just stands as a gateway to the rest of the application, but as soon as the application has started up, it retrieves the latest version of the locations database, and then opens that database to build a directed graph, using the DiGraph class. Finally, it kickstarts the background service that pushes data to the backend.
+The first activity a user will see upon opening the application - at first glance this activity just stands as a gateway to the rest of the application, but as soon as the application has started up, it retrieves the latest version of the locations database, and then opens that database to build a directed graph, using the DiGraph class. Finally, it initialises the background service that pushes data to the backend.
 
-It was important to make sure that this operation in the background ran in a seperate thread to the GUI, or there would have been issues with blocking whilst the operation was carried out ( problems that would become more prevalent the larger the database became ).
+It was important to make sure that this operation in the background ran in a seperate thread to the GUI, or there would have been issues with blocking whilst the operation was carried out (problems that would become more prevalent as the database grew in size).
 
 \subsubsection{Class: DiGraph} 
 
-This class is critical to the function of the application - with all of the location based functions in the application using stored in an object of this class. The DiGraph class uses custom made Node and Edge classes to create a directed graph within the application, allowing for the later implementation of Dijkstra's algorithm. Each Node represents a location within Kings, with each Edge representing a connection between those two locations.
+This class is critical to the function of the application - with all of the location based functions in the application using stored in an object of this class. The DiGraph class uses custom made Node and Edge classes to create a directed graph within the application, allowing for the later implementation of Dijkstra's algorithm. Each Node represents a location within King's, with each Edge representing a connection between those two locations.
 
 One of the most critical aspects of the class is the global variable that forms its adjacency list, details each Node's adjacent Nodes, and the Edges that connect them. Finding a data structure in which to store these three pieces of information, whilst also making them easily retrievable was difficult - eventually a HashMap within a HashMap was used. 
 
@@ -382,16 +383,16 @@ would be the same as
 nodeMAC.get("MAC address of the first Node");
 \end{minted}
 
-The problem with this approach is that when originally adding each Node to the DiGraph, the operation is now much more expensive to perform, and there is exponentially more space used per Node - however the ability to easily retrieve each node offsets this initally expensive operation, and the memory usage is still negligible in terms of the memory available to the device.
+The problem with this approach is that when originally adding each Node to the DiGraph, the operation is now much more expensive to perform, and there is three times more space used per Node - however the ability to easily retrieve each node offsets this initally expensive operation, and the memory usage is still negligible in terms of the memory available to the device.
 
 \subsubsection{Activity: Location Finder}
 
-When this activity is opened, a wifi scan is immediately performed, and a loading screen shown until the Activity has received and processed the results. The completion of a wifi scan triggers a WIFI\_SCAN\_RESULTS\_AVAILABLE event which is listened for by the BroadcastReceiver class. When the BroadcastReceiver receives this action, it triggers an onReceive method where the results can be fetched and operations run as a response to this action.
+When this activity is opened, a WiFi scan is immediately performed, and a loading screen shown until the Activity has received and processed the results. The completion of a WiFi scan triggers a WiFi\_SCAN\_RESULTS\_AVAILABLE event which is listened for by the BroadcastReceiver class. When the BroadcastReceiver receives this action, it triggers an onReceive method where the results can be fetched and operations run as a response to this action.
 
-The results are returned in a <ScanResults> List, which is then ordered using a comparator, according to signal strength ( from the best quality to the lowest quality ). In the best case, the top result is taken, and its MAC address used to find the Node relevant to that user's location in the DiGraph. Because of the issues with signal variance that have been described throughout this report, this is not always the case. To cover this occurence, the implementation will loop through the results list until it hits the first recognisable MAC address.
+The results are returned in a ScanResults List, which is then ordered using a comparator, according to signal strength (from the best quality to the lowest quality). In the best case, the top result is taken, and its MAC address used to find the Node relevant to that user's location in the DiGraph. Because of the issues with signal variance that have been described throughout this report, this is not always the case. To cover this occurence, the implementation will loop through the results list until it hits the first recognisable MAC address.
 
 \begin{minted}[frame=single]{Java}
-for(int i = 0 ; i < results.size() ; i++ )
+for(int i = 0 ; i < results.size() ; i++)
 {
     if(!MainActivity.myGraph.getLocFromMac(results.get(i).BSSID)
     .equals("Location not found"))
@@ -406,17 +407,17 @@ resultString = "You're at: \n \n " + locationString;
 
 Finally, the user's location is extrapolated by getting the 'location' variable from the Node.
 
-The original plan for this class involved using the top three access points to get a much more precise estimate of the user's location using trilateration. Unfortunately, because of the variation of signal strengths at any given point ( a figure that can even be affected by another person's body ), the top three MAC addresses in any given place can change constantly. To get an accurate result would require having populated the database with every possible variation for every area, resulting in an exponential increase in the amount of data that needs to be taken ( and therefore Nodes required ). 
+The original plan for this class involved using the top three access points to get a much more precise estimate of the user's location using trilateration. Unfortunately, because of the variation of signal strengths at any given point (a figure that can even be affected by another person's body), the top three MAC addresses in any given place can change constantly. To get an accurate result would require having populated the database with every possible variation for every area, resulting in an exponential increase in the amount of data that needs to be taken (and therefore Nodes required). 
 
-Once this activity has pinpointed your location, the loading screen will be replaced by that location, along with a button to refresh the location ( which will start another scan ), and a button that will use the current location as the start point in the route planning activity.
+Once this activity has pinpointed your location, the loading screen will be replaced by that location, along with a button to refresh the location (which will start another scan), and a button that will use the current location as the start point in the route planning activity.
 
-An interesting feature provided by the BroadcastReceiver is that it will listen for \textit{any} trigger of the SCAN\_RESULTS\_AVAILABLE action, meaning that when the system performs a wifi scan seperate from the application, the application will perform the operation defined in it's onReceive anyway - this means that the location will auto-update without having to trigger multiple scans, ultimately meaning a more economical use of resources.
+An interesting feature provided by the BroadcastReceiver is that it will listen for \textit{any} trigger of the SCAN\_RESULTS\_AVAILABLE action, meaning that when the system performs a WiFi scan seperate from the application, the application will perform the operation defined in it's onReceive anyway - this means that the location will auto-update without having to trigger multiple scans, ultimately meaning a more economical use of resources.
 
 \subsubsection{Activity: Route Planning}
 
-This activity provides two drop down lists - each populated with all of the locations that are currently present in the directed graph. The user can select a start point, and an end point and once the 'Find Route' button has been pressed, the activity fetches the relevant nodes for both locations ( by using their position in the drop down lists as the node ID, and fetching from the nodeIDList ). It then applies Dijkstra's algorithm to the start node to find the shortest distance to all of the nodes in the directed graph, before using the second node as an argument to find a path between the two.
+This activity provides two drop down lists - each populated with all of the locations that are currently present in the directed graph. The user can select a start point, and an end point and once the 'Find Route' button has been pressed, the activity fetches the relevant nodes for both locations (by using their position in the drop down lists as the node ID, and fetching from the nodeIDList). It then applies Dijkstra's algorithm to the start node to find the shortest distance to all of the nodes in the directed graph, before using the second node as an argument to find a path between the two.
 
-The resulting path is then displayed in the next activity - each step in the path is used to create an 'inflatable' - inflatables allow for the dynamic creation of activities by using the same small section of the layout and filling it with changeable content.
+The resulting path is then displayed in the next activity - each step in the path is used to create an 'inflatable' - inflatables allow for the dynamic creation of views by using the same small section of the layout and filling it with changeable content.
 
 \subsubsection{Class: Dijkstra}
 
@@ -465,22 +466,23 @@ Services are components within Android applications that can perform operations 
 
 Firstly, it is worth noting that a Service does run in the main thread of it's hosting process - therefore any long running operations should be be run within a new thread so as to avoid blocking on the main.
 
-The first thing the service does is trigger a wifiscan in much the same manner as the Location Finder activity does - the main difference being that when the BroadcastReceiver is triggered the first time, it is then unregistered to prevent the repeated triggering of the operation defined in it's onReceive.
+The first thing the service does is trigger a WiFiscan in much the same manner as the Location Finder activity does - the main difference being that when the BroadcastReceiver is triggered the first time, it is then unregistered to prevent the repeated triggering of the operation defined in it's onReceive.
 
-After this first trigger, the Service will create a new thread, and attempt to connect to google - if it cannot connect it will check the status of the internet connection and then create a 'fault' record in an SQLite database, noting the time and any details that can be provided as to where the failure occurred. If it can connect, the Service will POST the location data in JSON format, before checking to see if there are any faults in the aforementioned database - if there are it will POST each fault individually in JSON format\footnote{Expensive, no?}.
+After this first trigger, the Service will create a new thread, and attempt to connect to Google - if it cannot connect it will check the status of the connection itself and then create a 'fault' record in an SQLite database, noting the time and any details that can be provided as to where the failure occurred. If it can connect, the Service will POST the location data in JSON format, before checking to see if there are any faults in the aforementioned database - if there are it will POST each fault individually in JSON format.
 
-Finally, the thread will sleep for 15 minutes - upon waking, it will register the BroadcastReceiver again so that it can listen for the next SCAN\_RESULTS\_AVAILABLE action that the device provides. This again allows for an economical use of resources whilst running in the background, instead of triggering a wifiscan itself every 15 minutes:
+Finally, the thread will sleep for 15 minutes - upon waking, it will register the BroadcastReceiver again so that it can listen for the next SCAN\_RESULTS\_AVAILABLE action that the device provides. This again allows for an economical use of resources whilst running in the background, instead of triggering a WiFiscan itself every 15 minutes:
 
 
 \begin{minted}[frame=single]{Java}
 public void onReceive(Context c, Intent intent) {
-            unregisterReceiver(this);
-            new Thread(new Runnable() {
-            	....
-SystemClock.sleep(900000);
-registerReceiver(scanReceiver, 
-	new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
-}.start();
+	unregisterReceiver(this);
+	new Thread(new Runnable() {
+		...
+		SystemClock.sleep(900000);
+		registerReceiver(scanReceiver, 
+			new IntentFilter(WiFiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+	}).start();
+}
 
 \end{minted}
 
@@ -488,17 +490,17 @@ registerReceiver(scanReceiver,
 
 This Activity provides very little towards functionality, instead providing utility. Firstly, it provides a warning to the user that the app will collect data at regular intervals, and provides checkboxes that allow the user to opt out of the data collection. During development, another feature was also added to provide more utility to the user - a button that will open a dialog for the user to enter their King's username and password.
 
-This data is then used to create correctly set up wireless profiles for both AccessKings and Eduroam. This idea is meant to provide more functionality to the user from the application, and also helps to make sure that the user doesn't have connection issues due to authentication when in Kings.
+This data is then used to create correctly set up wireless profiles for both AccessKing's and Eduroam. This idea is meant to provide more functionality to the user from the application, and also helps to make sure that the user doesn't have connection issues due to authentication when in King's.
 
 Unfortunately, during implementation there was a major issue discovered - the functionality to programatically add a wireless profile for a WPA-Enterprise network was only added in Android version 4.3, and so far is not available for earlier Android versions. An implementation using this would violate non-functional requirement NF6, so the application will make sure that the device it's running on is at the required Android version, else it will not display that functionality - the rest of the application will continue to function as normal.
 
 \subsection{Difficulties during implementation}
 
-Whilst developing the mobile application I encountered the majority of the difficulties for this project - mostly due to having to implement complex methods such as a functioning Dijkstra's algorithm, but mostly trying to develop a method to determine the user's location that was accurate, with as much precision as possible. After extensive testing, it became clear that the originally planned '3 MAC' method, where I would use a combination of trilateration and fuzzy location determination\footnote{A method for roughly determining location} to determine a precise\footnote{To within 5-10 feet} location, however the rate of success for accurately finding the user's location was too low - most of the time the application returning that it didn't recognise the area - this is mostly due to the original implementation.
+Whilst developing the mobile application I encountered the majority of the difficulties for this project - mostly due to having to implement complex methods such as a functioning Dijkstra's algorithm, but also trying to develop a method to determine the user's location that was accurate, with as much precision as possible. After extensive testing, it became clear that the originally planned '3 MAC' method where I would use a combination of trilateration and fuzzy location determination\footnote{A method for roughly determining location} to determine a precise\footnote{To within 5-10 feet} location was not suitable - the rate of success for finding the user's location at all was too low - most of the time the application returning that it didn't recognise the area.
 
 This original implementation took the top three MAC address and concatenated them, meaning that to find a match the user had to be in the location where that exact combination happens again - however, as covered by Cook et al, radio signals are extremely variable\cite{cook2005indoor}, and this had a major impact. An example of this is shown in the Appendix - two subsequent screenshots showing a refresh with a colleague next to me and with that colleague three feet away, showing two completely different results. This was a repeatable occurrence. 
 
-Because of the limited amount of time available, it was necessary to establish a working, accurate proof-of-concept before trying to develop a higher level of precision, and so the current implementation is almost guaranteed to accurately discern your location within Kings.
+Because of the limited amount of time available, it was necessary to establish a working, accurate proof-of-concept before trying to develop a higher level of precision, and so the current implementation is almost guaranteed to accurately discern your location within King's.
 
 \section{Backend}
 
@@ -518,7 +520,7 @@ Outside of this server, I used Sublime text editor, along with the SFTP plugin t
 
 \subsubsection{Libraries / Frameworks Used}
 
-Libraries in Rails are given the name 'Gems' - implementing them in a Ruby on Rails ( RoR ) server is fairly easy to perform and they can provide some great additional functionality that would be difficult / time-consuming to write from scratch. To this end I used two Gems that aren't automatically packed with RoR.
+Libraries in Rails are given the name 'Gems' - implementing them in a Ruby on Rails (RoR) server is fairly easy to perform and they can provide some great additional functionality that would be difficult / time-consuming to write from scratch. To this end I used two Gems that aren't automatically packed with RoR.
 
 Devise was the first Gem - Devise provides easily implementable user and session management, allowing for the quick development and continued rapid prototyping of a strong authentication system. To write my own user authenticaton with a Gem like Devise available would have been a waste of time, and almost definitely would not have provided the completeness of security that Devise does. 
 
@@ -612,18 +614,24 @@ The issue with the above code is that it only works for one part of the Highchar
 
 \section{FOUND}
 
-FOUND was never meant to be a part of the original application - rather it became a necessity after a short amount of time spent attempting to gather wireless location data. FOUND is a mobile application designed to build a database that the main application ( LOST ) can transform into a directed graph. The toolkit used is the same as was used to develop the LOST application.
+FOUND was never meant to be a part of the original application - rather it became a necessity after a short amount of time spent attempting to gather wireless location data. FOUND is a mobile application designed to build a database that the main application (LOST) can transform into a directed graph. The toolkit used is the same as was used to develop the LOST application.
 
 \subsection{Activity: Main Function}
 The application has only one activity, dedicated to it's one function. Because it an application designed for my ease of use, and never actually meant to be seen by the user, it would be appropriate to consider it as a  kludge\footnote{http://dictionary.reference.com/browse/kludge} when analysing it in terms of UX, usability and functionality.
 
-The application will take a scan of local wireless points, and create a database record that will be readable as a Node object in the main LOST application. If this is the first Node in the database then it will leave it at that. If it is not then it will also create an Edge connecting the newly created Node to the last created Node ( or a user-selected Node ). There is also option to create more than one edge from the newly created Node, attaching to to multiple other Nodes in the case of locations being connected in multiple ways.
+The application will take a scan of local wireless points, and create a database record that will be readable as a Node object in the main LOST application. If this is the first Node in the database then it will leave it at that. If it is not then it will also create an Edge connecting the newly created Node to the last created Node (or a user-selected Node). There is also option to create more than one edge from the newly created Node, attaching to to multiple other Nodes in the case of locations being connected in multiple ways.
 
 Finally, there is a function which POSTs the database to the backend, so that it can be retrieved by all versions of the main application with ease.
 
 \section{Testing}
 
 During the development of this application, testing was important after the implementation of each new feature. Unfortunately automating this through unit testing was in almost every case, not possible. Because of the nature of this project requiring actual location information taken from the environment it is to be used in, it was much easier for any testing of functionality, and indeed any regression testing, to be performed by testing on the two development phones, making sure that everything that happened was logged using logcat.
+
+This testing was performed at different intervals throughout the day, and in different areas of King's. Results showed that the requirement NF2 was satisfied 90\% of the time, with an accuracy to within 10 feet approximately 75\% of the time. The rate of success however, was not just determined by the strength of the location determination algorithm, but also by the scans I had taken using FOUND. 
+
+Encouragingly, in 99\% of cases, the user would at least be given the correct floor and corridor, which should provide enough information to the user to be useful. The 1\% is mostly accounted for when a user is outside, where at two points the user was reported as being three floors up.
+
+The route planning algorithm was skewed slightly, as described in the Evaluation chapter, but otherwise would give the user the quickest route to their chosen destination - most importantly it would never lead the user to the wrong place or be unable to calculate a route. 
 
 \subsection{Monkey}
 
@@ -644,9 +652,9 @@ All of the requirements originally laid out for the LOST module of the project w
 
 Firstly and most importantly is the location determination functionality - whilst the requirement of accurately discerning the user's location has been achieved, the accuracy and precision of the implementation is not ideal. The application will give the user a location 99\% of the time, but this may not always be accurate, as touched upon briefly in the Implementation chapter. Such a problem was the signal variation that there were cases where the closest router in a room would come at a lower signal strength than a router in the adjourning corridor, and therefore the user whilst the user would receive a roughly accurate location, it wouldn't be the textit{most} accurate location. Obviously this meant that the precision of the application was also thrown off.
 
-In order to combat this, when creating the locations, many nodes would be created for a single location ( to try and cover all possible scenarios ) - this caused it's own problems - for starters any duplicate nodes would also be shown in the Route Finder part of the application, as the user needed to be able to navigate from any one of these nodes. 
+In order to combat this, when creating the locations, many nodes would be created for a single location (to try and cover all possible scenarios) - this caused it's own problems - for starters any duplicate nodes would also be shown in the Route Finder part of the application, as the user needed to be able to navigate from any one of these nodes. 
 
-Finally, the user interface, whilst simple to use, is fairly bland - whilst the aim of the project was to provide a proof-of-concept application, the application was designed with a large user element in mind, and this does not show through as well as it could do in the UI.
+Finally, the user interface, whilst simple to use, is fairly bland - whilst the aim of the project was to provide a proof-of-concept application, the application was designed with a large user element in mind, and this does not show through as well as it could do in the UI. An example of this is the possible extension considered where each step in the route planner highlights green when the user has arrived at that location.
 
 \section{Backend}
 
@@ -667,7 +675,7 @@ This could again be attributed to the signal variance discussed throughout the r
 
 When this project started, I found myself considering the problem environment with too much attention paid to the real-world environment, instead of abstracting the problem out to a more logical problem - it is a mindset that I was forced to take during the course of the project and that will be invaluable to me as a developer in future projects. 
 
-An important lesson learned was to avoid 'feature-creeping' - during implementation I constantly found myself digressing from the development of a feature to add in a function that wasn't necessarily needed in the first place - whilst some of them have been useful ( such as the FOUND application ), others could have taken a much lower priority ( such as the semi-automated wifi configuration setup functionality in LOST ). 
+An important lesson learned was to avoid 'feature-creeping' - during implementation I constantly found myself digressing from the development of a feature to add in a function that wasn't necessarily needed in the first place - whilst some of them have been useful (such as the FOUND application), others could have taken a much lower priority (such as the semi-automated WiFi configuration setup functionality in LOST). 
 
 As a proof of concept project, I believe that this project has succeeded - the result has been a working system that provides a location based contextually aware environment, without relying on GPS - this proves that location technology can develop beyond the current scale that GPS provides. Overall though, I feel as if each component in the project could provide more functionality than it already does. There is always more that can be done to develop a system, and in the case of this project, this is especially true. 
 
@@ -675,19 +683,19 @@ As a proof of concept project, I believe that this project has succeeded - the r
 
 This project has provided some fascinating experience, and there are many avenues to consider for future development.
 
-\subsection{Location Determination}
-
-The current application provides a location, but not necessarily the most accurate. Once modifications have been made to the underlying data structure as described below, the accuracy can be increased by creating locations using multiple MAC addresses - as originally intended - just by collecting the two highest strength MAC addresses per scenario instead of one, the accuracy and precision can be dramatically increased, with each additional MAC address acting to reduce the field around the first that the user could be in.
-
-\subsection{LOST}
-
-Unfortunately, most future work for the LOST application is more aimed at the user experience, and less at providing meaningful contributions to the original problem. This covers additions like providing social integration so that users can provide low-level location information and route-planning information to others. Whilst useful when considering it's application in the context of the environment it is currently being applied in, it does not provide any real significance, and would infact be rather gimmicky.
-
 \subsection{FOUND}
 
 The most interesting piece of future work I would like to pursue would be to redesign the FOUND application outside of it's original parameters as my own utility. With careful attention, and modifications made to the underlying data structure for recording locations, the FOUND application could potentially become a useful development tool for mapping large areas with little expense\footnote{Obviously with the provision that there are available wireless access points}. The eventual result of this would be easily developable and deployable bespoke contextually aware systems. 
 
 To this end, the structure for storing locations would need to be changed - instead making sure that only one node is stored for an area, but with multiple MAC addresses to cover all potential signal variation scenarios. This would also tie in with another major point - the location determination method itself.
+
+\subsection{Location Determination}
+
+The current application provides a location, but not necessarily the most accurate. Once modifications have been made to the underlying data structure as described above, the accuracy can be increased by creating locations using multiple MAC addresses - as originally intended - just by collecting the two highest strength MAC addresses per scenario instead of one, the accuracy and precision can be dramatically increased, with each additional MAC address acting to reduce the field around the first that the user could be in.
+
+\subsection{LOST}
+
+Unfortunately, most future work for the LOST application is more aimed at the user experience, and less at providing meaningful contributions to the original problem. This covers additions like providing social integration so that users can provide low-level location information and route-planning information to others. Whilst useful when considering it's application in the context of the environment it is currently being applied in, it does not provide any real significance, and would infact be rather gimmicky.
 
 %http://dl.acm.org/citation.cfm?id=1164798&CFID=501587811&CFTOKEN=25626225
 %http://creately.com/?tempID=gc7qvpsj1&action=login&destination=creately-login
@@ -700,10 +708,9 @@ To this end, the structure for storing locations would need to be changed - inst
 %\include{Chapters/Evaluation}
 %\include{Chapters/Conclusion}
 
-\chapter{Bibliography}
 \bibliographystyle{plain}
 \bibliography{mybib}
-\addcontentsline{toc}{chapter}{Bibliography}
+\addcontentsline{toc}{section}{Bibliography}
 \appendix
 \include{Appendices/appendix}
 %\include{Appendices/UserGuide}

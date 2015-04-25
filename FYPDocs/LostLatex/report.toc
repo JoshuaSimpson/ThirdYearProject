@@ -4,96 +4,92 @@
 \contentsline {chapter}{\numberline {2}Project Background and Main Points to Consider}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Location Services}{5}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Application: Google Maps}{5}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Paper: Indoor Location Using Trilateration Characteristics}{6}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Paper: Indoor Location Using Trilateration Characteristics\cite {cook2005indoor}}{6}{subsection.2.1.2}
 \contentsline {subsubsection}{Issues with the trilateration approach}{6}{section*.2}
 \contentsline {subsection}{\numberline {2.1.3}Paper: More Stuff on Location - Fuzzy Location?}{7}{subsection.2.1.3}
 \contentsline {section}{\numberline {2.2}Context-Aware Services}{7}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Estimote}{7}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Google Maps}{8}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Paper: An Architecture for Data Collection and Processing in Context-Aware Applications}{8}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Paper: An Architecture for Data Collection and Processing in Context-Aware Applications\cite {salviarchitecture}}{8}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Crowd Sourcing}{8}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Captcha}{9}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}The 90-9-1 Rule for Participation Inequality in Social Media and Online Communities}{9}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.1}reCAPTCHA}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}The 90-9-1 Rule for Participation Inequality in Social Media and Online Communities\cite {participationinequality}}{9}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Platform}{9}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Reasons for Android as a platform}{10}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Ethical Concerns}{10}{section.2.5}
-\contentsline {chapter}{\numberline {3}Requirements}{12}{chapter.3}
-\contentsline {section}{\numberline {3.1}LOST - Android Application}{12}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Functional Requirements}{12}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Non-functional Requirements}{13}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Backend}{14}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Functional Requirements}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Non-functional Requirements}{14}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}FOUND - Android Application}{14}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Functional Requirements}{14}{subsection.3.3.1}
-\contentsline {chapter}{\numberline {4}Design}{15}{chapter.4}
-\contentsline {section}{\numberline {4.1}Component Diagram}{16}{section.4.1}
-\contentsline {section}{\numberline {4.2}LOST}{17}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Finding Location}{17}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Route Planning}{17}{subsection.4.2.2}
-\contentsline {subsubsection}{Choosing an algorithm}{18}{section*.3}
-\contentsline {subsection}{\numberline {4.2.3}Recognising access point faults}{18}{subsection.4.2.3}
-\contentsline {subsubsection}{Caching Data}{18}{section*.4}
-\contentsline {subsection}{\numberline {4.2.4}Data Upload}{19}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Backend}{19}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Public API - Receiving data, and serving the location database}{19}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Data Presentation}{20}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Security}{20}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}Databases}{20}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Locations Database}{20}{subsection.4.4.1}
-\contentsline {subsubsection}{Nodes}{21}{section*.5}
-\contentsline {subsubsection}{Edges}{21}{section*.6}
-\contentsline {subsection}{\numberline {4.4.2}User Data}{21}{subsection.4.4.2}
-\contentsline {subsubsection}{Location Reporting}{22}{section*.7}
-\contentsline {subsubsection}{Access Point Recording}{22}{section*.8}
-\contentsline {chapter}{\numberline {5}Implementation}{23}{chapter.5}
-\contentsline {section}{\numberline {5.1}LOST}{23}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Toolkit}{23}{subsection.5.1.1}
-\contentsline {subsubsection}{Languages Used}{23}{section*.9}
-\contentsline {subsubsection}{Development Environment}{23}{section*.10}
-\contentsline {subsubsection}{Libraries / Frameworks Used}{24}{section*.11}
-\contentsline {subsection}{\numberline {5.1.2}Component Analysis}{24}{subsection.5.1.2}
-\contentsline {subsubsection}{Activity: Main Menu}{24}{section*.12}
-\contentsline {subsubsection}{Class: DiGraph}{24}{section*.13}
-\contentsline {subsubsection}{Activity: Location Finder}{25}{section*.14}
-\contentsline {subsubsection}{Activity: Route Planning}{27}{section*.15}
-\contentsline {subsubsection}{Class: Dijkstra}{27}{section*.16}
-\contentsline {subsubsection}{Service: LocationPush}{28}{section*.17}
-\contentsline {subsubsection}{Activity: Settings}{29}{section*.18}
-\contentsline {subsection}{\numberline {5.1.3}Difficulties during implementation}{30}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Backend}{30}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Toolkit}{30}{subsection.5.2.1}
-\contentsline {subsubsection}{Languages Used}{30}{section*.19}
-\contentsline {subsubsection}{Development Environment}{31}{section*.20}
-\contentsline {subsubsection}{Libraries / Frameworks Used}{31}{section*.21}
-\contentsline {subsection}{\numberline {5.2.2}Component Analysis: API}{32}{subsection.5.2.2}
-\contentsline {subsubsection}{POST: /locations}{32}{section*.22}
-\contentsline {subsubsection}{POST: /accesspoints}{32}{section*.23}
-\contentsline {subsubsection}{POST: /dbs}{32}{section*.24}
-\contentsline {subsubsection}{GET: /dbs/get}{32}{section*.25}
-\contentsline {subsection}{\numberline {5.2.3}Component Analysis: Site}{32}{subsection.5.2.3}
-\contentsline {subsubsection}{Login}{33}{section*.26}
-\contentsline {subsubsection}{Index}{33}{section*.27}
-\contentsline {subsubsection}{Locations}{33}{section*.28}
-\contentsline {subsubsection}{Access Point Faults}{33}{section*.29}
-\contentsline {subsection}{\numberline {5.2.4}Difficulties during implementation}{34}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}FOUND}{34}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Activity: Main Function}{35}{subsection.5.3.1}
-\contentsline {section}{\numberline {5.4}Testing}{35}{section.5.4}
+\contentsline {chapter}{\numberline {3}Requirements}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}LOST - Android Application}{11}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Functional Requirements}{11}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Non-functional Requirements}{12}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Backend}{13}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Functional Requirements}{13}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Non-functional Requirements}{13}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}FOUND - Android Application}{13}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Functional Requirements}{13}{subsection.3.3.1}
+\contentsline {chapter}{\numberline {4}Design}{14}{chapter.4}
+\contentsline {section}{\numberline {4.1}Component Diagram}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}LOST}{16}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Finding Location}{16}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Route Planning}{16}{subsection.4.2.2}
+\contentsline {subsubsection}{Choosing an algorithm}{17}{section*.3}
+\contentsline {subsection}{\numberline {4.2.3}Recognising access point faults}{17}{subsection.4.2.3}
+\contentsline {subsubsection}{Caching Data}{17}{section*.4}
+\contentsline {subsection}{\numberline {4.2.4}Data Upload}{18}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Backend}{18}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Public API - Receiving data and serving the location database}{18}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Data Presentation}{19}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Security}{19}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Databases}{19}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Locations Database}{19}{subsection.4.4.1}
+\contentsline {subsubsection}{Nodes}{20}{section*.5}
+\contentsline {subsubsection}{Edges}{20}{section*.6}
+\contentsline {subsection}{\numberline {4.4.2}User Data}{20}{subsection.4.4.2}
+\contentsline {subsubsection}{Location Reporting}{21}{section*.7}
+\contentsline {subsubsection}{Access Point Recording}{21}{section*.8}
+\contentsline {chapter}{\numberline {5}Implementation}{22}{chapter.5}
+\contentsline {section}{\numberline {5.1}LOST}{22}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Toolkit}{22}{subsection.5.1.1}
+\contentsline {subsubsection}{Languages Used}{22}{section*.9}
+\contentsline {subsubsection}{Development Environment}{22}{section*.10}
+\contentsline {subsubsection}{Libraries / Frameworks Used}{23}{section*.11}
+\contentsline {subsection}{\numberline {5.1.2}Component Analysis}{23}{subsection.5.1.2}
+\contentsline {subsubsection}{Activity: Main Menu}{23}{section*.12}
+\contentsline {subsubsection}{Class: DiGraph}{23}{section*.13}
+\contentsline {subsubsection}{Activity: Location Finder}{24}{section*.14}
+\contentsline {subsubsection}{Activity: Route Planning}{26}{section*.15}
+\contentsline {subsubsection}{Class: Dijkstra}{26}{section*.16}
+\contentsline {subsubsection}{Service: LocationPush}{27}{section*.17}
+\contentsline {subsubsection}{Activity: Settings}{28}{section*.18}
+\contentsline {subsection}{\numberline {5.1.3}Difficulties during implementation}{29}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Backend}{29}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Toolkit}{29}{subsection.5.2.1}
+\contentsline {subsubsection}{Languages Used}{29}{section*.19}
+\contentsline {subsubsection}{Development Environment}{30}{section*.20}
+\contentsline {subsubsection}{Libraries / Frameworks Used}{30}{section*.21}
+\contentsline {subsection}{\numberline {5.2.2}Component Analysis: API}{31}{subsection.5.2.2}
+\contentsline {subsubsection}{POST: /locations}{31}{section*.22}
+\contentsline {subsubsection}{POST: /accesspoints}{31}{section*.23}
+\contentsline {subsubsection}{POST: /dbs}{31}{section*.24}
+\contentsline {subsubsection}{GET: /dbs/get}{31}{section*.25}
+\contentsline {subsection}{\numberline {5.2.3}Component Analysis: Site}{31}{subsection.5.2.3}
+\contentsline {subsubsection}{Login}{32}{section*.26}
+\contentsline {subsubsection}{Index}{32}{section*.27}
+\contentsline {subsubsection}{Locations}{32}{section*.28}
+\contentsline {subsubsection}{Access Point Faults}{32}{section*.29}
+\contentsline {subsection}{\numberline {5.2.4}Difficulties during implementation}{33}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}FOUND}{33}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Activity: Main Function}{34}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Testing}{34}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Monkey}{35}{subsection.5.4.1}
 \contentsline {subsubsection}{Seeding}{35}{section*.30}
-\contentsline {chapter}{\numberline {6}Evaluation}{37}{chapter.6}
-\contentsline {section}{\numberline {6.1}LOST}{37}{section.6.1}
-\contentsline {section}{\numberline {6.2}Backend}{38}{section.6.2}
-\contentsline {section}{\numberline {6.3}FOUND}{38}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusion}{39}{chapter.7}
-\contentsline {section}{\numberline {7.1}Final Thoughts}{39}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future Work}{39}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Location Determination}{40}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}LOST}{40}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}FOUND}{40}{subsection.7.2.3}
-\contentsline {chapter}{\numberline {8}Bibliography}{41}{chapter.8}
-\contentsline {chapter}{Bibliography}{43}{chapter*.31}
-\contentsline {chapter}{\numberline {A}Extra Information}{44}{appendix.A}
-\contentsline {section}{\numberline {A.1}Use Case Diagram}{44}{section.A.1}
-\contentsline {section}{\numberline {A.2}Component Diagram}{45}{section.A.2}
+\contentsline {chapter}{\numberline {6}Evaluation}{36}{chapter.6}
+\contentsline {section}{\numberline {6.1}LOST}{36}{section.6.1}
+\contentsline {section}{\numberline {6.2}Backend}{37}{section.6.2}
+\contentsline {section}{\numberline {6.3}FOUND}{37}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusion}{38}{chapter.7}
+\contentsline {section}{\numberline {7.1}Final Thoughts}{38}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future Work}{38}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}FOUND}{39}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Location Determination}{39}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}LOST}{39}{subsection.7.2.3}
+\contentsline {section}{Bibliography}{41}{chapter*.31}

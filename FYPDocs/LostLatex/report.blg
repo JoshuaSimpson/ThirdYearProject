@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: report.aux
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: report.aux
 The style file: plain.bst
 A level-1 auxiliary file: Appendices/appendix.aux
 Database file #1: mybib.bib
@@ -7,4 +9,45 @@ Warning--to sort, need author or key in ios2
 Warning--empty year in salviarchitecture
 Warning--empty journal in thippeswamystudy
 Warning--empty year in thippeswamystudy
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            589 strings with 7382 characters,
+and the built_in function-call counts, 5502 in all, are:
+= -- 523
+> -- 244
+< -- 5
++ -- 103
+- -- 80
+* -- 284
+:= -- 876
+add.period$ -- 58
+call.type$ -- 19
+change.case$ -- 95
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 216
+empty$ -- 493
+format.name$ -- 80
+if$ -- 1209
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 10
+newline$ -- 95
+num.names$ -- 34
+pop$ -- 165
+preamble$ -- 1
+purify$ -- 78
+quote$ -- 0
+skip$ -- 183
+stack$ -- 0
+substring$ -- 215
+swap$ -- 56
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 72
+warning$ -- 5
+while$ -- 45
+width$ -- 21
+write$ -- 189
 (There were 5 warnings)
