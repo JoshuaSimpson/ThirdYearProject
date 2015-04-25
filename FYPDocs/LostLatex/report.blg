@@ -9,45 +9,45 @@ Warning--to sort, need author or key in ios2
 Warning--empty year in salviarchitecture
 Warning--empty journal in thippeswamystudy
 Warning--empty year in thippeswamystudy
-You've used 19 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            589 strings with 7382 characters,
-and the built_in function-call counts, 5502 in all, are:
-= -- 523
-> -- 244
-< -- 5
-+ -- 103
-- -- 80
-* -- 284
-:= -- 876
-add.period$ -- 58
-call.type$ -- 19
-change.case$ -- 95
+            597 strings with 7727 characters,
+and the built_in function-call counts, 6025 in all, are:
+= -- 578
+> -- 272
+< -- 6
++ -- 114
+- -- 90
+* -- 322
+:= -- 957
+add.period$ -- 62
+call.type$ -- 20
+change.case$ -- 103
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 216
-empty$ -- 493
-format.name$ -- 80
-if$ -- 1209
+cite$ -- 25
+duplicate$ -- 237
+empty$ -- 529
+format.name$ -- 90
+if$ -- 1325
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 10
-newline$ -- 95
-num.names$ -- 34
-pop$ -- 165
+int.to.str$ -- 20
+missing$ -- 11
+newline$ -- 100
+num.names$ -- 36
+pop$ -- 173
 preamble$ -- 1
-purify$ -- 78
+purify$ -- 85
 quote$ -- 0
-skip$ -- 183
+skip$ -- 199
 stack$ -- 0
-substring$ -- 215
-swap$ -- 56
-text.length$ -- 5
+substring$ -- 244
+swap$ -- 64
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
+type$ -- 76
 warning$ -- 5
-while$ -- 45
-width$ -- 21
-write$ -- 189
+while$ -- 50
+width$ -- 22
+write$ -- 203
 (There were 5 warnings)

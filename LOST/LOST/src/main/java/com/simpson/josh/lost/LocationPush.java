@@ -61,8 +61,7 @@ public class LocationPush extends Service {
         scanReceiver = new wifiScanReceiver();
         registerReceiver(scanReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         wifi.startScan();
-        Log.d("Something happened", "Which is good");
-        Toast.makeText(c, "Stuff happened", Toast.LENGTH_SHORT).show();
+        Toast.makeText(c, "Initial location upload", Toast.LENGTH_SHORT).show();
 
         return START_NOT_STICKY;
 
@@ -79,7 +78,6 @@ public class LocationPush extends Service {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Log.d("Calling from JSONPOST", "Woot");
                 JSONObject jsonobj = new JSONObject();
                 try {
                     jsonobj.put("loc", location);
@@ -155,7 +153,6 @@ public class LocationPush extends Service {
                 } catch (Exception c) {
                     c.printStackTrace();
                 }
-                Log.d("IT WORKED", "Stuff");
             }
         }).start();
     }
@@ -166,7 +163,6 @@ public class LocationPush extends Service {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    Log.d("Are we even receiving the scan?", "I fucking hope so");
                     FaultDatabaseHelper fh = new FaultDatabaseHelper(getApplicationContext());
 
                     results = wifi.getScanResults();
@@ -197,17 +193,10 @@ public class LocationPush extends Service {
 
                     // If we're at Kings then launch into this set of statements, otherwise we ain't got no business posting stuff
                     if (atKings) {
-
-                        Log.d("Hit at Kings", "Okay...");
                         String location = MainActivity.myGraph.getLocFromMac(firstMac);
                         // If we're connected, and connected to WiFi
                         if (networkInf.isConnected() && networkInf.getType() == ConnectivityManager.TYPE_WIFI) {
-
-                            Log.d("Does it get here?", "Please god say yes");
-
                             if (internetAvailable()) {
-
-                                Log.d("Where are we getting to", "Seriously");
                                 // Here we POST the location data
                                 JSONPost(location, dateString);
 
@@ -218,7 +207,6 @@ public class LocationPush extends Service {
 
                                     do {
                                         JSONPost(poster.getString(0), poster.getString(1), poster.getString(2), poster.getString(3));
-                                        Log.d("Hm?", poster.getString(2));
                                     } while (poster.moveToNext());
 
                                     fh.clearFaults();
@@ -230,11 +218,9 @@ public class LocationPush extends Service {
                             // This is our issue set, then just insert into the database
                             if (networkInf.isConnected() && InetAddress.getByName("http://www.google.co.uk").isReachable(10000)) {
                                 // FirstMAC may not NECESSARILY be the one we're connected to...
-                                Log.d("Unless", "You're kidding.");
                                 fh.insertFault(info.getMacAddress(), location, dateString, "High latency");
                             } else if (networkInf.isConnected() && !InetAddress.getByName("http://www.google.co.uk").isReachable(10000)) {
                                 // This case tells us if the latency is abnormally high
-                                Log.d("Could be this too I guess", "Worth a check");
                                 fh.insertFault(info.getMacAddress(), location, dateString, "No internet");
                             }
                         } catch (UnknownHostException u) {
@@ -260,7 +246,7 @@ public class LocationPush extends Service {
                 urlc.connect();
                 yes = (urlc.getResponseCode() == 200);
             } catch (IOException e) {
-                Log.e("hm?", "Couldn't check internet connection", e);
+
             }
 
             return yes;

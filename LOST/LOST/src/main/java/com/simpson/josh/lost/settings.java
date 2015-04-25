@@ -45,7 +45,6 @@ public class settings extends FragmentActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 ed.putBoolean("Location", compoundButton.isChecked());
-                Log.d("Location change: ", "" + sharedPrefs.getBoolean("Location", false));
                 ed.commit();
             }
         });
@@ -54,7 +53,6 @@ public class settings extends FragmentActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 ed.putBoolean("Wireless", compoundButton.isChecked());
-                Log.d("Wireless change: ", "" + sharedPrefs.getBoolean("Wireless", false));
                 ed.commit();
             }
         });

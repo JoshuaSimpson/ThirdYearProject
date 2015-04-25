@@ -31,7 +31,6 @@ public class Downloader extends AsyncTask<String, Void, String> {
 
             //Set download location
             File location = new File(application[0]);
-            Log.d("Where is this downloading to?", "No seriously," + location.getPath().toString());
 
             //Set download name
             File downloadedFile = new File(location, "LOSTANDFOUND");
@@ -52,16 +51,12 @@ public class Downloader extends AsyncTask<String, Void, String> {
             }
 
             fo.close();
-
-            if (downloadedFile.exists()) {
-                Log.d("FUCKING DEBUGGING,", downloadedFile.getAbsolutePath());
-            }
         } catch (final MalformedURLException m) {
-            Log.d("Fuck", m.toString());
+
         } catch (final IOException i) {
-            Log.d("Fuckit", i.toString());
+
         } catch (Exception e) {
-            Log.d("Something went wrong", e.toString());
+
         }
 
         return "done";

@@ -17,6 +17,14 @@ Gregory~D Abowd, Anind~K Dey, Peter~J Brown, Nigel Davies, Mark Smith, and Pete
 \newblock In {\em Handheld and ubiquitous computing}, pages 304--307. Springer
   Berlin Heidelberg, 1999.
 
+\bibitem{Astrain:2006:FLT:1164783.1164798}
+J.~J. Astrain, J.~Villadangos, J.~R. Garitagoitia, J.~R. Gonz\'{a}lez~de
+  Mend\'{\i}vil, and V.~Cholvi.
+\newblock Fuzzy location and tracking on wireless networks.
+\newblock In {\em Proceedings of the 4th ACM International Workshop on Mobility
+  Management and Wireless Access}, MobiWac '06, pages 84--91, New York, NY,
+  USA, 2006. ACM.
+
 \bibitem{Bohmer:2011:FAA:2037373.2037383}
 Matthias Bohmer, Brent Hecht, Johannes Schoning, Antonio Kruger, and Gernot
   Bauer.
@@ -53,7 +61,7 @@ Google.
 \newblock Android support libraries.
 \newblock \url{http://developer.android.com/tools/support-library/index.html}.
 
-\bibitem{googlewifi}
+\bibitem{googleWiFi}
 Google.
 \newblock Configure access points with google location service.
 \newblock \url{https://support.google.com/nexus/answer/1725632?hl=en}.

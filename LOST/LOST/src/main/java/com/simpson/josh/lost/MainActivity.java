@@ -40,8 +40,6 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
             }
             ed.commit();
-        } else if (sharedPrefs.contains("FirstTime")) {
-            Log.d("Awesome it did the thing", "Well done");
         }
 
         //Nothing much doing here...

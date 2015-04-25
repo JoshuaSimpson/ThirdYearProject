@@ -77,13 +77,10 @@ public class DatabaseHelper extends SQLiteAssetHelper{
     public void uploadData() {
         SQLiteDatabase db = getReadableDatabase();
 
-        Log.d("This worked", "Really");
         RequestParams params = new RequestParams();
         try {
             params.put("DB", new File(db.getPath()));
-            Log.d("So did the params", "Awesome");
         } catch (Exception f) {
-            Log.d("Didn't work", "Dammit");
         }
 
         AsyncHttpClient client = new AsyncHttpClient();
@@ -91,13 +88,10 @@ public class DatabaseHelper extends SQLiteAssetHelper{
         client.post("http://178.62.73.203/dbs", params, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                Log.d("Hell yeah", "It worked");
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d("Whoops, post failed", "D:");
-                Log.d("We had:", "" + statusCode + error.toString());
             }
         });
     }

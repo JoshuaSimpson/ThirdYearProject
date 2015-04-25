@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.21)  25 APR 2015 16:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.21)  25 APR 2015 22:22
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -475,7 +475,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen137
 \l_MT_below_shortintertext_sep=\dimen138
 ) (./report.aux
-(./Appendices/appendix.aux))
+(./Appendices/Appendix.aux))
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -613,7 +613,7 @@ runsystem(pygmentize -S default -f latex > report.pyg)...executed.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-<FrontMatter/logo.png, id=128, 234.8775pt x 214.8025pt>
+<FrontMatter/logo.png, id=156, 234.8775pt x 214.8025pt>
 File: FrontMatter/logo.png Graphic file (type png)
 
 <use FrontMatter/logo.png>
@@ -664,18 +664,18 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 2.
-)
-\tf@toc=\write7
-\openout7 = `report.toc'.
-
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 \chapter
-             {Introduction} [1
+l.96 ...line {A}Extra Information}{44}{appendix.A}
+                                                   [1
 
-] [2]
+])
+\tf@toc=\write7
+\openout7 = `report.toc'.
+
+ [2]
 Chapter 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 34.
@@ -695,47 +695,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--40
 
 ] [4]
 Chapter 2.
-
-Package natbib Warning: Citation `googleWiFi' on page 5 undefined on input line
- 65.
-
-
-Package natbib Warning: Citation `googleWiFi2' on page 5 undefined on input lin
-e 65.
-
 [5
 
 ] [6]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 96.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 98.
 
  (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [7] [8] [9] [10]
+) [7] [8] [9] [10] [11]
 Chapter 3.
-[11
+[12
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 168--168
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
 [][][]\OT1/lmr/m/n/8 Figures cre-ated by com-par-ing phone spec-i-fi-ca-tions a
 t []$\OT1/lmtt/m/n/8 http : / / www . phonearena . com / news /
  []
 
-[12] [13]
+[13] [14]
 Chapter 4.
-[14
+[15
 
-] <Diagrams/ComponentDiagram.png, id=350, 854.19125pt x 757.83125pt>
+] <Diagrams/ComponentDiagram.png, id=397, 854.19125pt x 757.83125pt>
 File: Diagrams/ComponentDiagram.png Graphic file (type png)
 
 <use Diagrams/ComponentDiagram.png>
-Package pdftex.def Info: Diagrams/ComponentDiagram.png used on input line 209.
+Package pdftex.def Info: Diagrams/ComponentDiagram.png used on input line 211.
 (pdftex.def)             Requested size: 512.5187pt x 454.70226pt.
- [15 <./Diagrams/ComponentDiagram.png>]
-[16] [17] [18] [19] [20] [21]
+ [16 <./Diagrams/ComponentDiagram.png>]
+[17] [18] [19] [20] [21] [22]
 Chapter 5.
-[22
+[23
 
-] [23]
+] [24]
 \openout4 = `report.pyg'.
 
 runsystem(pygmentize -l Java -f latex -F tokenmerge             -P "verboptions
@@ -769,29 +761,19 @@ runsystem(rm report.out.pyg)...executed.
 
 runsystem(rm report.pyg)...executed.
 
- [24]
-\openout4 = `report.pyg'.
-
-runsystem(pygmentize -l Java -f latex -F tokenmerge             -P "verboptions
-= ,frame=single" -o report.out.pyg report.pyg)...executed.
-
-
-(./report.out.pyg)
-runsystem(rm report.out.pyg)...executed.
-
-runsystem(rm report.pyg)...executed.
-
  [25]
 \openout4 = `report.pyg'.
 
 runsystem(pygmentize -l Java -f latex -F tokenmerge             -P "verboptions
 = ,frame=single" -o report.out.pyg report.pyg)...executed.
 
- (./report.out.pyg)
+
+(./report.out.pyg)
 runsystem(rm report.out.pyg)...executed.
 
 runsystem(rm report.pyg)...executed.
 
+ [26]
 \openout4 = `report.pyg'.
 
 runsystem(pygmentize -l Java -f latex -F tokenmerge             -P "verboptions
@@ -817,12 +799,22 @@ runsystem(rm report.pyg)...executed.
 runsystem(pygmentize -l Java -f latex -F tokenmerge             -P "verboptions
 = ,frame=single" -o report.out.pyg report.pyg)...executed.
 
- (./report.out.pyg [26])
+ (./report.out.pyg)
 runsystem(rm report.out.pyg)...executed.
 
 runsystem(rm report.pyg)...executed.
 
- [27]
+\openout4 = `report.pyg'.
+
+runsystem(pygmentize -l Java -f latex -F tokenmerge             -P "verboptions
+= ,frame=single" -o report.out.pyg report.pyg)...executed.
+
+ (./report.out.pyg [27])
+runsystem(rm report.out.pyg)...executed.
+
+runsystem(rm report.pyg)...executed.
+
+ [28]
 \openout4 = `report.pyg'.
 
 runsystem(pygmentize -l Java -f latex -F tokenmerge             -P "verboptions
@@ -833,7 +825,7 @@ runsystem(rm report.out.pyg)...executed.
 
 runsystem(rm report.pyg)...executed.
 
- [28] [29] [30]
+ [29] [30] [31]
 \openout4 = `report.pyg'.
 
 runsystem(pygmentize -l JSON -f latex -F tokenmerge             -P "verboptions
@@ -848,17 +840,6 @@ runsystem(rm report.pyg)...executed.
 \openout4 = `report.pyg'.
 
 runsystem(pygmentize -l JSON -f latex -F tokenmerge             -P "verboptions
-= ,frame=single" -o report.out.pyg report.pyg)...executed.
-
- (./report.out.pyg)
-runsystem(rm report.out.pyg)...executed.
-
-runsystem(rm report.pyg)...executed.
-
- [31]
-\openout4 = `report.pyg'.
-
-runsystem(pygmentize -l Ruby -f latex -F tokenmerge             -P "verboptions
 = ,frame=single" -o report.out.pyg report.pyg)...executed.
 
  (./report.out.pyg)
@@ -872,86 +853,152 @@ runsystem(rm report.pyg)...executed.
 runsystem(pygmentize -l Ruby -f latex -F tokenmerge             -P "verboptions
 = ,frame=single" -o report.out.pyg report.pyg)...executed.
 
+ (./report.out.pyg)
+runsystem(rm report.out.pyg)...executed.
+
+runsystem(rm report.pyg)...executed.
+
+ [33]
+\openout4 = `report.pyg'.
+
+runsystem(pygmentize -l Ruby -f latex -F tokenmerge             -P "verboptions
+= ,frame=single" -o report.out.pyg report.pyg)...executed.
+
 
 (./report.out.pyg)
 runsystem(rm report.out.pyg)...executed.
 
 runsystem(rm report.pyg)...executed.
 
- [33] [34] [35]
+ [34] [35] [36]
 Chapter 6.
-[36
+[37
 
-] [37]
+] [38]
 Chapter 7.
-[38
+[39
 
-] (./report.bbl [39]
+] (./report.bbl [40]
 Underfull \hbox (badness 1242) in paragraph at lines 4--7
 []\OT1/lmr/m/n/10 Stack over-flow - iphone sig-nal strength.  []$\OT1/lmtt/m/n/
 10 http : / / stackoverflow . com / questions /
  []
 
+[41
 
-Underfull \hbox (badness 2237) in paragraph at lines 47--50
+]
+Underfull \hbox (badness 2237) in paragraph at lines 55--58
 []\OT1/lmr/m/n/10 Google.  An-droid ser-vices.  []$\OT1/lmtt/m/n/10 http : / / 
 developer . android . com / guide / components /
  []
 
 
-Underfull \hbox (badness 5847) in paragraph at lines 52--55
+Underfull \hbox (badness 5847) in paragraph at lines 60--63
 []\OT1/lmr/m/n/10 Google.  An-droid sup-port li-braries.  []$\OT1/lmtt/m/n/10 h
 ttp : / / developer . android . com / tools /
  []
 
-[40
 
-]
-Underfull \hbox (badness 1546) in paragraph at lines 62--66
+Underfull \hbox (badness 1546) in paragraph at lines 70--74
 []\OT1/lmr/m/n/10 IDC.  Smart-phone os mar-ket share, q4 2014.  []$\OT1/lmtt/m/
 n/10 http : / / www . idc . com / prodserv /
  []
 
 
-Underfull \hbox (badness 4531) in paragraph at lines 89--92
+Underfull \hbox (badness 4531) in paragraph at lines 97--100
 []\OT1/lmr/m/n/10 Felix Richter.  15 years of google.  []$\OT1/lmtt/m/n/10 http
  : / / www . statista . com / chart / 1502 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--117
+Underfull \hbox (badness 10000) in paragraph at lines 120--125
 []\OT1/lmr/m/n/10 Steven J. Vaughan-Nichols.  How google--and ev-ery-one else--
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--117
+Underfull \hbox (badness 10000) in paragraph at lines 120--125
 \OT1/lmr/m/n/10 gets wi-fi lo-ca-tion data.  []$\OT1/lmtt/m/n/10 http : / / www
  . zdnet . com / article /
  []
 
-) [41]
-\openout2 = `Appendices/appendix.aux'.
+[42]) [43]
+\openout2 = `Appendices/Appendix.aux'.
+
+ (./Appendices/Appendix.tex
+Appendix A.
+<Diagrams/UseCase.png, id=626, 935.495pt x 436.63126pt>
+File: Diagrams/UseCase.png Graphic file (type png)
+
+<use Diagrams/UseCase.png>
+Package pdftex.def Info: Diagrams/UseCase.png used on input line 4.
+(pdftex.def)             Requested size: 374.19136pt x 174.6494pt.
+ [44
 
 
-No file Appendices/appendix.tex.
+ <./Diagrams/UseCase.png>]
+File: Diagrams/ComponentDiagram.png Graphic file (type png)
 
-Package natbib Warning: There were undefined citations.
+<use Diagrams/ComponentDiagram.png>
+Package pdftex.def Info: Diagrams/ComponentDiagram.png used on input line 9.
+(pdftex.def)             Requested size: 427.09459pt x 378.9147pt.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 718.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 718.
-(./report.aux (./Appendices/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 718.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 718.
+Overfull \hbox (15.1547pt too wide) in paragraph at lines 9--10
+[] 
+ []
+
+[45] <Diagrams/lostclass.png, id=637, 1325.95375pt x 1179.40625pt>
+File: Diagrams/lostclass.png Graphic file (type png)
+
+<use Diagrams/lostclass.png>
+Package pdftex.def Info: Diagrams/lostclass.png used on input line 13.
+(pdftex.def)             Requested size: 530.37212pt x 471.75415pt.
+
+Overfull \hbox (118.43222pt too wide) in paragraph at lines 13--14
+[] 
+ []
+
+[46 <./Diagrams/lostclass.png (PNG copy)>]
+<Diagrams/foundclass.png, id=642, 618.31pt x 692.5875pt>
+File: Diagrams/foundclass.png Graphic file (type png)
+
+<use Diagrams/foundclass.png>
+Package pdftex.def Info: Diagrams/foundclass.png used on input line 17.
+(pdftex.def)             Requested size: 370.98886pt x 415.5557pt.
+ [47 <./Diagrams/foundclass.png (PNG copy)>]
+<Diagrams/rubycontrollers.png, id=647, 647.19403pt x 592.18254pt>
+File: Diagrams/rubycontrollers.png Graphic file (type png)
+
+<use Diagrams/rubycontrollers.png>
+Package pdftex.def Info: Diagrams/rubycontrollers.png used on input line 21.
+(pdftex.def)             Requested size: 388.31941pt x 355.31226pt.
+
+<Diagrams/rubymodels.png, id=648, 922.59575pt x 236.79958pt>
+File: Diagrams/rubymodels.png Graphic file (type png)
+
+<use Diagrams/rubymodels.png>
+Package pdftex.def Info: Diagrams/rubymodels.png used on input line 24.
+(pdftex.def)             Requested size: 461.29675pt x 118.39949pt.
+)
+Overfull \hbox (49.35686pt too wide) in paragraph at lines 24--718
+[] 
+ []
+
+[48 <./Diagrams/rubycontrollers.png> <./Diagrams/rubymodels.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 721.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 721.
+ (./report.aux (./Appendices/Appendix.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 721.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 721.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 44F6D96BEAE234D747BB4ECF2A5B076C;1759.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 718.
+(rerunfilecheck)             Checksum: 829BB86E0CCA6A9C7294E8811AAAF9E5;2234.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 721.
  ) 
 Here is how much of TeX's memory you used:
- 11407 strings out of 495028
- 177825 string characters out of 6181497
- 291651 words of memory out of 5000000
- 14217 multiletter control sequences out of 15000+600000
+ 11462 strings out of 495028
+ 178896 string characters out of 6181497
+ 292651 words of memory out of 5000000
+ 14248 multiletter control sequences out of 15000+600000
  53857 words of font info for 44 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,8n,37p,1326b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -964,10 +1011,10 @@ fb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></us
 r/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmtt8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtti10.pfb>
-Output written on report.pdf (45 pages, 485426 bytes).
+Output written on report.pdf (52 pages, 737827 bytes).
 PDF statistics:
- 661 PDF objects out of 1000 (max. 8388607)
- 593 compressed objects within 6 object streams
- 195 named destinations out of 1000 (max. 500000)
- 259 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 744 PDF objects out of 1000 (max. 8388607)
+ 660 compressed objects within 7 object streams
+ 211 named destinations out of 1000 (max. 500000)
+ 340 words of extra memory for PDF output out of 10000 (max. 10000000)
 

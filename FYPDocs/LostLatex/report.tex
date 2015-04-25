@@ -62,7 +62,7 @@ Defined as \textit{"services that integrate a mobile device's location or positi
 
 \subsection{Application: Google Maps}
 
-Google Maps is easily the most widely used mapping tool on the planet, with over 54\% of smartphone owners using the app on a regular basis in 2013 (for comparison, this was 10\% more than Facebook at the time)\cite{googlemaps}. Google Maps are a chief provider of location information services, with advanced route planning and street-view functionality. They serve this data through their own API\footnote{https://developers.google.com/maps/}. The most interesting aspect of their service (in relation to this paper, at least) is their recent addition of the use of Wireless Access Points for their location services. Whilst they do not rely solely on it for location, they do use the data to increase accuracy and speed through their Maps application\cite{googleWiFi}. Interestingly, Google collect this WiFi data by crowdsourcing through an 'opt out' scheme in the Google Maps application\cite{googleWiFi2} - this may not be possible in the case of this project (as Google have used WiFi in a more assistive manner), but it provides a good basis from which to approach the problem.
+Google Maps is easily the most widely used mapping tool on the planet, with over 54\% of smartphone owners using the app on a regular basis in 2013 (for comparison, this was 10\% more than Facebook at the time)\cite{googlemaps}. Google Maps are a chief provider of location information services, with advanced route planning and street-view functionality. They serve this data through their own API\footnote{https://developers.google.com/maps/}. The most interesting aspect of their service (in relation to this paper, at least) is their recent addition of the use of Wireless Access Points for their location services. Whilst they do not rely solely on it for location, they do use the data to increase accuracy and speed through their Maps application\cite{googleWiFi}. Interestingly, Google collect this WiFi data by crowdsourcing through an 'opt out' scheme in the Google Maps application\cite{googlewifi2} - this may not be possible in the case of this project (as Google have used WiFi in a more assistive manner), but it provides a good basis from which to approach the problem.
 
 \subsection{Paper: Indoor Location Using Trilateration Characteristics\cite{cook2005indoor}}
 
@@ -81,7 +81,9 @@ Whilst there is a solution designed to solve this problem in the case of the tes
 
 Finally, in cases where the averaging solution is easily applicable, there \textit{should} be concerns regarding the impact on a mobile device's battery life when performing repeated scans and operations on the results of those scans.
 
-\subsection{Paper: More Stuff on Location - Fuzzy Location?} 
+\subsection{Fuzzy Location and Tracking on Wireless Networks\cite{Astrain:2006:FLT:1164783.1164798}} 
+
+This paper describes the current inadequacies presented in GPS at building level, and presents alternative technologies that could be used in this sort of project, such as infra-red receivers and RFID tags - the issues with these technologies is the proximity required to these sorts of devices to receive any data. The paper proposes 'inferring' location in order to deal with the 'vagueness and uncertainty of trilateration based on signal strength'\cite{Astrain:2006:FLT:1164783.1164798}. The paper also proposes 'training' a system to deal with the signal variance that is inherently present in this problem field. 
 
 \section{Context-Aware Services}
 
@@ -95,7 +97,7 @@ Contextually aware services use 'sensors' to fetch this information - examples i
 
 A rapidly accelerating tech start up, Estimote provides 'beacons' using low-power Bluetooth in order to send an ID\footnote{\url{http://estimote.com/api/getting-started/intro-to-beacons.html}} to an Estimote enabled application - these can then be programmatically associated with locations, events, etc. and calculates its distance from the phone using RSSI (the received signal strength) inside it's own API, meaning that it can be used very effectively to provide location-based services with minimal effort. This is so far the the most prominent product in the market using the iBeacon base.
 
-Currently the major drawback of the Estimote is the price, which limits Estimote beacons/stickers to small buildings – covering an area such as King’s would be incredibly costly\footnote{\url{http://estimote.com/\#jump-to-products}}, and any structural changes regarding the beacons would require significant effort to represent in an application developed to use Estimote. Another issue is that - as stated above - using RSSI to fetch location information can become very complex in a large building with lots of people in it (which would cause signal attenuation at different levels throughout the day). 
+Currently the major drawback of the Estimote is the price, which limits Estimote beacons/stickers to small buildings - covering an area such as King's would be incredibly costly\footnote{\url{http://estimote.com/\#jump-to-products}}, and any structural changes regarding the beacons would require significant effort to represent in an application developed to use Estimote. Another issue is that - as stated above - using RSSI to fetch location information can become very complex in a large building with lots of people in it (which would cause signal attenuation at different levels throughout the day). 
 
 \subsection{Google Maps}
 
@@ -122,7 +124,7 @@ reCAPTCHA was originally invented as an identification system to help discern hu
 
 \subsection{The 90-9-1 Rule for Participation Inequality in Social Media and Online Communities\cite{participationinequality}}
 
-This article addresses a major problem with crowdsourcing data which Nielsen refers to as participation inequality, stating that user participation often follows a 90-9-1 rule, with 90\% of users being "lurkers or users that will observe but not contribute"\cite{participationinequality}. Nielsen also covers how to overcome this participation inequality (after briefly summarizing with ‘you can’t’); one method in particular is of interest when considering the aims of this project and its associated application: 'make participation a side effect'  – essentially the act of collecting data without the user having to do anything - this is less intrusive to the user’s day-to-day use of the application, but can also have obvious ethical ramifications if the user is unaware if they are sourcing data.
+This article addresses a major problem with crowdsourcing data which Nielsen refers to as participation inequality, stating that user participation often follows a 90-9-1 rule, with 90\% of users being "lurkers or users that will observe but not contribute"\cite{participationinequality}. Nielsen also covers how to overcome this participation inequality (after briefly summarizing with ‘you can't'); one method in particular is of interest when considering the aims of this project and its associated application: 'make participation a side effect'  - essentially the act of collecting data without the user having to do anything - this is less intrusive to the user's day-to-day use of the application, but can also have obvious ethical ramifications if the user is unaware if they are sourcing data.
 
 \section{Platform}
 
@@ -496,7 +498,7 @@ Unfortunately, during implementation there was a major issue discovered - the fu
 
 \subsection{Difficulties during implementation}
 
-Whilst developing the mobile application I encountered the majority of the difficulties for this project - mostly due to having to implement complex methods such as a functioning Dijkstra's algorithm, but also trying to develop a method to determine the user's location that was accurate, with as much precision as possible. After extensive testing, it became clear that the originally planned '3 MAC' method where I would use a combination of trilateration and fuzzy location determination\footnote{A method for roughly determining location} to determine a precise\footnote{To within 5-10 feet} location was not suitable - the rate of success for finding the user's location at all was too low - most of the time the application returning that it didn't recognise the area.
+Whilst developing the mobile application I encountered the majority of the difficulties for this project - mostly due to having to implement complex methods such as a functioning Dijkstra's algorithm, but also trying to develop a method to determine the user's location that was accurate, with as much precision as possible. After extensive testing, it became clear that the originally planned '3 MAC' method where I would use a combination of trilateration and fuzzy location determination\footnote{A method for roughly determining location} to determine a precise\footnote{To within 5-10 feet} location was not suitable - the rate of success for finding the user's location at all was too low; most of the time the application returning that it didn't recognise the area.
 
 This original implementation took the top three MAC address and concatenated them, meaning that to find a match the user had to be in the location where that exact combination happens again - however, as covered by Cook et al, radio signals are extremely variable\cite{cook2005indoor}, and this had a major impact. An example of this is shown in the Appendix - two subsequent screenshots showing a refresh with a colleague next to me and with that colleague three feet away, showing two completely different results. This was a repeatable occurrence. 
 
@@ -514,27 +516,27 @@ Eventually, Ruby was chosen as the language, using the Ruby on Rails web framewo
 
 \subsubsection{Development Environment}
 
-Setting up an optimal development environment for the backend was much tricker than for the Android application, but there were several tools that streamlined the process. Firstly, a Digital Ocean server was rented for the duration of the project - Digital Ocean provide 'ready to deploy' droplets - essentially allowing me to rent a server that came with a version of Ubuntu and any web server stack already installed - after this I just had to familiarise myself with the server and the language itself.
+Setting up an optimal development environment for the backend was much tricker than for the Android application, but there were several tools that streamlined the process. Firstly, a Digital Ocean server was rented for the duration of the project - Digital Ocean provide 'ready to deploy' droplets - essentially allowing me to rent a server that came with a version of Ubuntu and any web server stack already installed - and any web server stack already installed - this allowed me to then concentrate on developing the server-side software itself.
 
 Outside of this server, I used Sublime text editor, along with the SFTP plugin to edit files locally and push them back to the server - this was mostly when I was implementing larger functions - for smaller functions I would use SSH and Vim. Also useful was the Rails console, which provided a shell to test code in before implementing it in the application proper.
 
 \subsubsection{Libraries / Frameworks Used}
 
-Libraries in Rails are given the name 'Gems' - implementing them in a Ruby on Rails (RoR) server is fairly easy to perform and they can provide some great additional functionality that would be difficult / time-consuming to write from scratch. To this end I used two Gems that aren't automatically packed with RoR.
+Libraries in Rails are given the name 'Gems' - implementing them in a Ruby on Rails (RoR) server is fairly easy to perform and they can provide some great additional functionality that would be difficult/time-consuming to write from scratch. To this end I used two Gems that aren't automatically packed with RoR.
 
-Devise was the first Gem - Devise provides easily implementable user and session management, allowing for the quick development and continued rapid prototyping of a strong authentication system. To write my own user authenticaton with a Gem like Devise available would have been a waste of time, and almost definitely would not have provided the completeness of security that Devise does. 
+Devise was the first Gem - Devise provides easily implementable user and session management, allowing for the quick development and continued rapid prototyping of a strong authentication system. To write my own user authentication with a Gem like Devise available would have been a waste of time, and almost definitely would not have provided the completeness of security that Devise does. 
 
-The other Gem that I used was the Bootstrap Gem. Bootstrap, developed by Twitter, provides a front-end framework for easy deployment of intuitive, good looking sites. It also focuses on making any front end-code written responsive - meaning that it will run effectively on mobile phones. Whilst this wasn't critical, the overall package allowed for rapid-prototyping much easier by alleviating any concerns as to the front-end. As a developer that works mostly with back-end / functional code, this was a highly valuable Gem.
+The other Gem that I used was the Bootstrap Gem. Bootstrap, developed by Twitter, provides a front-end framework for easy deployment of intuitive, good looking sites. It also focuses on making any front end-code written responsive - meaning that it will run effectively on mobile phones. Whilst this wasn't critical, the Gem allowed for proper rapid-prototyping by alleviating any concerns about the front-end. As a developer that works mostly with back-end / functional code, this was a highly valuable Gem.
 
-I also used one Javascript API called Highcharts - Highcharts provides an API for charting data, allowing the development of good looking data visualisation views. This was crucial for turning the stored data into information, and whilst it took some work to get Highcharts working well with RoR, it was time well spent and Highcharts helped to develop professional looking charts that would not have been possible had I wrote the function myself.
+I also used one Javascript API called Highcharts - Highcharts provides an API for charting data, allowing the development of useful data visualisation views. This was crucial for turning the stored data into information, and whilst it took some work to get Highcharts working well with RoR, it was time well spent and Highcharts helped to develop professional looking charts that would not have been possible had I wrote the function myself.
 
 \subsection{Component Analysis: API}
 
-In this section I will run through each endpoint of the API, showing the data the JSON that it takes in, and the action performed when each endpoint is consumed.
+In this section I will run through each endpoint of the API, showing the JSON that it takes in, and the action performed when each endpoint is consumed.
 
 \subsubsection{POST: /locations}
 
-When a JSON of the form :
+When a JSON object of the form :
 
 \begin{minted}[frame=single]{JSON}
 {"loc" : location, "time" : time-of-record}
@@ -544,7 +546,7 @@ is POSTed to the above endpoint, the server will create a new location record, w
 
 \subsubsection{POST: /accesspoints}
 
-When a JSON of the form :
+When a JSON object of the form :
 
 \begin{minted}[frame=single]{JSON}
 { "mac" : mac, "location" : location, "time" : time, "notes" : notes }
@@ -565,7 +567,7 @@ The frontend of the server presents the data that has been collected through the
 
 \subsubsection{Login}
 
-Before any of the pages on the site can be accessed, the user will need to log in. If they try to access any of the views available from the site wihout having logged in first they will be redirected to a login dialog. This functionality is thanks to the Devise Gem, allowing for session-authentication. This is implemented using one line of code:
+Before any of the pages on the site can be accessed, the user will need to log in. If they try to access any of the views available from the site wihout having logged in first they will be redirected to a login dialog. This functionality is provided by the Devise Gem, allowing for session-authentication. This is implemented using one line of code:
 
 \begin{minted}[frame=single]{Ruby}
 before_filter :authenticate_user!
@@ -579,7 +581,7 @@ The root of the site provides a fragment view of the data that a user could see 
 
 \subsubsection{Locations}
 
-The locations list shows each record that has been created by a POST from the mobile application, with the details of which location the record was created at, and the timestamp for the record. There are links on each row to either view or delete the record. When the record is viewed, the user is taken to a page showing the usage of that location over the past 7, 14 and 28 days. 
+The locations list shows each record that has been created by a POST from the mobile application, with the details of which location the record was created at, and the timestamp for the record. There are links on each row to either view or delete the record. When the record is viewed, the user is taken to a page showing the usage of that location over the past 7 days. 
 
 Additionally, from the main locations list, the user can click a button at the bottom which will download the entire list in .csv format, allowing the user to load the dataset into their own program and create their own information sets from there.
 
@@ -625,13 +627,13 @@ Finally, there is a function which POSTs the database to the backend, so that it
 
 \section{Testing}
 
-During the development of this application, testing was important after the implementation of each new feature. Unfortunately automating this through unit testing was in almost every case, not possible. Because of the nature of this project requiring actual location information taken from the environment it is to be used in, it was much easier for any testing of functionality, and indeed any regression testing, to be performed by testing on the two development phones, making sure that everything that happened was logged using logcat.
+During the development of this application, testing was important after the implementation of each new feature. Unfortunately automating this through unit testing was in almost every case, not possible. Because of the nature of this project requiring actual location information taken from the environment it is to be used in, it was much easier for any testing of functionality, and indeed any regression testing, to be performed by testing on the two development phones, making sure that everything that happened was logged using logcat\footnote{Logcat is the console which Android phones write all logs and events to}.
 
 This testing was performed at different intervals throughout the day, and in different areas of King's. Results showed that the requirement NF2 was satisfied 90\% of the time, with an accuracy to within 10 feet approximately 75\% of the time. The rate of success however, was not just determined by the strength of the location determination algorithm, but also by the scans I had taken using FOUND. 
 
 Encouragingly, in 99\% of cases, the user would at least be given the correct floor and corridor, which should provide enough information to the user to be useful. The 1\% is mostly accounted for when a user is outside, where at two points the user was reported as being three floors up.
 
-The route planning algorithm was skewed slightly, as described in the Evaluation chapter, but otherwise would give the user the quickest route to their chosen destination - most importantly it would never lead the user to the wrong place or be unable to calculate a route. 
+The route planning algorithm had some slight issues, as described in the Evaluation chapter, but otherwise would give the user the quickest route to their chosen destination - most importantly it would never lead the user to the wrong place or be unable to calculate a route. 
 
 \subsection{Monkey}
 
@@ -648,13 +650,13 @@ In this chapter I will evaluate each componeont that has been created as a resul
 
 \section{LOST} 
 
-All of the requirements originally laid out for the LOST module of the project were successfully achieved - the application will succesfully give the user their location in any mapped location, the successful implementation of Dijkstra's algorithm means that the user \textit{will} be provided with the shortest location to their destination, and the application returns useful data to a backend. The application does this all with currently discovered bugs or crashes, and the implementation does a lot of work in the background to make sure that the entire experience flows well. However there do remain some comments to be made on the final implementation.
+All of the requirements originally laid out for the LOST module of the project were successfully achieved - the application will succesfully give the user their location in any mapped location, the successful implementation of Dijkstra's algorithm means that the user \textit{will} be provided with the shortest location to their destination, and the application returns useful data to a backend. The application does this all without any currently discovered bugs or crashes, and the implementation does a lot of work in the background to make sure that the entire experience flows well. However there do remain some comments to be made on the final implementation.
 
-Firstly and most importantly is the location determination functionality - whilst the requirement of accurately discerning the user's location has been achieved, the accuracy and precision of the implementation is not ideal. The application will give the user a location 99\% of the time, but this may not always be accurate, as touched upon briefly in the Implementation chapter. Such a problem was the signal variation that there were cases where the closest router in a room would come at a lower signal strength than a router in the adjourning corridor, and therefore the user whilst the user would receive a roughly accurate location, it wouldn't be the textit{most} accurate location. Obviously this meant that the precision of the application was also thrown off.
+Firstly and most importantly is the location determination functionality - whilst the requirement of accurately discerning the user's location has been achieved, the accuracy and precision of the implementation is not ideal. The application will give the user a location 99\% of the time, but this may not always be accurate, as touched upon briefly in the Implementation chapter. Signal variation was such a problem that there were cases where the closest router in a room would come at a lower signal strength than a router in the adjourning corridor, and therefore whilst the user would receive a roughly accurate location, it wouldn't be the \textit{most} accurate location. Obviously this meant that the precision of the application was also thrown off.
 
-In order to combat this, when creating the locations, many nodes would be created for a single location (to try and cover all possible scenarios) - this caused it's own problems - for starters any duplicate nodes would also be shown in the Route Finder part of the application, as the user needed to be able to navigate from any one of these nodes. 
+In order to combat this, when creating the locations, many nodes would be created for a single location (to try and cover all possible scenarios). This caused it's own problems: for starters any duplicate nodes would also be shown in the Route Finder part of the application, as the user needed to be able to navigate from any one of these nodes. 
 
-Finally, the user interface, whilst simple to use, is fairly bland - whilst the aim of the project was to provide a proof-of-concept application, the application was designed with a large user element in mind, and this does not show through as well as it could do in the UI. An example of this is the possible extension considered where each step in the route planner highlights green when the user has arrived at that location.
+Finally, the user interface, although simple to use, is fairly bland - whilst the aim of the project was to provide a proof-of-concept application, the application was designed with a large user element in mind, and this does not show through as well as it could do in the UI. An example of this is the possible extension considered where each step in the route planner highlights green when the user has arrived at that location, that did not end up making it into final implementation.
 
 \section{Backend}
 
@@ -668,12 +670,11 @@ Whilst this tool was never designed to be part of the project whole, it provided
 
 This could again be attributed to the signal variance discussed throughout the report, but some fault also lies in the data structure originally designed to store this information.
 
-
 \chapter{Conclusion}
 
 \section{Final Thoughts}
 
-When this project started, I found myself considering the problem environment with too much attention paid to the real-world environment, instead of abstracting the problem out to a more logical problem - it is a mindset that I was forced to take during the course of the project and that will be invaluable to me as a developer in future projects. 
+When this project started, I found myself considering the problem environment with too much attention paid to the real-world environment, instead of abstracting it out to a more logical issue - it is a mindset that I was forced to take during the course of the project and that will be invaluable to me as a developer in future projects. 
 
 An important lesson learned was to avoid 'feature-creeping' - during implementation I constantly found myself digressing from the development of a feature to add in a function that wasn't necessarily needed in the first place - whilst some of them have been useful (such as the FOUND application), others could have taken a much lower priority (such as the semi-automated WiFi configuration setup functionality in LOST). 
 
@@ -685,7 +686,7 @@ This project has provided some fascinating experience, and there are many avenue
 
 \subsection{FOUND}
 
-The most interesting piece of future work I would like to pursue would be to redesign the FOUND application outside of it's original parameters as my own utility. With careful attention, and modifications made to the underlying data structure for recording locations, the FOUND application could potentially become a useful development tool for mapping large areas with little expense\footnote{Obviously with the provision that there are available wireless access points}. The eventual result of this would be easily developable and deployable bespoke contextually aware systems. 
+The most interesting piece of future work I would like to pursue would be to redesign the FOUND application outside of it's original parameters as my own utility. With careful attention and modifications made to the underlying data structure for recording locations, the FOUND application could potentially become a useful development tool for mapping large areas with little expense\footnote{Obviously with the provision that there are available wireless access points}. The eventual result of this would be easily developable and deployable bespoke contextually aware systems. 
 
 To this end, the structure for storing locations would need to be changed - instead making sure that only one node is stored for an area, but with multiple MAC addresses to cover all potential signal variation scenarios. This would also tie in with another major point - the location determination method itself.
 
@@ -695,11 +696,12 @@ The current application provides a location, but not necessarily the most accura
 
 \subsection{LOST}
 
-Unfortunately, most future work for the LOST application is more aimed at the user experience, and less at providing meaningful contributions to the original problem. This covers additions like providing social integration so that users can provide low-level location information and route-planning information to others. Whilst useful when considering it's application in the context of the environment it is currently being applied in, it does not provide any real significance, and would infact be rather gimmicky.
+Unfortunately, most future work for the LOST application is more aimed at the user experience, and less at providing meaningful contributions to the original problem. This covers additions like providing social integration so that users can provide low-level location information and route-planning information to others. Whilst useful when considering its application in the context of the environment it is currently being applied in, it does not provide any real significance, and would infact be rather gimmicky.
 
 %http://dl.acm.org/citation.cfm?id=1164798&CFID=501587811&CFTOKEN=25626225
 %http://creately.com/?tempID=gc7qvpsj1&action=login&destination=creately-login
 %http://www.gotealeaf.com/blog/how-to-use-devise-in-rails-for-authentication
+
 
 %\include{Chapters/Body}
 %\include{Chapters/DesignSpecification}
@@ -711,8 +713,9 @@ Unfortunately, most future work for the LOST application is more aimed at the us
 \bibliographystyle{plain}
 \bibliography{mybib}
 \addcontentsline{toc}{section}{Bibliography}
+
 \appendix
-\include{Appendices/appendix}
+\include{Appendices/Appendix}
 %\include{Appendices/UserGuide}
 %\include{Appendices/SourceCode}
 \end{document}

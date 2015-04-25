@@ -98,7 +98,6 @@ public class MainActivity extends Activity {
         scanButton.setEnabled(false);
         registerReceiver(scanReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         wifi.startScan();
-        Log.d("Button press", "What the fuck");
     }
 
     public void uploadDB() {
@@ -128,7 +127,6 @@ public class MainActivity extends Activity {
 
         public void onReceive(Context c, Intent intent)
         {
-            Log.d("Scan Complete", "Eat a p33n");
             results = wifi.getScanResults();
 
             Comparator<ScanResult> resultComparator = new Comparator<ScanResult>() {

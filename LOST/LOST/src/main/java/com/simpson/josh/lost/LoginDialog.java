@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class LoginDialog extends Activity {
+public class LoginDialog extends settings {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,6 @@ public class LoginDialog extends Activity {
             @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
             @Override
             public void onClick(View view) {
-                Log.d("6 and a half thousand"," fucking. Miles.");
 
                 TextView username = (TextView)findViewById(R.id.usernameBox);
                 TextView pwd = (TextView)findViewById(R.id.passwordBox);

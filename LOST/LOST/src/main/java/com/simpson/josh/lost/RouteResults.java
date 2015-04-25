@@ -32,7 +32,6 @@ public class RouteResults extends Activity {
             if(!alreadyDone.contains(path[i]) && i < path.length) {
                 TableRow row = (TableRow) LayoutInflater.from(RouteResults.this).inflate(R.layout.inflatable_table_row, null);
                 ImageView iv = (ImageView) row.findViewById(R.id.statusIcon);
-                Log.d("Trying here", "Seriously");
 
                 Log.d(path[i], path[path.length-1]);
                 // Set icon depending on the status

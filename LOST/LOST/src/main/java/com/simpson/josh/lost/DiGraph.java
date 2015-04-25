@@ -41,7 +41,6 @@ public class DiGraph {
             edges.add(newEdge);
             edges.size();
             adjacency.get(newEdge.startNode).put(newEdge.endNode, newEdge);
-            Log.d("Node: " + newEdge.startNode.id + " is being connected to: " + newEdge.endNode.id, "Edge ID: " + newEdge.edgeID);
         } else {
 
         }
@@ -68,15 +67,6 @@ public class DiGraph {
             location = "Location not found";
         }
         return location;
-    }
-
-
-    //Test method
-    public void printMACS() {
-        Set<String> maclist = nodeMAC.keySet();
-        for (String s : maclist) {
-            Log.d("MAC IS: ", s);
-        }
     }
 
     public Node getNodeFromLocation(String location) {
