@@ -28,5 +28,5 @@ class Location < ActiveRecord::Base
 		final_result =Hash[*past_week.map(&:to_s).product([0]).flatten].merge Hash[*summary.flatten]
 
 		final_result.to_a
-	end
+    end
 end

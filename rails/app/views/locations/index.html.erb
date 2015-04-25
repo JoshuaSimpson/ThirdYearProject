@@ -18,7 +18,7 @@
       <tr>
         <td><%= link_to location.loc, location %></td>
         <td><%= location.time %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %> | <%= link_to 'Remove', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

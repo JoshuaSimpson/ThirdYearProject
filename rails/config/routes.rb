@@ -10,5 +10,5 @@ Myapp::Application.routes.draw do
   get '/dbs/get', to: 'manager#download'
   get '/help', to: 'help#index'
 
-  resources :access_points, only: [:index, :show, :new, :create, :destroy, :edit, :patch]
+  resources :access_points, only: [:index, :show, :new, :edit, :create, :destroy, :patch]
 end
