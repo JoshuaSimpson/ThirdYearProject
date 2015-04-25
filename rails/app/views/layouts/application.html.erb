@@ -24,9 +24,6 @@
           <a class="navbar-brand" href="#">LOST</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Help</a></li>
-          </ul>
           </div>
       </div>
     </nav>
@@ -40,7 +37,6 @@
             <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Overview", root_path %></li>
             <li class="<%= 'active' if params[:controller] == 'access_points' %>"><%= link_to "Access Point Faults", access_points_path %></li>
             <li class="<%= 'active' if params[:controller] == 'locations' %>"><%= link_to "Location Usage", locations_path %></li>
-	    <li class="<%= 'active' if params[:controller] == 'help'%>"><%= link_to "Help", help_path %></li>
             <li><a href="#"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></a></li>
             </ul>
         </div>
